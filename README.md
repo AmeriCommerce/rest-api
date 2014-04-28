@@ -37,3 +37,9 @@ While logged into the admin console of your site, you can view the results of an
 
 Authentication
 --------------
+
+For convenience to developers writing private integrations that only ever use a single user or run headless, AmeriCommerce provides a way to create a non-expiring access token from the admin console. There are certain limitations to this type of token, such as not being able to access some types of encrypted data.
+
+The other way to obtain access tokens is via OAuth 2. This is the more secure way to integrate an application with the API and it enforces token expiration. Additionally, if the app is acting on the behalf of particular users, OAuth is a requirement, as the user will then be able to sign in with their admin credentials and use the app just like they would use the admin console.
+
+You can find more information about authentication in the [guide](authentication.md).
