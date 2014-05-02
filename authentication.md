@@ -1,18 +1,28 @@
 AmeriCommerce API Authentication
 ================================
 
-All AmeriCommerce API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one, how to use security scopes, and how to refresh expired access tokens.
+All AmeriCommerce API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one and how to refresh expired tokens.
 
-OAuth 2
--------
+Getting an Access Token
+-----------------------
 
 These instructions make use of digests and assume you know how to generate one (SHA256 in particular). You will need your application's ID and secret from the admin console before you proceed.
+
+### Creating Signatures
+
+In the processes below, there are some points where you will be asked to generate a signature. Each time will require slightly different information, but the overall process is the same:
+
+1. Concatenate all of the required information. This always starts with the application's secret.
+
+2. Calculate the SHA256 digest of the concatenated string.
+
+The signature is expected as a hex string when it is sent in on a request.
 
 ### Web Application
 
 1. Redirect the user to `https://[mystorename.com]/api/oauth` with the following query string parameters:
   * `app_id` - The App ID given to you in the admin console when you set up the application.
-  * `scope` - The permissions that this access token will need.
+  * `scope` - The permissions that this access token will need. (See [Scopes](scopes.md) for specifics.)
   * `redirect_url` - The URL that will be returned to after the user has authorized the application.
 
 2. The user will be asked to login with their admin console credentials.
@@ -32,11 +42,7 @@ These instructions make use of digests and assume you know how to generate one (
 
 7. Read back the response from the POST request. If all goes well it should contain an `access_token` and `refresh_token`. That `access_token` can now be used to make requests against the API.
 
-### Desktop Application (applications with a webview)
-
-WIP
-
-### Desktop Application (applications without a webview)
+### Desktop Application
 
 This flow does require obtaining user information up front, but instead of their password you will need their user-specific API key. We will use this information to create a login signature so that the user can be logged in securely and your app doesn't need to know or store their real password. The user-specific API key can be found in the admin console under **Tools** > **Apps & Addons** > **Manage Apps** > *More Actions* menu > *View User Authorization Key*. Click the *Show Key* button on that page and it will be displayed.
 
@@ -44,7 +50,7 @@ A user can regenerate this key at any time so it is suggested that you prompt th
 
 1. Send a POST request to `https://[mystorename.com]/api/oauth` with the following information in the request body (the request's `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
   * `app_id` - The App ID given to you in the admin console when you set up the application.
-  * `scope` - The permissions that this access token will need.
+  * `scope` - The permissions that this access token will need. (See [Scopes](scopes.md) for specifics.)
   * `redirect_url` - Can be your domain name or anything else for this flow, we're not performing redirection - just be consistent in all the spots that need it.
   * `username` - the username that the user has provided.
   * `signature` - concatenate the application's secret, the `username`, the user-specific API key, `app_id`, `scope`, and `redirect_url`, then calculate the SHA256 hash of the concatenated string. To summarize: `SHA256(secret + username + key + app_id + scope + redirect_url)`.
@@ -53,7 +59,7 @@ A user can regenerate this key at any time so it is suggested that you prompt th
   * `ref` - An identifier to represent the handshake.
   * `code` - A verification code.
 
-3. Generate a signature by concatenating the app's secret, the `username`, `code`, `app_id`, `scope`, and `redirect_url`, then calculating the SHA256 hash of the concatenated string. To summarize: `SHA256(secret + username + code + app_id + scope + redirect_url)`.
+3. Generate a signature by concatenating the app's secret, `code`, `app_id`, `scope`, and `redirect_url`, then calculating the SHA256 hash of the concatenated string. To summarize: `SHA256(secret + username + code + app_id + scope + redirect_url)`.
 
 4. Send another POST request to `https://[mystorename.com]/api/oauth/access_token` with the following information in the request body (the request's `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
   * `app_id` - The App ID used throughout this process.
