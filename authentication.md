@@ -67,3 +67,16 @@ A user can regenerate this key at any time so it is suggested that you prompt th
   * `signature` - The signature generated from the previous step.
 
 5. Read back the response from the previous POST request. If all goes well it should contain an `access_token` and `refresh_token`. That `access_token` can now be used to make requests against the API.
+
+Error Handling
+--------------
+
+There are two error formats that you may encounter when trying to obtain an access token.
+
+In the web flow specifically, in the event there is an error on the OAuth initialization or due to user permissions, the user will be redirected back to the `redirect_url` with three additional query string parameters:
+
+* `error` - The type of error that occured.
+* `error_reason` - The reason the error occured.
+* `error_description` - A longer description of the error.
+
+During the desktop flow or during token negotiation, errors are sent back on the response with a HTTP status code. The `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded` depending on what the `Content-Type` of the original request was.

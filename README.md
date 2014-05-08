@@ -48,3 +48,7 @@ The Format
 ----------
 
 All data serialization is done with JSON. For endpoints that return lists, there is a list metadata object wrapping the array of results. The list metadata gives you information such as paging and total number of results. For properties we use `snake_case`. Datetime objects are expressed in [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601).
+
+Rate Limiting
+-------------
+
