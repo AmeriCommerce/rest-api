@@ -30,14 +30,14 @@ The signature is expected as a hex string when it is sent in on a request.
 3. After login, the user will be prompted to grant the app access on their behalf.
 
 4. The user will be redirected back to the `redirect_url` that you provided on the initial request with the following query string parameters.
-  * `ref` - An identifier to represent the handshake.
+  * `auth_id` - An identifier to represent the handshake.
   * `code` - A verification code.
 
 5. Generate a signature by concatenating the app's secret, `code`, `app_id`, `scope`, and `redirect_url`, then computing a SHA256 digest of the concatenated string. The digest should be in hex format.
 
 6. Send a POST request to `https://[mystorename.com]/api/oauth/access_token` with the following information in the request body (the `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
   * `app_id` - The App ID used to start this process.
-  * `ref` - The handshake reference given to you when the user returned to your application.
+  * `auth_id` - The handshake reference given to you when the user returned to your application.
   * `signature` - The signature you generated above: `SHA256(secret + code + app_id + scope + redirect_url)`.
 
 7. Read back the response from the POST request. If all goes well it should contain an `access_token` and `refresh_token`. That `access_token` can now be used to make requests against the API.
@@ -56,14 +56,14 @@ A user can regenerate this key at any time so it is suggested that you prompt th
   * `signature` - concatenate the application's secret, the `username`, the user-specific API key, `app_id`, `scope`, and `redirect_url`, then calculate the SHA256 hash of the concatenated string. To summarize: `SHA256(secret + username + key + app_id + scope + redirect_url)`.
 
 2. Read the response to this request, it will be in the same `Content-Type` that you sent in. The response will contain the following information:
-  * `ref` - An identifier to represent the handshake.
+  * `auth_id` - An identifier to represent the handshake.
   * `code` - A verification code.
 
 3. Generate a signature by concatenating the app's secret, `code`, `app_id`, `scope`, and `redirect_url`, then calculating the SHA256 hash of the concatenated string. To summarize: `SHA256(secret + username + code + app_id + scope + redirect_url)`.
 
 4. Send another POST request to `https://[mystorename.com]/api/oauth/access_token` with the following information in the request body (the request's `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
   * `app_id` - The App ID used throughout this process.
-  * `ref` - The handshake identifier returned from the previous request.
+  * `auth_id` - The handshake identifier returned from the previous request.
   * `signature` - The signature generated from the previous step.
 
 5. Read back the response from the previous POST request. If all goes well it should contain an `access_token` and `refresh_token`. That `access_token` can now be used to make requests against the API.

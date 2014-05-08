@@ -35,7 +35,7 @@ exports.getAccessToken = function(options, next) {
         });
         response.on('end', function() {
           var d = JSON.parse(data.toString());
-          locals.ref = d.ref;
+          locals.authId = d.auth_id;
           locals.code = d.code;
           callback();
         });
@@ -48,7 +48,7 @@ exports.getAccessToken = function(options, next) {
       var sig = createSignature(options.secret, locals.code, options.appId, options.appScope, options.storeDomain);
       var outgoingData = JSON.stringify({
         'app_id': options.appId,
-        'ref': locals.ref,
+        'auth_id': locals.authId,
         'signature': sig
       });
       var requestOptions = {

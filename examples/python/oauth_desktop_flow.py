@@ -45,14 +45,14 @@ class AmeriCommerceApi():
         r = requests.post(APP_DOMAIN + '/oauth', headers = headers, data = json.dumps(body))
         return r.json()
 
-    def request_token(self, ref, code):
+    def request_token(self, auth_id, code):
         sig = self.create_sig(APP_SECRET, code, APP_ID, APP_SCOPE, APP_DOMAIN)
         headers = {
             'content-type': 'application/json'
         }
         body = {
             'app_id': APP_ID,
-            'ref': ref,
+            'auth_id': auth_id,
             'signature': sig
         }
         r = requests.post(APP_DOMAIN + '/oauth/access_token', headers = headers, data = json.dumps(body))
