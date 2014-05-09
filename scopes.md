@@ -54,6 +54,7 @@ Tools
 Other
 -----
 
-* `system` - Perform system tasks such as uploading files to the site (requires `FileBrowser` and `StoreSettings` permissions)
+* `settings` - View and change configuration data (requires `Shipping`, `Warehouses`, `TaxRates`, `GlobalRegions`, `PaymentGateways`, and `UrlRedirecting` permissions)
+* `system` - Perform system tasks such as uploading files to the site (requires `FileBrowser`, `Sessions`, and `StoreSettings` permissions)
 * `decrypt` - Access to decrypt certain sensitive information, cannot be combined with `no_expiry` (user must be able to view credit card data)
 * `no_expiry` - Token does not expire and does not require a refresh token, cannot be combined with `decrypt`
