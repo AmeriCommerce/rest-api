@@ -1,6 +1,8 @@
 Resource List
 =============
 
+All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the domain name of your AmeriCommerce store.
+
 People
 ------
 
