@@ -1,0 +1,33 @@
+﻿@model OAuthWebFlowExample.Models.ProductList
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_App.cshtml";
+}
+
+<h2>Product List</h2>
+
+@Html.Partial("_Pager", Model)
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Item Name</th>
+            <th>Item Number</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model.Products)
+        {
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.ItemName</td>
+                <td>@p.ItemNumber</td>
+                <td>@p.Price</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.Partial("_Pager", Model)

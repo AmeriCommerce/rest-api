@@ -1,0 +1,30 @@
+﻿@model OAuthWebFlowExample.Models.ProductList
+
+@helper GetNextPageClass()
+{
+    if (!string.IsNullOrEmpty(Model.NextPage))
+    {
+        @: next
+    }
+    else
+    {
+        @: next disabled
+    }
+}
+
+@helper GetPrevPageClass()
+{
+    if (!string.IsNullOrEmpty(Model.PreviousPage))
+    {
+        @: previous
+    }
+    else
+    {
+        @: previous disabled
+    }
+}
+
+<ul class="pager">
+    <li class="@GetPrevPageClass()"><a href="@Url.Action("Index", new {page = Model.CurrentPage - 1})">&larr; Previous</a></li>
+    <li class="@GetNextPageClass()"><a href="@Url.Action("Index", new {page = Model.CurrentPage + 1})">Next &rarr;</a></li>
+</ul>
