@@ -32,7 +32,7 @@ Sample Model
 	"is_affiliate_customer": false,
 	"updated_at": "2005-09-08T13:48:55-05:00",
 	"created_at": "2004-10-08T00:00:00-05:00",
-	"username": "callen",
+	"username": "chris",
 	"is_contact_information_only": false,
 	"tax_exemption_number": "",
 	"company": "AmeriCommerce",
