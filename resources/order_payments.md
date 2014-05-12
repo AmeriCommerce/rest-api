@@ -44,4 +44,6 @@ Sample Model
 Nested Resources
 ----------------
 
+Accessible via the `?expand=` parameter or `/api/v1/order_payments/{id}/{nested_resource}`.
+
 ### fields
