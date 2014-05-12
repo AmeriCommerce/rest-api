@@ -12,10 +12,10 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* [addresses](resources/addresses.md)
 
 * Orders
-	* carts
-	* orders
-	* order_items
-	* order_payments
+	* [carts](resources/carts.md)
+	* [orders](resources/orders.md)
+	* [order_items](resources/order_items.md)
+	* [order_payments](resources/order_payments.md)
 	* order_shipments
 	* order_statuses
 	* order_addresses
