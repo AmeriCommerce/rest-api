@@ -4,12 +4,12 @@ Resource List
 All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the domain name of your AmeriCommerce store. See [Common Usage](common_usage.md) for a more detailed explanation of most of the operations these provide.
 
 * People
-	* customers
-	* customer_types
-	* customer_payment_methods
-	* users
-	* profiles
-	* addresses
+	* [customers](resources/customers.md)
+	* [customer_types](resources/customer_types.md)
+	* [customer_payment_methods](resources/customer_payment_methods.md)
+	* [users](resources/users.md)
+	* [profiles](resources/profiles.md)
+	* [addresses](resources/addresses.md)
 
 * Orders
 	* carts
