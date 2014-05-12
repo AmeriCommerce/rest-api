@@ -52,4 +52,4 @@ All data serialization is done with JSON. For endpoints that return lists, there
 Rate Limiting
 -------------
 
-*WIP*
+We do enforce a rate limit for how many requests an application and/or token can make in a designated period of time. This limit varies by plan level.
