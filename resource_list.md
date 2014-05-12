@@ -1,128 +1,70 @@
 Resource List
 =============
 
-All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the domain name of your AmeriCommerce store.
+All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the domain name of your AmeriCommerce store. See [Common Usage](common_usage.md) for a more detailed explanation of most of the operations these provide.
 
-People
-------
+* People
+	* customers
+	* customer_types
+	* customer_payment_methods
+	* users
+	* profiles
+	* addresses
 
-### customers
+* Orders
+	* carts
+	* orders
+	* order_items
+	* order_payments
+	* order_shipments
+	* order_statuses
+	* order_addresses
+	* quotes
+	* subscriptions
+	* credit_cards
 
-### customer_types
+* Catalog
+	* products
+	* product_variants
+	* categories
+	* manufacturers
+	* attributes
+	* attribute_groups
+	* product_lists
+	* product_statuses
+	* shipping_rate_adjustments
+	* variant_groups
 
-### customer_payment_methods
+* Content
+	* pages
+	* blogs
+	* blog_categories
+	* blog_posts
 
-### users
+* Marketing
+	* adcodes
+	* affiliates
+	* drips
+	* discount_methods
+	* discount_rules
+	* coupon_codes
+	* gift_certificates
+	* gift_certificate_transactions
+	* mailing_lists
+	* email_templates
 
-### profiles
+* Tools
+	* custom_fields
 
-### addresses
+* Settings
+	* url_redirects
+	* tax_rates
+	* payment_methods
+	* regions
+	* shipping_providers
+	* custom_shipping_methods
+	* warehouses
 
-Orders
-------
-
-### carts
-
-### orders
-
-### order_items
-
-### order_payments
-
-### order_shipments
-
-### order_statuses
-
-### order_addresses
-
-### quotes
-
-### subscriptions
-
-### credit_cards
-
-Catalog
--------
-
-### products
-
-### product_variants
-
-### categories
-
-### manufacturers
-
-### attributes
-
-### attribute_groups
-
-### product_lists
-
-### product_statuses
-
-### shipping_rate_adjustments
-
-### variant_groups
-
-Content
--------
-
-### pages
-
-### blogs
-
-### blog_categories
-
-### blog_posts
-
-Marketing
----------
-
-### adcodes
-
-### affiliates
-
-### drips
-
-### discount_methods
-
-### discount_rules
-
-### coupon_codes
-
-### gift_certificates
-
-### gift_certificate_transactions
-
-### mailing_lists
-
-### email_templates
-
-Tools
------
-
-### custom_fields
-
-Settings
---------
-
-### url_redirects
-
-### tax_rates
-
-### payment_methods
-
-### regions
-
-### shipping_providers
-
-### custom_shipping_methods
-
-### warehouses
-
-System
-------
-
-### stores
-
-### sessions
+* System
+	* stores
+	* sessions

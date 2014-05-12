@@ -24,17 +24,17 @@ From Code
 
 Libraries like [RestSharp](http://restsharp.org/) and [JSON.NET](http://james.newtonking.com/json) will handle this format for you.
 
-```shell
+```csharp
 DateTime.UtcNow.ToString("s")   // NOTE: DateTime.Now.ToString("s") will give local time without the offset
 ```
 
-```shell
+```csharp
 DateTime.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.FFFFFFK")
 ```
 
 ###### Python
 
-```shell
+```python
 >>> from datetime import datetime
 >>> datetime.utcnow().isoformat()
 '2014-05-12T14:51:02.206277'
@@ -42,7 +42,7 @@ DateTime.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.FFFFFFK")
 
 ###### Ruby
 
-```shell
+```irb
 irb(main):001:0> require 'time'
 => true
 irb(main):002:0> Time.now.iso8601
@@ -53,7 +53,7 @@ irb(main):003:0> Time.now.utc.iso8601
 
 ###### node.js
 
-```shell
+```js
 > var date = new Date();
 undefined
 > date.toISOString();

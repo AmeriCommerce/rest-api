@@ -12,7 +12,7 @@ The standard GET requests supported by this API will return results in one of tw
 
 A single object result will just be the JSON for the object:
 
-```shell
+```json
 {
 	"id": 1,
 	"item_name": "Item 1",
@@ -23,7 +23,7 @@ A single object result will just be the JSON for the object:
 
 While a list result will contain some metadata about the list before the array of results:
 
-```shell
+```json
 {
 	"total_count": 1234,
 	"next_page": "https://[mystorename.com]/api/v1/products?page=2",
