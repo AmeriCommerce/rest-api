@@ -20,7 +20,7 @@ There are a couple of common variations to this format: one with the timezone of
 From Code
 ---------
 
-###### C#
+###### C\#
 
 Libraries like [RestSharp](http://restsharp.org/) and [JSON.NET](http://james.newtonking.com/json) will handle this format for you.
 
