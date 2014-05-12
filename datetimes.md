@@ -31,3 +31,31 @@ DateTime.UtcNow.ToString("s")   // NOTE: DateTime.Now.ToString("s") will give lo
 ```shell
 DateTime.Now.ToString("yyyy-MM-dd'T'HH:mm:ss.FFFFFFK")
 ```
+
+###### Python
+
+```shell
+>>> from datetime import datetime
+>>> datetime.utcnow().isoformat()
+'2014-05-12T14:51:02.206277'
+```
+
+###### Ruby
+
+```shell
+irb(main):001:0> require 'time'
+=> true
+irb(main):002:0> Time.now.iso8601
+=> "2014-05-12T09:47:09-05:00"
+irb(main):003:0> Time.now.utc.iso8601
+=> "2014-05-12T14:47:16Z"
+```
+
+###### node.js
+
+```shell
+> var date = new Date();
+undefined
+> date.toISOString();
+'2014-05-12T14:53:34.524Z'
+```
