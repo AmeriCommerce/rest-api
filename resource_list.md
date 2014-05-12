@@ -36,8 +36,8 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* variant_groups
 
 * Content
-	* pages
-	* blogs
+	* [pages](resources/pages.md)
+	* [blogs](resources/blogs.md)
 	* blog_categories
 	* blog_posts
 
