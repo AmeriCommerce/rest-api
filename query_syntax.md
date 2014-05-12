@@ -1,7 +1,7 @@
 Query Syntax
 ============
 
-The query syntax is available on the default list endpoint of every resource. It allows for more advanced filtering of the data returned. All field names (with the exception of nested resources) are available as query string parameters for this functionality.
+The query syntax is available on every resource root (i.e. `/api/v1/products`). It allows for more advanced filtering of the data returned. All field names (with the exception of nested resources) are available as query string parameters for this functionality.
 
 The general format of a query syntax parameter is as follows:
 
@@ -13,12 +13,12 @@ field_name=op:value
 
 * `op` - (Optional) The [comparison operator](#comparison-operator) to use when comparing the specified value to the field. Defaults to **eq**.
 
-* `value` - The value being checked for.
+* `value` - The value being checked for. (Read [here](datetimes.md) for additional information about using datetimes for this.)
 
 Comparison Operators
 --------------------
 
-### eq
+###### eq
 
 This is the default if no operator is specified. Returns results where a field is *equal to* the supplied value.
 
@@ -30,7 +30,7 @@ item_name=test
 item_name=eq:test
 ```
 
-### not
+###### not
 
 Returns results where a field is *not equal to* the supplied value.
 
@@ -38,7 +38,7 @@ Returns results where a field is *not equal to* the supplied value.
 item_name=not:test
 ```
 
-### like
+###### like
 
 Returns results where a field *contains* the supplied value.
 
@@ -46,7 +46,7 @@ Returns results where a field *contains* the supplied value.
 item_name=like:test
 ```
 
-### gt
+###### gt
 
 Returns results where a field is *greater than* the supplied value.
 
@@ -54,7 +54,7 @@ Returns results where a field is *greater than* the supplied value.
 price=gt:5.00
 ```
 
-### gte
+###### gte
 
 Returns results where a field is *greater than or equal to* the supplied value.
 
@@ -62,7 +62,7 @@ Returns results where a field is *greater than or equal to* the supplied value.
 price=gte:5.00
 ```
 
-### lt
+###### lt
 
 Returns results where a field is *less than* the supplied value.
 
@@ -70,7 +70,7 @@ Returns results where a field is *less than* the supplied value.
 price=lt:25.00
 ```
 
-### lte
+###### lte
 
 Returns results where a field is *less than or equal to* the supplied value.
 
@@ -81,7 +81,9 @@ price=lte:25.00
 Conjunction Operators
 ---------------------
 
-### AND
+Complex queries using parentheses are not supported. The conjunctions we do support will be evaluated in the standard order of operations.
+
+###### AND
 
 The default when multiple fields are specified in a query. Can also be used to specify multiple comparison values for a single field.
 
@@ -93,7 +95,7 @@ item_name=test&price=gt:5.00
 price=gt:5.00+AND+lte:25.00
 ```
 
-### OR
+###### OR
 
 Can prefix the first operator, in which it overrides the default `AND` behavior and uses `OR` instead. It can also be used to specify multiple comparison values for a single field.
 
@@ -104,8 +106,3 @@ item_name=like:test&price=OR+lte:25.00
 ```shell
 item_name=like:doge+OR+like:wow
 ```
-
-Additional Notes
-----------------
-
-Datetimes are possible with this syntax, but they must be specified in a particular format. The format we support for this is [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601).
