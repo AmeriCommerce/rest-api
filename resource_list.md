@@ -54,11 +54,11 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* email_templates
 
 * Tools
-	* custom_fields
+	* [custom_fields](resources/custom_fields.md)
 
 * Settings
-	* url_redirects
-	* tax_rates
+	* [url_redirects](resources/url_redirects.md)
+	* [tax_rates](resources/tax_rates.md)
 	* payment_methods
 	* regions
 	* shipping_providers
@@ -66,5 +66,5 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* warehouses
 
 * System
-	* stores
-	* sessions
+	* [stores](resources/stores.md)
+	* [sessions](resources/sessions.md)
