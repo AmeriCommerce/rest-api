@@ -38,8 +38,8 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 * Content
 	* [pages](resources/pages.md)
 	* [blogs](resources/blogs.md)
-	* blog_categories
-	* blog_posts
+	* [blog_categories](resources/blog_categories.md)
+	* [blog_posts](resources/blog_posts.md)
 
 * Marketing
 	* adcodes
