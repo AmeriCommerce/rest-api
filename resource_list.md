@@ -59,8 +59,8 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 * Settings
 	* [url_redirects](resources/url_redirects.md)
 	* [tax_rates](resources/tax_rates.md)
-	* payment_methods
-	* regions
+	* [payment_methods](resources/payment_methods.md)
+	* [regions](resources/regions.md)
 	* shipping_providers
 	* custom_shipping_methods
 	* warehouses
