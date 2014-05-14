@@ -1,4 +1,4 @@
-require './americommerce_api'
+require './americommerce'
 
 api = AmeriCommerce::ApiClient.new
 
