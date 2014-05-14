@@ -42,16 +42,16 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* [blog_posts](resources/blog_posts.md)
 
 * Marketing
-	* adcodes
-	* affiliates
-	* drips
-	* discount_methods
-	* discount_rules
-	* coupon_codes
-	* gift_certificates
-	* gift_certificate_transactions
-	* mailing_lists
-	* email_templates
+	* [adcodes](resources/adcodes.md)
+	* [affiliates](resources/affiliates.md)
+	* [drips](resources/drips.md)
+	* [discount_methods](resources/discount_methods.md)
+	* [discount_rules](resources/discount_rules.md)
+	* [coupon_codes](resources/coupon_codes.md)
+	* [gift_certificates](resources/gift_certificates.md)
+	* [gift_certificate_transactions](resources/gift_certificate_transactions.md)
+	* [mailing_lists](resources/mailing_lists.md)
+	* [email_templates](resources/email_templates.md)
 
 * Tools
 	* [custom_fields](resources/custom_fields.md)
