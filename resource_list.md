@@ -24,16 +24,16 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* [credit_cards](resources/credit_cards.md)
 
 * Catalog
-	* products
-	* product_variants
-	* categories
-	* manufacturers
-	* attributes
-	* attribute_groups
-	* product_lists
-	* product_statuses
-	* shipping_rate_adjustments
-	* variant_groups
+	* [products](resources/products.md)
+	* [product_variants](resources/product_variants.md)
+	* [categories](resources/categories.md)
+	* [manufacturers](resources/manufacturers.md)
+	* [attributes](resources/attributes.md)
+	* [attribute_groups](resources/attribute_groups.md)
+	* [product_lists](resources/product_lists.md)
+	* [product_statuses](resources/product_statuses.md)
+	* [shipping_rate_adjustments](resources/shipping_rate_adjustments.md)
+	* [variant_groups](resources/variant_groups.md)
 
 * Content
 	* [pages](resources/pages.md)
