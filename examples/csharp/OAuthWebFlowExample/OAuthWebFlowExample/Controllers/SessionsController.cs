@@ -16,7 +16,7 @@ namespace OAuthWebFlowExample.Controllers
     {
         public ActionResult Index(string r)
         {
-            var callbackUrl = HttpUtility.UrlEncode(Url.Action("Callback", "Sessions", new {r}, "http"));
+            var callbackUrl = Url.Action("Callback", "Sessions", new {r}, "http");
 
             var oauthUrl = string.Format("https://{0}/api/oauth?app_id={1}&scope={2}&redirect_url={3}",
                 ConfigurationManager.AppSettings["StoreDomain"],
@@ -29,10 +29,10 @@ namespace OAuthWebFlowExample.Controllers
 
         public ActionResult Callback(CallbackInput model)
         {
-            var callbackUrl = HttpUtility.UrlEncode(Url.Action("Callback", "Sessions", new {r = model.R}, "http"));
+            var callbackUrl = Url.Action("Callback", "Sessions", new {r = model.R}, "http");
             var accessTokenUrl = string.Format("https://{0}/api/oauth/access_token", ConfigurationManager.AppSettings["StoreDomain"]);
             var req = (HttpWebRequest) WebRequest.Create(accessTokenUrl);
-            var sig = CreateSignature(ConfigurationManager.AppSettings["AppSecret"], model.Code, ConfigurationManager.AppSettings["AppId"], ConfigurationManager.AppSettings["AppScope"], callbackUrl);
+            var sig = CreateSignature(ConfigurationManager.AppSettings["AppSecret"], model.Code, ConfigurationManager.AppSettings["AppId"], ConfigurationManager.AppSettings["AppScope"], callbackUrl.ToLower());
 
             req.Method = "POST";
             req.ContentType = "application/json";

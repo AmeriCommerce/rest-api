@@ -1,0 +1,26 @@
+<h2>Product List</h2>
+
+<%= erb :pager, :locals => locals %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Item Name</th>
+			<th>Item Number</th>
+			<th>Price</th>
+		</tr>
+	<thead>
+	<tbody>
+		<% locals[:product_list]['products'].each do |p| %>
+			<tr>
+				<td><%= p['id'] %></td>
+				<td><%= p['item_name'] %></td>
+				<td><%= p['item_number'] %></td>
+				<td><%= p['price'] %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= erb :pager, :locals => locals %>

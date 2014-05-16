@@ -1,0 +1,4 @@
+<ul class="pager">
+	<li class="<%= locals[:previous_button_class] %>"><a href="<%= url('/?page=' + (locals[:current_page] - 1).to_s) %>">&larr; Previous</a></li>
+	<li class="<%= locals[:next_button_class] %>"><a href="<%= url('/?page=' + (locals[:current_page] + 1).to_s) %>">Next &rarr;</a></li>
+</ul>
