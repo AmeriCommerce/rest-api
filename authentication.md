@@ -33,7 +33,7 @@ The signature is expected as a hex string when it is sent in on a request.
   * `auth_id` - An identifier to represent the handshake.
   * `code` - A verification code.
 
-5. Generate a signature by concatenating the app's secret, `code`, `app_id`, `scope`, and `redirect_url`, then computing a SHA256 digest of the concatenated string. The digest should be in hex format.
+5. Generate a signature by concatenating the app's secret, `code`, `app_id`, `scope`, and `redirect_url` (converted to all lowercase), then computing a SHA256 digest of the concatenated string. The digest should be in hex format. **Take extra care here that the `redirect_url` matches the original `redirect_url` precisely (before conversion to lowercase), or this will fail.**
 
 6. Send a POST request to `https://[mystorename.com]/api/oauth/access_token` with the following information in the request body (the `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
   * `app_id` - The App ID used to start this process.
@@ -67,6 +67,23 @@ A user can regenerate this key at any time so it is suggested that you prompt th
   * `signature` - The signature generated from the previous step.
 
 5. Read back the response from the previous POST request. If all goes well it should contain an `access_token` and `refresh_token`. That `access_token` can now be used to make requests against the API.
+
+Refreshing Tokens
+-----------------
+
+By refreshing a token you are trading in an expired access token for a new one, without having to grant access again (as that part has already been done).
+
+1. Generate a signature by concatenating the app's secret, the previous `access_token`, the `refresh_token`, and the `app_id`, then calculating the SHA256 of the concatenated string. To summarize: `SHA256(secret + access_token + refresh_token + app_id)`.
+
+2. Send a POST request to `https://[mystorename.com]/api/oauth/refresh` with the following information in the request body (the request's `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
+  * `app_id` - The App ID used to originally obtain the `access_token`.
+  * `access_token` - The original `access_token`.
+  * `signature` - The signature generated in step 1.
+
+3. Read back the response. If all goes well it should contain the following information:
+  * `access_token` - A new `access_token` to use for API requests.
+  * `refresh_token` - For use when this `access_token` expires.
+  * `expires` - The expiration of the new token.
 
 Error Handling
 --------------
