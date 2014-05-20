@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Product List</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-theme.min.css"/>
+</head>
+<body>
+
+	<div class="container">
+
+		<h2>Product List</h2>
+
+		{% include "pager.jinja" %}
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Item Name</th>
+					<th>Item Number</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for product in product_list['products'] %}
+					<tr>
+						<td>{{ product['id'] }}</td>
+						<td>{{ product['item_name'] }}</td>
+						<td>{{ product['item_number'] }}</td>
+						<td>{{ product['price'] }}</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+		{% include "pager.jinja" %}
+
+	</div>
+
+	<script src="/static/js/jquery-2.1.0.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+</body>
+</html>
