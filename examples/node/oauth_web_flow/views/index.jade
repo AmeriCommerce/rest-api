@@ -1,0 +1,30 @@
+doctype html
+html(lang="en")
+	head
+		title Product List
+		link(rel="stylesheet", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", href="/css/bootstrap-theme.min.css")
+
+	body
+		.container
+			h2 Product List
+			include pager
+			table(class=['table','table-striped'])
+				thead
+					tr
+						th Id
+						th Item Name
+						th Item Number
+						th Price
+				tbody
+					- each p in productList.products
+						tr
+							td= p.id
+							td= p.item_name
+							td= p.item_number
+							td= p.price
+
+			include pager
+
+		script(src="/js/jquery-2.1.0.min.js")
+		script(src="/js/bootstrap.min.js")
