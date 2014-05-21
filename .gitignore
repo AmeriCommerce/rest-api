@@ -28,6 +28,9 @@ local.properties
 # PDT-specific
 .buildpath
 
+examples/java/OAuthDesktopFlow/target/
+.idea
+
 
 #################
 ## Visual Studio
