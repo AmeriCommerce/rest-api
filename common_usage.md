@@ -307,3 +307,27 @@ Deletes an existing resource. On success, this method returns a `204 No Content`
 ```shell
 DELETE /api/v1/{resource_name}/{id}
 ```
+
+Error Handling
+--------------
+
+When there's a problem, it can usually be figured out by the status code and message returned.
+
+Status codes that you can expect to see when using our API that indiciate errors:
+
+* 400 Bad Request - usually due to insufficient data on a request
+* 401 Unauthorized - usually due to no X-AC-Auth-Token header or an invalid X-AC-Auth-Token header
+* 404 Not Found
+* 409 Conflict - usually due to a validation issue with the data provided
+* 429 Too Many Requests - rate limit exceeded
+* 500 Internal Error - an error has occurred on the server, if the cause of this cannot be determined it may be a good idea to contact support
+
+The error response has a standard structure that looks like this:
+
+```json
+{
+	"status_code": 400,
+	"message": "Bad Request",
+	"details": "This method requires one or more resource IDs to be specified"
+}
+```
