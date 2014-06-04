@@ -30,6 +30,7 @@ Sample Model
 	"gift_message": "",
 	"delivery_date": null,
 	"is_subscription_product": false,
+	"description": "test",
 	"variants": [
 		{
 			"id": 7,

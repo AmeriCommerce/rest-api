@@ -23,6 +23,7 @@ Sample Model
 	"declined_message": "",
 	"is_gateway": false,
 	"gateway_name": "",
+	"name": "Send Check or Money Order",
 	"updated_at": "2014-05-06T12:24:32.753-05:00",
 	"created_at": "2014-05-06T12:24:32.753-05:00"
 }
