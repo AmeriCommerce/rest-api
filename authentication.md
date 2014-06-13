@@ -44,7 +44,7 @@ The signature is expected as a hex string when it is sent in on a request.
 
 ### Desktop Application
 
-This flow does require obtaining user information up front, but instead of their password you will need their user-specific API key. We will use this information to create a login signature so that the user can be logged in securely and your app doesn't need to know or store their real password. The user-specific API key can be found in the admin console under **Tools** > **Apps & Addons** > **Manage Apps** > *More Actions* menu > *View User Authorization Key*. Click the *Show Key* button on that page and it will be displayed.
+This flow does require obtaining user information up front, but instead of their password you will need their user-specific API key. We will use this information to create a login signature so that the user can be logged in securely and your app doesn't need to know or store their real password. The user-specific API key can be found in the admin console under **Tools** > **Apps & Addons** > **API Apps & Integrations** > *More Actions* menu > *View User Authorization Key*. Click the *Show Key* button on that page and it will be displayed.
 
 A user can regenerate this key at any time so it is suggested that you prompt them for it again should authentication fail.
 

@@ -27,6 +27,7 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 * Catalog
 	* [products](resources/products.md)
 	* [product_variants](resources/product_variants.md)
+	* [product_pictures](resources/product_pictures.md)
 	* [categories](resources/categories.md)
 	* [manufacturers](resources/manufacturers.md)
 	* [attributes](resources/attributes.md)
