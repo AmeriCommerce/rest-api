@@ -160,4 +160,6 @@ Accessible via the `?expand=` parameter or `/api/v1/products/{id}/{nested_resour
 
 ### reviews
 
+### child_products
+
 ### custom_fields
