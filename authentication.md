@@ -3,6 +3,8 @@ AmeriCommerce API Authentication
 
 All AmeriCommerce API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one and how to refresh expired tokens.
 
+If your app is mostly just a service app and does not really interact with a user in any way, you can use the admin console to generate a token (more information below).
+
 Getting an Access Token
 -----------------------
 
@@ -67,6 +69,14 @@ A user can regenerate this key at any time so it is suggested that you prompt th
   * `signature` - The signature generated from the previous step.
 
 5. Read back the response from the previous POST request. If all goes well it should contain an `access_token` and `refresh_token`. That `access_token` can now be used to make requests against the API.
+
+### Generating a Token from the Admin Console
+
+Navigate to the application list at **Tools** > **Apps & Addons** > **API Apps & Integrations**. Next to the app you need a token for, click the *Tokens* icon (second icon from the left that looks like a person). This will open the list of all access tokens that belong to this application. On this screen you can click *New* to open another dialog that presents you with a list of available scopes for the new token. Select the ones you need, then click *Save*.
+
+Once the overlay closes and you see the *Saved successfully* message, your new token should be at the very top of the list. Click the magnifying glass next to it to view the details about that token, including the actual token string that you need to pass in. Tokens created in this way are non-expiring by default so make sure these are protected.
+
+These tokens can be revoked at any time by returning to this screen.
 
 Refreshing Tokens
 -----------------
