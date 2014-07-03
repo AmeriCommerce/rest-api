@@ -36,3 +36,40 @@ Nested Resources
 Accessible via the `?expand=` parameter or `/api/v1/discount_methods/{id}/{nested_resource}`.
 
 ### rules
+
+```shell
+GET /api/v1/discount_methods?expand=rules
+```
+
+```shell
+GET /api/v1/discount_methods/{id}/rules
+```
+
+```json
+{
+	...
+	"rules": [
+		{
+			"id": 1,
+			"type": "region",
+			"target": "0",
+			"updated_at": "2014-03-19T13:31:47.923-05:00",
+			"created_at": "2014-03-19T13:31:47.923-05:00",
+			"operator_type": "equal to",
+			"target_quantity": 1,
+			"target_quantity_type": ""
+		},
+		{
+			"id": 2,
+			"type": "total dollars",
+			"target": "50",
+			"updated_at": "2014-03-19T13:31:47.923-05:00",
+			"created_at": "2014-03-19T13:31:47.923-05:00",
+			"operator_type": "greater than",
+			"target_quantity": 1,
+			"target_quantity_type": ""
+		}
+	],
+	...
+}
+```

@@ -40,3 +40,42 @@ Nested Resources
 Accessible via the `?expand=` parameter or `/api/v1/gift_certificates/{id}/{nested_resource}`.
 
 ### transactions
+
+```shell
+GET /api/v1/gift_certificates?expand=transactions
+```
+
+```shell
+GET /api/v1/gift_certificates/{id}/transactions
+```
+
+```json
+{
+	...
+	"transactions": [
+		{
+			"id": 1,
+			"action": "Create",
+			"amount": 100,
+			"is_pre_tax_discount": false,
+			"order_id": 0,
+			"order_payment_id": null,
+			"updated_at": "2014-03-12T08:47:54.44-05:00",
+			"created_at": "2014-03-12T08:47:54.44-05:00",
+			"status": "Approved"
+		},
+		{
+			"id": 2,
+			"action": "SetActive",
+			"amount": 0,
+			"is_pre_tax_discount": false,
+			"order_id": 0,
+			"order_payment_id": null,
+			"updated_at": "2014-03-12T08:47:54.533-05:00",
+			"created_at": "2014-03-12T08:47:54.533-05:00",
+			"status": "Approved"
+		}
+	]
+	...
+}
+```
