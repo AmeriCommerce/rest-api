@@ -18,11 +18,13 @@ Sample Model
 	"state": "Texas",
 	"postal_code": "77702",
 	"country": "United States",
+	"is_default_shipping_address": false
 	"phone": "555-555-5555",
 	"company": "AmeriCommerce",
 	"alternate_phone": "",
 	"fax": "",
 	"comments": "",
+	"is_default_billing_address": false,
 	"updated_at": "2014-04-07T11:55:56.297-05:00",
 	"created_at": "2014-04-07T11:55:56.297-05:00",
 	"first_name": "Chris",
