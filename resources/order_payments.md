@@ -27,6 +27,7 @@ Sample Model
 	"authorization_code": "",
 	"reject_reason": "",
 	"avs_code": "",
+	"payment_method_name": "Credit Card",
 	"transaction_type": "None",
 	"amount": 60.73,
 	"payment_note": "",
