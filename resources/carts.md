@@ -47,6 +47,15 @@ Accessible via the `?expand=` parameter or `/api/v1/carts/{id}/{nested_resource}
 
 ### items
 
+```shell
+GET /api/v1/carts?expand=items
+```
+
+```shell
+GET /api/v1/carts/{id}/items
+```
+
+```json
 {
 	...
 	"items": [
@@ -101,3 +110,4 @@ Accessible via the `?expand=` parameter or `/api/v1/carts/{id}/{nested_resource}
 	],
 	...
 }
+```
