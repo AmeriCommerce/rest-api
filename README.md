@@ -49,6 +49,11 @@ The Format
 
 All data serialization is done with JSON. For endpoints that return lists, there is a list metadata object wrapping the array of results. The list metadata gives you information such as paging and total number of results. For properties we use `snake_case`. Datetime objects are expressed in [ISO 8601 format](datetimes.md).
 
+Caching
+-------
+
+Most responses in the API are cached on the server, and the appropriate HTTP headers are set when this happens. Typically this will only be on `GET` requests. The response will contain the headers `Last-Modified` and `Expires`, as well as the `Cache-Control` header. It is strongly encouraged to obey these headers when making requests to the API. If you must have up-to-the-second data at all times, the cache can be revalidated on demand by including the header `Cache-Control: no-cache` on your request.
+
 Rate Limiting
 -------------
 
