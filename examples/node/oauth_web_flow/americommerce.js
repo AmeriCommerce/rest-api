@@ -12,14 +12,14 @@ function createSignature() {
 }
 
 exports.startNegotiation = function(returnUrl) {
-  return util.format("https://%s/api/oauth?app_id=%d&scope=%s&redirect_url=%s",
+  return util.format("https://%s/api/oauth?client_id=%d&scope=%s&redirect_uri=%s",
     config.storeDomain, config.appId, config.appScope, returnUrl);
 };
 
 exports.getToken = function(tempData, callback) {
   var sig = createSignature(config.appSecret, tempData.code, config.appId, config.appScope, tempData.returnUrl.toLowerCase());
   var outgoingData = JSON.stringify({
-    'app_id': config.appId,
+    'client_id': config.appId,
     'auth_id': tempData.authId,
     'signature': sig
   });

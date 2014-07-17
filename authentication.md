@@ -27,7 +27,7 @@ These instructions make use of digests and assume you know how to generate one (
   * `auth_id` - An identifier to represent the handshake.
   * `code` - A verification code.
 
-5. Generate a signature by concatenating the app's secret, `code`, `client_id`, `scope`, and `redirect_uri` (converted to all lowercase), then computing a SHA256 digest of the concatenated string. The digest should be in hex format. **Take extra care here that the `redirect_url` matches the original `redirect_url` precisely (before conversion to lowercase), or this will fail.**
+5. Generate a signature by concatenating the app's secret, `code`, `client_id`, `scope`, and `redirect_uri` (converted to all lowercase), then computing a SHA256 digest of the concatenated string. The digest should be in hex format. **Take extra care here that the `redirect_uri` matches the original `redirect_uri` precisely (before conversion to lowercase), or this will fail.**
 
 6. Send a POST request to `https://[mystorename.com]/api/oauth/access_token` with the following information in the request body (the `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
   * `client_id` - The App ID used to start this process.

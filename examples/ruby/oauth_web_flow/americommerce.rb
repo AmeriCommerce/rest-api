@@ -18,13 +18,13 @@ module AmeriCommerce
 		end
 
 		def start_negotiation_url(return_url)
-			"https://#{@store_domain}/api/oauth?app_id=#{@app_id}&scope=#{@app_scope}&redirect_url=#{return_url}"
+			"https://#{@store_domain}/api/oauth?client_id=#{@app_id}&scope=#{@app_scope}&redirect_uri=#{return_url}"
 		end
 
 		def verify(return_url, auth_id, code)
 			sig = create_signature(@app_secret, code, @app_id, @app_scope, return_url.downcase)
 			data = {
-				:app_id => @app_id,
+				:client_id => @app_id,
 				:auth_id => auth_id,
 				:signature => sig
 			}.to_json
