@@ -1,6 +1,0 @@
-{
-	"app_id": 1,
-	"app_secret": "<< YOUR SECRET DO NOT EXPOSE THIS >>",
-	"store_domain": "<< YOUR STORE DOMAIN >>",
-	"app_scope": "catalog"
-}
