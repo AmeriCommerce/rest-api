@@ -1,5 +1,5 @@
-Python Web Flow Example
-=======================
+Python 3 Web Flow Example
+=========================
 
 Makes use of the following packages:
 

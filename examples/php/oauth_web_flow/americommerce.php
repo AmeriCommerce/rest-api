@@ -5,14 +5,14 @@ require 'config.php';
 class ApiClient
 {
   public function startNegotiation($returnUrl) {
-    return "https://" . AC_STORE_DOMAIN . "/api/oauth?app_id=" . AC_APP_ID 
-      . "&scope=" . AC_APP_SCOPE . "&redirect_url=" . $returnUrl;
+    return "https://" . AC_STORE_DOMAIN . "/api/oauth?client_id=" . AC_APP_ID 
+      . "&scope=" . AC_APP_SCOPE . "&redirect_uri=" . $returnUrl;
   }
 
   public function getToken($auth_id, $code, $return_url) {
     $sig = $this->createSignature(AC_APP_SECRET, $code, AC_APP_ID, AC_APP_SCOPE, strtolower($return_url));
     $arr = array(
-      'app_id' => AC_APP_ID,
+      'client_id' => AC_APP_ID,
       'auth_id' => $auth_id,
       'signature' => $sig
     );

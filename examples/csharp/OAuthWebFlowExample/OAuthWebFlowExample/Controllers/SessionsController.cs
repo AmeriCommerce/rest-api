@@ -18,7 +18,7 @@ namespace OAuthWebFlowExample.Controllers
         {
             var callbackUrl = Url.Action("Callback", "Sessions", new {r}, "http");
 
-            var oauthUrl = string.Format("https://{0}/api/oauth?app_id={1}&scope={2}&redirect_url={3}",
+            var oauthUrl = string.Format("https://{0}/api/oauth?client_id={1}&scope={2}&redirect_uri={3}",
                 ConfigurationManager.AppSettings["StoreDomain"],
                 ConfigurationManager.AppSettings["AppId"],
                 ConfigurationManager.AppSettings["AppScope"],
@@ -41,7 +41,7 @@ namespace OAuthWebFlowExample.Controllers
             {
                 var verifyBody = new VerifyRequestBody
                 {
-                    AppId = ConfigurationManager.AppSettings["AppId"],
+                    ClientId = ConfigurationManager.AppSettings["AppId"],
                     AuthId = model.AuthId,
                     Signature = sig
                 };

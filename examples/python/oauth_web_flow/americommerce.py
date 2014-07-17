@@ -14,7 +14,7 @@ class ApiClient():
         self.store_domain = config['store_domain']
 
     def start_negotiation(self, return_url):
-        return "https://{}/api/oauth?app_id={}&scope={}&redirect_url={}".format(
+        return "https://{}/api/oauth?client_id={}&scope={}&redirect_uri={}".format(
             self.store_domain, self.app_id, self.app_scope, return_url)
 
     def verify(self, return_url, auth_id, code):
@@ -23,7 +23,7 @@ class ApiClient():
             'Content-Type': 'application/json'
         }
         body = {
-            'app_id': self.app_id,
+            'client_id': self.app_id,
             'auth_id': auth_id,
             'signature': sig
         }
