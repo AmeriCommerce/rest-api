@@ -5,6 +5,8 @@ addresses
 GET /api/v1/addresses
 ```
 
+**Required scope**: `read_people`, `people`
+
 Sample Model
 ------------
 

@@ -7,6 +7,8 @@ Only methods with a `payment_type` of `Custom` are writable. System-defined paym
 GET /api/v1/payment_methods
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 

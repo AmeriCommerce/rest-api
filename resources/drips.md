@@ -5,6 +5,8 @@ drips
 GET /api/v1/drips
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

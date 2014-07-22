@@ -5,6 +5,8 @@ shipping_providers
 GET /api/v1/shipping_providers
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 

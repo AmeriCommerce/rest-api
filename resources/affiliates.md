@@ -5,6 +5,8 @@ affiliates
 GET /api/v1/affiliates
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

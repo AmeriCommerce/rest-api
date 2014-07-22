@@ -5,6 +5,8 @@ shipping_rate_adjustments
 GET /api/v1/shipping_rate_adjustments
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

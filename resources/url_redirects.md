@@ -5,6 +5,8 @@ url_redirects
 GET /api/v1/url_redirects
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 

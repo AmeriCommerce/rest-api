@@ -5,6 +5,8 @@ custom_fields
 GET /api/v1/custom_fields
 ```
 
+**Required scope**: `custom_fields`
+
 Sample Model
 ------------
 

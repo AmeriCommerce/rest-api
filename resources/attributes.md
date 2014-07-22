@@ -5,6 +5,8 @@ attributes
 GET /api/v1/attributes
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

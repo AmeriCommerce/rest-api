@@ -5,6 +5,8 @@ discount_rules
 GET /api/v1/discount_rules
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

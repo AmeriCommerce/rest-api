@@ -5,6 +5,8 @@ mailing_lists
 GET /api/v1/mailing_lists
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

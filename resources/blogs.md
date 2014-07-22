@@ -5,6 +5,8 @@ blogs
 GET /api/v1/blogs
 ```
 
+**Required scope**: `read_content`, `content`
+
 Sample Model
 ------------
 

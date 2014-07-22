@@ -5,6 +5,8 @@ product_statuses
 GET /api/v1/product_statuses
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

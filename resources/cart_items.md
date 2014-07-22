@@ -5,6 +5,8 @@ cart_items
 GET /api/v1/cart_items
 ```
 
+**Required scope**: `read_orders`, `orders`
+
 Sample Model
 ------------
 

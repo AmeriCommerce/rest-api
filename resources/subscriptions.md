@@ -5,6 +5,8 @@ subscriptions
 GET /api/v1/subscriptions
 ```
 
+**Required scope**: `read_orders`, `orders`
+
 Sample Model
 ------------
 

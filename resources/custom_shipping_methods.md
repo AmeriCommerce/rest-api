@@ -5,6 +5,8 @@ custom_shipping_methods
 GET /api/v1/custom_shipping_methods
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 

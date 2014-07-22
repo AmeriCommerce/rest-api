@@ -5,6 +5,8 @@ links
 GET /api/v1/links
 ```
 
+**Required scope**: `read_content`, `content`
+
 Sample Model
 ------------
 

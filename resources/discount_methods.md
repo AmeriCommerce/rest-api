@@ -5,6 +5,8 @@ discount_methods
 GET /api/v1/discount_methods
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

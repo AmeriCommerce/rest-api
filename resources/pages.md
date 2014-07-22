@@ -5,6 +5,8 @@ pages
 GET /api/v1/pages
 ```
 
+**Required scope**: `read_content`, `content`
+
 Sample Model
 ------------
 

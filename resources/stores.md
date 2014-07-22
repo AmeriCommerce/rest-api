@@ -7,6 +7,8 @@ This resource is read only (only `GET` actions are available).
 GET /api/v1/stores
 ```
 
+**Required scope**: `system`
+
 Sample Model
 ------------
 

@@ -5,6 +5,8 @@ customer_types
 GET /api/v1/customer_types
 ```
 
+**Required scope**: `read_people`, `people`
+
 Sample Model
 ------------
 

@@ -5,6 +5,8 @@ tax_rates
 GET /api/v1/tax_rates
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 
