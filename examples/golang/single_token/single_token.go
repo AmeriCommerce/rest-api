@@ -1,10 +1,10 @@
 package main
 
 import (
-	"net/http"
-	"fmt"
 	"encoding/json"
+	"fmt"
 	"io/ioutil"
+	"net/http"
 )
 
 const storeDomain = "<< YOUR STORE DOMAIN >>"
@@ -18,7 +18,7 @@ type Product struct {
 type ProductList struct {
 	NextPage     string `json:"next_page"`
 	PreviousPage string `json:"previous_page"`
-	TotalCount   int `json:"total_count"`
+	TotalCount   int    `json:"total_count"`
 	Products     []Product
 }
 
@@ -55,7 +55,7 @@ func main() {
 		fmt.Println(err)
 	} else {
 		for _, p := range list.Products {
-			fmt.Println(p.ItemName + ":", p.Price)
+			fmt.Println(p.ItemName+":", p.Price)
 		}
 	}
 }
