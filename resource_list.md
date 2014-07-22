@@ -36,12 +36,14 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 	* [product_statuses](resources/product_statuses.md)
 	* [shipping_rate_adjustments](resources/shipping_rate_adjustments.md)
 	* [variant_groups](resources/variant_groups.md)
+	* [variant_inventory](resources/variant_inventory.md)
 
 * Content
 	* [pages](resources/pages.md)
 	* [blogs](resources/blogs.md)
 	* [blog_categories](resources/blog_categories.md)
 	* [blog_posts](resources/blog_posts.md)
+	* [links](resources/links.md)
 
 * Marketing
 	* [adcodes](resources/adcodes.md)
