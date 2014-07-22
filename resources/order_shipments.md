@@ -5,6 +5,8 @@ order_shipments
 GET /api/v1/orders
 ```
 
+**Required scope**: `read_orders`, `orders`
+
 Sample Model
 ------------
 

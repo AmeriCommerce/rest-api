@@ -5,6 +5,8 @@ adcodes
 GET /api/v1/adcodes
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

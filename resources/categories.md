@@ -5,6 +5,8 @@ categories
 GET /api/v1/categories
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

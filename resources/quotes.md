@@ -5,6 +5,8 @@ quotes
 GET /api/v1/quotes
 ```
 
+**Required scope**: `read_orders`, `orders`
+
 Sample Model
 ------------
 

@@ -5,6 +5,8 @@ profiles
 GET /api/v1/profiles
 ```
 
+**Required scope**: `read_people`, `people`
+
 Sample Model
 ------------
 

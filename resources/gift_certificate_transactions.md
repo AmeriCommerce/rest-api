@@ -5,6 +5,8 @@ gift_certificate_transactions
 GET /api/v1/gift_certificate_transactions
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

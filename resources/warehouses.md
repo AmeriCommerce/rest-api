@@ -5,6 +5,8 @@ warehouses
 GET /api/v1/warehouses
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 

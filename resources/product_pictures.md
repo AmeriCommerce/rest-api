@@ -5,6 +5,8 @@ product_pictures
 GET /api/v1/product_pictures
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

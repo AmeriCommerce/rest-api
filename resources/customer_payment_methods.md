@@ -5,6 +5,8 @@ customer_payment_methods
 GET /api/v1/customer_payment_methods
 ```
 
+**Required scope**: `read_people`, `people`
+
 Sample Model
 ------------
 

@@ -5,6 +5,8 @@ attribute_groups
 GET /api/v1/attribute_groups
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

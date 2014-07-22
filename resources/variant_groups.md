@@ -5,6 +5,8 @@ variant_groups
 GET /api/v1/variant_groups
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

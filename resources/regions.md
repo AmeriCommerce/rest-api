@@ -5,6 +5,8 @@ regions
 GET /api/v1/regions
 ```
 
+**Required scope**: `settings`
+
 Sample Model
 ------------
 

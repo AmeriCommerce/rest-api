@@ -5,6 +5,8 @@ coupon_codes
 GET /api/v1/coupon_codes
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

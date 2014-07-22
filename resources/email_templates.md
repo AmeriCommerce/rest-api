@@ -5,6 +5,8 @@ email_templates
 GET /api/v1/email_templates
 ```
 
+**Required scope**: `read_marketing`, `marketing`
+
 Sample Model
 ------------
 

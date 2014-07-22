@@ -5,6 +5,8 @@ manufacturers
 GET /api/v1/manufacturers
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

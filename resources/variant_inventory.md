@@ -5,6 +5,8 @@ variant_inventory
 GET /api/v1/variant_inventory
 ```
 
+**Required scope**: `read_catalog`, `catalog`
+
 Sample Model
 ------------
 

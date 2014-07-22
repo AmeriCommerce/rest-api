@@ -5,6 +5,8 @@ users
 GET /api/v1/users
 ```
 
+**Required scope**: `read_people`, `people`
+
 Sample Model
 ------------
 

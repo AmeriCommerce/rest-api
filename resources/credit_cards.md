@@ -5,6 +5,8 @@ credit_cards
 GET /api/v1/credit_cards
 ```
 
+**Required scope**: `read_orders`, `orders`
+
 Sample Model
 ------------
 
