@@ -47,13 +47,13 @@ These tokens can be revoked at any time by returning to this screen.
 Refreshing Tokens
 -----------------
 
-By refreshing a token you are trading in an expired access token for a new one, without having to grant access again (as that part has already been done).
+By refreshing a token you are requesting a new access token using the same scope as a previous one without having to grant permissions again (as that part has already been done). Refresh tokens are long living and can be used multiple times.
 
-1. Generate a signature by concatenating the app's secret, the previous `access_token`, the `refresh_token`, and the `app_id`, then calculating the SHA256 of the concatenated string. To summarize: `SHA256(secret + access_token + refresh_token + client_id)`.
+1. Generate a signature by concatenating the app's secret, the `refresh_token`, and the `app_id`, then calculating the SHA256 of the concatenated string. To summarize: `SHA256(secret + refresh_token + client_id)`.
 
 2. Send a POST request to `https://[mystorename.com]/api/oauth/refresh` with the following information in the request body (the request's `Content-Type` can be either `application/json` or `application/x-www-form-urlencoded`):
-  * `client_id` - The App ID used to originally obtain the `access_token`.
-  * `access_token` - The original `access_token`.
+  * `client_id` - The App ID.
+  * `refresh_token` - The `refresh_token`.
   * `signature` - The signature generated in step 1.
 
 3. Read back the response. If all goes well it should contain the following information:
