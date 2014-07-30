@@ -173,3 +173,9 @@ ac-rest-api.sublime-workspace
 #############
 
 node_modules
+
+#############
+## Scripts
+#############
+
+zendesk/

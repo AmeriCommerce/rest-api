@@ -23,6 +23,7 @@ Sample Model
 	"adcode": "",
 	"adcode_id": 0,
 	"affiliate_id": 0,
+	"customer_type_id": 1,
 	"is_no_tax_customer": false,
 	"comments": "",
 	"store_id": 1,
