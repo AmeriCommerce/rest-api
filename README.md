@@ -58,3 +58,8 @@ Rate Limiting
 -------------
 
 We do enforce a rate limit for how many requests an application and/or token can make in a designated period of time. This limit varies by plan level.
+
+Support
+-------
+
+All API support for AmeriCommerce is handled through the support portal located at [http://support.americommerce.com/hc/en-us](http://support.americommerce.com/hc/en-us). Please submit a ticket there if you have an issue with the API itself or the documentation you find here.
