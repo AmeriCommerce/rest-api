@@ -51,3 +51,5 @@ Accessible via the `?expand=` parameter or `/api/v1/customers/{id}/{nested_resou
 ### addresses
 
 ### custom_fields
+
+### reward_points
