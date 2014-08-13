@@ -59,6 +59,8 @@ Rate Limiting
 
 We do enforce a rate limit for how many requests an application and/or token can make in a designated period of time. This limit varies by plan level.
 
+All responses from the API include the header `X-AC-Call-Limit` which includes the number of calls made against that store and the total number of calls allowed. This currently resets every 10 seconds. If the limit is exceeded, the API will return the response `429 - Too Many Requests` and will include an additional header `Retry-After`. The `Retry-After` header indicates what time the counter will reset and requests can resume.
+
 Support
 -------
 
