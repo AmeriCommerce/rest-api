@@ -57,7 +57,9 @@ Most responses in the API are cached on the server, and the appropriate HTTP hea
 Rate Limiting
 -------------
 
-We do enforce a rate limit for how many requests an application and/or token can make in a designated period of time. This limit varies by plan level.
+We enforce a rate limit for how many requests an application and/or token can make in a designated period of time. There are two types of REST API applications: installed and custom.  Installed apps are those that are available to be installed directly from the AmeriCommerce app store or a 3rd party integration app. Custom apps are those that you create manually for a specific store.
+
+Installed apps are subject to the max rate limit of 50 calls per 10 second window, regardless of your plan level.  All installed apps for a particular store combine toward this one overall limit. Custom apps are subject to a separate rate limit that will vary based on your plan level.  The maxium rate limit for custom apps is also 50 calls per 10 second window.  The rate limit for custom apps will scale up as your plan level increases.
 
 All responses from the API include the header `X-AC-Call-Limit` which includes the number of calls made against that store and the total number of calls allowed. This currently resets every 10 seconds. If the limit is exceeded, the API will return the response `429 - Too Many Requests` and will include an additional header `Retry-After`. The `Retry-After` header indicates what time the counter will reset and requests can resume.
 
