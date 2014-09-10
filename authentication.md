@@ -6,8 +6,6 @@ All AmeriCommerce API requests require an access token. The purpose of this guid
 
 If your app is mostly just a service app and does not really interact with a user in any way, you can use the admin console to generate a token (more information below).
 
-**Compatibility Notice**: Several pieces of this document changed for compatiblity with API changes that occured on July 17, 2014 (builds 2014.2.717.x, 2014.3.717.x, etc and above). If you still need to reference documentation for versions prior to that, you can go to [the pre-auth-revisions tag](https://github.com/americommerce/ac-rest-api/tree/pre-auth-revisions).
-
 Getting an Access Token
 -----------------------
 
