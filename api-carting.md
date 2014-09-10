@@ -136,8 +136,8 @@ Calculates the shipping rates applicable to this cart. Returns a `200 OK` respon
   "total_count": 12,
   "rates": [
     {
-      "shipping_method_id": 0,
       "shipping_provider_service_id": 0,
+      "custom_shipping_method_id": 3,
       "provider": "Custom",
       "name": "3",
       "description": "Free Ground Shipping",
@@ -146,8 +146,8 @@ Calculates the shipping rates applicable to this cart. Returns a `200 OK` respon
       "lead_time": null
     },
     {
-      "shipping_method_id": 0,
       "shipping_provider_service_id": 29,
+      "custom_shipping_method_id": null,
       "provider": "USPS",
       "name": "Priority Mail",
       "description": "USPS Priority Mail",
@@ -156,8 +156,8 @@ Calculates the shipping rates applicable to this cart. Returns a `200 OK` respon
       "lead_time": null
     },
     {
-      "shipping_method_id": 0,
       "shipping_provider_service_id": 21,
+      "custom_shipping_method_id": null,
       "provider": "FedEx",
       "name": "GROUND_HOME_DELIVERY",
       "description": "FedEx Home Delivery",
