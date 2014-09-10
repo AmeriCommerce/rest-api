@@ -44,7 +44,7 @@ Returns a `200 OK` response with the [cart resource](resources/carts.md) as the 
 				55,
 				299
 			],
-			personalizations: [
+			"personalizations": [
 				{
 					"personalization_id": 3,
 					"answer": "hello world!"
