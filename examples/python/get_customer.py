@@ -19,11 +19,11 @@ def get_customer(firstName, lastName, email):
 	headers = {
 		'X-AC-Auth-Token': ACCESS_TOKEN,
 		'Content-Type': 'application/json'
-    }
+	}
 	
 	# build API call to check if customer already exists (using email)
 	uri = 'https://{}/api/v1/customers?email={}'.format(STORE_DOMAIN, email)
-    
+	
 	# include verify=False if using dev certificate
 	# r = requests.get(uri, headers = headers, verify=False)
 	r = requests.get(uri, headers = headers)
@@ -31,7 +31,7 @@ def get_customer(firstName, lastName, email):
 	# see if a customer was found
 	customer = r.json()
 	if (customer['total_count'] > 0):
-		return customer['customers'][0];
+		return customer['customers'][0]
 		
 	# no customer found, so lets create a new one
 	data = {
