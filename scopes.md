@@ -28,8 +28,8 @@ Orders
 
 Permissions required: `Orders`, `OrderStatuses`
 
-* `read_order` - View order data
-* `order` - View and change order data; supercedes `read_order` if specified together
+* `read_orders` - View order data
+* `orders` - View and change order data; supercedes `read_order` if specified together
 
 Applies to:
 
