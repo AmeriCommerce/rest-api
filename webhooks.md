@@ -123,9 +123,9 @@ The response to this webhook is expected to contain:
 The request contains the following:
 
 * `items` - Array. Contains summarized information for the products we need status information for:
-  * `product_id` - Integer. The ID of the [`product`](resource/products.md).
-  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resource/variant_inventory.md) record, if it exists.
-  * `product_status_id` - Integer. The ID of the current [`product_status`](resource/product_statuses.md).
+  * `product_id` - Integer. The ID of the [`product`](resources/products.md).
+  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resources/variant_inventory.md) record, if it exists.
+  * `product_status_id` - Integer. The ID of the current [`product_status`](resources/product_statuses.md).
   * `product` - Object. Product model as shown on the [`products`](resources/products.md) resource.
   * `variant_inventory` - Object. Variant inventory model as shown on the [`variant_inventory`](resources/variant_inventory.md) resource.
   * `product_status` - Object. Product status model as shown on the [`product_statuses`](resources/product_statuses.md) resource.
@@ -138,11 +138,11 @@ The request contains the following:
 The response to this webhook is expected to contain:
 
 * `items` - Array. Contains status information that corresponds to the data sent from the webhook request:
-  * `product_id` - Integer. The ID of the [`product`](resource/products.md) that this data corresponds to.
-  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resource/variant_inventory.md) record, if it exists.
+  * `product_id` - Integer. The ID of the [`product`](resources/products.md) that this data corresponds to.
+  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resources/variant_inventory.md) record, if it exists.
   * `inventory` - Integer. Current stock of this item.
   * `status_display_text` - String. The text to display for this item's status on frontend pages.
-  * `product_status_id` - Integer. The ID of the [`product_status`](resource/product_statuses.md) to set for this product.
+  * `product_status_id` - Integer. The ID of the [`product_status`](resources/product_statuses.md) to set for this product.
   * `is_unavailable` - Boolean. Indicates that the product is not available for purchase.
   * `is_hidden` - Boolean. Indicates that this product should be hidden from customer view.
   * `is_back_ordered` - Boolean. Indicates that this product is currently backordered.
@@ -250,9 +250,9 @@ The request contains the following:
 The request contains the following:
 
 * `item` - Object. A summary of data about the item and its inventory information
-  * `product_id` - Integer. The ID of the [`product`](resource/products.md).
-  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resource/variant_inventory.md) record, if it exists.
-  * `product_status_id` - Integer. The ID of the current [`product_status`](resource/product_statuses.md).
+  * `product_id` - Integer. The ID of the [`product`](resources/products.md).
+  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resources/variant_inventory.md) record, if it exists.
+  * `product_status_id` - Integer. The ID of the current [`product_status`](resources/product_statuses.md).
   * `product` - Object. Product model as shown on the [`products`](resources/products.md) resource.
   * `variant_inventory` - Object. Variant inventory model as shown on the [`variant_inventory`](resources/variant_inventory.md) resource.
   * `product_status` - Object. Product status model as shown on the [`product_statuses`](resources/product_statuses.md) resource.
