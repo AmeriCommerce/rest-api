@@ -23,11 +23,11 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [cart_items](resources/cart_items.md) | child_items |
 | [credit_cards](resources/credit_cards.md) | |
 | [orders](resources/orders.md) | items, payments, shipments, custom_fields |
+| [order_addresses](resources/order_addresses.md) | |
 | [order_items](resources/order_items.md) | |
 | [order_payments](resources/order_payments.md) | fields |
 | [order_shipments](resources/order_shipments.md) | items |
 | [order_statuses](resources/order_statuses.md) | |
-| [order_addresses](resources/order_addresses.md) | |
 | [quotes](resources/quotes.md) | items, payments, shipments, custom_fields |
 | [subscriptions](resources/subscriptions.md) | |
 | [wishlists](resources/wishlists.md) | items |
