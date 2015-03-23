@@ -39,6 +39,7 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [attributes](resources/attributes.md) | |
 | [attribute_groups](resources/attribute_groups.md) | |
 | [categories](resources/categories.md) | products, custom_fields |
+| [inventory](resources/inventory.md)* | |
 | [manufacturers](resources/manufacturers.md) | |
 | [products](resources/products.md) | variants, personalizations, related, categories, pricing, attributes, variant\_inventory, pictures, child\_products, shipping\_rate\_adjustments, reviews, custom\_fields |
 | [product_lists](resources/product_lists.md) | |
@@ -49,6 +50,8 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [shipping_rate_adjustments](resources/shipping_rate_adjustments.md) | |
 | [variant_groups](resources/variant_groups.md) | variants |
 | [variant_inventory](resources/variant_inventory.md) | pricing, variants |
+
+\* Special endpoint
 
 ### Content
 
