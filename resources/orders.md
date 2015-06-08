@@ -65,6 +65,24 @@ Sample Model
 }
 ```
 
+Status Change Events
+--------------------
+
+To update the status of an order and trigger order-status-changed events such as sending notification emails to customers, a special endpoint must be used.
+
+```Shell
+PUT /api/v1/orders/{order_id}/status
+```
+
+Sample Model
+------------
+
+```json
+{
+"order_status_id": 3
+}
+```
+
 Nested Resources
 ----------------
 
