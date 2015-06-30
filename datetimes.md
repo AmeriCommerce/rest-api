@@ -1,4 +1,3 @@
-[//]: # (Zendesk: 202836780)
 Datetime Format
 ===============
 
