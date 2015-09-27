@@ -9,7 +9,13 @@ $curl = curl_init('https://' . AC_STORE_DOMAIN . '/api/v1/products');
 curl_setopt($curl, CURLOPT_HEADER, false);
 curl_setopt($curl, CURLOPT_HTTPHEADER, array('X-AC-Auth-Token: ' . AC_ACCESS_TOKEN));
 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-// If using dev certificate
+
+// When verify peer is on you'll need a current CA bundle (pem file) 
+// from http://curl.haxx.se/docs/caextract.html and the php.ini file needs 
+// to point to the pem file location. For example: curl.cainfo =c:\php\cacert.pem
+//
+// If you are using a test certification you can bypass the peer check
+// by uncommenting this line:
 //curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
 
 $json = curl_exec($curl);
