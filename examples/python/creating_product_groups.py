@@ -71,6 +71,7 @@ class SimpleProduct(object):
             this.child_products = children
             for c in this.child_products:
                 c.is_child_product = True
+                c.child_required_quantity = 0
 
         if (group_type in group_types.keys()):
             group_types[group_type](this)

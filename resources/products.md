@@ -666,7 +666,8 @@ GET /api/v1/products/{id}/child_products
 			"profile_id": null,
 			"is_default_child": false,
 			"bind_quantity_to_parent": false,
-			"is_required": false
+			"is_required": false,
+			"child_required_quantity": 0
 		},
 		...
 	],
