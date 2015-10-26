@@ -40,7 +40,7 @@ Sample Model
 	"tax_exemption_number": "",
 	"company": "AmeriCommerce",
 	"source_group": "",
-    "store_payment_methods_enabled": "Purchase Orders,Checks"
+    "store_payment_methods_enabled": ["Purchase Orders","Checks"]
 }
 ```
 
