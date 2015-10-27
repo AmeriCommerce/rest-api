@@ -39,7 +39,8 @@ Sample Model
 	"is_contact_information_only": false,
 	"tax_exemption_number": "",
 	"company": "AmeriCommerce",
-	"source_group": ""
+	"source_group": "",
+    "store_payment_methods_enabled": ["Purchase Orders","Checks"]
 }
 ```
 
