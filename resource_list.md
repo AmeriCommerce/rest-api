@@ -40,6 +40,9 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [categories](resources/categories.md) | products, custom_fields |
 | [inventory](resources/inventory.md)* | |
 | [manufacturers](resources/manufacturers.md) | |
+| [price_calculators](resources/price_calculators.md) | rules |
+| [price_calculator_rules](resources/price_calculator_rules.md) | modifiers |
+| [price_calculator_rule_modifiers](resources/price_calculator_rule_modifiers.md) | |
 | [products](resources/products.md) | variants, personalizations, related, categories, pricing, attributes, variant\_inventory, pictures, child\_products, shipping\_rate\_adjustments, reviews, custom\_fields |
 | [product_lists](resources/product_lists.md) | |
 | [product_pictures](resources/product_pictures.md) | |
