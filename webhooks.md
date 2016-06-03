@@ -23,6 +23,7 @@ In the case of events that expect responses, the timeout is intentionally short 
 | ProductStatusChanged | Called when a product's status has been changed | No |
 | ValidateCart | Called when the current cart is being checked for errors | Yes |
 | ValidateCheckout | Called when the checkout page is being checked for errors | Yes |
+| GetDiscount | Called when calculating discounts for a cart | Yes |
 
 ### Subscribing to a Webhook
 
@@ -304,3 +305,73 @@ The request contains the following:
 The response to this webhook is expected to contain:
 
 * `validation_messages` - Array. Consists of validation messages (strings) to display to the user.
+
+---
+
+#### GetDiscount
+
+###### Request
+
+The request contains the following:
+
+* `ad_code` - String. [`ad code`](https://support.sparkpay.com/hc/en-us/articles/201903360-HOWTO-Setup-Campaign-AdCodes) set on the current session.
+* `billing_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+* `campaign_code` - String. [`campaign code`](resources/coupon_codes) set on the cart. 
+* `cart_id` - Integer. ID of the current [`cart`](resources/carts)
+* `customer_type` - String. The [`customer type`](resources/customer_types.md) name
+* `customer_type_id` - Integer. ID of the [`customer type`](resources/customer_types.md)
+* `destination_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource. 
+* `is_region_set` - Boolean. Is a specific region set?
+* `items` - Array of Objects 
+    * `cart_item_id` - Integer. ID of the [`cart item`](resources/cart_items.md)
+    * `category_id` - Array of Integers. List of [`category`](resources/categories.md) IDs this item belongs to.
+    * `custom_fields` - Object
+        * `name` - String
+        * `value` - String
+    * `destination_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+    * `is_subscription_item` - Boolean. Is this a subscription item?
+    * `item_number` - String. Item Number as it appears on the [`product`](resources/products.md) resource.
+    * `manufacturer_id` - Integer. ID of the [`manufacturer`](resources/manufacturers.md)
+    * `origin_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+    * `parent_product_id` - Integer. ID of the [`parent product`](resources/products.md)
+    * `price` - Decimal. Unit price of the item.
+    * `product_id` - Integer. ID of the [`product`](resources/products.md)
+    * `product_list_id` - Array of Integer. IDs of the product lists this product belongs to.
+    * `quantity` - Integer. Quantity
+    * `shipping_classification_code` - String. Breakout shipping classification code
+    * `variants` - Array of Object.
+        * `group` - String. Variant group
+        * `value` - String. Variant name
+* `shipping_method_list` - Object.
+    * `classification_code` - String. Breakout shipping classification code
+    * `delivery_date` - String. Estimated delivery date
+    * `ship_method` - String. Selected shipping method
+    * `shipping_method_name` - String. Selected shipping method name
+* `shipping_region_id` - Integer. ID of the [`shipping region`](resources/regions.md)
+* `shipping_total` - Decimal. Shipping Total
+* `store_id` - Integer. ID of the [`store`](resources/stores.md)
+* `subscription_subtotal` - Decimal. Subtotal of the subscription items
+* `tax_region_id` - Integer. ID of the [`tax region`](resources/regions.md)
+* `total_weight` - Decimal. Total weight of the items in the cart.
+
+
+###### Response
+
+The response to this webhook is expected to contain:
+
+* `cart_items` - Array of Objects.
+    * `cart_id` - Integer. Must match the `cart_id` sent in the request
+    * `description` - String. Optional Item level discount description.
+    * `discount_amount` - Decimal. The discount that should be applied for this item.
+* `add_items` - Array of Objects. New items that will be added to the cart as part of the discount.
+    * `price` - Decimal.
+    * `product_id` - Integer. ID of the [`product`](resources/products.md)
+    * `quantity` - Integer.
+    * `variant_inventory_item_number` - [`variant inventory`](resources/variant_inventory.md) item number
+    * `variants` - Array of Objects. If using variant inventory set `variant_inventory_item_number` instead of this array.
+        * `group` - String. Variant group name
+        * `value` - String. Variant name
+* `description` - Array of String. Optional description of all discounts applied.
+* `discount` - Decimal. Discount amount will be used in addition to any `cart_items.discount_amount`
+* `shipping_discount` - Decimal. Specify this amount if shipping should be discounted separately.
+
