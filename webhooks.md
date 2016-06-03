@@ -340,8 +340,8 @@ The request contains the following:
     * `quantity` - Integer. Quantity
     * `shipping_classification_code` - String. Breakout shipping classification code
     * `variants` - Array of Object.
-            * `group` - String. Variant group
-            * `value` - String. Variant name
+        * `group` - String. Variant group
+        * `value` - String. Variant name
 * `shipping_method_list` - Object.
     * `classification_code` - String. Breakout shipping classification code
     * `delivery_date` - String. Estimated delivery date
