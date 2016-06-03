@@ -23,6 +23,7 @@ In the case of events that expect responses, the timeout is intentionally short 
 | ProductStatusChanged | Called when a product's status has been changed | No |
 | ValidateCart | Called when the current cart is being checked for errors | Yes |
 | ValidateCheckout | Called when the checkout page is being checked for errors | Yes |
+| GetDiscount | Called when calculating discounts for a cart | Yes |
 
 ### Subscribing to a Webhook
 
@@ -315,15 +316,15 @@ The request contains the following:
 
 * `ad_code` - String. [`ad code`](https://support.sparkpay.com/hc/en-us/articles/201903360-HOWTO-Setup-Campaign-AdCodes) set on the current session.
 * `billing_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-* `campaign_code` - String. [`campaign code`]('resources/coupon_codes') set on the cart. 
-* `cart_id` - Integer. ID of the current [`cart`]('resources/carts')
-* `customer_type` - String. The [`customer type`]('resources/customer_types.md') name
+* `campaign_code` - String. [`campaign code`](resources/coupon_codes) set on the cart. 
+* `cart_id` - Integer. ID of the current [`cart`](resources/carts)
+* `customer_type` - String. The [`customer type`](resources/customer_types.md) name
 * `customer_type_id` - Integer. ID of the [`customer type`](resources/customer_types.md)
 * `destination_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource. 
-* `is_region_set` - Boolean. Is a specific region set
+* `is_region_set` - Boolean. Is a specific region set?
 * `items` - Array of Objects 
     * `cart_item_id` - Integer. ID of the [`cart item`](resources/cart_items.md)
-    * `category_id` - Array of Integers. List of [`category`](resources/categories.md) ids this item belongs to.
+    * `category_id` - Array of Integers. List of [`category`](resources/categories.md) IDs this item belongs to.
     * `custom_fields` - Object
         * `name` - String
         * `value` - String
