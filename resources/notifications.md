@@ -16,8 +16,9 @@ Sample Model
   "product_id": 79,
   "email_address": "notificationsample@capitalone.com",
   "customer_id": 30,
-  "notification_frequency_type": "Once",
+  "notification_frequency_type": "Once", 
   "store_id": 3,
   "variant_inventory_id": null
 }
 ```
+Possible values for ```notification_frequency_type``` are ```"Once", "Everytime", "Never"```
