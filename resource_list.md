@@ -40,6 +40,7 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [categories](resources/categories.md) | products, custom_fields |
 | [inventory](resources/inventory.md)* | |
 | [manufacturers](resources/manufacturers.md) | |
+| [notifications](resources/notifications.md) | |
 | [price_calculators](resources/price_calculators.md) | rules |
 | [price_calculator_rules](resources/price_calculator_rules.md) | modifiers |
 | [price_calculator_rule_modifiers](resources/price_calculator_rule_modifiers.md) | |
