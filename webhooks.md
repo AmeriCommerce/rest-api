@@ -35,12 +35,32 @@ Webhook subscriptions are accessible via `/api/v1/webhooks`, which works exactly
    * `"Ignore"` - Disregard the failure and continue as normal, this is the default.
    * `"Error"` - Display an error message to the user.
    * `"Fallback"` - Call an alternate URL as indicated by the `fallback_url` field.
- * `store_id` - The ID of the store that this webhook applies to, only events on this store will be triggered.
+ * `store_id` - The ID of the store, as shown on the [`store`](resources/stores.md) resource, that this webhook applies to. Only events on this store will be triggered. 
  * `cache_length` - How long the response to this webhook request will be cached by the Spark Pay Online Store servers, options are:
    * `"Short"` - 5 minutes
    * `"Long"` - 30 minutes
    * `"NoCache"` - Do not cache the response.
  * `fallback_url` - In the event of a failure, and the `failure_type` is set to `"Fallback"`, this URL will be called next.
+
+
+For this example, the token needs to have "View and change order data" and "Perform system tasks" [`scope`](scopes.md).
+
+```shell
+curl -X POST  \
+  -H "X-AC-Auth-Token: [TOKEN]"  \
+  -H "Content-Type: application/json"  \
+  -H "Cache-Control: no-cache"  \
+  -d '{ \
+	"event_type": "OrderPlace", \
+	"url": "https://[webhookhost.com]/OrderPlacedProcessor", \
+	"failure_type": "Fallback", \
+	"store_id": 1, \
+	"cache_length": "Short", \
+	"fallback_url": "https://[webhookhost.com]/fallback/OrderPlacedProcessor" \
+   }'  \
+   "https://[mystoredomain.com]/api/v1/webhooks" 
+```
+
 
 ### Detailed Information
 
