@@ -35,7 +35,7 @@ GET /api/v1/product_lists/{id}/items
 ```json
 {
 	...
-	"product_lists": [
+	"items": [
 		{
 			"id": 1,
 			"product_id": 1,
