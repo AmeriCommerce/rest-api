@@ -1,17 +1,17 @@
-The Spark Pay Online Store API
+The AmeriCommerce API
 ==============================
 
-The Spark Pay Online Store API is a REST-style API designed to be a replacement for the legacy SOAP API. While there are no current plans to discontinue the SOAP API, it is recommended that all integrations be converted to use the new API. The new API uses JSON and includes an OAuth 2 authentication mechanism. It is **HTTPS only**.
+The AmeriCommerce API is a REST-style API designed to be a replacement for the legacy SOAP API. While there are no current plans to discontinue the SOAP API, it is recommended that all integrations be converted to use the new API. The new API uses JSON and includes an OAuth 2 authentication mechanism. It is **HTTPS only**.
 
 Setup
 -----
 
-To use the API it is assumed that you already have an Spark Pay Online Store account and access to the admin console. From the admin console you can set up a *custom application*, which is necessary for using the API. To do this, browse to **Tools** > **Apps & Addons** > **API Apps & Integrations** in the admin console. Click the *New* button and fill out the details for your new application. Upon hitting *Save* you will see the *App ID* and *App Secret* displayed on the screen. You will need these for the OAuth process, so it is suggested you make a note of them or at least where to find them.
+To use the API it is assumed that you already have an AmeriCommerce account and access to the admin console. From the admin console you can set up a *custom application*, which is necessary for using the API. To do this, browse to **Tools** > **Apps & Addons** > **API Apps & Integrations** in the admin console. Click the *New* button and fill out the details for your new application. Upon hitting *Save* you will see the *App ID* and *App Secret* displayed on the screen. You will need these for the OAuth process, so it is suggested you make a note of them or at least where to find them.
 
 Making Requests
 ---------------
 
-All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the domain name of your Spark Pay Online Store store. All requests require an access token, which can be obtained either through the OAuth 2 process or the admin console (there is one exception, as noted at the end of this section). The access token is passed in as a special header called `X-AC-Auth-Token`.
+All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the domain name of your AmeriCommerce store. All requests require an access token, which can be obtained either through the OAuth 2 process or the admin console (there is one exception, as noted at the end of this section). The access token is passed in as a special header called `X-AC-Auth-Token`.
 
 In curl, a simple request for the product list would look like this:
 
@@ -66,4 +66,4 @@ All responses from the API include the header `X-AC-Call-Limit` which includes t
 Support
 -------
 
-All API support for Spark Pay Online Store is handled through the support portal located at [http://support.americommerce.com/hc/en-us](http://support.americommerce.com/hc/en-us). Please submit a ticket there if you have an issue with the API itself or the documentation you find here.
+All API support for AmeriCommerce is handled through the support portal located at [http://support.americommerce.com/hc/en-us](http://support.americommerce.com/hc/en-us). Please submit a ticket there if you have an issue with the API itself or the documentation you find here.
