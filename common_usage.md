@@ -1,7 +1,7 @@
 Common Usage
 ============
 
-Most resources in the Spark Pay Online Store API support the same set of use cases and have similar response formats for each of them.
+Most resources in the  AmeriCommerce API support the same set of use cases and have similar response formats for each of them.
 
 GET
 ---

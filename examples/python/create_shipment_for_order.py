@@ -49,7 +49,7 @@ def create_shipment(order, shipping_info):
                 'shipment_name': 'Shipment 1'
                 
                 # any other data for the shipment goes here
-                # for all fields - https://github.com/SparkPay/rest-api/blob/master/resources/order_shipments.md
+                # for all fields - https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_shipments.md
         }
 
         # build API call to post new shipment

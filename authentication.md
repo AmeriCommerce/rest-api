@@ -1,7 +1,7 @@
-Spark Pay Online Store API Authentication
+AmeriCommerce API Authentication
 =========================================
 
-All Spark Pay Online Store API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one and how to refresh expired tokens.
+All AmeriCommerce API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one and how to refresh expired tokens.
 
 If your app is mostly just a service app and does not really interact with a user in any way, you can use the admin console to generate a token (more information below).
 

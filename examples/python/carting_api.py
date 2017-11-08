@@ -11,7 +11,7 @@ import time
 import datetime
 from optparse import OptionParser
 
-STORE_DOMAIN = "<STORENAME.MYSPARKPAY.COM>"
+STORE_DOMAIN = "<STORENAME.AMERICOMMERCE.COM>"
 ACCESS_TOKEN = "<TOKEN>"
 STORE_ID = 1  # This should reflect your store's ID
 TEST_PROD_ID = 5158 #id of a test product

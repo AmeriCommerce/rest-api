@@ -38,7 +38,7 @@ While logged into the admin console of your site, you can view the results of an
 Authentication
 --------------
 
-For convenience to developers writing private integrations that only ever use a single user or run headless, Spark Pay provides a way to create a non-expiring access token from the admin console. There are certain limitations to this type of token, such as not being able to access some types of encrypted data.
+For convenience to developers writing private integrations that only ever use a single user or run headless, AmeriCommerce provides a way to create a non-expiring access token from the admin console. There are certain limitations to this type of token, such as not being able to access some types of encrypted data.
 
 The other way to obtain access tokens is via OAuth 2. This is the more secure way to integrate an application with the API and it enforces token expiration. Additionally, if the app is acting on the behalf of particular users, OAuth is a requirement, as the user will then be able to sign in with their admin credentials and use the app just like they would use the admin console.
 
@@ -57,7 +57,7 @@ Most responses in the API are cached on the server, and the appropriate HTTP hea
 Rate Limiting
 -------------
 
-We enforce a rate limit for how many requests an application and/or token can make in a designated period of time. There are two types of REST API applications: installed and custom.  Installed apps are those that are available to be installed directly from the Spark Pay app store or a 3rd party integration app. Custom apps are those that you create manually for a specific store.
+We enforce a rate limit for how many requests an application and/or token can make in a designated period of time. There are two types of REST API applications: installed and custom.  Installed apps are those that are available to be installed directly from the AmeriCommerce app store or a 3rd party integration app. Custom apps are those that you create manually for a specific store.
 
 Installed apps are subject to the max rate limit of 50 calls per 10 second window, regardless of your plan level.  All installed apps for a particular store combine toward this one overall limit. Custom apps are subject to a separate rate limit that will vary based on your plan level.  The maxium rate limit for custom apps is also 50 calls per 10 second window.  The rate limit for custom apps will scale up as your plan level increases.
 

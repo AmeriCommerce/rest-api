@@ -6,10 +6,10 @@ Files can be uploaded using `POST /api/v1/upload`. This endpoint accepts request
 A sample request to this endpoint would look like the following:
 
 ```shell
-POST https://samplestore.mysparkspay.com/api/v1/upload HTTP/1.1
+POST https://samplestore.americommerce.com/api/v1/upload HTTP/1.1
 X-AC-Auth-Token: <access_token>
 Content-Type: multipart/form-data; boundary="SPOS API demo"
-Host: samplestore.mysparkpay.com
+Host: samplestore.americommerce.com
 Content-Length: 287054
 Connection: Keep-Alive
 
@@ -55,7 +55,7 @@ Sample Code
 This code will produce the sample request shown above and print out the resulting status code.
 
 ```csharp
-var webService = new Uri("https://samplestore.mysparkpay.com/api/v1/upload");
+var webService = new Uri("https://samplestore.americommerce.com/api/v1/upload");
 var requestMessage = new HttpRequestMessage(HttpMethod.Post, webService);
 
 requestMessage.Headers.ExpectContinue = false;
