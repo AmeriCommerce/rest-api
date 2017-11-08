@@ -244,7 +244,7 @@ POST /api/v1/carts/{id}/place_order
 
 Submits all of the cart information to process payment and create an order. Returns a `200 OK` response with a model specific to this endpoint as the response body (see sample response data below for details).
 
-*At the time of this writing, some advanced features available on Spark Pay Online Store's checkout page might not be available here.*
+*At the time of this writing, some advanced features available on AmeriCommerce's checkout page might not be available here.*
 
 ### Request body
 
