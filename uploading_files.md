@@ -8,22 +8,22 @@ A sample request to this endpoint would look like the following:
 ```shell
 POST https://samplestore.americommerce.com/api/v1/upload HTTP/1.1
 X-AC-Auth-Token: <access_token>
-Content-Type: multipart/form-data; boundary="SPOS API demo"
+Content-Type: multipart/form-data; boundary="AmeriCommerce API demo"
 Host: samplestore.americommerce.com
 Content-Length: 287054
 Connection: Keep-Alive
 
---SPOS API demo
+--AmeriCommerce API demo
 Content-Type: application/json
 Content-Disposition: form-data
 
 {"destination":"/shared/images/sample.jpg","overwrite":true}
---SPOS API demo
+--AmeriCommerce API demo
 Content-Type: image/jpeg
 Content-Disposition: form-data
 
 <binary_data>
---SPOS API demo--
+--AmeriCommerce API demo--
 ```
 
 The `Content-Type` of the overall request should be set to `multipart/form-data`. This is also where we will need to specify what the boundary string is for the multipart request. The boundary will tell the server where one part begins and ends.
