@@ -36,6 +36,17 @@ Sample Model
 }
 ```
 
+Category Tree
+-------------
+
+When executing a POST, PUT, or DELETE command against the categories endpoint, you will be modifying the category tree for the site.  When the category tree changes for a site, it must be rebuilt.  The API does not automatically trigger a rebuild because the operation can be expensive, and there is no way to know how many category operations will be performed during a given interaction with the API.  For this reason, we expose the following method:
+
+```shell
+POST /api/v1/categories/rebuild_tree
+```
+
+This will trigger a background process to rebuild the category tree.  Since this is an asynchronous process, the API call returns immediately with a `204 No Content` response. Category trees can be arbitrarily large, so the operation to rebuild the tree may take some time to complete.
+
 Nested Resources
 ----------------
 
