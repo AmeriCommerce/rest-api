@@ -2,7 +2,7 @@ order_shipments
 ===============
 
 ```shell
-GET /api/v1/orders
+GET /api/v1/order_shipments
 ```
 
 **Required scope**: `read_orders`, `orders`
@@ -41,3 +41,28 @@ Nested Resources
 Accessible via the `?expand=` parameter or `/api/v1/order_shipments/{id}/{nested_resource}`.
 
 ### items
+
+```shell
+GET /api/v1/order_shipments?expand=items
+```
+
+```shell
+GET /api/v1/order_shipments/{id}/items
+```
+
+```json
+{
+    ...
+    "items": [
+        {
+            "id": 206,
+            "quantity_shipped": 1,
+            "product_id": 36,
+            "item_name": "Claymore"
+        },
+	...
+    ],
+    ...
+}
+
+```
