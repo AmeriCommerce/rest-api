@@ -1,16 +1,18 @@
 stores
 ======
 
+## Get Stores
+
 This resource is read only (only `GET` actions are available).
 
+###### Example Request
 ```shell
 GET /api/v1/stores
 ```
 
 **Required scope**: `system`
 
-Sample Model
-------------
+###### Example Response
 
 ```json
 {
@@ -25,3 +27,51 @@ Sample Model
 	"profile_id": 9
 }
 ```
+
+## Get Store Alert Emails
+
+###### Example Request
+```shell
+GET /api/v1/stores/{store_id}/store_alert_emails
+```
+###### Example Response
+
+```json
+{
+    "total_count": 3,
+    "store_alert_email": [
+        {
+            "id": 2,
+            "store_id": 3,
+            "email": "test@not-real-address.com"
+        },
+        {
+            "id": 3,
+            "store_id": 3,
+            "email": "test2@not-real-address.com"
+        }
+    ]
+}
+```
+
+## Add Store Alert Emails
+
+###### Example Request
+```shell
+PUT /api/v1/stores/{store_id}/store_alert_emails
+```
+
+```json
+{
+    "email": "test@not-real-address.com"
+}
+```
+###### Example Response
+```json
+{
+    "id": 5,
+    "store_id": 3,
+    "email": "test@not-real-address.com"
+}
+```
+
