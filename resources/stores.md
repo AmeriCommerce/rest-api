@@ -32,7 +32,7 @@ GET /api/v1/stores
 
 ###### Example Request
 ```shell
-GET /api/v1/stores/{store_id}/store_alert_emails
+GET /api/v1/stores/{store_id}/store_alert_email
 ```
 ###### Example Response
 
@@ -58,7 +58,7 @@ GET /api/v1/stores/{store_id}/store_alert_emails
 
 ###### Example Request
 ```shell
-PUT /api/v1/stores/{store_id}/store_alert_emails
+PUT /api/v1/stores/{store_id}/store_alert_email
 ```
 
 ```json
