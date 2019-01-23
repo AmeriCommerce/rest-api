@@ -1,6 +1,7 @@
 carts
 =====
 
+###### Example Request
 ```shell
 GET /api/v1/carts
 ```
@@ -35,6 +36,10 @@ Sample Model
 	"gift_certificate_discount": null,
 	"coupon_code": "",
 	"associated_order_id": null,
+	"shipping_estimate_city": "BEAUMONT",
+	"shipping_estimate_state_code": "TX",
+	"shipping_estimate_postal_code": "77701",
+	"shipping_estimate_country_code": "US",
 	"is_shipping_billed_to_account": false,
 	"customer_payment_method_id": null,
 	"payment_method_id": null,
@@ -49,6 +54,7 @@ Accessible via the `?expand=` parameter or `/api/v1/carts/{id}/{nested_resource}
 
 ### items
 
+###### Example Request
 ```shell
 GET /api/v1/carts?expand=items
 ```
@@ -111,5 +117,41 @@ GET /api/v1/carts/{id}/items
 		...
 	],
 	...
+}
+```
+## Recalculate and return cart
+
+###### Example Request
+```shell
+GET /api/v1/carts/{id}/calculated
+```
+
+
+## Update/Set Shipping Estimation Address
+
+###### Example Request
+```shell
+PUT /api/v1/carts/{id}/shipping_estimation
+```
+
+```json
+{
+	"city": "Beaumont",
+	"state_code" : "TX",
+	"postal_code" : "77701",
+	"country_code" : "US"
+}
+```
+
+## Update/Set Coupon Code
+
+###### Example Request
+```shell
+PUT /api/v1/carts/{id}/coupon_code
+```
+
+```json
+{
+	"coupon_code" : "bigsavings"
 }
 ```
