@@ -1,14 +1,15 @@
 email_templates
 ===============
 
+## Get Email Template
+
 ```shell
 GET /api/v1/email_templates
 ```
 
 **Required scope**: `read_marketing`, `marketing`
 
-Sample Model
-------------
+###### Sample Model
 
 ```json
 {
@@ -25,3 +26,27 @@ Sample Model
 	"email_format": "TEXT"
 }
 ```
+
+## Send Email
+
+Sends an email template as specified by the model in the request. 
+
+###### Example Request
+
+```shell
+POST /api/v1/email_templates/{template_id}/send
+```
+
+```json
+{
+	"order_id": 100,
+	"customer_id": 7,
+	"email_address": "coolGuy89@americommerce.com",
+	"merge_codes": {
+		"##TESTMERGE##" : "what's up",
+		"##ANOTHERMERGE##" : "10"
+	}
+}
+```
+
+
