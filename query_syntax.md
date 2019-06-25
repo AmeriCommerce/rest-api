@@ -114,7 +114,7 @@ The default when multiple fields are specified in a query. Can also be used to s
 Can prefix the first operator, in which it overrides the default `AND` behavior and uses `OR` instead. It can also be used to specify multiple comparison values for a single field.
 
 ```shell
-/api/v1/products?item_name=like:test&price=OR+lte:25.00
+/api/v1/products?weight=OR+gt:3.5&length=gt:12
 ```
 
 ```shell
