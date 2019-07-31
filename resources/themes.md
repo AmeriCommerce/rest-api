@@ -25,7 +25,7 @@ POST /api/v1/themes/import
 
 ```json
 {
-    "theme_id": 1234
+    "theme_id": 1234,
     "theme_name": "ThemeName"
 }
 
