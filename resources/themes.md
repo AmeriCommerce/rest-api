@@ -3,14 +3,14 @@ themes
 
 ## Import Theme
 
-```shell
-POST /api/v1/themes/import
-```
 
 **Required scope**: `themes`
 
-Sample Model
+###### Sample Request
 ------------
+```shell
+POST /api/v1/themes/import
+```
 
 ```json
 {
@@ -19,3 +19,15 @@ Sample Model
 }
 
 ```
+
+###### Sample Response
+------------
+
+```json
+{
+    "theme_id": 1234
+    "theme_name": "ThemeName"
+}
+
+```
+Theme name is included because it can be changed by the import process in the case of duplicates. (ex: ThemeName_1)
