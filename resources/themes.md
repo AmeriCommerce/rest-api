@@ -7,7 +7,6 @@ themes
 **Required scope**: `themes`
 
 ###### Sample Request
-------------
 ```shell
 POST /api/v1/themes/import
 ```
@@ -21,7 +20,6 @@ POST /api/v1/themes/import
 ```
 
 ###### Sample Response
-------------
 
 ```json
 {
