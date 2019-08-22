@@ -13,3 +13,7 @@ The fields that have been identified with this issue so far are as follows:
 * [users](resources/users.md)
 	* `last_login_attempt_at`
 	* `last_login_at`
+* [products](resources/products.md)
+	* `length`
+	* `height`
+	* `width`
