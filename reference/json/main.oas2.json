@@ -1,0 +1,71 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0",
+      "title": "To-do Demo",
+      "description": "This OAS2 (Swagger 2) file represents a real API that lives at http://todos.stoplight.io.\n\nFor authentication information, click the apikey security scheme in the editor sidebar.",
+      "contact": {
+        "name": "Stoplight",
+        "url": "https://stoplight.io"
+      },
+      "license": {
+        "name": "MIT"
+      }
+    },
+    "host": "{store_domain}",
+    "schemes": [
+      "https"
+    ],
+    "consumes": [
+      "application/json"
+    ],
+    "produces": [
+      "application/json"
+    ],
+    "securityDefinitions": {
+      "X-AC-Auth-Token": {
+        "name": "X-AC-Auth-Token",
+        "type": "apiKey",
+        "in": "header",
+        "description": "* Every request requires an access token which is passed in as a special header called X-AC-Auth-Token\n\nCurl example to get a list of products:\n\n```shell\ncurl -H 'X-AC-Auth-Token: 7ccdb91...dfd0' https://youstore.americommerce.com/api/v1/products.json\n```"
+      }
+    },
+    "paths": {
+      "/adcodes": {
+        "get": {
+          "responses": {
+            "200": {
+              "description": "",
+              "examples": {
+                "application/json": ""
+              },
+              "schema": {
+                "$ref": "./common.oas2.yml#/definitions/adcodesResponse"
+              }
+            }
+          },
+          "security": [
+            {
+              "X-AC-Auth-Token": []
+            }
+          ],
+          "tags": [
+            "/adcodes"
+          ],
+          "operationId": "getAdcodes",
+          "summary": "Get Adcodes"
+        }
+      }
+    },
+    "parameters": {},
+    "definitions": {},
+    "tags": [
+      {
+        "name": "Todos"
+      },
+      {
+        "name": "/adcodes"
+      }
+    ],
+    "basePath": "/api/v1"
+  }
