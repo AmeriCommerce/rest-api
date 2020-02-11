@@ -268,7 +268,7 @@ Submits all of the cart information to process payment and create an order. Retu
 	* `country` - (required) Country of the billing address.
 	* `notes` - (optional) Any additional information to record for this address entry.
 * `shipping_address` - (optional) The [address](https://github.com/AmeriCommerce/rest-api/blob/master/resources/addresses.md) to use for shipping. Only required if `use_billing_address_for_shipping` is `false`.
-	* `id` - (optional) The ID of an existing [address](resource/addresses.md). If omitted, a new address will be created.
+	* `id` - (optional) The ID of an existing [address](https://github.com/AmeriCommerce/rest-api/blob/master/resources/addresses.md). If omitted, a new address will be created.
 	* `name` - (required) The name of the person to ship to.
 	* `address_line_1` - (required) Line 1 of the shipping street address.
 	* `address_line_2` - (optional) Line 2 of the shipping street address.
