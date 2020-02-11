@@ -1,7 +1,7 @@
 Datetime Format
 ===============
 
-The format for datetimes in this API follows the [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601). This format will work when passed in for the [query syntax](query_syntax.md) as well as on request bodies for POST/PUT requests.
+The format for datetimes in this API follows the [ISO 8601 format](http://en.wikipedia.org/wiki/ISO_8601). This format will work when passed in for the [query syntax](https://github.com/AmeriCommerce/rest-api/blob/master/query_syntax.md) as well as on request bodies for POST/PUT requests.
 
 There are a couple of common variations to this format: one with the timezone offset, and one without.
 

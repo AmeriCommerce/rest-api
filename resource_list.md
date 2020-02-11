@@ -1,58 +1,58 @@
 Resource List
 =============
 
-All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the SSL domain name of your AmeriCommerce. See [Common Usage](common_usage.md) for a more detailed explanation of most of the operations these provide.
+All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the SSL domain name of your AmeriCommerce. See [Common Usage](https://github.com/AmeriCommerce/rest-api/blob/master/common_usage.md) for a more detailed explanation of most of the operations these provide.
 
 ### People
 
 | Name | Collections |
 | ---- | ----------- |
-| [addresses](resources/addresses.md) |
-| [customers](resources/customers.md) | addresses, reward\_points, custom\_fields |
-| [customer_types](resources/customer_types.md) | |
-| [customer_payment_methods](resources/customer_payment_methods.md) | fields |
-| [profiles](resources/profiles.md) | contacts |
-| [users](resources/users.md) | |
+| [addresses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/addresses.md) |
+| [customers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/customers.md) | addresses, reward\_points, custom\_fields |
+| [customer_types](https://github.com/AmeriCommerce/rest-api/blob/master/resources/customer_types.md) | |
+| [customer_payment_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/customer_payment_methods.md) | fields |
+| [profiles](https://github.com/AmeriCommerce/rest-api/blob/master/resources/profiles.md) | contacts |
+| [users](https://github.com/AmeriCommerce/rest-api/blob/master/resources/users.md) | |
 
 ### Orders
 
 | Name | Collections |
 | ---- | ----------- |
-| [carts](resources/carts.md) | items |
-| [cart_items](resources/cart_items.md) | child_items |
-| [credit_cards](resources/credit_cards.md) | |
-| [orders](resources/orders.md) | items, payments, shipments, custom_fields |
-| [order_addresses](resources/order_addresses.md) | |
-| [order_items](resources/order_items.md) | |
-| [order_payments](resources/order_payments.md) | fields |
-| [order_shipments](resources/order_shipments.md) | items |
-| [order_statuses](resources/order_statuses.md) | |
-| [quotes](resources/quotes.md) | items, payments, shipments, custom_fields |
-| [subscriptions](resources/subscriptions.md) | |
-| [wishlists](resources/wishlists.md) | items |
+| [carts](https://github.com/AmeriCommerce/rest-api/blob/master/resources/carts.md) | items |
+| [cart_items](https://github.com/AmeriCommerce/rest-api/blob/master/resources/cart_items.md) | child_items |
+| [credit_cards](https://github.com/AmeriCommerce/rest-api/blob/master/resources/credit_cards.md) | |
+| [orders](https://github.com/AmeriCommerce/rest-api/blob/master/resources/orders.md) | items, payments, shipments, custom_fields |
+| [order_addresses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_addresses.md) | |
+| [order_items](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_items.md) | |
+| [order_payments](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_payments.md) | fields |
+| [order_shipments](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_shipments.md) | items |
+| [order_statuses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_statuses.md) | |
+| [quotes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/quotes.md) | items, payments, shipments, custom_fields |
+| [subscriptions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/subscriptions.md) | |
+| [wishlists](https://github.com/AmeriCommerce/rest-api/blob/master/resources/wishlists.md) | items |
 
 ### Catalog
 
 | Name | Collections |
 | ---- | ----------- |
-| [attributes](resources/attributes.md) | |
-| [attribute_groups](resources/attribute_groups.md) | |
-| [categories](resources/categories.md) | products, custom_fields |
-| [inventory](resources/inventory.md)* | |
-| [manufacturers](resources/manufacturers.md) | |
-| [notifications](resources/notifications.md) | |
-| [price_calculators](resources/price_calculators.md) | rules |
-| [price_calculator_rules](resources/price_calculator_rules.md) | modifiers |
-| [price_calculator_rule_modifiers](resources/price_calculator_rule_modifiers.md) | |
-| [products](resources/products.md) | variants, personalizations, related, categories, pricing, attributes, variant\_inventory, pictures, child\_products, shipping\_rate\_adjustments, reviews, custom\_fields |
-| [product_lists](resources/product_lists.md) | |
-| [product_pictures](resources/product_pictures.md) | |
-| [product_reviews](resources/product_reviews.md) | ratings |
-| [product_statuses](resources/product_statuses.md) | |
-| [product_variants](resources/product_variants.md) | |
-| [shipping_rate_adjustments](resources/shipping_rate_adjustments.md) | |
-| [variant_groups](resources/variant_groups.md) | variants |
-| [variant_inventory](resources/variant_inventory.md) | pricing, variants |
+| [attributes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/attributes.md) | |
+| [attribute_groups](https://github.com/AmeriCommerce/rest-api/blob/master/resources/attribute_groups.md) | |
+| [categories](https://github.com/AmeriCommerce/rest-api/blob/master/resources/categories.md) | products, custom_fields |
+| [inventory](https://github.com/AmeriCommerce/rest-api/blob/master/resources/inventory.md)* | |
+| [manufacturers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/manufacturers.md) | |
+| [notifications](https://github.com/AmeriCommerce/rest-api/blob/master/resources/notifications.md) | |
+| [price_calculators](https://github.com/AmeriCommerce/rest-api/blob/master/resources/price_calculators.md) | rules |
+| [price_calculator_rules](https://github.com/AmeriCommerce/rest-api/blob/master/resources/price_calculator_rules.md) | modifiers |
+| [price_calculator_rule_modifiers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/price_calculator_rule_modifiers.md) | |
+| [products](https://github.com/AmeriCommerce/rest-api/blob/master/resources/products.md) | variants, personalizations, related, categories, pricing, attributes, variant\_inventory, pictures, child\_products, shipping\_rate\_adjustments, reviews, custom\_fields |
+| [product_lists](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_lists.md) | |
+| [product_pictures](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_pictures.md) | |
+| [product_reviews](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_reviews.md) | ratings |
+| [product_statuses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_statuses.md) | |
+| [product_variants](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_variants.md) | |
+| [shipping_rate_adjustments](https://github.com/AmeriCommerce/rest-api/blob/master/resources/shipping_rate_adjustments.md) | |
+| [variant_groups](https://github.com/AmeriCommerce/rest-api/blob/master/resources/variant_groups.md) | variants |
+| [variant_inventory](https://github.com/AmeriCommerce/rest-api/blob/master/resources/variant_inventory.md) | pricing, variants |
 
 \* Special endpoint
 
@@ -60,49 +60,49 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 
 | Name | Collections |
 | ---- | ----------- |
-| [blogs](resources/blogs.md) | categories, posts |
-| [blog_categories](resources/blog_categories.md) | posts |
-| [blog_posts](resources/blog_posts.md) | categories |
-| [links](resources/links.md) | child_links |
-| [pages](resources/pages.md) | |
+| [blogs](https://github.com/AmeriCommerce/rest-api/blob/master/resources/blogs.md) | categories, posts |
+| [blog_categories](https://github.com/AmeriCommerce/rest-api/blob/master/resources/blog_categories.md) | posts |
+| [blog_posts]https://github.com/AmeriCommerce/rest-api/blob/master/(resources/blog_posts.md) | categories |
+| [links](https://github.com/AmeriCommerce/rest-api/blob/master/resources/links.md) | child_links |
+| [pages](https://github.com/AmeriCommerce/rest-api/blob/master/resources/pages.md) | |
 
 ### Marketing
 
 | Name | Collections |
 | ---- | ----------- |
-| [adcodes](resources/adcodes.md) | |
-| [affiliates](resources/affiliates.md) | |
-| [coupon_codes](resources/coupon_codes.md) | |
-| [discount_methods](resources/discount_methods.md) | rules |
-| [discount_rules](resources/discount_rules.md) | |
-| [drips](resources/drips.md) | members, events |
-| [email_templates](resources/email_templates.md) | |
-| [gift_certificates](resources/gift_certificates.md) | transactions |
-| [gift_certificate_transactions](resources/gift_certificate_transactions.md) | |
-| [mailing_lists](resources/mailing_lists.md) | members |
+| [adcodes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/adcodes.md) | |
+| [affiliates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/affiliates.md) | |
+| [coupon_codes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/coupon_codes.md) | |
+| [discount_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/discount_methods.md) | rules |
+| [discount_rules](https://github.com/AmeriCommerce/rest-api/blob/master/resources/discount_rules.md) | |
+| [drips](https://github.com/AmeriCommerce/rest-api/blob/master/resources/drips.md) | members, events |
+| [email_templates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/email_templates.md) | |
+| [gift_certificates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/gift_certificates.md) | transactions |
+| [gift_certificate_transactions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/gift_certificate_transactions.md) | |
+| [mailing_lists](https://github.com/AmeriCommerce/rest-api/blob/master/resources/mailing_lists.md) | members |
 
 ### Tools
 
 | Name | Collections |
 | ---- | ----------- |
-| [custom_fields](resources/custom_fields.md) | values, list_items, stores |
-| [custom\_field\_values](resources/custom_field_values.md) | |
+| [custom_fields](https://github.com/AmeriCommerce/rest-api/blob/master/resources/custom_fields.md) | values, list_items, stores |
+| [custom\_field\_values](https://github.com/AmeriCommerce/rest-api/blob/master/resources/custom_field_values.md) | |
 
 ### Settings
 
 | Name | Collections |
 | ---- | ----------- |
-| [custom_shipping_methods](resources/custom_shipping_methods.md)	| rules |
-| [payment_methods](resources/payment_methods.md)	| fields, stores |
-| [regions](resources/regions.md)	| |
-| [shipping_providers](resources/shipping_providers.md)	| services |
-| [tax_rates](resources/tax_rates.md)	| |
-| [url_redirects](resources/url_redirects.md)	| |
-| [warehouses](resources/warehouses.md)	| |
+| [custom_shipping_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/custom_shipping_methods.md)	| rules |
+| [payment_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/payment_methods.md)	| fields, stores |
+| [regions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/regions.md)	| |
+| [shipping_providers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/shipping_providers.md)	| services |
+| [tax_rates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/tax_rates.md)	| |
+| [url_redirects](https://github.com/AmeriCommerce/rest-api/blob/master/resources/url_redirects.md)	| |
+| [warehouses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/warehouses.md)	| |
 
 ### System
 
 | Name | Collections |
 | ---- | ----------- |
-| [sessions](resources/sessions.md)	| |
-| [stores](resources/stores.md)	| |
+| [sessions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/sessions.md)	| |
+| [stores](https://github.com/AmeriCommerce/rest-api/blob/master/resources/stores.md)	| |

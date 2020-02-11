@@ -57,13 +57,13 @@ While logged into the admin console, you can use the examples for any of the `GE
 
 #### List of resources
 
-Fetches a list of resources. Without any additional parameters this will return a paged list. This endpoint also supports the [query syntax](query_syntax.md) for more selective results.
+Fetches a list of resources. Without any additional parameters this will return a paged list. This endpoint also supports the [query syntax](https://github.com/AmeriCommerce/rest-api/blob/master/query_syntax.md) for more selective results.
 
 ```shell
 GET /api/v1/{resource_name}
 ```
 
-The `{resource_name}` can be any of the root level [resources](resource_list.md).
+The `{resource_name}` can be any of the root level [resources](https://github.com/AmeriCommerce/rest-api/blob/master/resource_list.md).
 
 ```shell
 GET /api/v1/products
@@ -133,7 +133,7 @@ Fetches a single resource by its identifier. If the resource does not exist, thi
 GET /api/v1/{resource_name}/{id}
 ```
 
-The `{resource_name}` can be any of the root level [resources](resource_list.md). The `{id}` is expected to be an integer that uniquely identifies a particular resource.
+The `{resource_name}` can be any of the root level [resources](https://github.com/AmeriCommerce/rest-api/blob/master/resource_list.md). The `{id}` is expected to be an integer that uniquely identifies a particular resource.
 
 ```shell
 GET /api/v1/products/1
@@ -165,7 +165,7 @@ Fetches a single resource by its identifier with all of the nested resources alr
 GET /api/v1/{resource_name}/{id}/filled
 ```
 
-The `{resource_name}` can be any of the root level [resources](resource_list.md). The `{id}` is expected to be an integer that uniquely identifies a particular resource.
+The `{resource_name}` can be any of the root level [resources](https://github.com/AmeriCommerce/rest-api/blob/master/resource_list.md). The `{id}` is expected to be an integer that uniquely identifies a particular resource.
 
 ```shell
 GET /api/v1/products/1/filled
@@ -189,7 +189,7 @@ Returns the contents of a particular nested resource as a list result, without t
 GET /api/v1/{resource_name}/{id}/{nested_resource_name}
 ```
 
-The `{resource_name}` can be any of the root level [resources](resource_list.md). The `{id}` is expected to be an integer that uniquely identifies a particular resource. The `{nested_resource_name}` will be any of the collection names also supported by `expand` in other requests.
+The `{resource_name}` can be any of the root level [resources](https://github.com/AmeriCommerce/rest-api/blob/master/resource_list.md). The `{id}` is expected to be an integer that uniquely identifies a particular resource. The `{nested_resource_name}` will be any of the collection names also supported by `expand` in other requests.
 
 ```shell
 GET /api/v1/products/1/variants
@@ -235,7 +235,7 @@ Returns a list result of one or more particular resources as specified by their 
 GET /api/v1/{resource_name}/select_many?ids={ids}
 ```
 
-The `{resource_name}` can be any of the root level [resources](resource_list.md). The `{ids}` query string parameter is required for this request and is a comma-separated list of identifiers that you want this resource to return. If the `{ids}` parameter is omitted, this request will respond with `400 Bad Request`.
+The `{resource_name}` can be any of the root level [resources](https://github.com/AmeriCommerce/rest-api/blob/master/resource_list.md). The `{ids}` query string parameter is required for this request and is a comma-separated list of identifiers that you want this resource to return. If the `{ids}` parameter is omitted, this request will respond with `400 Bad Request`.
 
 ```shell
 GET /api/v1/products/select_many?ids=1,5,9

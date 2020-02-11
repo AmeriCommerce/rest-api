@@ -13,7 +13,7 @@ The general format of a query syntax parameter is as follows:
 
 * `op` - (Optional) The [comparison operator](#comparison-operator) to use when comparing the specified value to the field. Defaults to **eq**.
 
-* `value` - The value being checked for. (Read [here](datetimes.md) for additional information about using datetimes for this.)
+* `value` - The value being checked for. (Read [here](https://github.com/AmeriCommerce/rest-api/blob/master/datetimes.md) for additional information about using datetimes for this.)
 
 Samples:
 

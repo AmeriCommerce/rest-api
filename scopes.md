@@ -15,12 +15,12 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 
 Applies to:
 
-* [addresses](resources/addresses.md)
-* [customers](resources/customers.md)
-* [customer_types](resources/customer_types.md)
-* [customer_payment_methods](resources/customer_payment_methods.md)
-* [profiles](resources/profiles.md)
-* [users](resources/users.md)
+* [addresses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/addresses.md)
+* [customers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/customers.md)
+* [customer_types](https://github.com/AmeriCommerce/rest-api/blob/master/resources/customer_types.md)
+* [customer_payment_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/customer_payment_methods.md)
+* [profiles](https://github.com/AmeriCommerce/rest-api/blob/master/resources/profiles.md)
+* [users](https://github.com/AmeriCommerce/rest-api/blob/master/resources/users.md)
 
 Orders
 ------
@@ -32,17 +32,17 @@ Permissions required: `Orders`, `OrderStatuses`
 
 Applies to:
 
-* [carts](resources/carts.md)
-* [cart_items](resources/cart_items.md)
-* [credit_cards](resources/credit_cards.md)
-* [orders](resources/orders.md)
-* [order_addresses](resources/order_addresses.md)
-* [order_items](resources/order_items.md)
-* [order_payments](resources/order_payments.md)
-* [order_shipments](resources/order_shipments.md)
-* [order_statuses](resources/order_statuses.md)
-* [quotes](resources/quotes.md)
-* [subscriptions](resources/subscriptions.md)
+* [carts](https://github.com/AmeriCommerce/rest-api/blob/master/resources/carts.md)
+* [cart_items](https://github.com/AmeriCommerce/rest-api/blob/master/resources/cart_items.md)
+* [credit_cards](https://github.com/AmeriCommerce/rest-api/blob/master/resources/credit_cards.md)
+* [orders](https://github.com/AmeriCommerce/rest-api/blob/master/resources/orders.md)
+* [order_addresses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_addresses.md)
+* [order_items](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_items.md)
+* [order_payments](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_payments.md)
+* [order_shipments](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_shipments.md)
+* [order_statuses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/order_statuses.md)
+* [quotes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/quotes.md)
+* [subscriptions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/subscriptions.md)
 
 Catalog
 -------
@@ -54,18 +54,18 @@ Permissions required: `Products`, `ProductStatuses`, `VariationGroups`, `Product
 
 Applies to:
 
-* [attributes](resources/attributes.md)
-* [attribute_groups](resources/attribute_groups.md)
-* [categories](resources/categories.md)
-* [manufacturers](resources/manufacturers.md)
-* [products](resources/products.md)
-* [product_lists](resources/product_lists.md)
-* [product_pictures](resources/product_pictures.md)
-* [product_statuses](resources/product_statuses.md)
-* [product_variants](resources/product_variants.md)
-* [shipping_rate_adjustments](resource/shipping_rate_adjustments.md)
-* [variant_groups](resources/variant_groups.md)
-* [variant_inventory](resources/variant_inventory.md)
+* [attributes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/attributes.md)
+* [attribute_groups](https://github.com/AmeriCommerce/rest-api/blob/master/resources/attribute_groups.md)
+* [categories](https://github.com/AmeriCommerce/rest-api/blob/master/resources/categories.md)
+* [manufacturers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/manufacturers.md)
+* [products](https://github.com/AmeriCommerce/rest-api/blob/master/resources/products.md)
+* [product_lists](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_lists.md)
+* [product_pictures](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_pictures.md)
+* [product_statuses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_statuses.md)
+* [product_variants](https://github.com/AmeriCommerce/rest-api/blob/master/resources/product_variants.md)
+* [shipping_rate_adjustments](https://github.com/AmeriCommerce/rest-api/blob/master/resource/shipping_rate_adjustments.md)
+* [variant_groups](https://github.com/AmeriCommerce/rest-api/blob/master/resources/variant_groups.md)
+* [variant_inventory](https://github.com/AmeriCommerce/rest-api/blob/master/resources/variant_inventory.md)
 
 Content
 -------
@@ -77,11 +77,11 @@ Permissions required: `Blogs`, `BlogCategories`, `BlogPosts`, `ContentManagement
 
 Applies to:
 
-* [blogs](resources/blogs.md)
-* [blog_categories](resources/blog_categories.md)
-* [blog_posts](resources/blog_posts.md)
-* [links](resources/links.md)
-* [pages](resources/pages.md)
+* [blogs](https://github.com/AmeriCommerce/rest-api/blob/master/resources/blogs.md)
+* [blog_categories](https://github.com/AmeriCommerce/rest-api/blob/master/resources/blog_categories.md)
+* [blog_posts](https://github.com/AmeriCommerce/rest-api/blob/master/resources/blog_posts.md)
+* [links](https://github.com/AmeriCommerce/rest-api/blob/master/resources/links.md)
+* [pages](https://github.com/AmeriCommerce/rest-api/blob/master/resources/pages.md)
 
 Marketing
 ---------
@@ -93,16 +93,16 @@ Permissions required: `AdCodes`, `Affiliates`, `EmailEditor`, `MailingList`, `Di
 
 Applies to:
 
-* [adcodes](resources/adcodes.md)
-* [affiliates](resources/affiliates.md)
-* [coupon_codes](resources/coupon_codes.md)
-* [discount_methods](resources/discount_methods.md)
-* [discount_rules](resources/discount_rules.md)
-* [drips](resources/drips.md)
-* [email_templates](resources/email_templates.md)
-* [gift_certificates](resources/gift_certificates.md)
-* [gift_certificate_transactions](resources/gift_certificate_transactions.md)
-* [mailing_lists](resources/mailing_lists.md)
+* [adcodes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/adcodes.md)
+* [affiliates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/affiliates.md)
+* [coupon_codes](https://github.com/AmeriCommerce/rest-api/blob/master/resources/coupon_codes.md)
+* [discount_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/discount_methods.md)
+* [discount_rules](https://github.com/AmeriCommerce/rest-api/blob/master/resources/discount_rules.md)
+* [drips](https://github.com/AmeriCommerce/rest-api/blob/master/resources/drips.md)
+* [email_templates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/email_templates.md)
+* [gift_certificates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/gift_certificates.md)
+* [gift_certificate_transactions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/gift_certificate_transactions.md)
+* [mailing_lists](https://github.com/AmeriCommerce/rest-api/blob/master/resources/mailing_lists.md)
 
 Specialized Scopes
 ------------------
@@ -121,7 +121,7 @@ Permissions required: `CustomFields`
 
 Applies to:
 
-* [custom_fields](resources/custom_fields.md)
+* [custom_fields](https://github.com/AmeriCommerce/rest-api/blob/master/resources/custom_fields.md)
 
 ### settings
 
@@ -129,13 +129,13 @@ Permissions required: `Shipping`, `Warehouses`, `TaxRates`, `GlobalRegions`, `Pa
 
 Applies to:
 
-* [custom_shipping_methods](resources/custom_shipping_methods.md)
-* [payment_methods](resources/payment_methods.md)
-* [regions](resources/regions.md)
-* [shipping_providers](resources/shipping_providers.md)
-* [tax_rates](resources/tax_rates.md)
-* [url_redirects](resources/url_redirects.md)
-* [warehouses](resources/warehouses.md)
+* [custom_shipping_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/custom_shipping_methods.md)
+* [payment_methods](https://github.com/AmeriCommerce/rest-api/blob/master/resources/payment_methods.md)
+* [regions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/regions.md)
+* [shipping_providers](https://github.com/AmeriCommerce/rest-api/blob/master/resources/shipping_providers.md)
+* [tax_rates](https://github.com/AmeriCommerce/rest-api/blob/master/resources/tax_rates.md)
+* [url_redirects](https://github.com/AmeriCommerce/rest-api/blob/master/resources/url_redirects.md)
+* [warehouses](https://github.com/AmeriCommerce/rest-api/blob/master/resources/warehouses.md)
 
 ### system
 
@@ -143,8 +143,8 @@ Permissions required: `FileBrowser`, `Sessions`, `StoreSettings`
 
 Applies to:
 
-* [stores](resources/stores.md)
-* [sessions](resources/sessions.md)
+* [stores](https://github.com/AmeriCommerce/rest-api/blob/master/resources/stores.md)
+* [sessions](https://github.com/AmeriCommerce/rest-api/blob/master/resources/sessions.md)
 * `POST /api/v1/upload`
 
 ### decrypt

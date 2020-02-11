@@ -14,7 +14,7 @@ These instructions make use of digests and assume you know how to generate one (
 
 1. Redirect the user to `https://[mystorename.com]/api/oauth` with the following query string parameters:
   * `client_id` - The App ID given to you in the admin console when you set up the application.
-  * `scope` - The permissions that this access token will need. (See [Scopes](scopes.md) for specifics.)
+  * `scope` - The permissions that this access token will need. (See [Scopes](https://github.com/AmeriCommerce/rest-api/blob/master/scopes.md) for specifics.)
   * `redirect_uri` - The callback URL that will be returned to after the user has authorized the application.
 
 2. The user will be asked to login with their admin console credentials.
