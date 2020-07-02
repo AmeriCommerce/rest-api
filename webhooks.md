@@ -7,23 +7,39 @@ In the case of events that expect responses, the timeout is intentionally short 
 
 ### Webhook Types
 
-| Event Type | Description | Reply? |
-| ---- | ----------- | ------ |
-| AuthorizingPayment | Called to authorize a payment | Yes |
-| CapturingPayment | Called to capture a payment | Yes |
-| GetPrice | Called when calculating price for one or more products | Yes |
-| GetProductStatus | Called when checking the status of a product for display | Yes |
-| GetTax | Called when calculating tax for a cart | Yes |
-| OrderApproved | Called after an order has been marked with an Approved order status | No |
-| OrderCanceled | Called after an order has been marked with a Canceled order status | No |
-| OrderDeclined | Called after an order has been marked with a Declined order status | No |
-| OrderPlaced | Called after a new order has been placed | No |
-| OrderShipped | Called after an order has been marked with a Shipped order status | No |
-| PaymentProcessed | Called after a payment has finished processing | No |
-| ProductStatusChanged | Called when a product's status has been changed | No |
-| ValidateCart | Called when the current cart is being checked for errors | Yes |
-| ValidateCheckout | Called when the checkout page is being checked for errors | Yes |
-| GetDiscount | Called when calculating discounts for a cart | Yes |
+| Event Type | Description | Reply? | Version |
+| ---- | ----------- | ------ | -------- |
+| AuthorizingPayment | Called to authorize a payment | Yes | |
+| CapturingPayment | Called to capture a payment | Yes | |
+| CustomerCreated | Called when a customer is created | No | 2020.3+ | |
+| CustomerEmailUpdated | Called when a customer's email address changes | No | 2020.3+ |
+| CustomerUpdated | Called when a customer's data changes | No | 2020.3+ |
+| CustomerRegistered | Called when a customer registers an account for the store | No |  |
+| GetDiscount | Called when calculating discounts for a cart | Yes | |
+| GetPrice | Called when calculating price for one or more products | Yes | |
+| GetProductStatus | Called when checking the status of a product for display | Yes | |
+| GetTax | Called when calculating tax for a cart | Yes | |
+| NewOrder | Called when a new order of any status is created | No | 2020.3+ |
+| NewQuote | Called when a new quote of any status is created | No | 2020.3+ |
+| NewValidOrder | Called when a new order is created with a status that is not cancelled or declined | No | 2020.3+ |
+| OrderApproved | Called after an order payment has been approved | No | |
+| OrderCanceled | Called after an order has been marked with a Canceled order status | No | |
+| OrderDeclined | Called after an order has been marked with a Declined order status | No | |
+| OrderPlaced | Called after a new order has been placed | No | |
+| OrderShipped | Called after an order has been marked with a Shipped order status | No | |
+| OrderStatusChanged | Called when an order's status changes | No | 2020.3+ |
+| OrderUpdated | Called when an order's data changes | No | 2020.3+ |
+| PaymentProcessed | Called after a payment has finished processing | No | |
+| ProductCreated | Called when a new product is created | No | 2020.3+ |
+| ProductStatusChanged | Called when a product's status has been changed | No | |
+| ProductUpdated | Callend when a product's data changes | No | 2020.3+ |
+| QuoteStatusChanged | Called when a quote's status changes | No | 2020.3+ |
+| QuoteUpdated | Called when a quote's data changes | No | 2020.3+ |
+| ValidateCart | Called when the current cart is being checked for errors | Yes | |
+| ValidateCheckout | Called when the checkout page is being checked for errors | Yes | |
+| ValidateCustomer | Called when changing customer data to check for any errors | Yes | |
+| ValidateProduct | Called when changing product data to check for any errors | Yes | |
+
 
 ### Subscribing to a Webhook
 
@@ -61,6 +77,7 @@ curl -X POST  \
    "https://[mystoredomain.com]/api/v1/webhooks" 
 ```
 
+In version 2020.3+, webhooks may also be viewed and managed within your store's admin console at /store/admin/settings/addons/webhooksubscriptionslist.aspx
 
 ### Detailed Information
 
@@ -107,6 +124,116 @@ The response to this webhook is expected to contain:
 * `reject_reason` - String. Reason for declining the authorization.
 * `notes` - String. Any additional information about this authorization.
 * `outstanding_balance` - Decimal. Remaining balance in the event that this capture did not cover the full balance.
+
+---
+
+#### CustomerCreated
+
+###### Request
+
+The request contains the following:
+
+* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource.
+
+---
+
+#### CustomerUpdated
+
+###### Request
+
+The request contains the following:
+
+* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource. 
+
+---
+
+#### CustomerEmailUpdated
+
+###### Request
+
+The request contains the following:
+
+* `old_email` - string. The email address of the customer before the change.
+* `new_email` - string. The new email address of the customer.
+* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource.
+---
+
+#### CustomerRegistered
+
+###### Request
+
+The request contains the following:
+
+* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource. 
+
+---
+
+#### GetDiscount
+
+###### Request
+
+The request contains the following:
+
+* `ad_code` - String. [`ad code`](https://support.americommerce.com/hc/en-us/articles/201903360-Campaign-AdCodes) set on the current session.
+* `billing_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+* `campaign_code` - String. [`campaign code`](resources/coupon_codes) set on the cart. 
+* `cart_id` - Integer. ID of the current [`cart`](resources/carts)
+* `customer_type` - String. The [`customer type`](resources/customer_types.md) name
+* `customer_type_id` - Integer. ID of the [`customer type`](resources/customer_types.md)
+* `destination_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource. 
+* `is_region_set` - Boolean. Is a specific region set?
+* `items` - Array of Objects 
+    * `cart_item_id` - Integer. ID of the [`cart item`](resources/cart_items.md)
+    * `category_id` - Array of Integers. List of [`category`](resources/categories.md) IDs this item belongs to.
+    * `custom_fields` - Object
+        * `name` - String
+        * `value` - String
+    * `destination_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+    * `is_subscription_item` - Boolean. Is this a subscription item?
+    * `item_number` - String. Item Number as it appears on the [`product`](resources/products.md) resource.
+    * `manufacturer_id` - Integer. ID of the [`manufacturer`](resources/manufacturers.md)
+    * `origin_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+    * `parent_product_id` - Integer. ID of the [`parent product`](resources/products.md)
+    * `price` - Decimal. Unit price of the item.
+    * `product_id` - Integer. ID of the [`product`](resources/products.md)
+    * `product_list_id` - Array of Integer. IDs of the product lists this product belongs to.
+    * `quantity` - Integer. Quantity
+    * `shipping_classification_code` - String. Breakout shipping classification code
+    * `variants` - Array of Object.
+        * `group` - String. Variant group
+        * `value` - String. Variant name
+* `shipping_method_list` - Object.
+    * `classification_code` - String. Breakout shipping classification code
+    * `delivery_date` - String. Estimated delivery date
+    * `ship_method` - String. Selected shipping method
+    * `shipping_method_name` - String. Selected shipping method name
+* `shipping_region_id` - Integer. ID of the [`shipping region`](resources/regions.md)
+* `shipping_total` - Decimal. Shipping Total
+* `store_id` - Integer. ID of the [`store`](resources/stores.md)
+* `subscription_subtotal` - Decimal. Subtotal of the subscription items
+* `tax_region_id` - Integer. ID of the [`tax region`](resources/regions.md)
+* `total_weight` - Decimal. Total weight of the items in the cart.
+
+
+###### Response
+
+The response to this webhook is expected to contain:
+
+* `cart_items` - Array of Objects.
+    * `cart_id` - Integer. Must match the `cart_id` sent in the request
+    * `description` - String. Optional Item level discount description.
+    * `discount_amount` - Decimal. The discount that should be applied for this item.
+* `add_items` - Array of Objects. New items that will be added to the cart as part of the discount.
+    * `price` - Decimal.
+    * `product_id` - Integer. ID of the [`product`](resources/products.md)
+    * `quantity` - Integer.
+    * `variant_inventory_item_number` - [`variant inventory`](resources/variant_inventory.md) item number
+    * `variants` - Array of Objects. If using variant inventory set `variant_inventory_item_number` instead of this array.
+        * `group` - String. Variant group name
+        * `value` - String. Variant name
+* `description` - Array of String. Optional description of all discounts applied.
+* `discount` - Decimal. Discount amount will be used in addition to any `cart_items.discount_amount`
+* `shipping_discount` - Decimal. Specify this amount if shipping should be discounted separately.
 
 ---
 
@@ -204,6 +331,36 @@ The response to this webhook is expected to contain:
 
 ---
 
+#### NewOrder
+
+###### Request
+
+The request contains the following:
+
+* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+
+---
+
+#### NewQuote
+
+###### Request
+
+The request contains the following:
+
+* `quote` - Object. A quote model, as shown on the [`quotes`](/resources/quotes.md) resource. 
+
+---
+
+#### NewValidOrder
+
+###### Request
+
+The request contains the following:
+
+* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+
+---
+
 #### OrderApproved
 
 ###### Request
@@ -254,6 +411,18 @@ The request contains the following:
 
 ---
 
+#### OrderStatusChanged
+
+###### Request
+
+The request contains the following:
+
+* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `old_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
+* `new_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
+
+---
+
 #### PaymentProcessed
 
 ###### Request
@@ -261,6 +430,16 @@ The request contains the following:
 The request contains the following:
 
  * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](resources/order_payments.md) resource. 
+
+---
+
+#### ProductCreated
+
+###### Request
+
+The request contains the following:
+
+ * `product` - Object. A product model, as shown on the [`products`](resources/products.md) resource. 
 
 ---
 
@@ -280,6 +459,38 @@ The request contains the following:
   * `inventory` - Integer. Current stock of this item.
   * `item_number` - String. The product's item number.
   * `manufacturer_item_number` - String. The product's manufacturer item number.
+
+---
+
+#### ProductUpdated
+
+###### Request
+
+The request contains the following:
+
+ * `product` - Object. A product model, as shown on the [`products`](resources/products.md) resource. 
+
+---
+
+#### QuoteStatusChanged
+
+###### Request
+
+The request contains the following:
+
+* `quote` - Object. A quote model, as shown on the [`quote`](resources/quotes.md) resource.
+* `old_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
+* `new_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
+
+---
+
+#### QuoteUpdated
+
+###### Request
+
+The request contains the following:
+
+* `quote` - Object. A quote model, as shown on the [`quotes`](/resources/quotes.md) resource. 
 
 ---
 
@@ -328,70 +539,36 @@ The response to this webhook is expected to contain:
 
 ---
 
-#### GetDiscount
+#### ValidateCustomer
 
 ###### Request
 
 The request contains the following:
 
-* `ad_code` - String. [`ad code`](https://support.americommerce.com/hc/en-us/articles/201903360-Campaign-AdCodes) set on the current session.
-* `billing_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-* `campaign_code` - String. [`campaign code`](resources/coupon_codes) set on the cart. 
-* `cart_id` - Integer. ID of the current [`cart`](resources/carts)
-* `customer_type` - String. The [`customer type`](resources/customer_types.md) name
-* `customer_type_id` - Integer. ID of the [`customer type`](resources/customer_types.md)
-* `destination_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource. 
-* `is_region_set` - Boolean. Is a specific region set?
-* `items` - Array of Objects 
-    * `cart_item_id` - Integer. ID of the [`cart item`](resources/cart_items.md)
-    * `category_id` - Array of Integers. List of [`category`](resources/categories.md) IDs this item belongs to.
-    * `custom_fields` - Object
-        * `name` - String
-        * `value` - String
-    * `destination_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-    * `is_subscription_item` - Boolean. Is this a subscription item?
-    * `item_number` - String. Item Number as it appears on the [`product`](resources/products.md) resource.
-    * `manufacturer_id` - Integer. ID of the [`manufacturer`](resources/manufacturers.md)
-    * `origin_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-    * `parent_product_id` - Integer. ID of the [`parent product`](resources/products.md)
-    * `price` - Decimal. Unit price of the item.
-    * `product_id` - Integer. ID of the [`product`](resources/products.md)
-    * `product_list_id` - Array of Integer. IDs of the product lists this product belongs to.
-    * `quantity` - Integer. Quantity
-    * `shipping_classification_code` - String. Breakout shipping classification code
-    * `variants` - Array of Object.
-        * `group` - String. Variant group
-        * `value` - String. Variant name
-* `shipping_method_list` - Object.
-    * `classification_code` - String. Breakout shipping classification code
-    * `delivery_date` - String. Estimated delivery date
-    * `ship_method` - String. Selected shipping method
-    * `shipping_method_name` - String. Selected shipping method name
-* `shipping_region_id` - Integer. ID of the [`shipping region`](resources/regions.md)
-* `shipping_total` - Decimal. Shipping Total
-* `store_id` - Integer. ID of the [`store`](resources/stores.md)
-* `subscription_subtotal` - Decimal. Subtotal of the subscription items
-* `tax_region_id` - Integer. ID of the [`tax region`](resources/regions.md)
-* `total_weight` - Decimal. Total weight of the items in the cart.
-
+* `customer` - Object. A customer model as it appears on the [`customers`](resources/customers.md) resource.
 
 ###### Response
 
 The response to this webhook is expected to contain:
 
-* `cart_items` - Array of Objects.
-    * `cart_id` - Integer. Must match the `cart_id` sent in the request
-    * `description` - String. Optional Item level discount description.
-    * `discount_amount` - Decimal. The discount that should be applied for this item.
-* `add_items` - Array of Objects. New items that will be added to the cart as part of the discount.
-    * `price` - Decimal.
-    * `product_id` - Integer. ID of the [`product`](resources/products.md)
-    * `quantity` - Integer.
-    * `variant_inventory_item_number` - [`variant inventory`](resources/variant_inventory.md) item number
-    * `variants` - Array of Objects. If using variant inventory set `variant_inventory_item_number` instead of this array.
-        * `group` - String. Variant group name
-        * `value` - String. Variant name
-* `description` - Array of String. Optional description of all discounts applied.
-* `discount` - Decimal. Discount amount will be used in addition to any `cart_items.discount_amount`
-* `shipping_discount` - Decimal. Specify this amount if shipping should be discounted separately.
+* `validation_messages` - Array. Consists of validation messages (strings) to display to the user.
+
+---
+
+
+#### ValidateProduct
+
+###### Request
+
+The request contains the following:
+
+* `product` - Object. A product model as it appears on the [`products`](resources/products.md) resource.
+
+###### Response
+
+The response to this webhook is expected to contain:
+
+* `validation_messages` - Array. Consists of validation messages (strings) to display to the user.
+
+
 
