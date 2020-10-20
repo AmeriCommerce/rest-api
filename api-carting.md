@@ -191,6 +191,53 @@ Applies a shipping method to this cart and sets the shipping total. Returns a `2
 }
 ```
 
+Set Shipping Estimation Address
+-------------------------------
+
+```shell
+PUT /api/v1/carts/{id}/shipping_estimation
+```
+
+Similar to the calculate shipping method above, however this sets the estimation address on the cart so that when the cart is returned, shipping will be calculated/estimated on the cart itself. This assumes that you have set a shipping method on the cart. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+
+### Request body
+
+* `city` - (optional) The city to use for estimating shipping
+* `state_code` - (optional) The state to use for estimating shipping
+* `postal_code` - (optional) The postal code to use for estimating shipping
+* `country_code` - (optional) The country code to use for estimating shipping
+
+### Sample request data
+
+```json
+{
+  "city": "Beaumont",
+  "state_code": "TX",
+  "postal_code": "77701"
+}
+```
+
+Set Coupon/Discount Code
+------------------------
+
+```shell
+PUT /api/v1/carts/{id}/coupon_code
+```
+
+Applies a coupon/discount code to this cart and recalculates the total based on that code. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+
+### Request body
+
+* `coupon_code` - (required) The coupon code (string) to apply
+
+### Sample request data
+
+```json
+{
+  "coupon_code": "10PERCENTOFF"
+}
+```
+
 Get available payment methods
 -----------------------------
 
@@ -234,6 +281,16 @@ Gets the available payment methods for this cart. Will always at least contain a
   ]
 }
 ```
+
+Get Cart With Updated Pricing
+-----------------------------
+
+```shell
+GET /api/v1/carts/{id}/calculated
+```
+
+Gets the current state of a cart, ensuring that pricing, shipping, and discount totals are updated. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+
 
 Place order
 -----------
