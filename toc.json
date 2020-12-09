@@ -8,6 +8,10 @@
       "type": "item",
       "title": "AmeriCommerce REST API",
       "uri": "restapi.json"
+    },
+    {
+    "type": "divider",
+    "title": "Fuck"
     }
   ]
 }
