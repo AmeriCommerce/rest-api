@@ -14,7 +14,7 @@
       ]
     },
     "markdown": {
-      "rootDir": "examples"
+      "rootDir": "docs"
     },
     "image": {
       "rootDir": "assets/images"
