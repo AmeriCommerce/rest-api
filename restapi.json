@@ -614,7 +614,7 @@
         "summary": "Get Attribute Groups",
         "operationId": "getAttributeGroups",
         "tags": [
-          "/attribute_groups"
+          "attribute_groups"
         ],
         "security": [
           {
@@ -708,7 +708,7 @@
         "summary": "Get attributes",
         "operationId": "getAttributes",
         "tags": [
-          "/attributes"
+          "attributes"
         ],
         "security": [
           {
@@ -743,7 +743,7 @@
         "summary": "Get blog_categories",
         "operationId": "getBlogCategories",
         "tags": [
-          "/blog_categories"
+          "blog_categories"
         ],
         "security": [
           {
@@ -788,7 +788,7 @@
         "summary": "Get blog_posts",
         "operationId": "getBlogPosts",
         "tags": [
-          "/blog_posts"
+          "blog_posts"
         ],
         "security": [
           {
@@ -841,7 +841,7 @@
         "summary": "Get blogs",
         "operationId": "getBlogs",
         "tags": [
-          "/blogs"
+          "blogs"
         ],
         "security": [
           {
@@ -888,7 +888,7 @@
         "summary": "Get categories",
         "operationId": "getCategories",
         "tags": [
-          "/categories"
+          "categories"
         ],
         "security": [
           {
@@ -930,7 +930,7 @@
         "summary": "Get Coupon Codes",
         "operationId": "getCouponCodes",
         "tags": [
-          "/coupon_codes"
+          "coupon_codes"
         ],
         "security": [
           {
@@ -978,7 +978,7 @@
         "summary": "Get Credit Cards",
         "operationId": "getCreditCards",
         "tags": [
-          "/credit_cards"
+          "credit_cards"
         ],
         "security": [
           {
@@ -1044,7 +1044,7 @@
         ],
         "operationId": "getCustomFieldValues",
         "tags": [
-          "/custom_field_values"
+          "custom_field_values"
         ]
       }
     },
@@ -1137,7 +1137,7 @@
         "summary": "Get custom fields",
         "operationId": "getCustom_fields",
         "tags": [
-          "/custom_fields"
+          "custom_fields"
         ],
         "security": [
           {
@@ -1223,7 +1223,7 @@
         ],
         "operationId": "getCustomShippingMethods",
         "tags": [
-          "/custom_shipping_methods"
+          "custom_shipping_methods"
         ]
       }
     },
@@ -1277,7 +1277,7 @@
         "summary": "Get customer payment methods",
         "operationId": "getCustomerPaymentMethods",
         "tags": [
-          "/customer_payment_methods"
+          "customer_payment_methods"
         ],
         "security": [
           {
@@ -1322,7 +1322,7 @@
         "summary": "Get customer types",
         "operationId": "getCutomerTypes",
         "tags": [
-          "/customer_types"
+          "customer_types"
         ],
         "security": [
           {
@@ -1489,7 +1489,7 @@
         "summary": "Get customers",
         "operationId": "getCustomers",
         "tags": [
-          "/customers"
+          "customers"
         ],
         "security": [
           {
@@ -1556,7 +1556,7 @@
         "summary": "Get discount methods",
         "operationId": "getDisountMethods",
         "tags": [
-          "/discount_methods"
+          "discount_methods"
         ],
         "security": [
           {
@@ -1618,7 +1618,7 @@
         "summary": "Get Discount Rules",
         "operationId": "getDiscountRules",
         "tags": [
-          "/discount_rules"
+          "discount_rules"
         ],
         "security": [
           {
@@ -1662,7 +1662,7 @@
         "summary": "Get Drips",
         "operationId": "getDrips",
         "tags": [
-          "/drips"
+          "drips"
         ],
         "security": [
           {
@@ -1717,7 +1717,7 @@
         "summary": "Get email templates",
         "operationId": "getEmailTemplates",
         "tags": [
-          "/email_templates"
+          "email_templates"
         ],
         "security": [
           {
@@ -1770,7 +1770,7 @@
         "summary": "Get gift certificate transactions",
         "operationId": "getGiftCertificateTransactions",
         "tags": [
-          "/gift_certificate_transactions"
+          "gift_certificate_transactions"
         ],
         "security": [
           {
@@ -1868,7 +1868,7 @@
         "summary": "Get Gift Certificates",
         "operationId": "getGiftCertificates",
         "tags": [
-          "/gift_certificates"
+          "gift_certificates"
         ],
         "security": [
           {
@@ -1989,7 +1989,7 @@
         "summary": "Get Links",
         "operationId": "getLinks",
         "tags": [
-          "/links"
+          "links"
         ],
         "security": [
           {
@@ -2060,7 +2060,7 @@
         "summary": "Get Mailing Lists",
         "operationId": "getMailingLists",
         "tags": [
-          "/mailing_lists"
+          "mailing_lists"
         ],
         "security": [
           {
@@ -2149,7 +2149,7 @@
         "summary": "Get Manufacturers",
         "operationId": "getManufacturers",
         "tags": [
-          "/manufacturers"
+          "manufacturers"
         ],
         "security": [
           {
@@ -2198,7 +2198,7 @@
         "summary": "Get Microstores",
         "operationId": "getMicrostores",
         "tags": [
-          "/microstores"
+          "microstores"
         ],
         "security": [
           {
@@ -2263,7 +2263,7 @@
         "summary": "Get Notifications",
         "operationId": "getNotifications",
         "tags": [
-          "/notifications"
+          "notifications"
         ],
         "security": [
           {
@@ -2349,7 +2349,7 @@
         "summary": "Get Order Addresses",
         "operationId": "getOrderAddresses",
         "tags": [
-          "/order_addresses"
+          "order_addresses"
         ],
         "security": [
           {
@@ -2416,7 +2416,7 @@
         "summary": "Get Order Items",
         "operationId": "getOrderItems",
         "tags": [
-          "/order_items"
+          "order_items"
         ],
         "security": [
           {
@@ -2507,7 +2507,7 @@
         "summary": "Get Order Payments",
         "operationId": "getOrderPayments",
         "tags": [
-          "/order_payments"
+          "order_payments"
         ],
         "security": [
           {
@@ -2602,7 +2602,7 @@
         "summary": "Get Order Shipments",
         "operationId": "getOrderShipments",
         "tags": [
-          "/order_shipments"
+          "order_shipments"
         ],
         "security": [
           {
@@ -2676,7 +2676,7 @@
         "summary": "Get Order Statuses",
         "operationId": "getOrderStatuses",
         "tags": [
-          "/order_statuses"
+          "order_statuses"
         ],
         "security": [
           {
@@ -2965,7 +2965,7 @@
         "summary": "Get Orders",
         "operationId": "getOrders",
         "tags": [
-          "/orders"
+          "orders"
         ],
         "security": [
           {
@@ -3047,7 +3047,7 @@
         "description": "",
         "operationId": "getPages",
         "tags": [
-          "/pages"
+          "pages"
         ],
         "security": [
           {
@@ -3116,7 +3116,7 @@
         "summary": "Get Payment Methods",
         "operationId": "getPaymentMethods",
         "tags": [
-          "/payment_methods"
+          "payment_methods"
         ],
         "security": [
           {
@@ -3159,7 +3159,7 @@
         "summary": "Get Price Calculator Rule Modifiers",
         "operationId": "getPriceCalculatorRuleModifiers",
         "tags": [
-          "/price_calculator_rule_modifiers"
+          "price_calculator_rule_modifiers"
         ],
         "security": [
           {
@@ -3199,7 +3199,7 @@
         "summary": "Get Price Calculator Rules",
         "operationId": "getPriceCalculatorRules",
         "tags": [
-          "/price_calculator_rules"
+          "price_calculator_rules"
         ],
         "security": [
           {
@@ -3268,7 +3268,7 @@
         "summary": "Get Price Calculators",
         "operationId": "getPriceCalculators",
         "tags": [
-          "/price_calculators"
+          "price_calculators"
         ],
         "security": [
           {
@@ -3309,7 +3309,7 @@
         "summary": "Get Product Lists",
         "operationId": "getProductLists",
         "tags": [
-          "/product_lists"
+          "product_lists"
         ],
         "security": [
           {
@@ -3418,7 +3418,7 @@
         "summary": "Get Product Pictures",
         "operationId": "getProductPictures",
         "tags": [
-          "/product_pictures"
+          "product_pictures"
         ],
         "security": [
           {
@@ -3531,7 +3531,7 @@
         "summary": "Get Product Reviews",
         "operationId": "getProductReviews",
         "tags": [
-          "/product_reviews"
+          "product_reviews"
         ],
         "security": [
           {
@@ -3571,7 +3571,7 @@
         "summary": "Get Product Statuses",
         "operationId": "getProductStatuses",
         "tags": [
-          "/product_statuses"
+          "product_statuses"
         ],
         "security": [
           {
@@ -3670,7 +3670,7 @@
         "summary": "Get Product Variants",
         "operationId": "getProductVariants",
         "tags": [
-          "/product_variants"
+          "product_variants"
         ],
         "security": [
           {
@@ -4220,7 +4220,7 @@
         "summary": "Get Products",
         "operationId": "getProducts",
         "tags": [
-          "/products"
+          "products"
         ],
         "security": [
           {
@@ -4262,7 +4262,7 @@
         "summary": "Get Profiles",
         "operationId": "getProfiles",
         "tags": [
-          "/profiles"
+          "profiles"
         ],
         "security": [
           {
@@ -4483,7 +4483,7 @@
         "summary": "Get Quotes",
         "operationId": "getQuotes",
         "tags": [
-          "/quotes"
+          "quotes"
         ],
         "security": [
           {
@@ -4570,7 +4570,7 @@
         "summary": "Get Regions",
         "operationId": "getRegions",
         "tags": [
-          "/regions",
+          "regions",
           "Todos"
         ],
         "security": [
@@ -4637,7 +4637,7 @@
         "summary": "Get Sessions",
         "operationId": "getSessions",
         "tags": [
-          "/sessions"
+          "sessions"
         ],
         "security": [
           {
@@ -4714,7 +4714,7 @@
         "summary": "Get Shipping Providers",
         "operationId": "getShippingProviders",
         "tags": [
-          "/shipping_providers"
+          "shipping_providers"
         ],
         "security": [
           {
@@ -4779,7 +4779,7 @@
         "summary": "Get Shipping Rate Adjustments",
         "operationId": "getShippingRateAdjustments",
         "tags": [
-          "/shipping_rate_adjustments"
+          "shipping_rate_adjustments"
         ],
         "security": [
           {
@@ -4841,7 +4841,7 @@
         "summary": "Get Stores",
         "operationId": "getStores",
         "tags": [
-          "/stores"
+          "stores"
         ],
         "security": [
           {
@@ -4936,7 +4936,7 @@
         "summary": "Get Subscriptions",
         "operationId": "getSubscriptions",
         "tags": [
-          "/subscriptions"
+          "subscriptions"
         ],
         "security": [
           {
@@ -4998,7 +4998,7 @@
         "summary": "Get Tax Rates",
         "operationId": "getTaxRates",
         "tags": [
-          "/tax_rates"
+          "tax_rates"
         ],
         "security": [
           {
@@ -5055,7 +5055,7 @@
         "summary": "Get Url Redirects",
         "operationId": "getUrlRedirects",
         "tags": [
-          "/url_redirects"
+          "url_redirects"
         ],
         "security": [
           {
@@ -5169,7 +5169,7 @@
         "summary": "Get Users",
         "operationId": "getUsers",
         "tags": [
-          "/users"
+          "users"
         ],
         "security": [
           {
@@ -5211,7 +5211,7 @@
         "summary": "Get Variant Groups",
         "operationId": "getVariantGroups",
         "tags": [
-          "/variant_groups"
+          "variant_groups"
         ],
         "security": [
           {
@@ -5252,7 +5252,7 @@
         "summary": "Get Variant Inventory",
         "operationId": "getVariantInventory",
         "tags": [
-          "/variant_inventory"
+          "variant_inventory"
         ],
         "security": [
           {
@@ -5296,7 +5296,7 @@
         "summary": "Get Warehouses",
         "operationId": "getWarehouses",
         "tags": [
-          "/warehouses"
+          "warehouses"
         ],
         "security": [
           {
@@ -6204,7 +6204,7 @@
         "summary": "Get Webhooks",
         "operationId": "getWebhooks",
         "tags": [
-          "/webhooks"
+          "webhooks"
         ],
         "security": [
           {
@@ -6320,7 +6320,7 @@
         "summary": "Get Wishlists",
         "operationId": "getWishlists",
         "tags": [
-          "/wishlists"
+          "wishlists"
         ],
         "security": [
           {
@@ -6336,187 +6336,187 @@
       "name": "Todos"
     },
     {
-      "name": "/cart_items"
+      "name": "cart_items"
     },
     {
-      "name": "/carts"
+      "name": "carts"
     },
     {
-      "name": "/attribute_groups"
+      "name": "attribute_groups"
     },
     {
-      "name": "/attributes"
+      "name": "attributes"
     },
     {
-      "name": "/blog_categories"
+      "name": "blog_categories"
     },
     {
-      "name": "/blog_posts"
+      "name": "blog_posts"
     },
     {
-      "name": "/blogs"
+      "name": "blogs"
     },
     {
-      "name": "/categories"
+      "name": "categories"
     },
     {
-      "name": "/coupon_codes"
+      "name": "coupon_codes"
     },
     {
-      "name": "/credit_cards"
+      "name": "credit_cards"
     },
     {
-      "name": "/custom_fields"
+      "name": "custom_fields"
     },
     {
-      "name": "/customer_payment_methods"
+      "name": "customer_payment_methods"
     },
     {
-      "name": "/customer_types"
+      "name": "customer_types"
     },
     {
-      "name": "/customers"
+      "name": "customers"
     },
     {
-      "name": "/discount_methods"
+      "name": "discount_methods"
     },
     {
-      "name": "/discount_rules"
+      "name": "discount_rules"
     },
     {
-      "name": "/drips"
+      "name": "drips"
     },
     {
-      "name": "/email_templates"
+      "name": "email_templates"
     },
     {
-      "name": "/gift_certificate_transactions"
+      "name": "gift_certificate_transactions"
     },
     {
-      "name": "/custom_field_values"
+      "name": "custom_field_values"
     },
     {
-      "name": "/custom_shipping_methods"
+      "name": "custom_shipping_methods"
     },
     {
-      "name": "/gift_certificates"
+      "name": "gift_certificates"
     },
     {
-      "name": "/links"
+      "name": "links"
     },
     {
-      "name": "/mailing_lists"
+      "name": "mailing_lists"
     },
     {
-      "name": "/manufacturers"
+      "name": "manufacturers"
     },
     {
-      "name": "/microstores"
+      "name": "microstores"
     },
     {
-      "name": "/notifications"
+      "name": "notifications"
     },
     {
-      "name": "/order_addresses"
+      "name": "order_addresses"
     },
     {
-      "name": "/order_items"
+      "name": "order_items"
     },
     {
-      "name": "/order_payments"
+      "name": "order_payments"
     },
     {
-      "name": "/order_shipments"
+      "name": "order_shipments"
     },
     {
-      "name": "/order_statuses"
+      "name": "order_statuses"
     },
     {
-      "name": "/orders"
+      "name": "orders"
     },
     {
-      "name": "/pages"
+      "name": "pages"
     },
     {
-      "name": "/payment_methods"
+      "name": "payment_methods"
     },
     {
-      "name": "/payment_calculator_rule_modifiers"
+      "name": "payment_calculator_rule_modifiers"
     },
     {
-      "name": "/price_calculator_rule_modifiers"
+      "name": "price_calculator_rule_modifiers"
     },
     {
-      "name": "/price_calculator_rules"
+      "name": "price_calculator_rules"
     },
     {
-      "name": "/price_calculators"
+      "name": "price_calculators"
     },
     {
-      "name": "/product_lists"
+      "name": "product_lists"
     },
     {
-      "name": "/product_pictures"
+      "name": "product_pictures"
     },
     {
-      "name": "/product_reviews"
+      "name": "product_reviews"
     },
     {
-      "name": "/product_statuses"
+      "name": "product_statuses"
     },
     {
-      "name": "/product_variants"
+      "name": "product_variants"
     },
     {
-      "name": "/products"
+      "name": "products"
     },
     {
-      "name": "/profiles"
+      "name": "profiles"
     },
     {
-      "name": "/quotes"
+      "name": "quotes"
     },
     {
-      "name": "/regions"
+      "name": "regions"
     },
     {
-      "name": "/sessions"
+      "name": "sessions"
     },
     {
-      "name": "/shipping_providers"
+      "name": "shipping_providers"
     },
     {
-      "name": "/shipping_rate_adjustments"
+      "name": "shipping_rate_adjustments"
     },
     {
-      "name": "/stores"
+      "name": "stores"
     },
     {
-      "name": "/subscriptions"
+      "name": "subscriptions"
     },
     {
-      "name": "/tax_rates"
+      "name": "tax_rates"
     },
     {
-      "name": "/url_redirects"
+      "name": "url_redirects"
     },
     {
-      "name": "/users"
+      "name": "users"
     },
     {
-      "name": "/variant_groups"
+      "name": "variant_groups"
     },
     {
-      "name": "/variant_inventory"
+      "name": "variant_inventory"
     },
     {
-      "name": "/warehouses"
+      "name": "warehouses"
     },
     {
-      "name": "/webhooks"
+      "name": "webhooks"
     },
     {
-      "name": "/wishlists"
+      "name": "wishlists"
     },
     {
       "name": "adcodes"
