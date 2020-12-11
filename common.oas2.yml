@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
   version: '1.0'
-  title: To-do Demo
+  title: AC API
   description: |-
     ### Notes:
 
-    This OAS2 (Swagger 2) specification defines common models and responses, that other specifications may reference.
+    This oas3 specification defines common models and responses, that other specifications may reference.
 
     For example, check out the user poperty in the main.oas2 todo-partial model - it references the user model in this specification!
 
@@ -74,25 +74,25 @@ definitions:
       commission_type:
         type: string
       total_sales:
-        type: 'null'
+        type: number
       total_orders:
-        type: 'null'
+        type: integer
       initial_sales:
-        type: 'null'
+        type: number
       load_sales:
-        type: 'null'
+        type: number
       new_customers:
-        type: 'null'
+        type: integer
       load_customers:
-        type: 'null'
+        type: integer
       total_commissions:
-        type: 'null'
+        type: number
       conversion_rate:
-        type: 'null'
+        type: number
       cost_per_customer:
-        type: 'null'
+        type: number
       sales_per_ad_dollar:
-        type: 'null'
+        type: number
       repeat_commission_amount:
         type: string
       repeat_commission_type:
@@ -160,7 +160,7 @@ definitions:
       id:
         type: integer
       affiliate_status:
-        type: 'null'
+        type: string
       email:
         type: string
       affiliate_code:
@@ -174,17 +174,17 @@ definitions:
       description:
         type: string
       commission_amount:
-        type: 'null'
+        type: number
       commission_type:
         type: string
       pay_for_repeat_sales:
         type: string
       repeat_commission_amount:
-        type: 'null'
+        type: number
       repeat_commission_type:
         type: string
       last_statement_at:
-        type: 'null'
+        type: string
       payee_name:
         type: string
       payee_address_line_1:
@@ -200,7 +200,7 @@ definitions:
       payee_postal_code:
         type: string
       payee_country:
-        type: 'null'
+        type: string
       payee_phone:
         type: string
       payee_tax_id:
@@ -224,23 +224,23 @@ definitions:
       contact_postal_code:
         type: string
       contact_country:
-        type: 'null'
+        type: string
       contact_phone:
         type: string
       total_visitors:
-        type: 'null'
+        type: integer
       total_sales:
-        type: 'null'
+        type: number
       total_orders:
-        type: 'null'
+        type: integer
       new_customers:
-        type: 'null'
+        type: integer
       total_commissions:
-        type: 'null'
+        type: number
       conversion_rate:
-        type: 'null'
+        type: number
       store_id:
-        type: 'null'
+        type: integer
       updated_at:
         type: string
       created_at:
@@ -266,7 +266,7 @@ definitions:
       product_id:
         type: integer
       variant_inventory_id:
-        type: 'null'
+        type: integer
       item_number:
         type: string
       item_name:
@@ -325,7 +325,7 @@ definitions:
       ppc_keyword:
         type: string
       affiliate_id:
-        type: 'null'
+        type: integer
       store_id:
         type: integer
       session_id:
@@ -355,7 +355,7 @@ definitions:
       source_group:
         type: string
       from_subscription_id:
-        type: 'null'
+        type: integer
       previous_order_status_id:
         type: integer
       order_status_last_changed_at:
@@ -369,11 +369,11 @@ definitions:
       order_type:
         type: string
       expires_at:
-        type: 'null'
+        type: string
       expires:
         type: boolean
       from_quote_id:
-        type: 'null'
+        type: integer
       campaign_code:
         type: string
       reward_points_credited:
@@ -451,7 +451,7 @@ definitions:
       ppc_keyword:
         type: string
       affiliate_id:
-        type: 'null'
+        type: integer
       store_id:
         type: integer
       session_id:
@@ -489,11 +489,11 @@ definitions:
       order_type:
         type: string
       expires_at:
-        type: 'null'
+        type: string
       expires:
         type: boolean
       from_quote_id:
-        type: 'null'
+        type: integer
       campaign_code:
         type: string
       reward_points_credited:
@@ -699,7 +699,7 @@ definitions:
       default_teaser_image:
         type: string
       new_post_notification_email_template_id:
-        type: 'null'
+        type: integer
       new_comment_notification_email_template_id:
         type: integer
       notify_commenters_on_new_comments:
@@ -728,9 +728,9 @@ definitions:
       warehouse_id:
         type: integer
       parent_product_id:
-        type: 'null'
+        type: integer
       parent_cart_item_id:
-        type: 'null'
+        type: integer
       updated_at:
         type: string
       created_at:
@@ -751,7 +751,14 @@ definitions:
             variant_group_id:
               type: integer
       personalizations:
-        type: 'null'
+        type: array
+        items:
+          type: object
+          properties:
+            id:
+              type: integer
+            answer:
+              type: string
   carts:
     type: object
     properties:
@@ -762,7 +769,7 @@ definitions:
       cart_type:
         type: string
       customer_id:
-        type: 'null'
+        type: integer
       is_public:
         type: boolean
       updated_at:
@@ -792,15 +799,15 @@ definitions:
       discounted_shipping_total:
         type: integer
       region_markup_amount:
-        type: 'null'
+        type: number
       non_shipping_discount:
         type: integer
       gift_certificate_discount:
-        type: 'null'
+        type: number
       coupon_code:
         type: string
       associated_order_id:
-        type: 'null'
+        type: integer
       shipping_estimate_city:
         type: string
       shipping_estimate_state_code:
@@ -812,9 +819,9 @@ definitions:
       is_shipping_billed_to_account:
         type: boolean
       customer_payment_method_id:
-        type: 'null'
+        type: integer
       payment_method_id:
-        type: 'null'
+        type: integer
       is_payment_cart_only:
         type: boolean
   categories:
@@ -1076,7 +1083,7 @@ definitions:
       starts_at:
         type: string
       remaining_uses:
-        type: 'null'
+        type: integer
       notes:
         type: string
       is_free_shipping_discount:
@@ -1152,7 +1159,7 @@ definitions:
       order_id:
         type: integer
       order_payment_id:
-        type: 'null'
+        type: integer
       updated_at:
         type: string
       created_at:
@@ -1167,9 +1174,9 @@ definitions:
       code:
         type: string
       original_order_id:
-        type: 'null'
+        type: integer
       from_customer_id:
-        type: 'null'
+        type: integer
       recipient_email:
         type: string
       recipient_name:
@@ -1187,7 +1194,7 @@ definitions:
       comments:
         type: string
       created_at:
-        type: 'null'
+        type: string
       expires_at:
         type: string
       store_id:
@@ -1203,7 +1210,7 @@ definitions:
       expires:
         type: boolean
       order_item_id:
-        type: 'null'
+        type: integer
   links:
     type: object
     properties:
@@ -1214,13 +1221,13 @@ definitions:
       text:
         type: string
       sort_order:
-        type: 'null'
+        type: integer
       store_id:
         type: integer
       is_hidden:
         type: boolean
       named_link:
-        type: 'null'
+        type: string
       page_id:
         type: integer
       updated_at:
@@ -1271,11 +1278,11 @@ definitions:
       url_based_subscribe_url:
         type: string
       updated_at:
-        type: 'null'
+        type: string
       created_at:
-        type: 'null'
+        type: string
       welcome_email_template_id:
-        type: 'null'
+        type: string
   manufacturers:
     type: object
     properties:
@@ -1288,7 +1295,7 @@ definitions:
       is_hidden:
         type: boolean
       sort_order:
-        type: 'null'
+        type: integer
       manufacturer_logo_url:
         type: string
       page_title:
@@ -1360,7 +1367,7 @@ definitions:
       store_id:
         type: integer
       variant_inventory_id:
-        type: 'null'
+        type: integer
   order_addresses:
     type: object
     properties:
@@ -1426,7 +1433,7 @@ definitions:
       weight_unit:
         type: string
       parent_order_item_id:
-        type: 'null'
+        type: integer
       is_quantity_bound_to_parent:
         type: boolean
       updated_at:
@@ -1434,11 +1441,11 @@ definitions:
       created_at:
         type: string
       height:
-        type: 'null'
+        type: number
       length:
-        type: 'null'
+        type: number
       width:
-        type: 'null'
+        type: number
       size_unit:
         type: string
       admin_comments:
@@ -1450,7 +1457,7 @@ definitions:
       gift_message:
         type: string
       delivery_date:
-        type: 'null'
+        type: string
       is_subscription_product:
         type: boolean
       warehouse_id:
@@ -1520,7 +1527,7 @@ definitions:
       created_at:
         type: string
       gift_certificate_id:
-        type: 'null'
+        type: integer
       is_captured:
         type: boolean
       transaction_id:
@@ -1549,17 +1556,17 @@ definitions:
       shipping_method_id:
         type: integer
       number_of_packages:
-        type: 'null'
+        type: integer
       total_weight:
-        type: 'null'
+        type: number
       provider_base_shipping_cost:
         type: string
       provider_insurance_cost:
-        type: 'null'
+        type: number
       provider_handling_cost:
-        type: 'null'
+        type: number
       provider_total_shipping_cost:
-        type: 'null'
+        type: number
       email_sent:
         type: boolean
       private_comment:
@@ -1592,7 +1599,7 @@ definitions:
       color:
         type: string
       email_template_id:
-        type: 'null'
+        type: integer
       updated_at:
         type: string
       created_at:
@@ -1759,9 +1766,9 @@ definitions:
       is_hidden:
         type: boolean
       updated_at:
-        type: 'null'
+        type: string
       created_at:
-        type: 'null'
+        type: string
       is_default_selection:
         type: boolean
     description: 'Accessible via the `?expand=` parameter or `/api/v1/products/{id}/{nested_resource}`.'
@@ -1800,7 +1807,7 @@ definitions:
       cart_type:
         type: string
       customer_id:
-        type: 'null'
+        type: integer
       is_public:
         type: boolean
       updated_at:
@@ -1830,21 +1837,21 @@ definitions:
       discounted_shipping_total:
         type: integer
       region_markup_amount:
-        type: 'null'
+        type: number
       non_shipping_discount:
         type: integer
       gift_certificate_discount:
-        type: 'null'
+        type: number
       coupon_code:
         type: string
       associated_order_id:
-        type: 'null'
+        type: integer
       is_shipping_billed_to_account:
         type: boolean
       customer_payment_method_id:
-        type: 'null'
+        type: integer
       payment_method_id:
-        type: 'null'
+        type: integer
       is_payment_cart_only:
         type: boolean
   warehouses:
@@ -1898,7 +1905,7 @@ definitions:
       created_at:
         type: string
       low_stock_warning_at:
-        type: 'null'
+        type: integer
       low_stock_warning_enabled:
         type: boolean
       gtin:
@@ -1919,7 +1926,7 @@ definitions:
       last_login_at:
         type: string
       user_role_id:
-        type: 'null'
+        type: integer
       updated_at:
         type: string
       created_at:
@@ -2003,7 +2010,7 @@ definitions:
       created_at:
         type: string
       customer_payment_method_id:
-        type: 'null'
+        type: integer
       shipping_address_id:
         type: integer
       billing_address_id:
@@ -2011,7 +2018,7 @@ definitions:
       is_enabled:
         type: boolean
       latest_renewal_order_id:
-        type: 'null'
+        type: integer
       is_renewal_payment_declined:
         type: boolean
       renewal_count:
@@ -2154,7 +2161,7 @@ definitions:
       region_type:
         type: string
       postal_code_country:
-        type: 'null'
+        type: string
       is_shipping_region:
         type: boolean
       is_tax_region:
@@ -2338,11 +2345,11 @@ definitions:
       is_discontinued:
         type: boolean
       eta_date:
-        type: 'null'
+        type: string
       quantity_on_order:
         type: integer
       available_region_id:
-        type: 'null'
+        type: integer
       call_for_shipping_on_whole_order:
         type: boolean
       break_out_shipping:
@@ -2356,7 +2363,7 @@ definitions:
       no_price_mask:
         type: string
       starting_quantity:
-        type: 'null'
+        type: integer
       tax_code:
         type: string
       use_map_pricing:
@@ -2366,17 +2373,17 @@ definitions:
       has_visible_variants:
         type: boolean
       product_rating_dimension_group_override_id:
-        type: 'null'
+        type: integer
       average_review_rating:
-        type: 'null'
+        type: number
       review_count:
-        type: 'null'
+        type: integer
       exclude_children_from_display:
         type: boolean
       use_pricing_from_parent:
         type: boolean
       low_stock_warning_threshold:
-        type: 'null'
+        type: integer
       enable_low_stock_warning:
         type: boolean
       do_not_discount:
@@ -2384,7 +2391,7 @@ definitions:
       head_tags:
         type: string
       handling_fee:
-        type: 'null'
+        type: number
       custom_upsell_url:
         type: string
       e_product_serial_number_file_path:
@@ -2400,7 +2407,7 @@ definitions:
       is_subscription_product:
         type: boolean
       subscription_frequency:
-        type: 'null'
+        type: integer
       subscription_frequency_type:
         type: string
       e_product_generic_username:
@@ -2408,9 +2415,9 @@ definitions:
       e_product_generic_password:
         type: string
       shipping_override:
-        type: 'null'
+        type: number
       insurance_cost:
-        type: 'null'
+        type: number
       exclude_from_commissions:
         type: boolean
       days_until_reorder_allowed:
@@ -2420,17 +2427,17 @@ definitions:
       approval_required:
         type: boolean
       in_stock_notification_email_template_id:
-        type: 'null'
+        type: integer
       inelligible_for_purchase_by_points:
         type: boolean
       earns_points:
         type: boolean
       additional_points_earned:
-        type: 'null'
+        type: integer
       allowed_variable_subscription_types:
         type: string
       profile_id:
-        type: 'null'
+        type: integer
       variants:
         type: array
         items:
@@ -2501,11 +2508,11 @@ definitions:
       overall_rating:
         type: integer
       customer_id:
-        type: 'null'
+        type: integer
       approved_by_user_id:
-        type: 'null'
+        type: integer
       approved_at:
-        type: 'null'
+        type: string
       created_at:
         type: string
       updated_at:
@@ -3087,13 +3094,11 @@ definitions:
             updated_at:
               type: string
             created_at:
-              type:
-                - 'null'
-                - string
+              type: string
             region_type:
               type: string
             postal_code_country:
-              type: 'null'
+              type: string
             is_shipping_region:
               type: boolean
             is_tax_region:
@@ -3194,13 +3199,11 @@ definitions:
             last_login_at:
               type: string
             user_role_id:
-              type: 'null'
+              type: integer
             updated_at:
               type: string
             created_at:
-              type:
-                - 'null'
-                - string
+              type: string
             first_name:
               type: string
             last_name:
@@ -3235,9 +3238,7 @@ definitions:
             updated_at:
               type: string
             created_at:
-              type:
-                - 'null'
-                - string
+              type: string
             display_type:
               type: string
             group_header_html:
@@ -3362,7 +3363,7 @@ definitions:
           source_group:
             type: string
           from_subscription_id:
-            type: 'null'
+            type: integer
           previous_order_status_id:
             type: integer
           order_status_last_changed_at:
@@ -3376,11 +3377,11 @@ definitions:
           order_type:
             type: string
           expires_at:
-            type: 'null'
+            type: string
           expires:
             type: boolean
           from_quote_id:
-            type: 'null'
+            type: integer
           campaign_code:
             type: string
           reward_points_credited:
@@ -3392,13 +3393,13 @@ definitions:
           manufacturer_invoice_number:
             type: string
           manufacturer_invoice_amount:
-            type: 'null'
+            type: number
           manufacturer_invoice_paid:
             type: boolean
           entered_by:
             type: string
           due_date:
-            type: 'null'
+            type: string
           items:
             type: array
             items:
@@ -3431,9 +3432,9 @@ definitions:
                 warehouse_id:
                   type: integer
                 variant_inventory_id:
-                  type: 'null'
+                  type: integer
                 parent_order_item_id:
-                  type: 'null'
+                  type: integer
                 is_quantity_bound_to_parent:
                   type: boolean
                 updated_at:
@@ -3459,11 +3460,11 @@ definitions:
                 line_item_note:
                   type: string
                 order_shipping_address_id:
-                  type: 'null'
+                  type: integer
                 gift_message:
                   type: string
                 delivery_date:
-                  type: 'null'
+                  type: string
                 discount_amount:
                   type: integer
                 discount_percentage:
@@ -3475,9 +3476,25 @@ definitions:
                 description:
                   type: string
                 variants:
-                  type: 'null'
+                  type: array
+                  items:
+                    type: object
+                  properties:
+                    id:
+                      type: integer
+                    description:
+                      type: string
+                    variant_group_id: 
+                      type: integer
                 personalizations:
-                  type: 'null'
+                  type: array
+                  items:
+                    type: object
+                  properties:
+                    id:
+                      type: integer
+                    answer:
+                      type: string
           payments:
             type: array
             items:
@@ -3521,7 +3538,7 @@ definitions:
                   type: string
                 transaction_type:
                   type: string
-                amount:
+                amount: 
                   type: number
                 payment_note:
                   type: string
@@ -3654,11 +3671,11 @@ definitions:
               color:
                 type: string
               email_template_id:
-                type: 'null'
+                type: integer
               updated_at:
-                type: 'null'
+                type: string
               created_at:
-                type: 'null'
+                type: string
               is_fully_refunded:
                 type: boolean
               is_partially_refunded:
@@ -3689,7 +3706,7 @@ definitions:
               adcode_id:
                 type: integer
               affiliate_id:
-                type: 'null'
+                type: integer
               customer_type_id:
                 type: integer
               is_no_tax_customer:
@@ -3725,7 +3742,7 @@ definitions:
               source_group:
                 type: string
               sales_person_user_id:
-                type: 'null'
+                type: integer
               store_payment_methods_enabled:
                 type: array
                 items:
