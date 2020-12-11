@@ -56,12 +56,8 @@
       "uri": "docs/webhooks.md"
     },
     {
-      "type": "divider",
-      "title": "APIS"
-    },
-    {
       "type": "item",
-      "title": "AmeriCommerce REST API",
+      "title": "Resources",
       "uri": "restapi.json"
     }
   ]
