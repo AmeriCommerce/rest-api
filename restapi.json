@@ -143,7 +143,6 @@
         "operationId": "getAdcodes",
         "summary": "Get Adcodes",
         "tags": [
-          "Endpoints",
           "adcodes"
         ]
       }
@@ -257,7 +256,6 @@
           }
         ],
         "tags": [
-          "Endpoints",
           "addresses"
         ]
       }
@@ -615,13 +613,14 @@
         },
         "summary": "Get Attribute Groups",
         "operationId": "getAttributeGroups",
-        "tags": [
-          "attribute_groups"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "attribute_groups"
         ]
       }
     },
@@ -709,13 +708,14 @@
         },
         "summary": "Get attributes",
         "operationId": "getAttributes",
-        "tags": [
-          "attributes"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "attributes"
         ]
       }
     },
@@ -889,13 +889,14 @@
         },
         "summary": "Get categories",
         "operationId": "getCategories",
-        "tags": [
-          "categories"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "blog_categories"
         ]
       }
     },
@@ -2150,13 +2151,14 @@
         },
         "summary": "Get Manufacturers",
         "operationId": "getManufacturers",
-        "tags": [
-          "manufacturers"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "manufacturers"
         ]
       }
     },
@@ -3160,13 +3162,14 @@
         },
         "summary": "Get Price Calculator Rule Modifiers",
         "operationId": "getPriceCalculatorRuleModifiers",
-        "tags": [
-          "price_calculator_rule_modifiers"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "price_calculator_rule_modifiers"
         ]
       }
     },
@@ -3200,13 +3203,14 @@
         },
         "summary": "Get Price Calculator Rules",
         "operationId": "getPriceCalculatorRules",
-        "tags": [
-          "price_calculator_rules"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "price_calculator_rules"
         ]
       }
     },
@@ -3269,13 +3273,14 @@
         },
         "summary": "Get Price Calculators",
         "operationId": "getPriceCalculators",
-        "tags": [
-          "price_calculators"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "price_calculators"
         ]
       }
     },
@@ -3310,13 +3315,14 @@
         },
         "summary": "Get Product Lists",
         "operationId": "getProductLists",
-        "tags": [
-          "product_lists"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "product_lists"
         ]
       }
     },
@@ -3419,13 +3425,14 @@
         },
         "summary": "Get Product Pictures",
         "operationId": "getProductPictures",
-        "tags": [
-          "product_pictures"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "product_pictures"
         ]
       }
     },
@@ -3532,13 +3539,14 @@
         },
         "summary": "Get Product Reviews",
         "operationId": "getProductReviews",
-        "tags": [
-          "product_reviews"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "product_reviews"
         ]
       }
     },
@@ -3572,13 +3580,14 @@
         },
         "summary": "Get Product Statuses",
         "operationId": "getProductStatuses",
-        "tags": [
-          "product_statuses"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "product_statuses"
         ]
       }
     },
@@ -3671,13 +3680,14 @@
         },
         "summary": "Get Product Variants",
         "operationId": "getProductVariants",
-        "tags": [
-          "product_variants"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "product_variants"
         ]
       }
     },
@@ -4221,13 +4231,14 @@
         },
         "summary": "Get Products",
         "operationId": "getProducts",
-        "tags": [
-          "products"
-        ],
         "security": [
           {
             "X-AC-Auth-Token": []
           }
+        ],
+        "tags": [
+          "catalog",
+          "products"
         ]
       }
     },
@@ -6344,12 +6355,6 @@
       "name": "carts"
     },
     {
-      "name": "attribute_groups"
-    },
-    {
-      "name": "attributes"
-    },
-    {
       "name": "blog_categories"
     },
     {
@@ -6357,9 +6362,6 @@
     },
     {
       "name": "blogs"
-    },
-    {
-      "name": "categories"
     },
     {
       "name": "coupon_codes"
@@ -6410,9 +6412,6 @@
       "name": "mailing_lists"
     },
     {
-      "name": "manufacturers"
-    },
-    {
       "name": "microstores"
     },
     {
@@ -6444,33 +6443,6 @@
     },
     {
       "name": "payment_calculator_rule_modifiers"
-    },
-    {
-      "name": "price_calculator_rule_modifiers"
-    },
-    {
-      "name": "price_calculator_rules"
-    },
-    {
-      "name": "price_calculators"
-    },
-    {
-      "name": "product_lists"
-    },
-    {
-      "name": "product_pictures"
-    },
-    {
-      "name": "product_reviews"
-    },
-    {
-      "name": "product_statuses"
-    },
-    {
-      "name": "product_variants"
-    },
-    {
-      "name": "products"
     },
     {
       "name": "profiles"
@@ -6524,13 +6496,49 @@
       "name": "affiliates"
     },
     {
-      "name": "Endpoints"
-    },
-    {
       "name": "adcodes"
     },
     {
       "name": "addresses"
+    },
+    {
+      "name": "catalog"
+    },
+    {
+      "name": "attribute_groups"
+    },
+    {
+      "name": "attributes"
+    },
+    {
+      "name": "manufacturers"
+    },
+    {
+      "name": "price_calculator_rule_modifiers"
+    },
+    {
+      "name": "price_calculator_rules"
+    },
+    {
+      "name": "price_calculators"
+    },
+    {
+      "name": "product_lists"
+    },
+    {
+      "name": "product_pictures"
+    },
+    {
+      "name": "product_reviews"
+    },
+    {
+      "name": "product_statuses"
+    },
+    {
+      "name": "product_variants"
+    },
+    {
+      "name": "products"
     }
   ],
   "basePath": "/api/v1"
