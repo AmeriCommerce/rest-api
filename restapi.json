@@ -143,6 +143,7 @@
         "operationId": "getAdcodes",
         "summary": "Get Adcodes",
         "tags": [
+          "Endpoints",
           "adcodes"
         ]
       }
@@ -256,7 +257,8 @@
           }
         ],
         "tags": [
-          "addresses"
+          "Endpoints",
+          "adcodes"
         ]
       }
     },
@@ -6519,13 +6521,13 @@
       "name": "wishlists"
     },
     {
-      "name": "adcodes"
-    },
-    {
-      "name": "addresses"
-    },
-    {
       "name": "affiliates"
+    },
+    {
+      "name": "Endpoints"
+    },
+    {
+      "name": "adcodes"
     }
   ],
   "basePath": "/api/v1"
