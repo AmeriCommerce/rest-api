@@ -258,7 +258,7 @@
         ],
         "tags": [
           "Endpoints",
-          "adcodes"
+          "addresses"
         ]
       }
     },
@@ -6528,6 +6528,9 @@
     },
     {
       "name": "adcodes"
+    },
+    {
+      "name": "addresses"
     }
   ],
   "basePath": "/api/v1"
