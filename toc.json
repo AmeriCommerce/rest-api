@@ -4,12 +4,7 @@
       "type": "divider",
       "title": "Getting Started"
     },
-    {
-      "type": "item",
-      "title": "Overview",
-      "uri": "docs/README.md"
-    },
-    {
+        {
       "type": "item",
       "title": "Authentication",
       "uri": "docs/authentication.md"
@@ -31,8 +26,18 @@
     },
     {
       "type": "item",
+      "title": "Known Issues",
+      "uri": "docs/known_issues.md"
+    },
+    {
+      "type": "item",
       "title": "Query Syntax",
       "uri": "docs/query_syntax.md"
+    },
+    {
+      "type": "item",
+      "title": "The AmeriCommerce API",
+      "uri": "docs/README.md"
     },
     {
       "type": "item",
