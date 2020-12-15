@@ -64,12 +64,8 @@
       "title": "Catalog"
     },
     {
-      "type": "group",
-      "title": "Products"
-    },
-    {
       "type": "item",
-      "title": "Get a Product",
+      "title": "Product",
       "uri": "/docs/rest-api/restapi.json/paths/~1products/get"
     }
   ]
