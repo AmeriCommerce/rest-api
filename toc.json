@@ -4,8 +4,7 @@
       "type": "divider",
       "title": "Getting Started"
     },
-    
-        {
+    {
       "type": "item",
       "title": "Overview",
       "uri": "docs/README.md"
