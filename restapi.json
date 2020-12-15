@@ -6335,7 +6335,12 @@
           "200": {
             "description": "",
             "schema": {
-              "$rev": "./common.oas2.yml#/definitions/inventoryResponse"
+              "$ref": "./common.oas2.yml#/definitions/inventory"
+            },
+            "examples": {
+              "application/json": {
+                
+              }
             }
           }
         },

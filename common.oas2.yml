@@ -275,14 +275,6 @@ definitions:
         type: string
       quantity:
         type: integer
-    x-examples:
-      example-1:
-        product_id: 0
-        variant_inventory_id: 0
-        item_number: string
-        item_name: string
-        gtin: string
-        quantity: 0
   orders:
     type: object
     properties:
