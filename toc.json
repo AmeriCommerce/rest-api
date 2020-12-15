@@ -260,6 +260,21 @@
           "uri": "/restapi.json/paths/~1variant_inventory/get"
         }
       ]
+    },
+    {
+      "type": "divider",
+      "title": "Content"
+    },
+    {
+      "type": "group",
+      "title": "Blogs",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Blogs",
+          "uri": "/restapi.json/paths/~1blogs/get"
+        }
+      ]
     }
   ]
 }
