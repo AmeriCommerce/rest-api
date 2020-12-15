@@ -65,12 +65,14 @@
     },
     {
       "type": "group",
-      "title": "Products"
-    },
-    {
-      "type": "item",
-      "title": "Product",
-      "uri": "/restapi.json/paths/~1products/get"
+      "title": "Products",
+      "items": [
+        {
+          "type": "item",
+          "title": "Product",
+          "uri": "/restapi.json/paths/~1products/get"
+        }
+      ]
     }
   ]
 }
