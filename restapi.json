@@ -31,7 +31,6 @@
     }
   },
   "paths": {
-    "Marketing": {
     "/adcodes": {
       "get": {
         "responses": {
@@ -147,7 +146,6 @@
           "adcodes"
         ]
       }
-    }
     },
     "/addresses": {
       "get": {
