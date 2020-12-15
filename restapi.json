@@ -6328,6 +6328,20 @@
           }
         ]
       }
+    },
+    "/inventory": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "schema": {
+              "$rev": "./common.oas2.yml#/definitions/inventoryResponse"
+            }
+          }
+        },
+        "summary": "Get Inventory",
+        "operationId": "getInventory"
+      }
     }
   },
   "definitions": {},
