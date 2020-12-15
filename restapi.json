@@ -706,7 +706,7 @@
             }
           }
         },
-        "summary": "Get attributes",
+        "summary": "GET attributes",
         "operationId": "getAttributes",
         "security": [
           {
@@ -887,7 +887,7 @@
             }
           }
         },
-        "summary": "Get categories",
+        "summary": "GET categories",
         "operationId": "getCategories",
         "security": [
           {
@@ -2149,7 +2149,7 @@
             }
           }
         },
-        "summary": "Get Manufacturers",
+        "summary": "GET manufacturers",
         "operationId": "getManufacturers",
         "security": [
           {
@@ -3160,7 +3160,7 @@
             }
           }
         },
-        "summary": "Get Price Calculator Rule Modifiers",
+        "summary": "GET price_calculator_rule_modifiers",
         "operationId": "getPriceCalculatorRuleModifiers",
         "security": [
           {
