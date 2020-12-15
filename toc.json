@@ -69,6 +69,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "/resources/attribute_groups.md"
+        },
+        {
+          "type": "item",
           "title": "Get Attribute Group",
           "uri": "/restapi.json/paths/~1attribute_groups/get"
         }
