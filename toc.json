@@ -65,12 +65,133 @@
     },
     {
       "type": "group",
+      "title": "Attribute Groups",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Attribute Group",
+          "uri": "/restapi.json/paths/~1attribute_groups/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Attributes",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Attributes",
+          "uri": "/restapi.json/paths/~1attributes/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Categories",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Categories",
+          "uri": "/restapi.json/paths/~1categories/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Manufacturers",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Manufacturers",
+          "uri": "/restapi.json/paths/~1manufacturers/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Product Lists",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Product Lists",
+          "uri": "/restapi.json/paths/~1product_lists/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Product Pictures",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Product Pictures",
+          "uri": "/restapi.json/paths/~1product_pictures/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Product Reviews",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Product Reviews",
+          "uri": "/restapi.json/paths/~1product_reviews/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Product Statuses",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Product Statuses",
+          "uri": "/restapi.json/paths/~1product_statuses/get"
+        }
+      ]
+    },
+        {
+      "type": "group",
+      "title": "Product Variants",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Product Variants",
+          "uri": "/restapi.json/paths/~1product_variants/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
       "title": "Products",
       "items": [
         {
           "type": "item",
           "title": "Get a Product",
           "uri": "/restapi.json/paths/~1products/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Variant Groups",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Variant Groups",
+          "uri": "/restapi.json/paths/~1variant_groups/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Variant Inventory",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Variant Inventory",
+          "uri": "/restapi.json/paths/~1variant_inventory/get"
         }
       ]
     }
