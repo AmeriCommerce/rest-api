@@ -74,7 +74,7 @@
         }
       ]
     },
-        {
+    {
       "type": "group",
       "title": "Attributes",
       "items": [
@@ -85,7 +85,7 @@
         }
       ]
     },
-        {
+    {
       "type": "group",
       "title": "Categories",
       "items": [
@@ -96,7 +96,18 @@
         }
       ]
     },
+    {
+      "type": "group",
+      "title": "Inventory",
+      "items": [
         {
+          "type": "item",
+          "title": "Get Inventory",
+          "uri": "/restapi.json/paths/~1inventory/get"
+        }
+      ]
+    },
+    {
       "type": "group",
       "title": "Manufacturers",
       "items": [
@@ -107,7 +118,51 @@
         }
       ]
     },
+    {
+      "type": "group",
+      "title": "Notifications",
+      "items": [
         {
+          "type": "item",
+          "title": "Get Notifications",
+          "uri": "/restapi.json/paths/~1notifications/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Price Calculators",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Price Calculators",
+          "uri": "/restapi.json/paths/~1price_calculators/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Price Calculator Rules",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Price Calculator Rules",
+          "uri": "/restapi.json/paths/~1price_calculator_rules/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Price Calculator Rule Modifiers",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Price Calculator Rule Modifiers",
+          "uri": "/restapi.json/paths/~1price_calculator_rule_modifiers/get"
+        }
+      ]
+    },
+    {
       "type": "group",
       "title": "Product Lists",
       "items": [
@@ -118,7 +173,7 @@
         }
       ]
     },
-        {
+    {
       "type": "group",
       "title": "Product Pictures",
       "items": [
@@ -129,7 +184,7 @@
         }
       ]
     },
-        {
+    {
       "type": "group",
       "title": "Product Reviews",
       "items": [
@@ -140,7 +195,7 @@
         }
       ]
     },
-        {
+    {
       "type": "group",
       "title": "Product Statuses",
       "items": [
@@ -151,7 +206,7 @@
         }
       ]
     },
-        {
+    {
       "type": "group",
       "title": "Product Variants",
       "items": [
@@ -170,6 +225,17 @@
           "type": "item",
           "title": "Get a Product",
           "uri": "/restapi.json/paths/~1products/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Shipping Rate Adjustments",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Shipping Rate Adjustments",
+          "uri": "/restapi.json/paths/~1shipping_rate_adjustments/get"
         }
       ]
     },

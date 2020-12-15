@@ -6335,11 +6335,11 @@
           "200": {
             "description": "",
             "schema": {
-              "$ref": "./common.oas2.yml#/definitions/inventory"
+              "$ref": "./common.oas2.yml#/definitions/inventoryResponse"
             },
             "examples": {
               "application/json": {
-                
+
               }
             }
           }

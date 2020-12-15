@@ -3764,3 +3764,9 @@ definitions:
         type: array
         items:
           $ref: '#/definitions/webhooks'
+  inventoryResponse:
+    type: object
+    title: inventoryResponse
+    description: The response returned when requesting /inventory
+    properties:
+      $ref: '#/definitions/inventory'
