@@ -619,7 +619,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "attribute_groups"
         ]
       }
@@ -714,7 +713,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "attributes"
         ]
       }
@@ -895,8 +893,7 @@
           }
         ],
         "tags": [
-          "catalog",
-          "blog_categories"
+          "categories"
         ]
       }
     },
@@ -2157,7 +2154,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "manufacturers"
         ]
       }
@@ -3168,7 +3164,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "price_calculator_rule_modifiers"
         ]
       }
@@ -3209,7 +3204,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "price_calculator_rules"
         ]
       }
@@ -3279,7 +3273,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "price_calculators"
         ]
       }
@@ -3321,7 +3314,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "product_lists"
         ]
       }
@@ -3431,7 +3423,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "product_pictures"
         ]
       }
@@ -3545,7 +3536,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "product_reviews"
         ]
       }
@@ -3586,7 +3576,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "product_statuses"
         ]
       }
@@ -3686,7 +3675,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "product_variants"
         ]
       }
@@ -4237,7 +4225,6 @@
           }
         ],
         "tags": [
-          "catalog",
           "products"
         ]
       }
@@ -6539,6 +6526,9 @@
     },
     {
       "name": "products"
+    },
+    {
+      "name": "categories"
     }
   ],
   "basePath": "/api/v1"
