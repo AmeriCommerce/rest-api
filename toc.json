@@ -580,16 +580,203 @@
       "title": "People"
     },
     {
+      "type": "group",
+      "title": "Addresses",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Addresses",
+          "uri": "/restapi.json/paths/~1addresses/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Customers",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Customers",
+          "uri": "/restapi.json/paths/~1customers/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Customer Types",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Customer Types",
+          "uri": "/restapi.json/paths/~1customer_types/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Customer Payment Methods",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Customer Payment Methods",
+          "uri": "/restapi.json/paths/~1customer_payment_methods/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Profiles",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Profiles",
+          "uri": "/restapi.json/paths/~1profiles/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Users",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Users",
+          "uri": "/restapi.json/paths/~1users/get"
+        }
+      ]
+    },
+    {
       "type": "divider",
       "title": "Settings"
+    },
+    {
+      "type": "group",
+      "title": "Custom Shipping Methods",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Custom Shipping Methods",
+          "uri": "/restapi.json/paths/~1custom_shipping_methods/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Payment Methods",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Payment Methods",
+          "uri": "/restapi.json/paths/~1payment_methods/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Regions",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Regions",
+          "uri": "/restapi.json/paths/~1regions/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Shipping Providers",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Shipping Providers",
+          "uri": "/restapi.json/paths/~1shipping_providers/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Tax Rates",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Tax Rates",
+          "uri": "/restapi.json/paths/~1tax_rates/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "URL Redirects",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get URL Redirects",
+          "uri": "/restapi.json/paths/~1url_redirects/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Warehouses",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Warehouses",
+          "uri": "/restapi.json/paths/~1warehouses/get"
+        }
+      ]
     },
     {
       "type": "divider",
       "title": "System"
     },
     {
+      "type": "group",
+      "title": "Sessions",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Sessions",
+          "uri": "/restapi.json/paths/~1sessions/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Stores",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Stores",
+          "uri": "/restapi.json/paths/~1stores/get"
+        }
+      ]
+    },
+    {
       "type": "divider",
       "title": "Tools"
+    },
+    {
+      "type": "group",
+      "title": "Custom Fields",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Custom Fields",
+          "uri": "/restapi.json/paths/~1custom_fields/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Custom Field values",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Custom Field Values",
+          "uri": "/restapi.json/paths/~1custom_field_values/get"
+        }
+      ]
     }
   ]
 }
