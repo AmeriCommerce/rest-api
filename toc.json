@@ -181,6 +181,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/price_calculator_rules.md"
+        },
+        {
+          "type": "item",
           "title": "Get Price Calculator Rules",
           "uri": "/restapi.json/paths/~1price_calculator_rules/get"
         }
@@ -190,6 +195,11 @@
       "type": "group",
       "title": "Price Calculator Rule Modifiers",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/price_calculator_rule_modifiers.md"
+        },
         {
           "type": "item",
           "title": "Get Price Calculator Rule Modifiers",
@@ -203,6 +213,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/product_lists.md"
+        },
+        {
+          "type": "item",
           "title": "Get Product Lists",
           "uri": "/restapi.json/paths/~1product_lists/get"
         }
@@ -212,6 +227,11 @@
       "type": "group",
       "title": "Product Pictures",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/product_pictures.md"
+        },
         {
           "type": "item",
           "title": "Get Product Pictures",
@@ -225,6 +245,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/product_reviews.md"
+        },
+        {
+          "type": "item",
           "title": "Get Product Reviews",
           "uri": "/restapi.json/paths/~1product_reviews/get"
         }
@@ -234,6 +259,11 @@
       "type": "group",
       "title": "Product Statuses",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/product_statuses.md"
+        },
         {
           "type": "item",
           "title": "Get Product Statuses",
@@ -247,6 +277,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/product_variants.md"
+        },
+        {
+          "type": "item",
           "title": "Get Product Variants",
           "uri": "/restapi.json/paths/~1product_variants/get"
         }
@@ -256,6 +291,11 @@
       "type": "group",
       "title": "Products",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/products.md"
+        },
         {
           "type": "item",
           "title": "Get a Product",
@@ -269,6 +309,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/shipping_rate_adjustments.md"
+        },
+        {
+          "type": "item",
           "title": "Get Shipping Rate Adjustments",
           "uri": "/restapi.json/paths/~1shipping_rate_adjustments/get"
         }
@@ -280,6 +325,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/variant_groups.md"
+        },
+        {
+          "type": "item",
           "title": "Get Variant Groups",
           "uri": "/restapi.json/paths/~1variant_groups/get"
         }
@@ -289,6 +339,11 @@
       "type": "group",
       "title": "Variant Inventory",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/variant_inventory.md"
+        },
         {
           "type": "item",
           "title": "Get Variant Inventory",
@@ -306,6 +361,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/blogs.md"
+        },
+        {
+          "type": "item",
           "title": "Get Blogs",
           "uri": "/restapi.json/paths/~1blogs/get"
         }
@@ -317,6 +377,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/blog_categories.md"
+        },
+        {
+          "type": "item",
           "title": "Get Blog Categories",
           "uri": "/restapi.json/paths/~1blog_categories/get"
         }
@@ -326,6 +391,11 @@
       "type": "group",
       "title": "Blog Posts",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/blog_posts.md"
+        },
         {
           "type": "item",
           "title": "Get Blog Posts",
@@ -350,6 +420,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/pages.md"
+        },
+        {
+          "type": "item",
           "title": "Get Pages",
           "uri": "/restapi.json/paths/~1pages/get"
         }
@@ -365,6 +440,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/adcodes.md"
+        },
+        {
+          "type": "item",
           "title": "Get Adcodes",
           "uri": "/restapi.json/paths/~1adcodes/get"
         }
@@ -374,6 +454,11 @@
       "type": "group",
       "title": "Affiliates",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/affiliates.md"
+        },
         {
           "type": "item",
           "title": "Get Affiliates",
@@ -387,6 +472,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/coupon_codes.md"
+        },
+        {
+          "type": "item",
           "title": "Get Coupon Codes",
           "uri": "/restapi.json/paths/~1coupon_codes/get"
         }
@@ -396,6 +486,11 @@
       "type": "group",
       "title": "Discount Methods",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/discount_methods.md"
+        },
         {
           "type": "item",
           "title": "Get Discount Methods",
@@ -409,6 +504,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/discount_rules.md"
+        },
+        {
+          "type": "item",
           "title": "Get Discount Rules",
           "uri": "/restapi.json/paths/~1discount_rules/get"
         }
@@ -418,6 +518,11 @@
       "type": "group",
       "title": "Drips",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/drips.md"
+        },
         {
           "type": "item",
           "title": "Get Drips",
