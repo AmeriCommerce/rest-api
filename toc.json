@@ -439,17 +439,17 @@
         }
       ]
     },
-        {
+    {
       "type": "divider",
-      "title": "Marketing"
+      "title": "Settings"
     },
-        {
+    {
       "type": "divider",
-      "title": "Marketing"
+      "title": "System"
     },
-        {
+    {
       "type": "divider",
-      "title": "Marketing"
-    },
+      "title": "Tools"
+    }
   ]
 }
