@@ -441,6 +441,146 @@
     },
     {
       "type": "divider",
+      "title": "Orders"
+    },
+    {
+      "type": "group",
+      "title": "Carts",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Carts",
+          "uri": "/restapi.json/paths/~1carts/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Cart Items",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Cart Items",
+          "uri": "/restapi.json/paths/~1cart_items/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Credit Cards",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Credit Cards",
+          "uri": "/restapi.json/paths/~1credit_cards/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Orders",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Orders",
+          "uri": "/restapi.json/paths/~1orders/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Order Addresses",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Order Addresses",
+          "uri": "/restapi.json/paths/~1order_addresses/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Order IUtems",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Order Items",
+          "uri": "/restapi.json/paths/~1order_items/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Order Payments",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Order Payments",
+          "uri": "/restapi.json/paths/~1order_payments/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Order Shipments",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Order Shipments",
+          "uri": "/restapi.json/paths/~1order_shipments/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Order Statuses",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Order Statuses",
+          "uri": "/restapi.json/paths/~1order_statuses/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Quotes",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Quotes",
+          "uri": "/restapi.json/paths/~1quotes/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Subscriptions",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Subscriptions",
+          "uri": "/restapi.json/paths/~1subscriptions/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Wishlists",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Wishlists",
+          "uri": "/restapi.json/paths/~1wishlists/get"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "People"
+    },
+    {
+      "type": "divider",
       "title": "Settings"
     },
     {
