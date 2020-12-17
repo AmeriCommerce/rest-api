@@ -66,6 +66,7 @@
     {
       "type": "group",
       "title": "Attribute Groups",
+      "uri": "docs/resources/attribute_groups.md",
       "items": [
         {
           "type": "item",
