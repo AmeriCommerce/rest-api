@@ -4,7 +4,12 @@
       "type": "divider",
       "title": "Getting Started"
     },
-        {
+    {
+      "type": "item",
+      "title": "Overview",
+      "uri": "docs/README.md"
+    },
+    {
       "type": "item",
       "title": "Authentication",
       "uri": "docs/authentication.md"
@@ -33,11 +38,6 @@
       "type": "item",
       "title": "Query Syntax",
       "uri": "docs/query_syntax.md"
-    },
-    {
-      "type": "item",
-      "title": "The AmeriCommerce API",
-      "uri": "docs/README.md"
     },
     {
       "type": "item",
@@ -70,7 +70,7 @@
         {
           "type": "item",
           "title": "Overview",
-          "uri": "/docs/adcodes.md"
+          "uri": "docs/resources/adcodes.md"
         },
         {
           "type": "item",
@@ -85,6 +85,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/attributes.md"
+        },
+        {
+          "type": "item",
           "title": "Get Attributes",
           "uri": "/restapi.json/paths/~1attributes/get"
         }
@@ -94,6 +99,11 @@
       "type": "group",
       "title": "Categories",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/categories.md"
+        },
         {
           "type": "item",
           "title": "Get Categories",
@@ -107,6 +117,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/inventory.md"
+        },
+        {
+          "type": "item",
           "title": "Get Inventory",
           "uri": "/restapi.json/paths/~1inventory/get"
         }
@@ -116,6 +131,11 @@
       "type": "group",
       "title": "Manufacturers",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/manufacturers.md"
+        },
         {
           "type": "item",
           "title": "Get Manufacturers",
@@ -129,6 +149,11 @@
       "items": [
         {
           "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/notifications.md"
+        },
+        {
+          "type": "item",
           "title": "Get Notifications",
           "uri": "/restapi.json/paths/~1notifications/get"
         }
@@ -138,6 +163,11 @@
       "type": "group",
       "title": "Price Calculators",
       "items": [
+        {
+          "type": "item",
+          "title": "Overview",
+          "uri": "docs/resources/price_calculators.md"
+        },
         {
           "type": "item",
           "title": "Get Price Calculators",
