@@ -27,7 +27,7 @@
       "name": "X-AC-Auth-Token",
       "type": "apiKey",
       "in": "header",
-      "description": "* Every request requires an access token which is passed in as a special header called X-AC-Auth-Token\n\nCurl example to get a list of products:\n\n```shell\ncurl -H 'X-AC-Auth-Token: 7ccdb91...dfd0' https://youstore.americommerce.com/api/v1/products.json\n```"
+      "description": "<!-- -->\n # Example  \n\n```shell\ncurl --request GET \\\n --url https://www.yourstore.com/api/v1/products \\\n --header 'X-AC-Auth-Token: {access_token}'"
     }
   },
   "paths": {
@@ -620,6 +620,13 @@
         ],
         "tags": [
           "attribute_groups"
+        ],
+        "description": "Test ",
+        "parameters": [
+          {
+            "type": "string",
+            "in": "query"
+          }
         ]
       }
     },
@@ -6338,9 +6345,7 @@
               "$ref": "./common.oas2.yml#/definitions/inventoryResponse"
             },
             "examples": {
-              "application/json": {
-
-              }
+              "application/json": {}
             }
           }
         },
