@@ -280,6 +280,176 @@
           "uri": "/restapi.json/paths/~1blogs/get"
         }
       ]
-    }
+    },
+    {
+      "type": "group",
+      "title": "Blog Categories",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Blog Categories",
+          "uri": "/restapi.json/paths/~1blog_categories/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Blog Posts",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Blog Posts",
+          "uri": "/restapi.json/paths/~1blog_posts/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Links",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Links",
+          "uri": "/restapi.json/paths/~1links/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Pages",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Pages",
+          "uri": "/restapi.json/paths/~1pages/get"
+        }
+      ]
+    },
+    {
+      "type": "divider",
+      "title": "Marketing"
+    },
+    {
+      "type": "group",
+      "title": "Adcodes",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Adcodes",
+          "uri": "/restapi.json/paths/~1adcodes/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Affiliates",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Affiliates",
+          "uri": "/restapi.json/paths/~1affiliates/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Coupon Codes",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Coupon Codes",
+          "uri": "/restapi.json/paths/~1coupon_codes/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Discount Methods",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Discount Methods",
+          "uri": "/restapi.json/paths/~1discount_methods/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Discount Rules",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Discount Rules",
+          "uri": "/restapi.json/paths/~1discount_rules/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Drips",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Drips",
+          "uri": "/restapi.json/paths/~1drips/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Email Templates",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Email Templates",
+          "uri": "/restapi.json/paths/~1email_templates/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Gift Certificates",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Gift Certificates",
+          "uri": "/restapi.json/paths/~1gift_certificates/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Gift Certificate Transactions",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Gift Certificates Transactions",
+          "uri": "/restapi.json/paths/~1gift_certificate_transactions/get"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "title": "Mailing Lists",
+      "items": [
+        {
+          "type": "item",
+          "title": "Get Mailing Lists",
+          "uri": "/restapi.json/paths/~1mailing_lists/get"
+        }
+      ]
+    },
+        {
+      "type": "divider",
+      "title": "Marketing"
+    },
+        {
+      "type": "divider",
+      "title": "Marketing"
+    },
+        {
+      "type": "divider",
+      "title": "Marketing"
+    },
   ]
 }
