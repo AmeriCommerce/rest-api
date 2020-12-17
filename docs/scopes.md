@@ -15,12 +15,12 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 
 Applies to:
 
-* [addresses](resources/addresses.md)
-* [customers](resources/customers.md)
-* [customer_types](resources/customer_types.md)
-* [customer_payment_methods](resources/customer_payment_methods.md)
-* [profiles](resources/profiles.md)
-* [users](resources/users.md)
+* [addresses](/restapi.json/paths/~1addresses/get)
+* [customers](/restapi.json/paths/~1customers/get)
+* [customer_types](/restapi.json/paths/~1customer_types/get)
+* [customer_payment_methods](/restapi.json/paths/~1customer_payment_methods/get)
+* [profiles](/restapi.json/paths/~1profiles/get)
+* [users](/restapi.json/paths/~1users/get)
 
 Orders
 ------
