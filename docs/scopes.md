@@ -15,7 +15,7 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 
 Applies to:
 
-* [addresses](/restapi.json/paths/~1addresses/get)
+* [addresses](https://americommerce.stoplight.io/docs/rest-api/restapi.json/paths/~1attributes/get)
 * [customers](/restapi.json/paths/~1customers/get)
 * [customer_types](/restapi.json/paths/~1customer_types/get)
 * [customer_payment_methods](/restapi.json/paths/~1customer_payment_methods/get)
