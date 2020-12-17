@@ -15,7 +15,7 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 
 Applies to:
 
-* [addresses](restapi.json/paths/~1attribute_groups/get)
+* [addresses](/restapi.json/paths/~1attribute_groups/get)
 * [customers](/restapi.json/paths/~1customers/get)
 * [customer_types](/restapi.json/paths/~1customer_types/get)
 * [customer_payment_methods](/restapi.json/paths/~1customer_payment_methods/get)
@@ -32,17 +32,17 @@ Permissions required: `Orders`, `OrderStatuses`
 
 Applies to:
 
-* [carts](resources/carts.md)
-* [cart_items](resources/cart_items.md)
-* [credit_cards](resources/credit_cards.md)
-* [orders](resources/orders.md)
-* [order_addresses](resources/order_addresses.md)
-* [order_items](resources/order_items.md)
-* [order_payments](resources/order_payments.md)
-* [order_shipments](resources/order_shipments.md)
-* [order_statuses](resources/order_statuses.md)
-* [quotes](resources/quotes.md)
-* [subscriptions](resources/subscriptions.md)
+* [carts](/restapi.json/paths/~1carts/get)
+* [cart_items](/restapi.json/paths/~1cart_items/get)
+* [credit_cards](/restapi.json/paths/~1credit_cards/get)
+* [orders](/restapi.json/paths/~1orders/get)
+* [order_addresses](/restapi.json/paths/~1order_addresses/get)
+* [order_items](/restapi.json/paths/~1order_items/get)
+* [order_payments](/restapi.json/paths/~1order_payments/get)
+* [order_shipments](/restapi.json/paths/~1order_shipments/get)
+* [order_statuses](/restapi.json/paths/~1order_statuses/get)
+* [quotes](/restapi.json/paths/~1quotes/get)
+* [subscriptions](/restapi.json/paths/~1subscriptions/get)
 
 Catalog
 -------
