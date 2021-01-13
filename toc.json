@@ -31,11 +31,6 @@
     },
     {
       "type": "item",
-      "title": "Known Issues",
-      "uri": "docs/known_issues.md"
-    },
-    {
-      "type": "item",
       "title": "Query Syntax",
       "uri": "docs/query_syntax.md"
     },
