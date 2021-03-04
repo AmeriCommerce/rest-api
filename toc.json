@@ -26,6 +26,11 @@
     },
     {
       "type": "item",
+      "title": "Client API",
+      "uri": "docs/resources/clientapi.md"
+    },
+    {
+      "type": "item",
       "title": "Datetime Format",
       "uri": "docs/datetimes.md"
     },
