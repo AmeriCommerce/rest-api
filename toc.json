@@ -496,7 +496,7 @@
     },
     {
       "type": "group",
-      "title": "Order IUtems",
+      "title": "Order Items",
       "items": [
         {
           "type": "item",
