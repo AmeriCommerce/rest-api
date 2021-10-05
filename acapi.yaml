@@ -1305,6 +1305,22 @@ paths:
                     items:
                       $ref: '#/components/schemas/wishlists'
       operationId: get-wishlists
+  '/adcodes/{adcode_id}':
+    parameters:
+      - schema:
+          type: integer
+        name: adcode_id
+        in: path
+        description: The ID of the `adcode`
+        required: true
+    delete:
+      summary: Delete an Adcode
+      operationId: delete-adcodes-id
+      tags:
+        - Market
+        - Adcodes
+      parameters: []
+      description: ''
 components:
   schemas:
     adcodes:
