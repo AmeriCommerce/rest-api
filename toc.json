@@ -1,407 +1,798 @@
 {
-  "items": [
-    {
-      "type": "item",
-      "title": "API Carting",
-      "uri": "docs/api-carting.md"
-    },
-    {
-      "type": "item",
-      "title": "AmeriCommerce API Authentication",
-      "uri": "docs/authentication.md"
-    },
-    {
-      "type": "item",
-      "title": "Common Usage",
-      "uri": "docs/common_usage.md"
-    },
-    {
-      "type": "item",
-      "title": "Datetime Format",
-      "uri": "docs/datetimes.md"
-    },
-    {
-      "type": "item",
-      "title": "Known Issues",
-      "uri": "docs/known_issues.md"
-    },
-    {
-      "type": "item",
-      "title": "Query Syntax",
-      "uri": "docs/query_syntax.md"
-    },
-    {
-      "type": "item",
-      "title": "The AmeriCommerce API",
-      "uri": "docs/README.md"
-    },
-    {
-      "type": "item",
-      "title": "Resource List",
-      "uri": "docs/resource_list.md"
-    },
-    {
-      "type": "item",
-      "title": "Scopes",
-      "uri": "docs/scopes.md"
-    },
-    {
-      "type": "item",
-      "title": "Uploading Files",
-      "uri": "docs/uploading_files.md"
-    },
-    {
-      "type": "item",
-      "title": "Webhooks",
-      "uri": "docs/webhooks.md"
-    },
-    {
-      "type": "divider",
-      "title": "resources"
-    },
-    {
-      "type": "item",
-      "title": "adcodes",
-      "uri": "docs/resources/adcodes.md"
-    },
-    {
-      "type": "item",
-      "title": "addresses",
-      "uri": "docs/resources/addresses.md"
-    },
-    {
-      "type": "item",
-      "title": "affiliates",
-      "uri": "docs/resources/affiliates.md"
-    },
-    {
-      "type": "item",
-      "title": "attribute_groups",
-      "uri": "docs/resources/attribute_groups.md"
-    },
-    {
-      "type": "item",
-      "title": "attributes",
-      "uri": "docs/resources/attributes.md"
-    },
-    {
-      "type": "item",
-      "title": "blog_categories",
-      "uri": "docs/resources/blog_categories.md"
-    },
-    {
-      "type": "item",
-      "title": "blog_posts",
-      "uri": "docs/resources/blog_posts.md"
-    },
-    {
-      "type": "item",
-      "title": "blogs",
-      "uri": "docs/resources/blogs.md"
-    },
-    {
-      "type": "item",
-      "title": "cart_items",
-      "uri": "docs/resources/cart_items.md"
-    },
-    {
-      "type": "item",
-      "title": "carts",
-      "uri": "docs/resources/carts.md"
-    },
-    {
-      "type": "item",
-      "title": "categories",
-      "uri": "docs/resources/categories.md"
-    },
-    {
-      "type": "item",
-      "title": "AmeriCommerce Client API Samples",
-      "uri": "docs/resources/clientapi.md"
-    },
-    {
-      "type": "item",
-      "title": "coupon_codes",
-      "uri": "docs/resources/coupon_codes.md"
-    },
-    {
-      "type": "item",
-      "title": "credit_cards",
-      "uri": "docs/resources/credit_cards.md"
-    },
-    {
-      "type": "item",
-      "title": "custom",
-      "uri": "docs/resources/custom_field_values.md"
-    },
-    {
-      "type": "item",
-      "title": "custom_fields",
-      "uri": "docs/resources/custom_fields.md"
-    },
-    {
-      "type": "item",
-      "title": "custom_shipping_methods",
-      "uri": "docs/resources/custom_shipping_methods.md"
-    },
-    {
-      "type": "item",
-      "title": "customer_payment_methods",
-      "uri": "docs/resources/customer_payment_methods.md"
-    },
-    {
-      "type": "item",
-      "title": "customer_types",
-      "uri": "docs/resources/customer_types.md"
-    },
-    {
-      "type": "item",
-      "title": "customers",
-      "uri": "docs/resources/customers.md"
-    },
-    {
-      "type": "item",
-      "title": "discount_methods",
-      "uri": "docs/resources/discount_methods.md"
-    },
-    {
-      "type": "item",
-      "title": "discount_rules",
-      "uri": "docs/resources/discount_rules.md"
-    },
-    {
-      "type": "item",
-      "title": "drips",
-      "uri": "docs/resources/drips.md"
-    },
-    {
-      "type": "item",
-      "title": "email_templates",
-      "uri": "docs/resources/email_templates.md"
-    },
-    {
-      "type": "item",
-      "title": "gift_certificate_transactions",
-      "uri": "docs/resources/gift_certificate_transactions.md"
-    },
-    {
-      "type": "item",
-      "title": "gift_certificates",
-      "uri": "docs/resources/gift_certificates.md"
-    },
-    {
-      "type": "item",
-      "title": "inventory",
-      "uri": "docs/resources/inventory.md"
-    },
-    {
-      "type": "item",
-      "title": "links",
-      "uri": "docs/resources/links.md"
-    },
-    {
-      "type": "item",
-      "title": "mailing_lists",
-      "uri": "docs/resources/mailing_lists.md"
-    },
-    {
-      "type": "item",
-      "title": "manufacturers",
-      "uri": "docs/resources/manufacturers.md"
-    },
-    {
-      "type": "item",
-      "title": "microstores",
-      "uri": "docs/resources/microstores.md"
-    },
-    {
-      "type": "item",
-      "title": "notifications",
-      "uri": "docs/resources/notifications.md"
-    },
-    {
-      "type": "item",
-      "title": "order_addresses",
-      "uri": "docs/resources/order_addresses.md"
-    },
-    {
-      "type": "item",
-      "title": "order_items",
-      "uri": "docs/resources/order_items.md"
-    },
-    {
-      "type": "item",
-      "title": "order_payments",
-      "uri": "docs/resources/order_payments.md"
-    },
-    {
-      "type": "item",
-      "title": "order_shipments",
-      "uri": "docs/resources/order_shipments.md"
-    },
-    {
-      "type": "item",
-      "title": "order_statuses",
-      "uri": "docs/resources/order_statuses.md"
-    },
-    {
-      "type": "item",
-      "title": "orders",
-      "uri": "docs/resources/orders.md"
-    },
-    {
-      "type": "item",
-      "title": "pages",
-      "uri": "docs/resources/pages.md"
-    },
-    {
-      "type": "item",
-      "title": "payment_methods",
-      "uri": "docs/resources/payment_methods.md"
-    },
-    {
-      "type": "item",
-      "title": "price_calculator_rule_modifiers",
-      "uri": "docs/resources/price_calculator_rule_modifiers.md"
-    },
-    {
-      "type": "item",
-      "title": "price_calculator_rules",
-      "uri": "docs/resources/price_calculator_rules.md"
-    },
-    {
-      "type": "item",
-      "title": "price_calculators",
-      "uri": "docs/resources/price_calculators.md"
-    },
-    {
-      "type": "item",
-      "title": "product_lists",
-      "uri": "docs/resources/product_lists.md"
-    },
-    {
-      "type": "item",
-      "title": "product_pictures",
-      "uri": "docs/resources/product_pictures.md"
-    },
-    {
-      "type": "item",
-      "title": "product_pricing",
-      "uri": "docs/resources/product_pricing.md"
-    },
-    {
-      "type": "item",
-      "title": "product",
-      "uri": "docs/resources/product_reviews.md"
-    },
-    {
-      "type": "item",
-      "title": "product_statuses",
-      "uri": "docs/resources/product_statuses.md"
-    },
-    {
-      "type": "item",
-      "title": "product_variants",
-      "uri": "docs/resources/product_variants.md"
-    },
-    {
-      "type": "item",
-      "title": "products",
-      "uri": "docs/resources/products.md"
-    },
-    {
-      "type": "item",
-      "title": "profiles",
-      "uri": "docs/resources/profiles.md"
-    },
-    {
-      "type": "item",
-      "title": "quotes",
-      "uri": "docs/resources/quotes.md"
-    },
-    {
-      "type": "item",
-      "title": "regions",
-      "uri": "docs/resources/regions.md"
-    },
-    {
-      "type": "item",
-      "title": "sessions",
-      "uri": "docs/resources/sessions.md"
-    },
-    {
-      "type": "item",
-      "title": "shipping_providers",
-      "uri": "docs/resources/shipping_providers.md"
-    },
-    {
-      "type": "item",
-      "title": "shipping_rate_adjustments",
-      "uri": "docs/resources/shipping_rate_adjustments.md"
-    },
-    {
-      "type": "item",
-      "title": "Integration Routes",
-      "uri": "docs/resources/special_integration_routes.md"
-    },
-    {
-      "type": "item",
-      "title": "stores",
-      "uri": "docs/resources/stores.md"
-    },
-    {
-      "type": "item",
-      "title": "subscriptions",
-      "uri": "docs/resources/subscriptions.md"
-    },
-    {
-      "type": "item",
-      "title": "tax_rates",
-      "uri": "docs/resources/tax_rates.md"
-    },
-    {
-      "type": "item",
-      "title": "themes",
-      "uri": "docs/resources/themes.md"
-    },
-    {
-      "type": "item",
-      "title": "url_redirects",
-      "uri": "docs/resources/url_redirects.md"
-    },
-    {
-      "type": "item",
-      "title": "users",
-      "uri": "docs/resources/users.md"
-    },
-    {
-      "type": "item",
-      "title": "variant_groups",
-      "uri": "docs/resources/variant_groups.md"
-    },
-    {
-      "type": "item",
-      "title": "variant_inventory",
-      "uri": "docs/resources/variant_inventory.md"
-    },
-    {
-      "type": "item",
-      "title": "warehouses",
-      "uri": "docs/resources/warehouses.md"
-    },
-    {
-      "type": "item",
-      "title": "carts",
-      "uri": "docs/resources/wishlists.md"
-    },
-    {
-      "type": "divider",
-      "title": "APIS"
-    },
-    {
-      "type": "item",
-      "title": "acapi",
-      "uri": "acapi.yaml"
-    }
-  ]
+   "items":[
+      {
+         "type":"divider",
+         "title":"Getting Started"
+      },
+      {
+         "type":"item",
+         "title":"Overview",
+         "uri":"docs/README.md"
+      },
+      {
+         "type":"item",
+         "title":"Authentication",
+         "uri":"docs/authentication.md"
+      },
+      {
+         "type":"item",
+         "title":"API Carting",
+         "uri":"docs/api-carting.md"
+      },
+      {
+         "type":"item",
+         "title":"Common Usage",
+         "uri":"docs/common_usage.md"
+      },
+      {
+         "type":"item",
+         "title":"Client API",
+         "uri":"docs/resources/clientapi.md"
+      },
+      {
+         "type":"item",
+         "title":"Datetime Format",
+         "uri":"docs/datetimes.md"
+      },
+      {
+         "type":"item",
+         "title":"Query Syntax",
+         "uri":"docs/query_syntax.md"
+      },
+      {
+         "type":"item",
+         "title":"Resource List",
+         "uri":"docs/resource_list.md"
+      },
+      {
+         "type":"item",
+         "title":"Scopes",
+         "uri":"docs/scopes.md"
+      },
+      {
+         "type":"item",
+         "title":"Uploading Files",
+         "uri":"docs/uploading_files.md"
+      },
+      {
+         "type":"item",
+         "title":"Webhooks",
+         "uri":"docs/webhooks.md"
+      },
+      {
+         "type":"divider",
+         "title":"APIS"
+      },
+      {
+         "type":"group",
+         "title":"Catalog",
+         "items":[
+            {
+               "type":"group",
+               "title":"Attribute Groups",
+               "uri":"docs/resources/attribute_groups.md",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Attribute Group",
+                     "uri":"/restapi.json/paths/~1attribute_groups/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Attributes",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Attributes",
+                     "uri":"/restapi.json/paths/~1attributes/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Categories",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Categories",
+                     "uri":"/restapi.json/paths/~1categories/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Inventory",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Inventory",
+                     "uri":"/restapi.json/paths/~1inventory/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Manufacturers",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Manufacturers",
+                     "uri":"/restapi.json/paths/~1manufacturers/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Notifications",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Notifications",
+                     "uri":"/restapi.json/paths/~1notifications/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Price Calculators",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Price Calculators",
+                     "uri":"/restapi.json/paths/~1price_calculators/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Price Calculator Rules",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Price Calculator Rules",
+                     "uri":"/restapi.json/paths/~1price_calculator_rules/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Price Calculator Rule Modifiers",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Price Calculator Rule Modifiers",
+                     "uri":"/restapi.json/paths/~1price_calculator_rule_modifiers/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Product Lists",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Product Lists",
+                     "uri":"/restapi.json/paths/~1product_lists/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Product Pictures",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Product Pictures",
+                     "uri":"/restapi.json/paths/~1product_pictures/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Product Reviews",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Product Reviews",
+                     "uri":"/restapi.json/paths/~1product_reviews/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Product Statuses",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Product Statuses",
+                     "uri":"/restapi.json/paths/~1product_statuses/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Product Variants",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Product Variants",
+                     "uri":"/restapi.json/paths/~1product_variants/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Products",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get a Product",
+                     "uri":"/restapi.json/paths/~1products/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Shipping Rate Adjustments",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Shipping Rate Adjustments",
+                     "uri":"/restapi.json/paths/~1shipping_rate_adjustments/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Variant Groups",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Variant Groups",
+                     "uri":"/restapi.json/paths/~1variant_groups/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Variant Inventory",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Variant Inventory",
+                     "uri":"/restapi.json/paths/~1variant_inventory/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"Content",
+         "items":[
+            {
+               "type":"group",
+               "title":"Blogs",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Blogs",
+                     "uri":"/restapi.json/paths/~1blogs/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Blog Categories",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Blog Categories",
+                     "uri":"/restapi.json/paths/~1blog_categories/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Blog Posts",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Blog Posts",
+                     "uri":"/restapi.json/paths/~1blog_posts/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Links",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Links",
+                     "uri":"/restapi.json/paths/~1links/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Pages",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Pages",
+                     "uri":"/restapi.json/paths/~1pages/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"Marketing",
+         "items":[
+            {
+               "type":"group",
+               "title":"Adcodes",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Adcodes",
+                     "uri":"/acapi.yaml/paths/~1adcodes"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Affiliates",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Affiliates",
+                     "uri":"/restapi.json/paths/~1affiliates/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Coupon Codes",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Coupon Codes",
+                     "uri":"/restapi.json/paths/~1coupon_codes/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Discount Methods",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Discount Methods",
+                     "uri":"/restapi.json/paths/~1discount_methods/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Discount Rules",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Discount Rules",
+                     "uri":"/restapi.json/paths/~1discount_rules/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Drips",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Drips",
+                     "uri":"/restapi.json/paths/~1drips/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Email Templates",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Email Templates",
+                     "uri":"/restapi.json/paths/~1email_templates/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Gift Certificates",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Gift Certificates",
+                     "uri":"/restapi.json/paths/~1gift_certificates/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Gift Certificate Transactions",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Gift Certificates Transactions",
+                     "uri":"/restapi.json/paths/~1gift_certificate_transactions/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Mailing Lists",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Mailing Lists",
+                     "uri":"/restapi.json/paths/~1mailing_lists/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"Orders",
+         "items":[
+            {
+               "type":"group",
+               "title":"Carts",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Carts",
+                     "uri":"/restapi.json/paths/~1carts/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Cart Items",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Cart Items",
+                     "uri":"/restapi.json/paths/~1cart_items/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Credit Cards",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Credit Cards",
+                     "uri":"/restapi.json/paths/~1credit_cards/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Orders",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Orders",
+                     "uri":"/restapi.json/paths/~1orders/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Order Addresses",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Order Addresses",
+                     "uri":"/restapi.json/paths/~1order_addresses/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Order Items",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Order Items",
+                     "uri":"/restapi.json/paths/~1order_items/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Order Payments",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Order Payments",
+                     "uri":"/restapi.json/paths/~1order_payments/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Order Shipments",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Order Shipments",
+                     "uri":"/restapi.json/paths/~1order_shipments/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Order Statuses",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Order Statuses",
+                     "uri":"/restapi.json/paths/~1order_statuses/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Quotes",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Quotes",
+                     "uri":"/restapi.json/paths/~1quotes/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Subscriptions",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Subscriptions",
+                     "uri":"/restapi.json/paths/~1subscriptions/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Wishlists",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Wishlists",
+                     "uri":"/restapi.json/paths/~1wishlists/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"People",
+         "items":[
+            {
+               "type":"group",
+               "title":"Addresses",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Addresses",
+                     "uri":"/restapi.json/paths/~1addresses/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Customers",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Customers",
+                     "uri":"/restapi.json/paths/~1customers/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Customer Types",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Customer Types",
+                     "uri":"/restapi.json/paths/~1customer_types/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Customer Payment Methods",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Customer Payment Methods",
+                     "uri":"/restapi.json/paths/~1customer_payment_methods/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Profiles",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Profiles",
+                     "uri":"/restapi.json/paths/~1profiles/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Users",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Users",
+                     "uri":"/restapi.json/paths/~1users/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"Settings",
+         "items":[
+            {
+               "type":"group",
+               "title":"Custom Shipping Methods",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Custom Shipping Methods",
+                     "uri":"/restapi.json/paths/~1custom_shipping_methods/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Payment Methods",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Payment Methods",
+                     "uri":"/restapi.json/paths/~1payment_methods/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Regions",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Regions",
+                     "uri":"/restapi.json/paths/~1regions/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Shipping Providers",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Shipping Providers",
+                     "uri":"/restapi.json/paths/~1shipping_providers/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Tax Rates",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Tax Rates",
+                     "uri":"/restapi.json/paths/~1tax_rates/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"URL Redirects",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get URL Redirects",
+                     "uri":"/restapi.json/paths/~1url_redirects/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Warehouses",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Warehouses",
+                     "uri":"/restapi.json/paths/~1warehouses/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"System",
+         "items":[
+            {
+               "type":"group",
+               "title":"Sessions",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Sessions",
+                     "uri":"/restapi.json/paths/~1sessions/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Stores",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Stores",
+                     "uri":"/restapi.json/paths/~1stores/get"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "type":"group",
+         "title":"Tools",
+         "items":[
+            {
+               "type":"group",
+               "title":"Custom Fields",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Custom Fields",
+                     "uri":"/restapi.json/paths/~1custom_fields/get"
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Custom Field values",
+               "items":[
+                  {
+                     "type":"item",
+                     "title":"Get Custom Field Values",
+                     "uri":"/restapi.json/paths/~1custom_field_values/get"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
 }
