@@ -9,7 +9,6 @@ paths:
   /adcodes:
     get:
       summary: Adcodes
-      tags: []
       responses:
         '200':
           description: OK
@@ -25,6 +24,8 @@ paths:
                     items:
                       $ref: '#/components/schemas/attributes'
       operationId: get-adcodes
+      tags:
+        - Marketing
   /addresses:
     get:
       summary: Addresses
@@ -47,7 +48,6 @@ paths:
   /affiliates:
     get:
       summary: Affiliates
-      tags: []
       responses:
         '200':
           description: OK
@@ -64,6 +64,8 @@ paths:
                       $ref: '#/components/schemas/affiliates'
       operationId: get-affilliates
       deprecated: true
+      tags:
+        - Marketing
     parameters: []
   /attribute_groups:
     get:
@@ -258,7 +260,6 @@ paths:
   /coupon_codes:
     get:
       summary: Coupon Codes
-      tags: []
       responses:
         '200':
           description: OK
@@ -274,6 +275,8 @@ paths:
                     items:
                       $ref: '#/components/schemas/coupon_codes'
       operationId: get-coupon_codes
+      tags:
+        - Marketing
   /credit_cards:
     get:
       summary: Credit Cards
@@ -410,7 +413,8 @@ paths:
   /discount_methods:
     get:
       summary: Discount Methods
-      tags: []
+      tags:
+        - Marketing
       responses:
         '200':
           description: OK
@@ -450,7 +454,8 @@ paths:
   /drips:
     get:
       summary: Drips
-      tags: []
+      tags:
+        - Marketing
       responses:
         '200':
           description: OK
@@ -469,7 +474,8 @@ paths:
   /email_templates:
     get:
       summary: Email Templates
-      tags: []
+      tags:
+        - Marketing
       responses:
         '200':
           description: OK
@@ -488,7 +494,8 @@ paths:
   /gift_certificate_transactions:
     get:
       summary: Gift Certificate Transactions
-      tags: []
+      tags:
+        - Marketing
       responses:
         '200':
           description: OK
@@ -507,7 +514,8 @@ paths:
   /gift_certificates:
     get:
       summary: Gift Certificates
-      tags: []
+      tags:
+        - Marketing
       responses:
         '200':
           description: OK
@@ -568,7 +576,8 @@ paths:
   /mailing_lists:
     get:
       summary: Mailing Lists
-      tags: []
+      tags:
+        - Marketing
       responses:
         '200':
           description: OK
