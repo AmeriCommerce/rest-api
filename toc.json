@@ -340,7 +340,7 @@
                   {
                      "type":"item",
                      "title":"Get Adcodes",
-                     "uri":"/acapi.yaml/paths/~1adcodes"
+                     "uri":"/acapi.yaml/paths/~1adcodes/get"
                   }
                ]
             },
