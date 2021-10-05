@@ -1316,11 +1316,11 @@ paths:
     delete:
       summary: Delete an Adcode
       operationId: delete-adcodes-id
-      tags:
-        - Adcodes
-        - Marketing
       parameters: []
       description: ''
+      tags:
+        - Marketing
+        - Adcodes
 components:
   schemas:
     adcodes:
