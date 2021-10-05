@@ -8,7 +8,7 @@ servers:
 paths:
   /adcodes:
     get:
-      summary: Adcodes
+      summary: Get All Adcodes
       responses:
         '200':
           description: OK
