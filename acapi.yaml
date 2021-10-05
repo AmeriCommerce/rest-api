@@ -87,20 +87,16 @@ paths:
               properties:
                 name:
                   type: string
-                  minLength: 1
                 description:
                   type: string
-                  minLength: 1
                 visits:
                   type: number
                 commission:
                   type: string
-                  minLength: 1
                 commission_type:
                   type: string
                 url:
                   type: string
-                  minLength: 1
                 is_pay_per_click:
                   type: boolean
               required:
@@ -112,6 +108,10 @@ paths:
                   description: 5% off
                   visits: 0
                   url: 'https://www.drunkenmoocow.com/Default.aspx?a=5off'
+      tags:
+        - Marketing
+        - Adcodes
+    parameters: []
   /addresses:
     get:
       summary: Addresses
