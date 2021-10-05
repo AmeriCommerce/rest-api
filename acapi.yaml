@@ -27,6 +27,91 @@ paths:
       tags:
         - Marketing
         - Adcodes
+    post:
+      summary: Create an Adcode
+      operationId: post-adcodes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/adcodes'
+        '500':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                properties:
+                  status_code:
+                    type: number
+                  message:
+                    type: string
+                    minLength: 1
+                  details:
+                    type: string
+                    minLength: 1
+                required:
+                  - status_code
+                  - message
+                  - details
+                x-examples:
+                  example-1:
+                    status_code: 500
+                    message: Internal Server Error
+                    details: "AdCode Class - Base POST failed - CommandText: AdCode_Insert - Cannot insert the value NULL into column 'visits', table 'AC_AndrewTestStore.dbo.adCodes'; column does not allow nulls. INSERT fails.\r\nThe statement has been terminated."
+              examples:
+                Example:
+                  value:
+                    status_code: 500
+                    message: Internal Server Error
+                    details: "AdCode Class - Base POST failed - CommandText: AdCode_Insert - Cannot insert the value NULL into column 'visits', table 'AC_AndrewTestStore.dbo.adCodes'; column does not allow nulls. INSERT fails.\r\nThe statement has been terminated."
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: 5off
+                  description: 5% off
+                  visits: 0
+                  affiliate_id: 0
+                  commission: '0'
+                  commission_type: ''
+                  url: 'https://www.drunkenmoocow.com/Default.aspx?a=5off'
+                  is_pay_per_click: false
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                description:
+                  type: string
+                  minLength: 1
+                visits:
+                  type: number
+                commission:
+                  type: string
+                  minLength: 1
+                commission_type:
+                  type: string
+                url:
+                  type: string
+                  minLength: 1
+                is_pay_per_click:
+                  type: boolean
+              required:
+                - visits
+            examples:
+              Example:
+                value:
+                  name: 5off
+                  description: 5% off
+                  visits: 0
+                  url: 'https://www.drunkenmoocow.com/Default.aspx?a=5off'
   /addresses:
     get:
       summary: Addresses
