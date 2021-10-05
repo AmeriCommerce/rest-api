@@ -26,6 +26,7 @@ paths:
       operationId: get-adcodes
       tags:
         - Marketing
+        - Adcodes
   /addresses:
     get:
       summary: Addresses
@@ -66,6 +67,7 @@ paths:
       deprecated: true
       tags:
         - Marketing
+        - Affiliates
     parameters: []
   /attribute_groups:
     get:
@@ -277,6 +279,7 @@ paths:
       operationId: get-coupon_codes
       tags:
         - Marketing
+        - Coupon Codes
   /credit_cards:
     get:
       summary: Credit Cards
@@ -415,6 +418,7 @@ paths:
       summary: Discount Methods
       tags:
         - Marketing
+        - Discount Methods
       responses:
         '200':
           description: OK
@@ -435,7 +439,9 @@ paths:
   /discount_rules:
     get:
       summary: Discount Rules
-      tags: []
+      tags:
+        - Marketing
+        - Discount Rules
       responses:
         '200':
           description: OK
@@ -456,6 +462,7 @@ paths:
       summary: Drips
       tags:
         - Marketing
+        - Drips
       responses:
         '200':
           description: OK
@@ -476,6 +483,7 @@ paths:
       summary: Email Templates
       tags:
         - Marketing
+        - Email Templates
       responses:
         '200':
           description: OK
@@ -496,6 +504,7 @@ paths:
       summary: Gift Certificate Transactions
       tags:
         - Marketing
+        - Gift Certificate Transactions
       responses:
         '200':
           description: OK
@@ -516,6 +525,7 @@ paths:
       summary: Gift Certificates
       tags:
         - Marketing
+        - Gift Certificates
       responses:
         '200':
           description: OK
@@ -578,6 +588,7 @@ paths:
       summary: Mailing Lists
       tags:
         - Marketing
+        - Mailing Lists
       responses:
         '200':
           description: OK
