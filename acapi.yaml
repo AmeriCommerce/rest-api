@@ -1317,8 +1317,8 @@ paths:
       summary: Delete an Adcode
       operationId: delete-adcodes-id
       tags:
-        - Market
         - Adcodes
+        - Marketing
       parameters: []
       description: ''
 components:
