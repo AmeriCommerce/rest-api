@@ -10,11 +10,13 @@ tags:
   - name: Blogs
   - name: Cart Items
   - name: Carts
+  - name: Categories
   - name: Coupon Codes
   - name: Credit Cards
   - name: Custom Field Values
   - name: Custom Fields
   - name: Custom Shipping Methods
+  - name: Customer Payment Methods
   - name: Customer Types
   - name: Customers
   - name: Discount Methods
@@ -58,8 +60,9 @@ tags:
   - name: Warehouses
   - name: Wishlists
 info:
-  title: acapi
+  title: Online Store API
   version: '1.0'
+  description: Online Store API
 servers:
   - url: 'https://www.example.com'
     description: ''
@@ -285,6 +288,8 @@ paths:
               required:
                 - id
       description: Update an adcode by ID.
+      tags:
+        - Adcodes
   /addresses:
     get:
       summary: Get Addresses
@@ -409,6 +414,8 @@ paths:
                   last_name: Smith
                   address_type: Default
       description: Creates an address
+      tags:
+        - Addresses
   '/addresses/{id}':
     parameters:
       - schema:
@@ -498,7 +505,8 @@ paths:
   /attribute_groups:
     get:
       summary: Get Attribute Groups
-      tags: []
+      tags:
+        - Attribute Groups
       responses:
         '200':
           description: OK
@@ -576,10 +584,95 @@ paths:
                   allow_multiple: true
                   tie_variant_inventory: false
       description: Creates an attribte group.
+      tags:
+        - Attribute Groups
+  '/attribute_groups/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `attribute_group`
+    put:
+      summary: Update an Attribute Group
+      operationId: put-attribute_groups-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute_groups'
+      description: Update an attribute group by ID.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1
+                  name: Shoes
+                  sort_order: 0
+                  is_hidden: false
+                  allow_drill_down: true
+                  allow_multiple: true
+                  tie_variant_inventory: false
+                  updated_at: null
+                  created_at: null
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                sort_order:
+                  type: integer
+                is_hidden:
+                  type: boolean
+                allow_drill_down:
+                  type: boolean
+                allow_multiple:
+                  type: boolean
+                tie_variant_inventory:
+                  type: boolean
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+              required:
+                - id
+            examples:
+              Example:
+                value:
+                  id: 1
+                  name: Tesla
+                  sort_order: 0
+                  is_hidden: false
+                  allow_drill_down: true
+                  allow_multiple: true
+                  tie_variant_inventory: false
+                  updated_at: ''
+                  created_at: ''
+      tags:
+        - Attribute Groups
+    delete:
+      summary: Delete an Attribute Group
+      operationId: delete-attribute_groups-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Delete an attribute group by ID.
+      tags:
+        - Attribute Groups
   /attributes:
     get:
       summary: Get Attributes
-      tags: []
+      tags:
+        - Attributes
       responses:
         '200':
           description: OK
@@ -656,6 +749,8 @@ paths:
                   meta_description: ''
                   url_rewrite: ''
       description: Creates an attribute.
+      tags:
+        - Attributes
   '/attributes/{id}':
     parameters:
       - schema:
@@ -680,6 +775,8 @@ paths:
             schema:
               $ref: '#/components/schemas/attributes'
       description: Update an attribute by ID.
+      tags:
+        - Attributes
     delete:
       summary: Delete an Attribute
       operationId: delete-attributes-id
@@ -691,88 +788,11 @@ paths:
       tags:
         - Attributes
       description: Delete an attribute by ID.
-  '/attribute_groups/{id}':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
-        description: The ID of the `attribute_group`
-    put:
-      summary: Update an Attribute Group
-      operationId: put-attribute_groups-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/attribute_groups'
-      description: Update an attribute group by ID.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: ''
-              type: object
-              x-examples:
-                example-1:
-                  id: 1
-                  name: Shoes
-                  sort_order: 0
-                  is_hidden: false
-                  allow_drill_down: true
-                  allow_multiple: true
-                  tie_variant_inventory: false
-                  updated_at: null
-                  created_at: null
-              properties:
-                id:
-                  type: integer
-                name:
-                  type: string
-                sort_order:
-                  type: integer
-                is_hidden:
-                  type: boolean
-                allow_drill_down:
-                  type: boolean
-                allow_multiple:
-                  type: boolean
-                tie_variant_inventory:
-                  type: boolean
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
-              required:
-                - id
-            examples:
-              Example:
-                value:
-                  id: 1
-                  name: Tesla
-                  sort_order: 0
-                  is_hidden: false
-                  allow_drill_down: true
-                  allow_multiple: true
-                  tie_variant_inventory: false
-                  updated_at: ''
-                  created_at: ''
-    delete:
-      summary: Delete an Attribute Group
-      operationId: delete-attribute_groups-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      description: Delete an attribute group by ID.
   /blog_categories:
     get:
       summary: Get Blog Categories
-      tags: []
+      tags:
+        - Blog Categories
       responses:
         '200':
           description: OK
@@ -843,6 +863,8 @@ paths:
                 - blog_id
                 - parent_category_id
                 - blog_category_path
+      tags:
+        - Blog Categories
   '/blog_categories/{id}':
     parameters:
       - schema:
@@ -879,6 +901,8 @@ paths:
                   created_at: '2021-10-05T20:42:06.1923052-05:00'
                   name: Blogging Molly
                   blog_category_path: /test
+      tags:
+        - Blog Categories
     delete:
       summary: Delete a Blog Category
       operationId: delete-blog_categories-id
@@ -888,10 +912,13 @@ paths:
         '404':
           $ref: '#/components/responses/404'
       description: Deletes a blog category by ID.
+      tags:
+        - Blog Categories
   /blogs:
     get:
       summary: Get Blogs
-      tags: []
+      tags:
+        - Blogs
       responses:
         '200':
           description: OK
@@ -1048,6 +1075,8 @@ paths:
                   new_comment_reply_notification_email_template_id: 8
         description: ''
       description: 'Creates a Blog. '
+      tags:
+        - Blogs
   '/blogs/{id}':
     parameters:
       - schema:
@@ -1185,6 +1214,8 @@ paths:
                   new_comment_admin_notification_email_template_id: 6
                   new_post_admin_notification_email_template_id: 7
                   new_comment_reply_notification_email_template_id: 8
+      tags:
+        - Blogs
     delete:
       summary: Delete a Blog
       operationId: delete-blogs-id
@@ -1194,10 +1225,13 @@ paths:
         '404':
           $ref: '#/components/responses/404'
       description: 'Deletes a blog. '
+      tags:
+        - Blogs
   /blog_posts:
     get:
       summary: Get Blog Posts
-      tags: []
+      tags:
+        - Blog Posts
       responses:
         '200':
           description: OK
@@ -1320,10 +1354,228 @@ paths:
                   head_tags: ''
                   url_rewrite: /blog/Hello-There
                   page_content_type: BlogPost
+      tags:
+        - Blog Posts
+  '/blog_posts/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `blog_post`
+    put:
+      summary: Update a Blog Post
+      operationId: put-blog_post-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog_posts'
+      description: 'Updates a Blog Post. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 43
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  published_at: null
+                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
+                  created_at: '2021-10-06T12:27:36.8249258-05:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There3
+                  page_content_type: BlogPost
+              properties:
+                id:
+                  type: number
+                  readOnly: true
+                blog_id:
+                  type: number
+                title:
+                  type: string
+                keywords:
+                  type: string
+                description:
+                  type: string
+                content:
+                  type: string
+                published_at: {}
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+                teaser_title:
+                  type: string
+                teaser_description:
+                  type: string
+                post_image_url:
+                  type: string
+                teaser_image_url:
+                  type: string
+                author_profile_id:
+                  type: number
+                are_comments_enabled:
+                  type: boolean
+                is_featured:
+                  type: boolean
+                is_stickied:
+                  type: boolean
+                are_comments_locked:
+                  type: boolean
+                view_count:
+                  type: number
+                store_id:
+                  type: number
+                head_tags:
+                  type: string
+                url_rewrite:
+                  type: string
+                page_content_type:
+                  type: string
+            examples:
+              Example:
+                value:
+                  id: 43
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  published_at: null
+                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
+                  created_at: '2021-10-06T12:27:36.8249258-05:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There
+                  page_content_type: BlogPost
+          application/xml:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 43
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  published_at: null
+                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
+                  created_at: '2021-10-06T12:27:36.8249258-05:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There3
+                  page_content_type: BlogPost
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                blog_id:
+                  type: integer
+                title:
+                  type: string
+                keywords:
+                  type: string
+                description:
+                  type: string
+                content:
+                  type: string
+                published_at: {}
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+                teaser_title:
+                  type: string
+                teaser_description:
+                  type: string
+                post_image_url:
+                  type: string
+                teaser_image_url:
+                  type: string
+                author_profile_id:
+                  type: integer
+                are_comments_enabled:
+                  type: boolean
+                is_featured:
+                  type: boolean
+                is_stickied:
+                  type: boolean
+                are_comments_locked:
+                  type: boolean
+                view_count:
+                  type: integer
+                store_id:
+                  type: integer
+                head_tags:
+                  type: string
+                url_rewrite:
+                  type: string
+                page_content_type:
+                  type: string
+              required:
+                - id
+        description: ''
+      tags:
+        - Blog Posts
+    delete:
+      summary: Delete a Blog Post
+      operationId: delete-blog_post-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a blog post.
+      tags:
+        - Blog Posts
   /cart_items:
     get:
       summary: Get Cart Items
-      tags: []
+      tags:
+        - Cart Items
       responses:
         '200':
           description: OK
@@ -1482,10 +1734,81 @@ paths:
                   personalizations:
                     - id: 27
                       answer: Hello There
+      tags:
+        - Cart Items
+  '/cart_items/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `cart_item`
+    put:
+      summary: Update a Cart Item
+      operationId: put-cart_items-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart_items'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart_items'
+            examples:
+              Example:
+                value:
+                  id: 6110
+                  product_id: 8
+                  item_number: 3367799-2
+                  quantity: 1
+                  price: 330
+                  cost: 125
+                  shipping_address_id: 0
+                  item_thumbnail: /Shared/images/sample/products/Shirts/3367799.jpg
+                  item_url: ''
+                  item_name: Clayton Solid Cotton French
+                  warehouse_id: 0
+                  parent_product_id: 4
+                  parent_cart_item_id: 45
+                  updated_at: '2021-10-05T12:09:13.62-05:00'
+                  created_at: '2021-10-05T12:08:41.37-05:00'
+                  cart_id: 3946
+                  is_subscription_product: false
+                  vendor_store_id: null
+                  variants:
+                    - id: 5
+                      description: 'COLOR: White'
+                      variant_group_id: 4
+                    - id: 7
+                      description: 'SIZE: Large'
+                      variant_group_id: 1
+                  personalizations:
+                    - id: 27
+                      answer: Hello There
+      description: 'Updates a cart item. '
+      tags:
+        - Cart Items
+    delete:
+      summary: ''
+      operationId: delete-cart_items-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a cart item.
+      tags:
+        - Cart Items
   /carts:
     get:
-      summary: Carts
-      tags: []
+      summary: Get Carts
+      tags:
+        - Carts
       responses:
         '200':
           description: OK
@@ -1501,10 +1824,49 @@ paths:
                     items:
                       $ref: '#/components/schemas/carts'
       operationId: get-carts
+      description: Gets an array of carts.
+  '/carts/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `cart`
+    put:
+      summary: Update a Cart
+      operationId: put-carts-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/carts'
+      description: Updates a cart.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/carts'
+      tags:
+        - Carts
+    delete:
+      summary: Delete a Cart
+      operationId: delete-carts-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a cart.
+      tags:
+        - Carts
   /categories:
     get:
-      summary: Categories
-      tags: []
+      summary: Get Categories
+      tags:
+        - Categories
       responses:
         '200':
           description: OK
@@ -1520,6 +1882,132 @@ paths:
                     items:
                       $ref: '#/components/schemas/categories'
       operationId: get-categories
+      description: Gets an array of categories.
+    post:
+      summary: Create a Category
+      operationId: post-categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/categories'
+      tags:
+        - Categories
+      description: Creates a category.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Shoes
+                  short_description: ''
+                  sort_order: 0
+                  is_hidden: false
+                  parent_category_id: 14
+                  max_quantity: 0
+                  category_thumbnail: ''
+                  page_title: ''
+                  keywords: ''
+                  meta_description: ''
+                  category_image: ''
+                  external_content_url: ''
+                  is_category_content_displayed: true
+                  are_subcategory_products_displayed: false
+                  url_rewrite: ''
+                  default_product_picture: ''
+                  alternate_thumbnail: ''
+                  head_tags: ''
+                  cat_image_alt_text: ''
+                  thumb_image_alt_text: ''
+                  vendor_store_id: 1
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                short_description:
+                  type: string
+                sort_order:
+                  type: integer
+                is_hidden:
+                  type: boolean
+                parent_category_id:
+                  type: integer
+                max_quantity:
+                  type: integer
+                category_thumbnail:
+                  type: string
+                page_title:
+                  type: string
+                keywords:
+                  type: string
+                meta_description:
+                  type: string
+                category_image:
+                  type: string
+                external_content_url:
+                  type: string
+                is_category_content_displayed:
+                  type: boolean
+                are_subcategory_products_displayed:
+                  type: boolean
+                url_rewrite:
+                  type: string
+                default_product_picture:
+                  type: string
+                alternate_thumbnail:
+                  type: string
+                head_tags:
+                  type: string
+                cat_image_alt_text:
+                  type: string
+                thumb_image_alt_text:
+                  type: string
+                vendor_store_id:
+                  type: integer
+              required:
+                - name
+  '/categories/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `category`
+    put:
+      summary: Update a Category
+      operationId: put-categories-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/categories'
+      description: Updates a category.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/categories'
+      tags:
+        - Categories
+    delete:
+      summary: Delete a Category
+      operationId: delete-categories-id
+      tags:
+        - Categories
+      description: Deletes a category.
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
   /coupon_codes:
     get:
       summary: Get Coupon Codes
@@ -1539,7 +2027,6 @@ paths:
                       $ref: '#/components/schemas/coupon_codes'
       operationId: get-coupon_codes
       tags:
-        - Marketing
         - Coupon Codes
     post:
       summary: Create a Coupon Code
@@ -1594,6 +2081,8 @@ paths:
                 value:
                   campaign_code: '123'
                   coupon_code: CC-3SCEUZGYA3
+      tags:
+        - Coupon Codes
   '/coupon_codes/{id}':
     parameters:
       - schema:
@@ -1659,10 +2148,13 @@ paths:
         '404':
           $ref: '#/components/responses/404'
       description: 'Delete a coupon code by ID. '
+      tags:
+        - Coupon Codes
   /credit_cards:
     get:
       summary: Credit Cards
-      tags: []
+      tags:
+        - Credit Cards
       responses:
         '200':
           description: OK
@@ -1678,10 +2170,221 @@ paths:
                     items:
                       $ref: '#/components/schemas/credit_cards'
       operationId: get-credit_cards
+      description: Gets an array of credit cards.
+    post:
+      summary: Add a Credit Cart
+      operationId: post-credit_cards
+      responses:
+        '200':
+          description: OK
+      description: Adds a credit card.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  customer_id: 18
+                  card_type: Visa
+                  expiration_month: 1
+                  expiration_year: 2022
+                  cardholder_name: First Last
+                  phone: ''
+                  address_line_1: 123 Test st.
+                  address_line_2: ''
+                  city: Lumberton
+                  state: Texas
+                  postal_code: '77657'
+                  country: United States
+                  is_default: false
+                  last_four: '1111'
+              properties:
+                customer_id:
+                  type: integer
+                card_type:
+                  type: string
+                expiration_month:
+                  type: integer
+                expiration_year:
+                  type: integer
+                cardholder_name:
+                  type: string
+                phone:
+                  type: string
+                address_line_1:
+                  type: string
+                address_line_2:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                postal_code:
+                  type: string
+                country:
+                  type: string
+                is_default:
+                  type: boolean
+                last_four:
+                  type: string
+              required:
+                - customer_id
+                - card_type
+            examples:
+              Example:
+                value:
+                  customer_id: 18
+                  card_type: Visa
+                  expiration_month: 1
+                  expiration_year: 2022
+                  cardholder_name: First Last
+                  phone: ''
+                  address_line_1: 123 Test st.
+                  address_line_2: ''
+                  city: Lumberton
+                  state: Texas
+                  postal_code: '77657'
+                  country: United States
+                  is_default: false
+                  last_four: '1111'
+          application/xml:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  customer_id: 18
+                  card_type: Visa
+                  expiration_month: 1
+                  expiration_year: 2022
+                  cardholder_name: First Last
+                  phone: ''
+                  address_line_1: 123 Test st.
+                  address_line_2: ''
+                  city: Lumberton
+                  state: Texas
+                  postal_code: '77701'
+                  country: United States
+                  is_default: false
+                  last_four: '1111'
+              properties:
+                customer_id:
+                  type: integer
+                card_type:
+                  type: string
+                expiration_month:
+                  type: number
+                expiration_year:
+                  type: number
+                cardholder_name:
+                  type: string
+                  minLength: 1
+                phone:
+                  type: string
+                address_line_1:
+                  type: string
+                  minLength: 1
+                address_line_2:
+                  type: string
+                city:
+                  type: string
+                  minLength: 1
+                state:
+                  type: string
+                  minLength: 1
+                postal_code:
+                  type: string
+                  minLength: 1
+                country:
+                  type: string
+                  minLength: 1
+                is_default:
+                  type: boolean
+                last_four:
+                  type: string
+                  minLength: 1
+              required:
+                - customer_id
+                - card_type
+                - expiration_year
+                - cardholder_name
+                - phone
+                - address_line_1
+                - address_line_2
+                - city
+                - state
+                - postal_code
+                - country
+                - is_default
+                - last_four
+            examples: {}
+        description: ''
+      tags:
+        - Credit Cards
+  '/credit_cards/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `credit_card`
+    put:
+      summary: Update a Credit Card
+      operationId: put-credit_cards-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credit_cards'
+      description: Updates a Credit Card.
+      tags:
+        - Credit Cards
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/credit_cards'
+            examples:
+              Example:
+                value:
+                  id: 42
+                  customer_id: 18
+                  card_type: Visa
+                  expiration_month: 1
+                  expiration_year: 2022
+                  cardholder_name: First Last
+                  phone: ''
+                  address_line_1: 123 Test st.
+                  address_line_2: ''
+                  city: Lumberton
+                  state: Texas
+                  postal_code: '77701'
+                  country: United States
+                  is_default: false
+                  updated_at: '2021-10-06T15:07:15.8334217-05:00'
+                  created_at: '2021-10-06T15:07:15.8334217-05:00'
+                  last_four: '1111'
+    delete:
+      summary: Delete a Credit Card
+      operationId: delete-credit_cards-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Credit Cards
+      description: Deletes a credit card.
   /custom_field_values:
     get:
-      summary: Custom Field Values
-      tags: []
+      summary: Get Custom Field Values
+      tags:
+        - Custom Field Values
       responses:
         '200':
           description: OK
@@ -1697,10 +2400,104 @@ paths:
                     items:
                       $ref: '#/components/schemas/custom_field_values'
       operationId: get-custom_field_values
+      description: Gets an array of custom field values.
+    post:
+      summary: Create a Custom Field Value
+      operationId: post-custom_field_values
+      responses:
+        '200':
+          description: OK
+      description: Creates a custom field value.
+      tags:
+        - Custom Field Values
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 133
+                  custom_field_id: 46
+                  resource_id: 74
+                  value: IONIZED PARTICLES
+              properties:
+                custom_field_id:
+                  type: integer
+                resource_id:
+                  type: integer
+                value:
+                  type: string
+                  minLength: 1
+              required:
+                - custom_field_id
+                - resource_id
+                - value
+            examples:
+              Example:
+                value:
+                  custom_field_id: 46
+                  resource_id: 88
+                  value: value
+  '/custom_field_value/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `custom_field`
+    put:
+      summary: Update a Custom Field Value
+      operationId: put-custom_field_value-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom_field_values'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  resource_id: 74
+                  value: IONIZED PARTICLES
+              properties:
+                resource_id:
+                  type: integer
+                value:
+                  type: string
+              required:
+                - resource_id
+                - value
+            examples:
+              Example:
+                value:
+                  resource_id: 74
+                  value: value
+      description: Updates a custom field value.
+      tags:
+        - Custom Field Values
+    delete:
+      summary: Delete a Custom Field Value
+      operationId: delete-custom_field_value-id
+      responses:
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes an custom field value.
+      tags:
+        - Custom Field Values
   /custom_fields:
     get:
-      summary: Custom Fields
-      tags: []
+      summary: Get Custom Fields
+      tags:
+        - Custom Fields
       responses:
         '200':
           description: OK
@@ -1716,10 +2513,137 @@ paths:
                     items:
                       $ref: '#/components/schemas/custom_fields'
       operationId: get-custom_fields
+      description: |-
+        Gets an array of custom fields.
+
+        For more information on custom fields, please see our knowledge base: [Custom Fields Overview](https://support.americommerce.com/hc/en-us/articles/201903820-Custom-Fields-Overview).
+    post:
+      summary: Create a Custom Field
+      operationId: post-custom_fields
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Custom Fields
+      description: |-
+        Creates a custom field.
+
+        For more information on custom fields, please see our knowledge base: [Custom Fields Overview](https://support.americommerce.com/hc/en-us/articles/201903820-Custom-Fields-Overview).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: My Custom Field
+                  resource_type: Products
+                  input_type: TextBox
+                  value_type: String
+                  field_width: 25
+                  sort_order: 1
+                  format_string: ''
+                  is_searchable: true
+                  is_editable: false
+                  is_multi_select: false
+                  label: Google Adwords Grouping
+                  is_private: true
+                  is_required: false
+                  show_on_order_page: false
+                  display_location: ''
+                  default_value: ''
+                  read_only: AdminWritable
+                  show_on_one_page_checkout: false
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                resource_type:
+                  type: string
+                input_type:
+                  type: string
+                value_type:
+                  type: string
+                field_width:
+                  type: integer
+                sort_order:
+                  type: integer
+                format_string:
+                  type: string
+                is_searchable:
+                  type: boolean
+                is_editable:
+                  type: boolean
+                is_multi_select:
+                  type: boolean
+                label:
+                  type: string
+                is_private:
+                  type: boolean
+                is_required:
+                  type: boolean
+                show_on_order_page:
+                  type: boolean
+                display_location:
+                  type: string
+                default_value:
+                  type: string
+                read_only:
+                  type: string
+                show_on_one_page_checkout:
+                  type: boolean
+              required:
+                - name
+                - resource_type
+  '/custom_fields/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `custom_field`
+    put:
+      summary: Update a Custom Field
+      operationId: put-custom_fields-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom_fields'
+      tags:
+        - Custom Fields
+      description: |-
+        Updates a custom field. 
+
+        For more information on custom fields, please see our knowledge base: [Custom Fields Overview](https://support.americommerce.com/hc/en-us/articles/201903820-Custom-Fields-Overview).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/custom_fields'
+    delete:
+      summary: Delete a Custom Field
+      operationId: delete-custom_fields-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: |-
+        Deletes a custom field. 
+
+        For more information on custom fields, please see our knowledge base: [Custom Fields Overview](https://support.americommerce.com/hc/en-us/articles/201903820-Custom-Fields-Overview).
+      tags:
+        - Custom Fields
   /custom_shipping_methods:
     get:
-      summary: Custom Shipping Methods
-      tags: []
+      summary: Get Custom Shipping Methods
+      tags:
+        - Custom Shipping Methods
       responses:
         '200':
           description: OK
@@ -1735,10 +2659,70 @@ paths:
                     items:
                       $ref: '#/components/schemas/custom_shipping_methods'
       operationId: get-custom_shipping_methods
+      description: |-
+        Gets an array of custom shipping methods.
+
+        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
+    post:
+      summary: Create a Custom Shipping Method
+      operationId: post-custom_shipping_methods
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom_shipping_methods'
+      tags:
+        - Custom Shipping Methods
+      description: |-
+        Creates a custom shipping method.
+
+        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Free Shipping
+                  is_enabled: true
+                  is_default: false
+                  markup_type: ''
+                  markup_amount: ''
+                  description: ''
+                  use_base_rate: false
+                  is_calculated_method: false
+                  admin_only: false
+              properties:
+                name:
+                  type: string
+                is_enabled:
+                  type: boolean
+                is_default:
+                  type: boolean
+                markup_type:
+                  type: string
+                markup_amount:
+                  type: string
+                description:
+                  type: string
+                use_base_rate:
+                  type: boolean
+                is_calculated_method:
+                  type: boolean
+                admin_only:
+                  type: boolean
+              required:
+                - name
+        description: ''
   /customer_payment_methods:
     get:
       summary: Customer Payment Methods
-      tags: []
+      tags:
+        - Customer Payment Methods
       responses:
         '200':
           description: OK
@@ -1754,6 +2738,60 @@ paths:
                     items:
                       $ref: '#/components/schemas/customer_payment_methods'
       operationId: get-customer_payment_methods
+      description: Gets an array of customer payment methods.
+    post:
+      summary: Create a Customer Payment Method
+      operationId: post-customer_payment_methods
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_payment_methods'
+      tags:
+        - Customer Payment Methods
+      description: Create a customer payment method.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 6
+                  payment_method_id: 111
+                  customer_id: 18
+                  payment_type: CreditCard
+                  is_default: false
+                  card_id: 6
+                  address_id: 4
+              properties:
+                id:
+                  type: integer
+                payment_method_id:
+                  type: integer
+                customer_id:
+                  type: integer
+                payment_type:
+                  type: string
+                is_default:
+                  type: boolean
+                card_id:
+                  type: integer
+                address_id:
+                  type: integer
+            examples:
+              Example:
+                value:
+                  id: 6
+                  payment_method_id: 111
+                  customer_id: 18
+                  payment_type: CreditCard
+                  is_default: false
+                  card_id: 6
+                  address_id: 4
   /customer_types:
     get:
       summary: Customer Types
@@ -2572,8 +3610,9 @@ paths:
                   file_path: path-to-theme-import-file.zip
   /url_redirects:
     get:
-      summary: URL Redirects
-      tags: []
+      summary: Get URL Redirects
+      tags:
+        - URL Redirects
       responses:
         '200':
           description: OK
@@ -2589,10 +3628,124 @@ paths:
                     items:
                       $ref: '#/components/schemas/url_redirects'
       operationId: get-url_redirects
+      description: Gets an array of URL redirects.
+    post:
+      summary: Create a URL Redirect
+      operationId: post-url_redirects
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/url_redirects'
+      tags:
+        - URL Redirects
+      description: Creates a URL redirect.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  from: /sitemap.html
+                  to: /store/sitemapgenerator.aspx
+                  is_active: true
+                  redirect_type: UrlRewrite
+              properties:
+                from:
+                  type: string
+                to:
+                  type: string
+                is_active:
+                  type: boolean
+                redirect_type:
+                  type: string
+              required:
+                - from
+                - to
+            examples:
+              Example:
+                value:
+                  from: /infinity.aspx
+                  to: /beyond.aspx
+                  is_active: true
+                  redirect_type: UrlRewrite
+          application/xml:
+            schema:
+              type: object
+              properties: {}
+          multipart/form-data:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  from: /sitemap.html
+                  to: /store/sitemapgenerator.aspx
+                  is_active: true
+                  redirect_type: UrlRewrite
+              properties:
+                from:
+                  type: string
+                to:
+                  type: string
+                is_active:
+                  type: boolean
+                redirect_type:
+                  type: string
+              required:
+                - from
+                - to
+            examples:
+              Example:
+                value:
+                  from: string
+                  to: string
+                  is_active: true
+                  redirect_type: string
+  '/url_redirects/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `url_redirect`
+    put:
+      summary: Update a URL Redirect
+      operationId: put-url_redirects-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/url_redirects'
+      tags:
+        - URL Redirects
+      description: Updates a URL redirect.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/url_redirects'
+    delete:
+      summary: Delete a URL Redirect
+      operationId: delete-url_redirects-id
+      responses:
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a URL redirect.
+      tags:
+        - URL Redirects
   /users:
     get:
-      summary: Users
-      tags: []
+      summary: Get Users
+      tags:
+        - Users
       responses:
         '200':
           description: OK
@@ -2608,10 +3761,12 @@ paths:
                     items:
                       $ref: '#/components/schemas/users'
       operationId: get-users
+      description: Gets an array of users.
   /variant_groups:
     get:
-      summary: Variant Groups
-      tags: []
+      summary: Get Variant Groups
+      tags:
+        - Variant Groups
       responses:
         '200':
           description: OK
@@ -2627,6 +3782,109 @@ paths:
                     items:
                       $ref: '#/components/schemas/variant_groups'
       operationId: get-variant_groups
+      description: |-
+        Gets an array of variant groups.
+
+        For more information on variant groups, please see our knowledge base: [Variant Group Overview](https://support.americommerce.com/hc/en-us/articles/213282337-Product-Variant-Overview).
+    post:
+      summary: Create a Variant Group
+      operationId: post-variant_groups
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Variant Groups
+      description: |-
+        Creates a variant group.
+
+        For more information on variant groups, please see our knowledge base: [Variant Group Overview](https://support.americommerce.com/hc/en-us/articles/213282337-Product-Variant-Overview).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Shirt Size
+                  sort_order: 1
+                  is_hidden: false
+                  display_type: DropDown
+                  group_header_html: ''
+                  public_description_html: ''
+                  group_footer_html: ''
+                  is_non_inventory: false
+              properties:
+                name:
+                  type: string
+                sort_order:
+                  type: integer
+                is_hidden:
+                  type: boolean
+                display_type:
+                  type: string
+                group_header_html:
+                  type: string
+                public_description_html:
+                  type: string
+                group_footer_html:
+                  type: string
+                is_non_inventory:
+                  type: boolean
+            examples:
+              Example:
+                value:
+                  name: Shirt Size
+                  sort_order: 1
+                  is_hidden: false
+                  display_type: DropDown
+                  group_header_html: ''
+                  public_description_html: ''
+                  group_footer_html: ''
+                  is_non_inventory: false
+  '/variant_groups/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `variant_group`
+    put:
+      summary: Update a Variant Group
+      operationId: put-variant_groups-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/variant_groups'
+      description: |-
+        Updates a varaint group.
+
+        For more information on variant groups, please see our knowledge base: [Variant Group Overview](https://support.americommerce.com/hc/en-us/articles/213282337-Product-Variant-Overview).
+      tags:
+        - Variant Groups
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/variant_groups'
+    delete:
+      summary: ''
+      operationId: delete-variant_groups-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: |-
+        Deletes a variant group.
+
+        For more information on variant groups, please see our knowledge base: [Variant Group Overview](https://support.americommerce.com/hc/en-us/articles/213282337-Product-Variant-Overview).
+      tags:
+        - Variant Groups
   /variant_inventory:
     get:
       summary: Get Variant Inventory
@@ -2940,6 +4198,43 @@ paths:
                       swatch_thumbnail_color: ''
                       variant_inventory_id: 7
         description: ''
+  '/variant_inventory/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `variant_inventory` item.
+    put:
+      summary: Update Variant Inventory
+      operationId: put-variant_inventory-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/variant_inventory'
+      description: Updates a variant inventory item.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/variant_inventory'
+      tags:
+        - Variant Inventory
+    delete:
+      summary: Delete Variant Inventory
+      operationId: delete-variant_inventory-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a variant inventory item by ID.
+      tags:
+        - Variant Inventory
   /wishlists:
     get:
       summary: Get Wishlists
@@ -3268,289 +4563,86 @@ paths:
       tags:
         - Warehouses
       description: Deletes a warehouse.
-  '/blog_posts/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `blog_post`
-    put:
-      summary: Update a Blog Post
-      operationId: put-blog_post-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/blog_posts'
-      description: 'Updates a Blog Post. '
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: ''
-              type: object
-              x-examples:
-                example-1:
-                  id: 43
-                  blog_id: 1
-                  title: Hello There
-                  keywords: ''
-                  description: ''
-                  content: ''
-                  published_at: null
-                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
-                  created_at: '2021-10-06T12:27:36.8249258-05:00'
-                  teaser_title: ''
-                  teaser_description: ''
-                  post_image_url: ''
-                  teaser_image_url: ''
-                  author_profile_id: 0
-                  are_comments_enabled: false
-                  is_featured: false
-                  is_stickied: false
-                  are_comments_locked: false
-                  view_count: 0
-                  store_id: 4
-                  head_tags: ''
-                  url_rewrite: /blog/Hello-There3
-                  page_content_type: BlogPost
-              properties:
-                id:
-                  type: number
-                  readOnly: true
-                blog_id:
-                  type: number
-                title:
-                  type: string
-                keywords:
-                  type: string
-                description:
-                  type: string
-                content:
-                  type: string
-                published_at: {}
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
-                teaser_title:
-                  type: string
-                teaser_description:
-                  type: string
-                post_image_url:
-                  type: string
-                teaser_image_url:
-                  type: string
-                author_profile_id:
-                  type: number
-                are_comments_enabled:
-                  type: boolean
-                is_featured:
-                  type: boolean
-                is_stickied:
-                  type: boolean
-                are_comments_locked:
-                  type: boolean
-                view_count:
-                  type: number
-                store_id:
-                  type: number
-                head_tags:
-                  type: string
-                url_rewrite:
-                  type: string
-                page_content_type:
-                  type: string
-            examples:
-              Example:
-                value:
-                  id: 43
-                  blog_id: 1
-                  title: Hello There
-                  keywords: ''
-                  description: ''
-                  content: ''
-                  published_at: null
-                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
-                  created_at: '2021-10-06T12:27:36.8249258-05:00'
-                  teaser_title: ''
-                  teaser_description: ''
-                  post_image_url: ''
-                  teaser_image_url: ''
-                  author_profile_id: 0
-                  are_comments_enabled: false
-                  is_featured: false
-                  is_stickied: false
-                  are_comments_locked: false
-                  view_count: 0
-                  store_id: 4
-                  head_tags: ''
-                  url_rewrite: /blog/Hello-There
-                  page_content_type: BlogPost
-          application/xml:
-            schema:
-              description: ''
-              type: object
-              x-examples:
-                example-1:
-                  id: 43
-                  blog_id: 1
-                  title: Hello There
-                  keywords: ''
-                  description: ''
-                  content: ''
-                  published_at: null
-                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
-                  created_at: '2021-10-06T12:27:36.8249258-05:00'
-                  teaser_title: ''
-                  teaser_description: ''
-                  post_image_url: ''
-                  teaser_image_url: ''
-                  author_profile_id: 0
-                  are_comments_enabled: false
-                  is_featured: false
-                  is_stickied: false
-                  are_comments_locked: false
-                  view_count: 0
-                  store_id: 4
-                  head_tags: ''
-                  url_rewrite: /blog/Hello-There3
-                  page_content_type: BlogPost
-              properties:
-                id:
-                  type: integer
-                  readOnly: true
-                blog_id:
-                  type: integer
-                title:
-                  type: string
-                keywords:
-                  type: string
-                description:
-                  type: string
-                content:
-                  type: string
-                published_at: {}
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
-                teaser_title:
-                  type: string
-                teaser_description:
-                  type: string
-                post_image_url:
-                  type: string
-                teaser_image_url:
-                  type: string
-                author_profile_id:
-                  type: integer
-                are_comments_enabled:
-                  type: boolean
-                is_featured:
-                  type: boolean
-                is_stickied:
-                  type: boolean
-                are_comments_locked:
-                  type: boolean
-                view_count:
-                  type: integer
-                store_id:
-                  type: integer
-                head_tags:
-                  type: string
-                url_rewrite:
-                  type: string
-                page_content_type:
-                  type: string
-              required:
-                - id
-        description: ''
-      tags:
-        - Blog Posts
-    delete:
-      summary: Delete a Blog Post
-      operationId: delete-blog_post-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      description: Deletes a blog post.
-      tags:
-        - Blog Posts
-  '/cart_items/{id}':
+  '/custom_shipping_methods/{id}':
     parameters:
       - schema:
           type: string
         name: id
         in: path
         required: true
-        description: The ID of the `cart_item`
+        description: The ID of the `custom_shipping_method`
     put:
-      summary: Update a Cart Item
-      operationId: put-cart_items-id
+      summary: Update a Custom Shipping Method
+      operationId: put-custom_shipping_methods-id
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/cart_items'
+                $ref: '#/components/schemas/custom_shipping_methods'
+      tags:
+        - Custom Shipping Methods
+      description: |-
+        Updates a custom shipping method.
+
+        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/cart_items'
-            examples:
-              Example:
-                value:
-                  id: 6110
-                  product_id: 8
-                  item_number: 3367799-2
-                  quantity: 1
-                  price: 330
-                  cost: 125
-                  shipping_address_id: 0
-                  item_thumbnail: /Shared/images/sample/products/Shirts/3367799.jpg
-                  item_url: ''
-                  item_name: Clayton Solid Cotton French
-                  warehouse_id: 0
-                  parent_product_id: 4
-                  parent_cart_item_id: 45
-                  updated_at: '2021-10-05T12:09:13.62-05:00'
-                  created_at: '2021-10-05T12:08:41.37-05:00'
-                  cart_id: 3946
-                  is_subscription_product: false
-                  vendor_store_id: null
-                  variants:
-                    - id: 5
-                      description: 'COLOR: White'
-                      variant_group_id: 4
-                    - id: 7
-                      description: 'SIZE: Large'
-                      variant_group_id: 1
-                  personalizations:
-                    - id: 27
-                      answer: Hello There
-      description: 'Updates a cart item. '
-      tags:
-        - Cart Items
+              $ref: '#/components/schemas/custom_shipping_methods'
     delete:
-      summary: ''
-      operationId: delete-cart_items-id
+      summary: Delete a Custom Shipping Method
+      operationId: delete-custom_shipping_methods-id
       responses:
         '200':
           description: OK
         '404':
           $ref: '#/components/responses/404'
-      description: Deletes a cart item.
       tags:
-        - Cart Items
+        - Custom Shipping Methods
+      description: |-
+        Deletes a custom shipping method.
+
+        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
+  '/customer_payment_methods/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `customer_payment_method`
+    put:
+      summary: Update a Customer Payment Method
+      operationId: put-customer_payment_methods-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_payment_methods'
+      description: Updates a customer payment method.
+      tags:
+        - Customer Payment Methods
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customer_payment_methods'
+    delete:
+      summary: Delete a Customer Payment Method
+      operationId: delete-customer_payment_methods-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Customer Payment Methods
+      description: Deletes a customer payment method.
 components:
   schemas:
     adcodes:
