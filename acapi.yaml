@@ -1,4 +1,62 @@
 openapi: 3.1.0
+tags:
+  - name: Adcodes
+  - name: Addresses
+  - name: Affiliates
+  - name: Attribute Groups
+  - name: Attributes
+  - name: Blog Categories
+  - name: Blog Posts
+  - name: Blogs
+  - name: Cart Items
+  - name: Carts
+  - name: Coupon Codes
+  - name: Credit Cards
+  - name: Custom Field Values
+  - name: Custom Fields
+  - name: Custom Shipping Methods
+  - name: Customer Types
+  - name: Customers
+  - name: Discount Methods
+  - name: Discount Rules
+  - name: Drips
+  - name: Email Templates
+  - name: Gift Certificate Transactions
+  - name: Gift Certificates
+  - name: Inventory
+  - name: Links
+  - name: Mailing Lists
+  - name: Manufacturers
+  - name: Notifications
+  - name: Order Addresses
+  - name: Order Payments
+  - name: Order Shipments
+  - name: Order Statuses
+  - name: Orders
+  - name: Pages
+  - name: Price Calculator Rule Modifiers
+  - name: Price Calculators
+  - name: Product Lists
+  - name: Product Pictures
+  - name: Product Pricing
+  - name: Product Reviews
+  - name: Product Statuses
+  - name: Product Variants
+  - name: Products
+  - name: Profiles
+  - name: Quotes
+  - name: Regions
+  - name: Sessions
+  - name: Shipping Rate Adjustments
+  - name: Subscriptions
+  - name: Tax Rates
+  - name: Theme Import
+  - name: URL Redirects
+  - name: Users
+  - name: Variant Groups
+  - name: Variant Inventory
+  - name: Warehouses
+  - name: Wishlists
 info:
   title: acapi
   version: '1.0'
@@ -832,7 +890,7 @@ paths:
       description: Deletes a blog category by ID.
   /blogs:
     get:
-      summary: Blogs
+      summary: Get Blogs
       tags: []
       responses:
         '200':
@@ -859,9 +917,286 @@ paths:
                   '':
                     type: string
       operationId: get-blogs
+    post:
+      summary: Create a Blog
+      operationId: post-blogs
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blogs'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  store_id: 1
+                  name: Our Blog
+                  description: ''
+                  tag_line: 'This is where ##STORENAME## talks about stuff related to our industry!'
+                  url_slug: /blog2
+                  meta_description: ''
+                  meta_keywords: ''
+                  copyright: ''
+                  image_url: ''
+                  language: ''
+                  max_feed_elements: 25
+                  syndication_type: Full
+                  is_rss_feed_enabled: true
+                  is_atom_feed_enabled: true
+                  max_chars_short_feed: null
+                  max_chars_summary: null
+                  is_commenting_enabled: true
+                  is_comment_moderation_enabled: true
+                  default_post_image: ''
+                  default_teaser_image: ''
+                  new_post_notification_email_template_id: null
+                  new_comment_notification_email_template_id: null
+                  notify_commenters_on_new_comments: false
+                  new_comment_admin_notification_email_template_id: null
+                  new_post_admin_notification_email_template_id: null
+                  new_comment_reply_notification_email_template_id: null
+              properties:
+                store_id:
+                  type: integer
+                name:
+                  type: string
+                description:
+                  type: string
+                tag_line:
+                  type: string
+                meta_keywords:
+                  type: string
+                url_slug:
+                  type: string
+                  description: 'Isn''t required depending your SEO settings in Settings > Search Engine, under Blogs. With the default settings, a URL will be created using the value entered for `name`. However, it must be unique.'
+                meta_description:
+                  type: string
+                copyright:
+                  type: string
+                image_url:
+                  type: string
+                language:
+                  type: string
+                max_feed_elements:
+                  type: number
+                syndication_type:
+                  type: string
+                  minLength: 1
+                is_rss_feed_enabled:
+                  type: boolean
+                is_atom_feed_enabled:
+                  type: boolean
+                max_chars_short_feed: {}
+                max_chars_summary: {}
+                is_commenting_enabled:
+                  type: boolean
+                is_comment_moderation_enabled:
+                  type: boolean
+                default_post_image:
+                  type: string
+                default_teaser_image:
+                  type: string
+                new_post_notification_email_template_id:
+                  type: integer
+                new_comment_notification_email_template_id:
+                  type: integer
+                notify_commenters_on_new_comments:
+                  type: boolean
+                new_comment_admin_notification_email_template_id:
+                  type: integer
+                new_post_admin_notification_email_template_id:
+                  type: integer
+                new_comment_reply_notification_email_template_id:
+                  type: integer
+              required:
+                - store_id
+                - name
+            examples:
+              Example:
+                value:
+                  store_id: 1
+                  name: Our Blog
+                  description: ''
+                  tag_line: 'This is where ##STORENAME## talks about stuff related to our industry!'
+                  url_slug: /blog
+                  meta_description: ''
+                  meta_keywords: ''
+                  copyright: ''
+                  image_url: ''
+                  language: ''
+                  max_feed_elements: 25
+                  syndication_type: Full
+                  is_rss_feed_enabled: true
+                  is_atom_feed_enabled: true
+                  max_chars_short_feed: null
+                  max_chars_summary: null
+                  is_commenting_enabled: true
+                  is_comment_moderation_enabled: true
+                  default_post_image: ''
+                  default_teaser_image: ''
+                  new_post_notification_email_template_id: 4
+                  new_comment_notification_email_template_id: 5
+                  notify_commenters_on_new_comments: false
+                  new_comment_admin_notification_email_template_id: 6
+                  new_post_admin_notification_email_template_id: 7
+                  new_comment_reply_notification_email_template_id: 8
+        description: ''
+      description: 'Creates a Blog. '
+  '/blogs/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `blog`
+    put:
+      summary: Update a Blog
+      operationId: put-blogs-id
+      responses:
+        '200':
+          description: OK
+      description: Updates a blog.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1
+                  store_id: 1
+                  name: Our Blog
+                  description: ''
+                  tag_line: 'This is where ##STORENAME## talks about stuff related to our industry!'
+                  url_slug: /blog
+                  meta_description: ''
+                  meta_keywords: ''
+                  copyright: ''
+                  image_url: ''
+                  language: ''
+                  max_feed_elements: 25
+                  syndication_type: Full
+                  is_rss_feed_enabled: true
+                  is_atom_feed_enabled: true
+                  max_chars_short_feed: null
+                  max_chars_summary: null
+                  is_commenting_enabled: true
+                  is_comment_moderation_enabled: true
+                  default_post_image: ''
+                  default_teaser_image: ''
+                  new_post_notification_email_template_id: 4
+                  new_comment_notification_email_template_id: 5
+                  notify_commenters_on_new_comments: false
+                  new_comment_admin_notification_email_template_id: 6
+                  new_post_admin_notification_email_template_id: 7
+                  new_comment_reply_notification_email_template_id: 8
+              properties:
+                id:
+                  type: integer
+                store_id:
+                  type: number
+                name:
+                  type: string
+                description:
+                  type: string
+                tag_line:
+                  type: string
+                url_slug:
+                  type: string
+                meta_description:
+                  type: string
+                meta_keywords:
+                  type: string
+                copyright:
+                  type: string
+                image_url:
+                  type: string
+                language:
+                  type: string
+                max_feed_elements:
+                  type: number
+                syndication_type:
+                  type: string
+                is_rss_feed_enabled:
+                  type: boolean
+                is_atom_feed_enabled:
+                  type: boolean
+                max_chars_short_feed:
+                  type: integer
+                max_chars_summary:
+                  type: integer
+                is_commenting_enabled:
+                  type: boolean
+                is_comment_moderation_enabled:
+                  type: boolean
+                default_post_image:
+                  type: string
+                default_teaser_image:
+                  type: string
+                new_post_notification_email_template_id:
+                  type: integer
+                new_comment_notification_email_template_id:
+                  type: integer
+                notify_commenters_on_new_comments:
+                  type: boolean
+                new_comment_admin_notification_email_template_id:
+                  type: integer
+                new_post_admin_notification_email_template_id:
+                  type: integer
+                new_comment_reply_notification_email_template_id:
+                  type: integer
+              required:
+                - id
+            examples:
+              Example:
+                value:
+                  id: 1
+                  store_id: 1
+                  name: Our Blog
+                  description: ''
+                  tag_line: 'This is where ##STORENAME## talks about stuff related to our industry!'
+                  url_slug: /blog
+                  meta_description: ''
+                  meta_keywords: ''
+                  copyright: ''
+                  image_url: ''
+                  language: ''
+                  max_feed_elements: 25
+                  syndication_type: Full
+                  is_rss_feed_enabled: true
+                  is_atom_feed_enabled: true
+                  max_chars_short_feed: 25
+                  max_chars_summary: 25
+                  is_commenting_enabled: true
+                  is_comment_moderation_enabled: true
+                  default_post_image: ''
+                  default_teaser_image: ''
+                  new_post_notification_email_template_id: 4
+                  new_comment_notification_email_template_id: 5
+                  notify_commenters_on_new_comments: false
+                  new_comment_admin_notification_email_template_id: 6
+                  new_post_admin_notification_email_template_id: 7
+                  new_comment_reply_notification_email_template_id: 8
+    delete:
+      summary: Delete a Blog
+      operationId: delete-blogs-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: 'Deletes a blog. '
   /blog_posts:
     get:
-      summary: Blog Posts
+      summary: Get Blog Posts
       tags: []
       responses:
         '200':
@@ -878,9 +1213,116 @@ paths:
                     items:
                       $ref: '#/components/schemas/blog_posts'
       operationId: get-blog_posts
+      description: Gets an array of blog posts.
+    post:
+      summary: Create a Blog Post
+      operationId: post-blog_posts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog_posts'
+      description: 'Creates a blog posts. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 15
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: My Content
+                  published_at: '2019-11-06T11:27:00-06:00'
+                  updated_at: '2019-11-06T11:27:46.87-06:00'
+                  created_at: '2019-11-06T11:27:46.87-06:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 2
+                  are_comments_enabled: true
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 140
+                  store_id: 1
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There
+                  page_content_type: BlogPost
+              properties:
+                blog_id:
+                  type: integer
+                title:
+                  type: string
+                keywords:
+                  type: string
+                description:
+                  type: string
+                content:
+                  type: string
+                teaser_title:
+                  type: string
+                teaser_description:
+                  type: string
+                post_image_url:
+                  type: string
+                teaser_image_url:
+                  type: string
+                author_profile_id:
+                  type: integer
+                are_comments_enabled:
+                  type: boolean
+                is_featured:
+                  type: boolean
+                is_stickied:
+                  type: boolean
+                are_comments_locked:
+                  type: boolean
+                view_count:
+                  type: integer
+                store_id:
+                  type: integer
+                head_tags:
+                  type: string
+                url_rewrite:
+                  type: string
+                page_content_type:
+                  type: string
+              required:
+                - blog_id
+                - store_id
+            examples:
+              Example:
+                value:
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There
+                  page_content_type: BlogPost
   /cart_items:
     get:
-      summary: Cart Items
+      summary: Get Cart Items
       tags: []
       responses:
         '200':
@@ -911,6 +1353,135 @@ paths:
                   '':
                     $ref: '#/components/schemas/cart_items'
       operationId: get-cart_items
+      description: Gets an array of cart items.
+    post:
+      summary: Create a Cart Item
+      operationId: post-cart_items
+      responses:
+        '200':
+          description: OK
+      description: 'Adds an Item to specified cart. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 6110
+                  product_id: 8
+                  item_number: 3367799-2
+                  quantity: 1
+                  price: 330
+                  cost: 125
+                  shipping_address_id: 0
+                  item_thumbnail: /Shared/images/sample/products/Shirts/3367799.jpg
+                  item_url: ''
+                  item_name: Clayton Solid Cotton French
+                  warehouse_id: 0
+                  parent_product_id: null
+                  parent_cart_item_id: null
+                  updated_at: '2021-10-05T12:09:13.62-05:00'
+                  created_at: '2021-10-05T12:08:41.37-05:00'
+                  cart_id: 3946
+                  is_subscription_product: false
+                  vendor_store_id: null
+                  variants:
+                    - id: 5
+                      description: 'COLOR: White'
+                      variant_group_id: 4
+                    - id: 7
+                      description: 'SIZE: Large'
+                      variant_group_id: 1
+                  personalizations:
+                    - id: 27
+                      answer: Hello There
+              properties:
+                product_id:
+                  type: integer
+                item_number:
+                  type: string
+                quantity:
+                  type: number
+                price:
+                  type: number
+                cost:
+                  type: number
+                shipping_address_id:
+                  type: integer
+                item_thumbnail:
+                  type: string
+                item_url:
+                  type: string
+                item_name:
+                  type: string
+                warehouse_id:
+                  type: number
+                parent_product_id: {}
+                parent_cart_item_id: {}
+                cart_id:
+                  type: integer
+                is_subscription_product:
+                  type: boolean
+                vendor_store_id:
+                  type: integer
+                variants:
+                  type: array
+                  uniqueItems: false
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      description:
+                        type: string
+                      variant_group_id:
+                        type: integer
+                personalizations:
+                  type: array
+                  uniqueItems: false
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      answer:
+                        type: string
+              required:
+                - product_id
+                - cart_id
+            examples:
+              Example:
+                value:
+                  id: 6110
+                  product_id: 8
+                  item_number: 3367799-2
+                  quantity: 1
+                  price: 330
+                  cost: 125
+                  shipping_address_id: 0
+                  item_thumbnail: /Shared/images/shirt.jpg
+                  item_url: ''
+                  item_name: T Shirt
+                  warehouse_id: 0
+                  parent_product_id: null
+                  parent_cart_item_id: null
+                  updated_at: '2021-10-05T12:09:13.62-05:00'
+                  created_at: '2021-10-05T12:08:41.37-05:00'
+                  cart_id: 3946
+                  is_subscription_product: false
+                  vendor_store_id: 1
+                  variants:
+                    - id: 5
+                      description: 'COLOR: White'
+                      variant_group_id: 4
+                    - id: 7
+                      description: 'SIZE: Large'
+                      variant_group_id: 1
+                  personalizations:
+                    - id: 27
+                      answer: Hello There
   /carts:
     get:
       summary: Carts
@@ -2058,8 +2629,9 @@ paths:
       operationId: get-variant_groups
   /variant_inventory:
     get:
-      summary: Variant Inventory
-      tags: []
+      summary: Get Variant Inventory
+      tags:
+        - Variant Inventory
       responses:
         '200':
           description: OK
@@ -2075,29 +2647,304 @@ paths:
                     items:
                       $ref: '#/components/schemas/variant_inventory'
       operationId: get-variant_inventory
-  /warehouses:
-    get:
-      summary: Warehouses
-      tags: []
+      description: Gets an array of all Variant Inventory.
+    post:
+      summary: Create a Variant Inventory Item
+      operationId: post-variant_inventory
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
+                description: ''
                 type: object
+                x-examples:
+                  example-1:
+                    id: 77
+                    product_id: 8
+                    inventory: 0
+                    item_number: 3367799-4
+                    manufacturer_item_number: ''
+                    weight: 0
+                    product_status_id: 3
+                    quickbooks_item_id: ''
+                    updated_at: '2021-10-06T14:28:52.9715109-05:00'
+                    created_at: '2021-10-06T14:28:52.9715109-05:00'
+                    low_stock_warning_at: 3
+                    low_stock_warning_enabled: false
+                    gtin: ''
+                    variants:
+                      - id: 9
+                        product_id: 8
+                        variant_group_id: 1
+                        description: X-Large
+                        price_adjustment: 0
+                        price_adjustment_type: ''
+                        sort_order: 0
+                        item_number_extension: ''
+                        is_hidden: false
+                        updated_at: null
+                        created_at: null
+                        is_default_selection: false
+                        swatch_file: null
+                        swatch_thumbnail: null
+                        swatch_thumbnail_color: null
+                        variant_inventory_id: 77
+                      - id: 5
+                        product_id: 8
+                        variant_group_id: 4
+                        description: White
+                        price_adjustment: 0
+                        price_adjustment_type: ''
+                        sort_order: 0
+                        item_number_extension: ''
+                        is_hidden: false
+                        updated_at: null
+                        created_at: null
+                        is_default_selection: false
+                        swatch_file: null
+                        swatch_thumbnail: null
+                        swatch_thumbnail_color: null
+                        variant_inventory_id: 77
                 properties:
-                  total_count:
+                  id:
                     type: integer
-                  warehouses:
+                  product_id:
+                    type: integer
+                  inventory:
+                    type: integer
+                  item_number:
+                    type: string
+                    minLength: 1
+                  manufacturer_item_number:
+                    type: string
+                  weight:
+                    type: number
+                  product_status_id:
+                    type: number
+                  quickbooks_item_id:
+                    type: string
+                  updated_at:
+                    type: string
+                  created_at:
+                    type: string
+                  low_stock_warning_at:
+                    type: number
+                  low_stock_warning_enabled:
+                    type: boolean
+                  gtin:
+                    type: string
+                  variants:
                     type: array
+                    uniqueItems: true
+                    minItems: -4
                     items:
-                      $ref: '#/components/schemas/warehouses'
-      operationId: get-warehouses
+                      type: object
+                      properties:
+                        id:
+                          type: integer
+                        product_id:
+                          type: integer
+                        variant_group_id:
+                          type: integer
+                        description:
+                          type: string
+                        price_adjustment:
+                          type: number
+                        price_adjustment_type:
+                          type: string
+                        sort_order:
+                          type: number
+                        item_number_extension:
+                          type: string
+                        is_hidden:
+                          type: boolean
+                        updated_at:
+                          type: string
+                        created_at:
+                          type: string
+                        is_default_selection:
+                          type: boolean
+                        swatch_file:
+                          type: string
+                        swatch_thumbnail:
+                          type: string
+                        swatch_thumbnail_color:
+                          type: string
+                        variant_inventory_id:
+                          type: number
+                      required:
+                        - id
+                        - product_id
+                        - variant_group_id
+                required:
+                  - id
+      tags:
+        - Variant Inventory
+      description: |-
+        Creates a variant inventory item.
+
+        Variant Inventory items are created from all possible variant combinations. It is required to specify applicable variants that make up the variant inventory item you wish to create. For information, please see our knowledge base: [Adding Variant Level Inventory](https://support.americommerce.com/hc/en-us/articles/201907140-Adding-Variant-Level-Inventory)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  product_id: 8
+                  inventory: 0
+                  item_number: 3367799-4
+                  manufacturer_item_number: ''
+                  weight: 0
+                  product_status_id: 3
+                  quickbooks_item_id: ''
+                  low_stock_warning_at: 3
+                  low_stock_warning_enabled: false
+                  gtin: ''
+                  variants:
+                    - id: 9
+                      product_id: 8
+                      variant_group_id: 1
+                      description: X-Large
+                      price_adjustment: 0
+                      price_adjustment_type: ''
+                      sort_order: 0
+                      item_number_extension: ''
+                      is_hidden: false
+                      is_default_selection: false
+                      swatch_file: ''
+                      swatch_thumbnail: ''
+                      swatch_thumbnail_color: ''
+                      variant_inventory_id: 7
+                    - id: 5
+                      product_id: 8
+                      variant_group_id: 4
+                      description: White
+                      price_adjustment: 0
+                      price_adjustment_type: ''
+                      sort_order: 0
+                      item_number_extension: ''
+                      is_hidden: false
+                      is_default_selection: false
+                      swatch_file: ''
+                      swatch_thumbnail: ''
+                      swatch_thumbnail_color: ''
+                      variant_inventory_id: 7
+              properties:
+                product_id:
+                  type: integer
+                inventory:
+                  type: number
+                item_number:
+                  type: string
+                manufacturer_item_number:
+                  type: string
+                weight:
+                  type: number
+                product_status_id:
+                  type: integer
+                quickbooks_item_id:
+                  type: string
+                low_stock_warning_at:
+                  type: number
+                low_stock_warning_enabled:
+                  type: boolean
+                gtin:
+                  type: string
+                variants:
+                  type: array
+                  uniqueItems: true
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: number
+                      product_id:
+                        type: number
+                      variant_group_id:
+                        type: number
+                      description:
+                        type: string
+                      price_adjustment:
+                        type: number
+                      price_adjustment_type:
+                        type: string
+                      sort_order:
+                        type: number
+                      item_number_extension:
+                        type: string
+                      is_hidden:
+                        type: boolean
+                      is_default_selection:
+                        type: boolean
+                      swatch_file:
+                        type: string
+                      swatch_thumbnail:
+                        type: string
+                      swatch_thumbnail_color:
+                        type: string
+                      variant_inventory_id:
+                        type: number
+                    required:
+                      - id
+                      - product_id
+                      - variant_group_id
+                      - swatch_thumbnail_color
+                      - variant_inventory_id
+              required:
+                - product_id
+                - variants
+            examples:
+              Example:
+                value:
+                  product_id: 8
+                  inventory: 0
+                  item_number: 3367799-4
+                  manufacturer_item_number: ''
+                  weight: 0
+                  product_status_id: 3
+                  quickbooks_item_id: ''
+                  low_stock_warning_at: 3
+                  low_stock_warning_enabled: false
+                  gtin: ''
+                  variants:
+                    - id: 9
+                      product_id: 8
+                      variant_group_id: 1
+                      description: X-Large
+                      price_adjustment: 0
+                      price_adjustment_type: ''
+                      sort_order: 0
+                      item_number_extension: ''
+                      is_hidden: false
+                      is_default_selection: false
+                      swatch_file: ''
+                      swatch_thumbnail: ''
+                      swatch_thumbnail_color: ''
+                      variant_inventory_id: 7
+                    - id: 5
+                      product_id: 8
+                      variant_group_id: 4
+                      description: White
+                      price_adjustment: 0
+                      price_adjustment_type: ''
+                      sort_order: 0
+                      item_number_extension: ''
+                      is_hidden: false
+                      is_default_selection: false
+                      swatch_file: ''
+                      swatch_thumbnail: ''
+                      swatch_thumbnail_color: ''
+                      variant_inventory_id: 7
+        description: ''
   /wishlists:
     get:
-      summary: Wishlists
-      tags: []
+      summary: Get Wishlists
+      tags:
+        - Wishlists
       responses:
         '200':
           description: OK
@@ -2113,6 +2960,597 @@ paths:
                     items:
                       $ref: '#/components/schemas/wishlists'
       operationId: get-wishlists
+      description: Gets an array of wishlists.
+    post:
+      summary: Create a Wishlist
+      operationId: post-wishlists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wishlists'
+      description: Creates a wishlist.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: My Wishlist
+                  cart_type: WishList
+                  customer_id: 42
+                  is_public: false
+                  store_id: 1
+                  discount_total: 100
+                  subtotal: 1099.99
+                  shipping_total: 0
+                  handling_total: 0
+                  tax_total: 0
+                  grand_total: 999.99
+                  tax_rate: 8
+                  additional_fees: 0
+                  discounted_shipping_total: 0
+                  region_markup_amount: 0
+                  non_shipping_discount: 100
+                  gift_certificate_discount: 5
+                  coupon_code: ''
+                  associated_order_id: null
+                  shipping_estimate_city: null
+                  shipping_estimate_state_code: null
+                  shipping_estimate_postal_code: null
+                  shipping_estimate_country_code: null
+                  is_shipping_billed_to_account: false
+                  customer_payment_method_id: null
+                  payment_method_id: null
+                  is_payment_cart_only: false
+              properties:
+                name:
+                  type: string
+                cart_type:
+                  type: string
+                customer_id:
+                  type: integer
+                is_public:
+                  type: boolean
+                store_id:
+                  type: integer
+                discount_total:
+                  type: number
+                subtotal:
+                  type: number
+                shipping_total:
+                  type: number
+                handling_total:
+                  type: number
+                tax_total:
+                  type: number
+                grand_total:
+                  type: number
+                tax_rate:
+                  type: number
+                additional_fees:
+                  type: number
+                discounted_shipping_total:
+                  type: number
+                region_markup_amount:
+                  type: number
+                non_shipping_discount:
+                  type: number
+                gift_certificate_discount:
+                  type: number
+                coupon_code:
+                  type: string
+                associated_order_id:
+                  type: integer
+                shipping_estimate_city:
+                  type: string
+                shipping_estimate_state_code: {}
+                shipping_estimate_postal_code:
+                  type: string
+                shipping_estimate_country_code:
+                  type: string
+                is_shipping_billed_to_account:
+                  type: boolean
+                customer_payment_method_id:
+                  type: integer
+                payment_method_id:
+                  type: integer
+                is_payment_cart_only:
+                  type: boolean
+            examples:
+              Example:
+                value:
+                  name: My Wishlist
+                  cart_type: WishList
+                  customer_id: 42
+                  is_public: false
+                  store_id: 1
+                  discount_total: 100
+                  subtotal: 1099.99
+                  shipping_total: 0
+                  handling_total: 0
+                  tax_total: 0
+                  grand_total: 999.99
+                  tax_rate: 8
+                  additional_fees: 0
+                  discounted_shipping_total: 0
+                  region_markup_amount: 0
+                  non_shipping_discount: 100
+                  gift_certificate_discount: 5
+                  coupon_code: ''
+                  associated_order_id: 3
+                  shipping_estimate_city: Beaumont
+                  shipping_estimate_state_code: Tx
+                  shipping_estimate_postal_code: '77702'
+                  shipping_estimate_country_code: US
+                  is_shipping_billed_to_account: false
+                  customer_payment_method_id: 333
+                  payment_method_id: 3
+                  is_payment_cart_only: false
+      tags:
+        - Wishlists
+  '/wishlists/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `wishlist`
+    put:
+      summary: Update a Wishlist
+      operationId: put-wishlists-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/wishlists'
+      description: Updates a wishlist.
+      tags:
+        - Wishlists
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/wishlists'
+    delete:
+      summary: Delete a Wishlist
+      operationId: delete-wishlists-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a wishlist.
+  /warehouses:
+    get:
+      summary: Get Warehouses
+      tags:
+        - Warehouses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  warehouses:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/warehouses'
+      operationId: get-warehouses
+      description: Gets an array of warehouses.
+    post:
+      summary: Create a Warehouse
+      operationId: post-warehouses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/warehouses'
+      description: 'Creates a warehouse. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Default Warehouse
+                  city: Your City
+                  state: Texas
+                  country: United States
+                  postal_code: '77702'
+                  is_default: true
+                  email: ''
+                  address_line_1: ''
+                  address_line_2: ''
+                  account_number: ''
+                  updated_at: '2019-03-28T11:42:10.227-05:00'
+                  created_at: '2019-03-28T11:42:10.227-05:00'
+              properties:
+                name:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                country:
+                  type: string
+                postal_code:
+                  type: string
+                is_default:
+                  type: boolean
+                email:
+                  type: string
+                address_line_1:
+                  type: string
+                address_line_2:
+                  type: string
+                account_number:
+                  type: string
+              required:
+                - name
+            examples:
+              Example:
+                value:
+                  name: The Warehouse
+                  city: Beaumont
+                  state: Texas
+                  country: United States
+                  postal_code: '77702'
+                  is_default: true
+                  email: ''
+                  address_line_1: ''
+                  address_line_2: ''
+                  account_number: ''
+      tags:
+        - Warehouses
+  '/warehouses/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `warehouse`
+    put:
+      summary: Update a Warehouse
+      operationId: put-warehouses-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/warehouses'
+      tags:
+        - Warehouses
+      description: Updates a warehouse.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/warehouses'
+            examples:
+              Example:
+                value:
+                  name: The Warehouse
+                  city: Beaumont
+                  state: Texas
+                  country: United States
+                  postal_code: '77702'
+                  is_default: true
+                  email: ''
+                  address_line_1: ''
+                  address_line_2: ''
+                  account_number: ''
+    delete:
+      summary: Delete a Warehouse
+      operationId: delete-warehouses-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Warehouses
+      description: Deletes a warehouse.
+  '/blog_posts/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `blog_post`
+    put:
+      summary: Update a Blog Post
+      operationId: put-blog_post-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog_posts'
+      description: 'Updates a Blog Post. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 43
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  published_at: null
+                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
+                  created_at: '2021-10-06T12:27:36.8249258-05:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There3
+                  page_content_type: BlogPost
+              properties:
+                id:
+                  type: number
+                  readOnly: true
+                blog_id:
+                  type: number
+                title:
+                  type: string
+                keywords:
+                  type: string
+                description:
+                  type: string
+                content:
+                  type: string
+                published_at: {}
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+                teaser_title:
+                  type: string
+                teaser_description:
+                  type: string
+                post_image_url:
+                  type: string
+                teaser_image_url:
+                  type: string
+                author_profile_id:
+                  type: number
+                are_comments_enabled:
+                  type: boolean
+                is_featured:
+                  type: boolean
+                is_stickied:
+                  type: boolean
+                are_comments_locked:
+                  type: boolean
+                view_count:
+                  type: number
+                store_id:
+                  type: number
+                head_tags:
+                  type: string
+                url_rewrite:
+                  type: string
+                page_content_type:
+                  type: string
+            examples:
+              Example:
+                value:
+                  id: 43
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  published_at: null
+                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
+                  created_at: '2021-10-06T12:27:36.8249258-05:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There
+                  page_content_type: BlogPost
+          application/xml:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 43
+                  blog_id: 1
+                  title: Hello There
+                  keywords: ''
+                  description: ''
+                  content: ''
+                  published_at: null
+                  updated_at: '2021-10-06T12:27:36.8249258-05:00'
+                  created_at: '2021-10-06T12:27:36.8249258-05:00'
+                  teaser_title: ''
+                  teaser_description: ''
+                  post_image_url: ''
+                  teaser_image_url: ''
+                  author_profile_id: 0
+                  are_comments_enabled: false
+                  is_featured: false
+                  is_stickied: false
+                  are_comments_locked: false
+                  view_count: 0
+                  store_id: 4
+                  head_tags: ''
+                  url_rewrite: /blog/Hello-There3
+                  page_content_type: BlogPost
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                blog_id:
+                  type: integer
+                title:
+                  type: string
+                keywords:
+                  type: string
+                description:
+                  type: string
+                content:
+                  type: string
+                published_at: {}
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+                teaser_title:
+                  type: string
+                teaser_description:
+                  type: string
+                post_image_url:
+                  type: string
+                teaser_image_url:
+                  type: string
+                author_profile_id:
+                  type: integer
+                are_comments_enabled:
+                  type: boolean
+                is_featured:
+                  type: boolean
+                is_stickied:
+                  type: boolean
+                are_comments_locked:
+                  type: boolean
+                view_count:
+                  type: integer
+                store_id:
+                  type: integer
+                head_tags:
+                  type: string
+                url_rewrite:
+                  type: string
+                page_content_type:
+                  type: string
+              required:
+                - id
+        description: ''
+      tags:
+        - Blog Posts
+    delete:
+      summary: Delete a Blog Post
+      operationId: delete-blog_post-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a blog post.
+      tags:
+        - Blog Posts
+  '/cart_items/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `cart_item`
+    put:
+      summary: Update a Cart Item
+      operationId: put-cart_items-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart_items'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/cart_items'
+            examples:
+              Example:
+                value:
+                  id: 6110
+                  product_id: 8
+                  item_number: 3367799-2
+                  quantity: 1
+                  price: 330
+                  cost: 125
+                  shipping_address_id: 0
+                  item_thumbnail: /Shared/images/sample/products/Shirts/3367799.jpg
+                  item_url: ''
+                  item_name: Clayton Solid Cotton French
+                  warehouse_id: 0
+                  parent_product_id: 4
+                  parent_cart_item_id: 45
+                  updated_at: '2021-10-05T12:09:13.62-05:00'
+                  created_at: '2021-10-05T12:08:41.37-05:00'
+                  cart_id: 3946
+                  is_subscription_product: false
+                  vendor_store_id: null
+                  variants:
+                    - id: 5
+                      description: 'COLOR: White'
+                      variant_group_id: 4
+                    - id: 7
+                      description: 'SIZE: Large'
+                      variant_group_id: 1
+                  personalizations:
+                    - id: 27
+                      answer: Hello There
+      description: 'Updates a cart item. '
+      tags:
+        - Cart Items
+    delete:
+      summary: ''
+      operationId: delete-cart_items-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a cart item.
+      tags:
+        - Cart Items
 components:
   schemas:
     adcodes:
