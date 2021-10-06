@@ -26,6 +26,7 @@ paths:
       operationId: get-adcodes
       tags:
         - Adcodes
+      description: Gets an array of adcodes
     post:
       summary: Create an Adcode
       operationId: post-adcodes
@@ -109,10 +110,126 @@ paths:
                   url: 'https://www.drunkenmoocow.com/Default.aspx?a=5off'
       tags:
         - Adcodes
+      description: Creates an adcode
     parameters: []
+  '/adcodes/{adcode_id}':
+    parameters:
+      - schema:
+          type: integer
+        name: adcode_id
+        in: path
+        description: The ID of the `adcode`
+        required: true
+    delete:
+      summary: Delete an Adcode
+      operationId: delete-adcodes-id
+      parameters: []
+      description: Delete an adcode by ID.
+      tags:
+        - Adcodes
+    put:
+      summary: Update an Adcode
+      operationId: put-adcodes-adcode_id
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 2
+                  name: abanddonedcart
+                  description: ''
+                  visits: 2
+                  affiliate_id: null
+                  commission: ''
+                  commission_type: ''
+                  total_sales: null
+                  total_orders: null
+                  initial_sales: null
+                  load_sales: null
+                  new_customers: null
+                  load_customers: null
+                  total_commissions: null
+                  conversion_rate: null
+                  cost_per_customer: null
+                  sales_per_ad_dollar: null
+                  repeat_commission_amount: ''
+                  repeat_commission_type: ''
+                  pay_for_repeat_sales: ''
+                  url: 'https://www.drunkenmoocow.com/Default.aspx?a=abandonedcart'
+                  is_pay_per_click: false
+                  source: ''
+                  updated_at: '2021-10-05T19:03:41.0406559-05:00'
+                  created_at: '2019-09-18T10:18:27.607-05:00'
+                  expires_at: '2019-09-30T00:00:00-05:00'
+                  creation_type: Manual
+              properties:
+                id:
+                  type: integer
+                  readOnly: true
+                name:
+                  type: string
+                description:
+                  type: string
+                visits:
+                  type: number
+                affiliate_id:
+                  type: integer
+                commission:
+                  type: string
+                commission_type:
+                  type: string
+                total_sales:
+                  type: number
+                total_orders:
+                  type: integer
+                initial_sales:
+                  type: integer
+                load_sales:
+                  type: integer
+                new_customers:
+                  type: integer
+                load_customers:
+                  type: integer
+                total_commissions:
+                  type: integer
+                conversion_rate:
+                  type: number
+                cost_per_customer:
+                  type: number
+                sales_per_ad_dollar:
+                  type: number
+                repeat_commission_amount:
+                  type: string
+                repeat_commission_type:
+                  type: string
+                pay_for_repeat_sales:
+                  type: string
+                url:
+                  type: string
+                is_pay_per_click:
+                  type: boolean
+                source:
+                  type: string
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+                expires_at:
+                  type: string
+                creation_type:
+                  type: string
+              required:
+                - id
+      description: Update an adcode by ID.
   /addresses:
     get:
-      summary: Addresses
+      summary: Get Addresses
       tags:
         - Addresses
       responses:
@@ -130,9 +247,176 @@ paths:
                     items:
                       $ref: '#/components/schemas/addresses'
       operationId: get-addresses
+      description: Gets an array of addresses
+    post:
+      summary: Create an Address
+      operationId: post-addresses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addresses'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 2
+                  customer_id: 13
+                  address_line_1: 323 forever
+                  address_line_2: ''
+                  city: lolapalooza
+                  state: Texas
+                  postal_code: '77701'
+                  country: United States
+                  is_default_shipping_address: false
+                  phone: '1234567897'
+                  company: ''
+                  alternate_phone: ''
+                  fax: ''
+                  comments: ''
+                  is_default_billing_address: false
+                  updated_at: '2019-04-01T17:12:37.187-05:00'
+                  created_at: '2019-04-01T17:12:37.107-05:00'
+                  first_name: James
+                  last_name: Madison
+                  address_type: Default
+              properties:
+                customer_id:
+                  type: integer
+                address_line_1:
+                  type: string
+                address_line_2:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                postal_code:
+                  type: string
+                country:
+                  type: string
+                is_default_shipping_address:
+                  type: boolean
+                phone:
+                  type: string
+                company:
+                  type: string
+                alternate_phone:
+                  type: string
+                fax:
+                  type: string
+                comments:
+                  type: string
+                is_default_billing_address:
+                  type: boolean
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                address_type:
+                  type: string
+              required:
+                - customer_id
+                - country
+            examples:
+              Example:
+                value:
+                  customer_id: 13
+                  address_line_1: 251 N Bristol Ave
+                  address_line_2: ''
+                  city: Los Angeles
+                  state: California
+                  postal_code: '90049'
+                  country: United States
+                  is_default_shipping_address: false
+                  phone: '1234567897'
+                  company: ''
+                  alternate_phone: ''
+                  fax: ''
+                  comments: ''
+                  is_default_billing_address: false
+                  updated_at: '2019-04-01T17:12:37.187-05:00'
+                  created_at: '2019-04-01T17:12:37.107-05:00'
+                  first_name: Will
+                  last_name: Smith
+                  address_type: Default
+      description: Creates an address
+  '/addresses/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `address`
+    put:
+      summary: Update an Address
+      operationId: put-addresses-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addresses'
+      description: Update an address by ID.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/addresses'
+            examples:
+              Example:
+                value:
+                  customer_id: 13
+                  address_line_1: 251 N Bristol Ave
+                  address_line_2: ''
+                  city: Los Angeles
+                  state: California
+                  postal_code: '90049'
+                  country: United States
+                  is_default_shipping_address: false
+                  phone: '1234567897'
+                  company: ''
+                  alternate_phone: ''
+                  fax: ''
+                  comments: ''
+                  is_default_billing_address: false
+                  updated_at: '2019-04-01T17:12:37.187-05:00'
+                  created_at: '2019-04-01T17:12:37.107-05:00'
+                  first_name: Will
+                  last_name: Smith
+                  address_type: Default
+      tags:
+        - Addresses
+    delete:
+      summary: Delete an Address
+      operationId: delete-addresses-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/addresses'
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Addresses
+      description: Delete an address by ID.
   /affiliates:
     get:
-      summary: Affiliates
+      summary: Get Affiliates
       responses:
         '200':
           description: OK
@@ -155,7 +439,7 @@ paths:
     parameters: []
   /attribute_groups:
     get:
-      summary: Attribute Groups
+      summary: Get Attribute Groups
       tags: []
       responses:
         '200':
@@ -186,9 +470,57 @@ paths:
                       updated_at: string
                       created_at: string
       operationId: get-attribute_groups
+      description: Gets an array of attribute groups.
+    post:
+      summary: Update an Attribute Group
+      operationId: post-attribute_groups
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute_groups'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Shoes
+                  sort_order: 0
+                  is_hidden: false
+                  allow_drill_down: true
+                  allow_multiple: true
+                  tie_variant_inventory: false
+              properties:
+                name:
+                  type: string
+                sort_order:
+                  type: number
+                is_hidden:
+                  type: boolean
+                allow_drill_down:
+                  type: boolean
+                allow_multiple:
+                  type: boolean
+                tie_variant_inventory:
+                  type: boolean
+            examples:
+              Example:
+                value:
+                  name: Tesla
+                  sort_order: 0
+                  is_hidden: false
+                  allow_drill_down: true
+                  allow_multiple: true
+                  tie_variant_inventory: false
+      description: Creates an attribte group.
   /attributes:
     get:
-      summary: Attributes
+      summary: Get Attributes
       tags: []
       responses:
         '200':
@@ -205,9 +537,183 @@ paths:
                     items:
                       $ref: '#/components/schemas/attributes'
       operationId: get-attributes
+      description: Gets an array of attribtues.
+    post:
+      summary: Create an Attribute
+      operationId: post-attributes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attributes'
+              examples: {}
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  attribute_group_id: 1
+                  name: White
+                  is_hidden: false
+                  sort_order: 0
+                  updated_at: null
+                  created_at: null
+                  page_title: ''
+                  keywords: ''
+                  meta_description: ''
+                  url_rewrite: ''
+              properties:
+                attribute_group_id:
+                  type: integer
+                name:
+                  type: string
+                is_hidden:
+                  type: boolean
+                sort_order:
+                  type: number
+                page_title:
+                  type: string
+                keywords:
+                  type: string
+                meta_description:
+                  type: string
+                url_rewrite:
+                  type: string
+              required:
+                - attribute_group_id
+            examples:
+              Example:
+                value:
+                  attribute_group_id: 1
+                  name: small
+                  is_hidden: false
+                  sort_order: 0
+                  page_title: ''
+                  keywords: ''
+                  meta_description: ''
+                  url_rewrite: ''
+      description: Creates an attribute.
+  '/attributes/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `attribute`
+    put:
+      summary: Update an Attribute
+      operationId: put-attributes-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attributes'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/attributes'
+      description: Update an attribute by ID.
+    delete:
+      summary: Delete an Attribute
+      operationId: delete-attributes-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Attributes
+      description: Delete an attribute by ID.
+  '/attribute_groups/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `attribute_group`
+    put:
+      summary: Update an Attribute Group
+      operationId: put-attribute_groups-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/attribute_groups'
+      description: Update an attribute group by ID.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1
+                  name: Shoes
+                  sort_order: 0
+                  is_hidden: false
+                  allow_drill_down: true
+                  allow_multiple: true
+                  tie_variant_inventory: false
+                  updated_at: null
+                  created_at: null
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                sort_order:
+                  type: integer
+                is_hidden:
+                  type: boolean
+                allow_drill_down:
+                  type: boolean
+                allow_multiple:
+                  type: boolean
+                tie_variant_inventory:
+                  type: boolean
+                updated_at:
+                  type: string
+                created_at:
+                  type: string
+              required:
+                - id
+            examples:
+              Example:
+                value:
+                  id: 1
+                  name: Tesla
+                  sort_order: 0
+                  is_hidden: false
+                  allow_drill_down: true
+                  allow_multiple: true
+                  tie_variant_inventory: false
+                  updated_at: ''
+                  created_at: ''
+    delete:
+      summary: Delete an Attribute Group
+      operationId: delete-attribute_groups-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Delete an attribute group by ID.
   /blog_categories:
     get:
-      summary: Blog Categories
+      summary: Get Blog Categories
       tags: []
       responses:
         '200':
@@ -224,6 +730,106 @@ paths:
                     items:
                       $ref: '#/components/schemas/blog_categories'
       operationId: get-blog_categories
+      description: Gets an array of blog categories.
+    post:
+      summary: Create a Blog Category
+      operationId: post-blog_categories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog_categories'
+      description: Creates a blog category.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1
+                  blog_id: 1
+                  parent_category_id: 0
+                  type: Category
+                  description: ''
+                  updated_at: '2019-10-18T11:41:33.31-05:00'
+                  created_at: '2019-10-18T11:41:33.31-05:00'
+                  name: test
+                  blog_category_path: test
+              properties:
+                blog_id:
+                  type: integer
+                parent_category_id:
+                  type: integer
+                type:
+                  type: string
+                  minLength: 1
+                description:
+                  type: string
+                updated_at:
+                  type: string
+                  minLength: 1
+                created_at:
+                  type: string
+                  minLength: 1
+                name:
+                  type: string
+                  minLength: 1
+                blog_category_path:
+                  type: string
+                  minLength: 1
+              required:
+                - blog_id
+                - parent_category_id
+                - blog_category_path
+  '/blog_categories/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `blog_cateogry`
+    put:
+      summary: Update a Blog Category
+      operationId: put-blog_categories-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blog_categories'
+      description: Updates a blog category by ID.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blog_categories'
+            examples:
+              Example:
+                value:
+                  id: 7
+                  blog_id: 1
+                  parent_category_id: 0
+                  type: Tag
+                  description: ''
+                  updated_at: '2021-10-05T20:42:06.1923052-05:00'
+                  created_at: '2021-10-05T20:42:06.1923052-05:00'
+                  name: Blogging Molly
+                  blog_category_path: /test
+    delete:
+      summary: Delete a Blog Category
+      operationId: delete-blog_categories-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a blog category by ID.
   /blogs:
     get:
       summary: Blogs
@@ -345,7 +951,7 @@ paths:
       operationId: get-categories
   /coupon_codes:
     get:
-      summary: Coupon Codes
+      summary: Get Coupon Codes
       responses:
         '200':
           description: OK
@@ -417,6 +1023,71 @@ paths:
                 value:
                   campaign_code: '123'
                   coupon_code: CC-3SCEUZGYA3
+  '/coupon_codes/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `coupon_code` you wish to update.
+    put:
+      summary: Update a Coupon Code
+      operationId: put-coupon_codes-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1023
+                  campaign_code: '123'
+                  coupon_code: CC-3SCEUZGYA3
+                  is_active: false
+                  is_expired: false
+                  expires_at: null
+                  max_uses: 0
+                  usage_count: 0
+                  notes: ''
+                  is_hidden: false
+              properties:
+                campaign_code:
+                  type: string
+                coupon_code:
+                  type: string
+                is_active:
+                  type: boolean
+                is_expired:
+                  type: boolean
+                expires_at:
+                  type: string
+                max_uses:
+                  type: number
+                usage_count:
+                  type: number
+                notes:
+                  type: string
+                is_hidden:
+                  type: boolean
+      tags:
+        - Coupon Codes
+      description: Update a coupon code by ID.
+    delete:
+      summary: Delete a Coupon Code
+      operationId: delete-coupon_codes-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: 'Delete a coupon code by ID. '
   /credit_cards:
     get:
       summary: Credit Cards
@@ -1442,183 +2113,6 @@ paths:
                     items:
                       $ref: '#/components/schemas/wishlists'
       operationId: get-wishlists
-  '/adcodes/{adcode_id}':
-    parameters:
-      - schema:
-          type: integer
-        name: adcode_id
-        in: path
-        description: The ID of the `adcode`
-        required: true
-    delete:
-      summary: Delete an Adcode
-      operationId: delete-adcodes-id
-      parameters: []
-      description: ''
-      tags:
-        - Adcodes
-    put:
-      summary: Update an Adcode
-      operationId: put-adcodes-adcode_id
-      responses:
-        '200':
-          description: OK
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: ''
-              type: object
-              x-examples:
-                example-1:
-                  id: 2
-                  name: abanddonedcart
-                  description: ''
-                  visits: 2
-                  affiliate_id: null
-                  commission: ''
-                  commission_type: ''
-                  total_sales: null
-                  total_orders: null
-                  initial_sales: null
-                  load_sales: null
-                  new_customers: null
-                  load_customers: null
-                  total_commissions: null
-                  conversion_rate: null
-                  cost_per_customer: null
-                  sales_per_ad_dollar: null
-                  repeat_commission_amount: ''
-                  repeat_commission_type: ''
-                  pay_for_repeat_sales: ''
-                  url: 'https://www.drunkenmoocow.com/Default.aspx?a=abandonedcart'
-                  is_pay_per_click: false
-                  source: ''
-                  updated_at: '2021-10-05T19:03:41.0406559-05:00'
-                  created_at: '2019-09-18T10:18:27.607-05:00'
-                  expires_at: '2019-09-30T00:00:00-05:00'
-                  creation_type: Manual
-              properties:
-                id:
-                  type: integer
-                  readOnly: true
-                name:
-                  type: string
-                description:
-                  type: string
-                visits:
-                  type: number
-                affiliate_id:
-                  type: integer
-                commission:
-                  type: string
-                commission_type:
-                  type: string
-                total_sales:
-                  type: number
-                total_orders:
-                  type: integer
-                initial_sales:
-                  type: integer
-                load_sales:
-                  type: integer
-                new_customers:
-                  type: integer
-                load_customers:
-                  type: integer
-                total_commissions:
-                  type: integer
-                conversion_rate:
-                  type: number
-                cost_per_customer:
-                  type: number
-                sales_per_ad_dollar:
-                  type: number
-                repeat_commission_amount:
-                  type: string
-                repeat_commission_type:
-                  type: string
-                pay_for_repeat_sales:
-                  type: string
-                url:
-                  type: string
-                is_pay_per_click:
-                  type: boolean
-                source:
-                  type: string
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
-                expires_at:
-                  type: string
-                creation_type:
-                  type: string
-              required:
-                - id
-  '/coupon_codes/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `coupon_code` you wish to update.
-    put:
-      summary: Update a Coupon Code
-      operationId: put-coupon_codes-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      requestBody:
-        content:
-          application/json:
-            schema:
-              description: ''
-              type: object
-              x-examples:
-                example-1:
-                  id: 1023
-                  campaign_code: '123'
-                  coupon_code: CC-3SCEUZGYA3
-                  is_active: false
-                  is_expired: false
-                  expires_at: null
-                  max_uses: 0
-                  usage_count: 0
-                  notes: ''
-                  is_hidden: false
-              properties:
-                campaign_code:
-                  type: string
-                coupon_code:
-                  type: string
-                is_active:
-                  type: boolean
-                is_expired:
-                  type: boolean
-                expires_at:
-                  type: string
-                max_uses:
-                  type: number
-                usage_count:
-                  type: number
-                notes:
-                  type: string
-                is_hidden:
-                  type: boolean
-      tags:
-        - Coupon Codes
-    delete:
-      summary: Delete a Coupon Code
-      operationId: delete-coupon_codes-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
 components:
   schemas:
     adcodes:
@@ -1683,6 +2177,7 @@ components:
       properties:
         id:
           type: integer
+          readOnly: true
         customer_id:
           type: integer
         address_line_1:
@@ -4260,28 +4755,23 @@ components:
       content:
         application/json:
           schema:
-            description: ''
+            description: Not Found
             type: object
+            x-examples:
+              example-1:
+                status_code: 404
+                message: Not Found
+                details: No resource found
             properties:
               status_code:
                 type: number
               message:
                 type: string
-                minLength: 1
               details:
                 type: string
-                minLength: 1
-            required:
-              - status_code
-              - message
-              - details
-            x-examples:
-              example-1:
-                status_code: 404
-                message: Not Found
-                details: No resource found identified by '10233'
           examples:
             Example:
               status_code: 404
               message: Not Found
-              details: No resource found identified by '10233'
+              details: No resource found
+      headers: {}
