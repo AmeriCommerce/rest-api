@@ -341,6 +341,16 @@
                      "type":"item",
                      "title":"Get Adcodes",
                      "uri":"/acapi.yaml/paths/~1adcodes/get"
+                  },
+                  {
+                     "type":"item",
+                     "title":"Create Adcodes",
+                     "uri":"/acapi.yaml/paths/~1adcodes/post"
+                  },
+                  {
+                     "type":"item",
+                     "title":"Delete Adcodes",
+                     "uri":"acapi.yaml/paths/~1adcodes~1{adcode_id}/delete"
                   }
                ]
             },
