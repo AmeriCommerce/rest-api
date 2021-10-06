@@ -364,6 +364,59 @@ paths:
       tags:
         - Marketing
         - Coupon Codes
+    post:
+      summary: Create a Coupon Code
+      operationId: post-coupon_codes
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coupon_codes'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  campaign_code: '123'
+                  coupon_code: CC-3SCEUZGYA3
+                  is_active: false
+                  is_expired: false
+                  expires_at: null
+                  max_uses: 0
+                  usage_count: 0
+                  notes: ''
+                  is_hidden: false
+              properties:
+                campaign_code:
+                  type: string
+                coupon_code:
+                  type: string
+                is_active:
+                  type: boolean
+                is_expired:
+                  type: boolean
+                expires_at: {}
+                max_uses:
+                  type: number
+                usage_count:
+                  type: number
+                notes:
+                  type: string
+                is_hidden:
+                  type: boolean
+              required:
+                - campaign_code
+                - coupon_code
+            examples:
+              Example:
+                value:
+                  campaign_code: '123'
+                  coupon_code: CC-3SCEUZGYA3
   /credit_cards:
     get:
       summary: Credit Cards
@@ -1448,9 +1501,9 @@ paths:
               properties:
                 id:
                   type: integer
+                  readOnly: true
                 name:
                   type: string
-                  minLength: 1
                 description:
                   type: string
                 visits:
@@ -1489,25 +1542,83 @@ paths:
                   type: string
                 url:
                   type: string
-                  minLength: 1
                 is_pay_per_click:
                   type: boolean
                 source:
                   type: string
                 updated_at:
                   type: string
-                  minLength: 1
                 created_at:
                   type: string
-                  minLength: 1
                 expires_at:
                   type: string
-                  minLength: 1
                 creation_type:
                   type: string
-                  minLength: 1
               required:
                 - id
+  '/coupon_codes/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `coupon_code` you wish to update.
+    put:
+      summary: Update a Coupon Code
+      operationId: put-coupon_codes-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1023
+                  campaign_code: '123'
+                  coupon_code: CC-3SCEUZGYA3
+                  is_active: false
+                  is_expired: false
+                  expires_at: null
+                  max_uses: 0
+                  usage_count: 0
+                  notes: ''
+                  is_hidden: false
+              properties:
+                campaign_code:
+                  type: string
+                coupon_code:
+                  type: string
+                is_active:
+                  type: boolean
+                is_expired:
+                  type: boolean
+                expires_at:
+                  type: string
+                max_uses:
+                  type: number
+                usage_count:
+                  type: number
+                notes:
+                  type: string
+                is_hidden:
+                  type: boolean
+      tags:
+        - Coupon Codes
+    delete:
+      summary: Delete a Coupon Code
+      operationId: delete-coupon_codes-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
 components:
   schemas:
     adcodes:
@@ -4143,3 +4254,34 @@ components:
       name: X-AC-Auth-Token
       type: apiKey
       in: header
+  responses:
+    '404':
+      description: Example response
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            properties:
+              status_code:
+                type: number
+              message:
+                type: string
+                minLength: 1
+              details:
+                type: string
+                minLength: 1
+            required:
+              - status_code
+              - message
+              - details
+            x-examples:
+              example-1:
+                status_code: 404
+                message: Not Found
+                details: No resource found identified by '10233'
+          examples:
+            Example:
+              status_code: 404
+              message: Not Found
+              details: No resource found identified by '10233'

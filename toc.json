@@ -376,8 +376,23 @@
                "items":[
                   {
                      "type":"item",
-                     "title":"Get Coupon Codes",
+                     "title":"Get All Coupon Codes",
                      "uri":"/acapi.yaml/paths/~1coupon_codes/get"
+                  },
+				  {
+                     "type":"item",
+                     "title":"Create a Coupon Code",
+                     "uri":"/acapi.yaml/paths/~1coupon_codes/post"
+                  },
+				  {
+                     "type":"item",
+                     "title":"Update a Coupon Code",
+                     "uri":"acapi.yaml/paths/~1coupon_codes~1{id}/put"
+                  },
+				  {
+                     "type":"item",
+                     "title":"Delete a Coupon Code",
+                     "uri":"acapi.yaml/paths/~1coupon_codes~1{id}/delete"
                   }
                ]
             },
