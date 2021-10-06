@@ -350,7 +350,7 @@
                   {
                      "type":"item",
                      "title":"Update an Adcode",
-                     "uri":"/acapi.yaml/paths/~1adcodes/put"
+                     "uri":"acapi.yaml/paths/~1adcodes~1{adcode_id}/put"
                   },
                   {
                      "type":"item",
