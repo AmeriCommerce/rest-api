@@ -113,7 +113,8 @@ paths:
   /addresses:
     get:
       summary: Addresses
-      tags: []
+      tags:
+        - Addresses
       responses:
         '200':
           description: OK
@@ -1403,6 +1404,110 @@ paths:
       description: ''
       tags:
         - Adcodes
+    put:
+      summary: Update an Adcode
+      operationId: put-adcodes-adcode_id
+      responses:
+        '200':
+          description: OK
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 2
+                  name: abanddonedcart
+                  description: ''
+                  visits: 2
+                  affiliate_id: null
+                  commission: ''
+                  commission_type: ''
+                  total_sales: null
+                  total_orders: null
+                  initial_sales: null
+                  load_sales: null
+                  new_customers: null
+                  load_customers: null
+                  total_commissions: null
+                  conversion_rate: null
+                  cost_per_customer: null
+                  sales_per_ad_dollar: null
+                  repeat_commission_amount: ''
+                  repeat_commission_type: ''
+                  pay_for_repeat_sales: ''
+                  url: 'https://www.drunkenmoocow.com/Default.aspx?a=abandonedcart'
+                  is_pay_per_click: false
+                  source: ''
+                  updated_at: '2021-10-05T19:03:41.0406559-05:00'
+                  created_at: '2019-09-18T10:18:27.607-05:00'
+                  expires_at: '2019-09-30T00:00:00-05:00'
+                  creation_type: Manual
+              properties:
+                id:
+                  type: integer
+                name:
+                  type: string
+                  minLength: 1
+                description:
+                  type: string
+                visits:
+                  type: number
+                affiliate_id:
+                  type: integer
+                commission:
+                  type: string
+                commission_type:
+                  type: string
+                total_sales:
+                  type: number
+                total_orders:
+                  type: integer
+                initial_sales:
+                  type: integer
+                load_sales:
+                  type: integer
+                new_customers:
+                  type: integer
+                load_customers:
+                  type: integer
+                total_commissions:
+                  type: integer
+                conversion_rate:
+                  type: number
+                cost_per_customer:
+                  type: number
+                sales_per_ad_dollar:
+                  type: number
+                repeat_commission_amount:
+                  type: string
+                repeat_commission_type:
+                  type: string
+                pay_for_repeat_sales:
+                  type: string
+                url:
+                  type: string
+                  minLength: 1
+                is_pay_per_click:
+                  type: boolean
+                source:
+                  type: string
+                updated_at:
+                  type: string
+                  minLength: 1
+                created_at:
+                  type: string
+                  minLength: 1
+                expires_at:
+                  type: string
+                  minLength: 1
+                creation_type:
+                  type: string
+                  minLength: 1
+              required:
+                - id
 components:
   schemas:
     adcodes:
