@@ -173,14 +173,14 @@ paths:
         - Adcodes
       description: Creates an adcode
     parameters: []
-  '/adcodes/{adcode_id}':
+  '/adcodes/{id}':
     parameters:
       - schema:
-          type: integer
-        name: adcode_id
+          type: string
+        name: id
         in: path
-        description: The ID of the `adcode`
         required: true
+        description: The ID of the `adcode`
     delete:
       summary: Delete an Adcode
       operationId: delete-adcodes-id
@@ -7305,3 +7305,11 @@ components:
               message: Not Found
               details: No resource found
       headers: {}
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      schema:
+        type: integer
+      description: id of object
