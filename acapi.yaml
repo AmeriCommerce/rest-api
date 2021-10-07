@@ -947,6 +947,7 @@ paths:
                   '':
                     type: string
       operationId: get-blogs
+      description: Gets an array of blogs.
     post:
       summary: Create a Blog
       operationId: post-blogs
@@ -2031,6 +2032,7 @@ paths:
       operationId: get-coupon_codes
       tags:
         - Coupon Codes
+      description: Gets an array of coupon codes.
     post:
       summary: Create a Coupon Code
       operationId: post-coupon_codes
@@ -2086,6 +2088,7 @@ paths:
                   coupon_code: CC-3SCEUZGYA3
       tags:
         - Coupon Codes
+      description: Creats a coupon code.
   '/coupon_codes/{id}':
     parameters:
       - schema:
@@ -2861,8 +2864,9 @@ paths:
                   customer_level: 1
   /customers:
     get:
-      summary: Customers
-      tags: []
+      summary: Get Customers
+      tags:
+        - Customers
       responses:
         '200':
           description: OK
@@ -2878,6 +2882,151 @@ paths:
                     items:
                       $ref: '#/components/schemas/customers'
       operationId: get-customers
+      description: Gets an array of customers.
+    post:
+      summary: Create a Customer
+      operationId: post-customers
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Customers
+      description: Creates a customer.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  customer_number: ''
+                  last_name: Aurelius
+                  first_name: Marcus
+                  email: maurelius@test.com
+                  phone_number: 555-123-4596
+                  adcode: ''
+                  adcode_id: 0
+                  affiliate_id: null
+                  customer_type_id: 4
+                  is_no_tax_customer: true
+                  comments: ''
+                  store_id: 19
+                  source: ''
+                  search_string: ''
+                  no_account: false
+                  sales_person: ''
+                  alternate_phone_number: 455-258-8585
+                  is_affiliate_customer: false
+                  username: ''
+                  is_contact_information_only: false
+                  tax_exemption_number: ''
+                  company: Romanatech
+                  source_group: ''
+                  sales_person_user_id: null
+                  store_payment_methods_enabled: []
+                  tax_rate: null
+                  reward_tier_id: null
+                  sub: ''
+                  customer_payment_methods_availability: []
+              properties:
+                customer_number:
+                  type: string
+                last_name:
+                  type: string
+                first_name:
+                  type: string
+                email:
+                  type: string
+                phone_number:
+                  type: string
+                adcode:
+                  type: string
+                adcode_id:
+                  type: number
+                affiliate_id:
+                  type: integer
+                customer_type_id:
+                  type: integer
+                is_no_tax_customer:
+                  type: boolean
+                comments:
+                  type: string
+                store_id:
+                  type: number
+                source:
+                  type: string
+                search_string:
+                  type: string
+                no_account:
+                  type: boolean
+                sales_person:
+                  type: string
+                alternate_phone_number:
+                  type: string
+                is_affiliate_customer:
+                  type: boolean
+                username:
+                  type: string
+                is_contact_information_only:
+                  type: boolean
+                tax_exemption_number:
+                  type: string
+                company:
+                  type: string
+                source_group:
+                  type: string
+                sales_person_user_id:
+                  type: integer
+                store_payment_methods_enabled:
+                  type: array
+                  items:
+                    type: object
+                tax_rate:
+                  type: number
+                reward_tier_id:
+                  type: integer
+                sub:
+                  type: string
+                customer_payment_methods_availability:
+                  type: array
+                  items:
+                    type: object
+              required:
+                - email
+                - store_id
+            examples:
+              Example:
+                value:
+                  customer_number: ''
+                  last_name: Aurelius
+                  first_name: Marcus
+                  email: maurelius@test.com
+                  phone_number: 555-123-4596
+                  adcode: ''
+                  adcode_id: 0
+                  affiliate_id: 1
+                  customer_type_id: 4
+                  is_no_tax_customer: true
+                  comments: ''
+                  store_id: 19
+                  source: ''
+                  search_string: ''
+                  no_account: false
+                  sales_person: ''
+                  alternate_phone_number: 455-258-8585
+                  is_affiliate_customer: false
+                  username: ''
+                  is_contact_information_only: false
+                  tax_exemption_number: ''
+                  company: Romanatech
+                  source_group: ''
+                  sales_person_user_id: 2
+                  store_payment_methods_enabled: []
+                  tax_rate: 2
+                  reward_tier_id: 1
+                  sub: ''
+                  customer_payment_methods_availability: []
   /discount_methods:
     get:
       summary: Discount Methods
@@ -2901,6 +3050,68 @@ paths:
                     items:
                       $ref: '#/components/schemas/discount_methods'
       operationId: get-discount_methods
+      description: Gets an array of discount methods.
+    post:
+      summary: Create a Discount Method
+      operationId: post-discount_methods
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                description: ''
+                type: object
+                x-examples:
+                  example-1:
+                    name: 15 off
+                    is_enabled: true
+                    is_strict: false
+                    use_once: false
+                    expires: false
+                    expires_at: ''
+                    starts_at: '7/7/2021 3:23:11 PM'
+                    remaining_uses: null
+                    notes: ''
+                    is_free_shipping_discount: false
+                properties:
+                  name:
+                    type: string
+                  is_enabled:
+                    type: boolean
+                  is_strict:
+                    type: boolean
+                  use_once:
+                    type: boolean
+                  expires:
+                    type: boolean
+                  expires_at:
+                    type: string
+                  starts_at:
+                    type: string
+                  remaining_uses:
+                    type: integer
+                  notes:
+                    type: string
+                  is_free_shipping_discount:
+                    type: boolean
+              examples:
+                Example:
+                  value:
+                    name: 15 off
+                    is_enabled: true
+                    is_strict: false
+                    use_once: false
+                    expires: false
+                    expires_at: ''
+                    starts_at: '7/7/2021 3:23:11 PM'
+                    remaining_uses: 5
+                    notes: ''
+                    is_free_shipping_discount: false
+      tags:
+        - Discount Methods
+        - Marketing
+      description: Creates a discount method.
   /discount_rules:
     get:
       summary: Discount Rules
@@ -3489,8 +3700,9 @@ paths:
       operationId: get-quotes
   /regions:
     get:
-      summary: Regions
-      tags: []
+      summary: Get Regions
+      tags:
+        - Regions
       responses:
         '200':
           description: OK
@@ -3506,10 +3718,95 @@ paths:
                     items:
                       $ref: '#/components/schemas/regions'
       operationId: get-regions
+      description: Gets an array of regions.
+    post:
+      summary: Create a Region
+      operationId: post-regions
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Regions
+      description: Creates a region.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 14
+                  postal_codes: []
+                  name: OCONUS
+                  states:
+                    - Alaska
+                    - Hawaii
+                  countries: []
+                  markup_type: Percent
+                  markup_amount: 5
+                  sort_order: 1
+                  region_type: ZipcodeState
+                  postal_code_country: null
+                  is_shipping_region: true
+                  is_tax_region: false
+              properties:
+                postal_codes:
+                  type: array
+                  items:
+                    type: object
+                name:
+                  type: string
+                states:
+                  type: array
+                  items:
+                    type: object
+                countries:
+                  type: array
+                  items:
+                    type: object
+                markup_type:
+                  type: string
+                  description: The default is `Percent`
+                markup_amount:
+                  type: number
+                sort_order:
+                  type: integer
+                region_type:
+                  type: string
+                postal_code_country:
+                  type: string
+                is_shipping_region:
+                  type: boolean
+                is_tax_region:
+                  type: boolean
+              required:
+                - markup_amount
+                - sort_order
+            examples:
+              Example:
+                value:
+                  postal_codes: []
+                  name: OCONUS
+                  states:
+                    - type: string
+                    - type: string
+                  countries: []
+                  markup_type: Percent
+                  markup_amount: 5
+                  sort_order: 1
+                  updated_at: '2021-10-07T12:58:11.533-05:00'
+                  created_at: '2021-10-07T12:58:11.533-05:00'
+                  region_type: ZipcodeState
+                  postal_code_country: ''
+                  is_shipping_region: true
+                  is_tax_region: false
+        description: ''
   /sessions:
     get:
-      summary: Sessions
-      tags: []
+      summary: Get Sessions
+      tags:
+        - Sessions
       responses:
         '200':
           description: OK
@@ -3525,10 +3822,12 @@ paths:
                     items:
                       $ref: '#/components/schemas/sessions'
       operationId: get-sessions
+      description: Gets an array of sessions.
   /shipping_rate_adjustments:
     get:
-      summary: Shipping Rate Adjustments
-      tags: []
+      summary: Get Shipping Rate Adjustments
+      tags:
+        - Shipping Rate Adjustments
       responses:
         '200':
           description: OK
@@ -3544,6 +3843,47 @@ paths:
                     items:
                       $ref: '#/components/schemas/shipping_rate_adjustments'
       operationId: get-shipping_rate_adjustments
+      description: Gets an array of shipping rate adjustments.
+  '/shipping_rate_adjustments/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `shipipng_rate_adjustment`
+    put:
+      summary: Update a Shipping Rate Adjustment
+      operationId: put-shipping_rate_adjustments-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipping_rate_adjustments'
+      tags:
+        - Shipping Rate Adjustments
+      description: |-
+        Updates a shipping rate adjustment.
+
+        For more information on shipping rate adjustments, please see our knowledge base: [Shipping Rate Adjustments Overview](https://support.americommerce.com/hc/en-us/articles/223487968-Product-Shipping-Rate-Adjustments).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shipping_rate_adjustments'
+    delete:
+      summary: Delete a Shipping Rate Adjustment
+      operationId: delete-shipping_rate_adjustments-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Shipping Rate Adjustments
+      description: Deletes a shipping rate adjustment.
   /stores:
     get:
       summary: Stores
@@ -3567,8 +3907,9 @@ paths:
       description: Gets an array of stores.
   /subscriptions:
     get:
-      summary: Subscriptions
-      tags: []
+      summary: Get Subscriptions
+      tags:
+        - Subscriptions
       responses:
         '200':
           description: OK
@@ -3584,6 +3925,109 @@ paths:
                     items:
                       $ref: '#/components/schemas/subscriptions'
       operationId: get-subscriptions
+      description: Gets an aray of subscriptions.
+    post:
+      summary: Create a Subscription
+      operationId: post-subscriptions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subscriptions'
+      description: Creates a subscription.
+      tags:
+        - Subscriptions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  saved_cart_id: 139
+                  customer_id: 18
+                  next_due_at: '2022-08-01T00:00:00-05:00'
+                  frequency_type: Months
+                  frequency: 1
+                  drip_series_id: 0
+                  original_order_id: 100039
+                  shipping_method_name: USPS;USPS Media Mail;USPS Media Mail
+                  customer_payment_method_id: 27
+                  shipping_address_id: 170
+                  billing_address_id: 169
+                  is_enabled: false
+                  latest_renewal_order_id: null
+                  is_renewal_payment_declined: false
+                  renewal_count: 0
+                  one_time_customer_notice: ''
+                  customer_notice: ''
+              properties:
+                saved_cart_id:
+                  type: integer
+                customer_id:
+                  type: integer
+                next_due_at:
+                  type: string
+                frequency_type:
+                  type: string
+                frequency:
+                  type: number
+                drip_series_id:
+                  type: integer
+                original_order_id:
+                  type: integer
+                shipping_method_name:
+                  type: string
+                customer_payment_method_id:
+                  type: integer
+                shipping_address_id:
+                  type: integer
+                billing_address_id:
+                  type: integer
+                is_enabled:
+                  type: boolean
+                latest_renewal_order_id:
+                  type: integer
+                is_renewal_payment_declined:
+                  type: boolean
+                renewal_count:
+                  type: number
+                one_time_customer_notice:
+                  type: string
+                customer_notice:
+                  type: string
+              required:
+                - customer_id
+                - frequency_type
+                - frequency
+                - original_order_id
+                - shipping_method_name
+                - customer_payment_method_id
+                - shipping_address_id
+                - billing_address_id
+            examples:
+              Example:
+                value:
+                  saved_cart_id: 139
+                  customer_id: 18
+                  next_due_at: '2022-08-01T00:00:00-05:00'
+                  frequency_type: Months
+                  frequency: 1
+                  drip_series_id: 0
+                  original_order_id: 100039
+                  shipping_method_name: USPS;USPS Media Mail;USPS Media Mail
+                  customer_payment_method_id: 27
+                  shipping_address_id: 170
+                  billing_address_id: 169
+                  is_enabled: false
+                  latest_renewal_order_id: 245
+                  is_renewal_payment_declined: false
+                  renewal_count: 0
+                  one_time_customer_notice: ''
+                  customer_notice: ''
   /tax_rates:
     get:
       summary: Tax Rates
@@ -3714,7 +4158,7 @@ paths:
                   theme_name: ThemeName
                   file_path: path-to-theme-import-file.zip
       tags:
-        - Import Themes
+        - Theme Import
   /url_redirects:
     get:
       summary: Get URL Redirects
@@ -4530,6 +4974,8 @@ paths:
         '404':
           $ref: '#/components/responses/404'
       description: Deletes a wishlist.
+      tags:
+        - Wishlists
   /warehouses:
     get:
       summary: Get Warehouses
@@ -4786,6 +5232,147 @@ paths:
       tags:
         - Customer Types
       description: Deletes a customer type.
+  '/subscriptions/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `subscription`
+    put:
+      summary: Update a Subscription
+      operationId: put-subscriptions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subscriptions'
+      tags:
+        - Subscriptions
+      description: Updates a subscription.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/subscriptions'
+    delete:
+      summary: Delete a Subscription
+      operationId: delete-subscriptions-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a subscription
+      tags:
+        - Subscriptions
+  '/regions/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `region`
+    put:
+      summary: Update a Region
+      operationId: put-regions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/regions'
+      tags:
+        - Regions
+      description: Updates a region.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/regions'
+    delete:
+      summary: Delete a Region
+      operationId: delete-regions-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Regions
+      description: Deletes a region.
+  '/customers/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `customer`
+    put:
+      summary: Update a Customer
+      operationId: put-customers-id
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Customers
+      description: Updates a customer.
+    delete:
+      summary: Delete a Customer
+      operationId: delete-customers-id
+      tags:
+        - Customers
+      description: Deletes a customer.
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+  '/discount_methods/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `discount_method`
+    put:
+      summary: Update a Discount Method
+      operationId: put-discount_methods-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discount_methods'
+      tags:
+        - Discount Methods
+        - Marketing
+      description: Updates a discount method.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discount_methods'
+    delete:
+      summary: Delete a Discount Method
+      operationId: delete-discount_methods-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Discount Methods
+        - Marketing
+      description: Deletes a discount method.
 components:
   schemas:
     adcodes:
@@ -6961,7 +7548,26 @@ components:
         reward_points_credited:
           type: boolean
     regions:
+      description: ''
       type: object
+      x-examples:
+        example-1:
+          id: 14
+          postal_codes: []
+          name: OCONUS
+          states:
+            - Alaska
+            - Hawaii
+          countries: []
+          markup_type: Percent
+          markup_amount: 5
+          sort_order: 1
+          updated_at: '2021-10-07T12:58:11.533-05:00'
+          created_at: '2021-10-07T12:58:11.533-05:00'
+          region_type: ZipcodeState
+          postal_code_country: null
+          is_shipping_region: true
+          is_tax_region: false
       properties:
         id:
           type: integer
@@ -6969,22 +7575,18 @@ components:
           type: array
           items:
             type: object
-            properties: {}
         name:
           type: string
         states:
           type: array
-          items:
-            type: object
-            properties: {}
+          items: {}
         countries:
           type: array
-          items:
-            type: string
+          items: {}
         markup_type:
           type: string
         markup_amount:
-          type: integer
+          type: number
         sort_order:
           type: integer
         updated_at:
@@ -6999,6 +7601,8 @@ components:
           type: boolean
         is_tax_region:
           type: boolean
+      required:
+        - id
     sessions:
       type: object
       properties:
@@ -7424,7 +8028,7 @@ components:
       in: header
   responses:
     '404':
-      description: Example response
+      description: Resource Not Found
       content:
         application/json:
           schema:
@@ -7448,4 +8052,23 @@ components:
               message: Not Found
               details: No resource found
       headers: {}
+    '500':
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            description: ''
+            type: object
+            x-examples:
+              example-1:
+                status_code: 500
+                message: Internal Server Error
+                details: 'Regions Class - Base POST failed - CommandText: Regions_Update - Regions Class - Error writing to the database - CommandText: Regions_Update - Status: Err - Record has been removed from the database'
+            properties:
+              status_code:
+                type: number
+              message:
+                type: string
+              details:
+                type: string
   parameters: {}
