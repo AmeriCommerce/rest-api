@@ -15,12 +15,12 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 
 Applies to:
 
-* [addresses](https://americommerce.stoplight.io/docs/rest-api/restapi.json/paths/~1attributes/get)
-* [customers](/restapi.json/paths/~1customers/get)
-* [customer_types](/restapi.json/paths/~1customer_types/get)
-* [customer_payment_methods](/restapi.json/paths/~1customer_payment_methods/get)
-* [profiles](/restapi.json/paths/~1profiles/get)
-* [users](/restapi.json/paths/~1users/get)
+* [addresses](/acapi.yaml/paths/~1attributes/get)
+* [customers](/acapi.yaml/paths/~1customers/get)
+* [customer_types](/acapi.yaml/paths/~1customer_types/get)
+* [customer_payment_methods](/acapi.yaml/paths/~1customer_payment_methods/get)
+* [profiles](/acapi.yaml/paths/~1profiles/get)
+* [users](/acapi.yaml/paths/~1users/get)
 
 Orders
 ------
@@ -32,17 +32,17 @@ Permissions required: `Orders`, `OrderStatuses`
 
 Applies to:
 
-* [carts](/restapi.json/paths/~1carts/get)
-* [cart_items](/restapi.json/paths/~1cart_items/get)
-* [credit_cards](/restapi.json/paths/~1credit_cards/get)
-* [orders](/restapi.json/paths/~1orders/get)
-* [order_addresses](/restapi.json/paths/~1order_addresses/get)
-* [order_items](/restapi.json/paths/~1order_items/get)
-* [order_payments](/restapi.json/paths/~1order_payments/get)
-* [order_shipments](/restapi.json/paths/~1order_shipments/get)
-* [order_statuses](/restapi.json/paths/~1order_statuses/get)
-* [quotes](/restapi.json/paths/~1quotes/get)
-* [subscriptions](/restapi.json/paths/~1subscriptions/get)
+* [carts](/acapi.yaml/paths/~1carts/get)
+* [cart_items](/acapi.yaml/paths/~1cart_items/get)
+* [credit_cards](/acapi.yaml/paths/~1credit_cards/get)
+* [orders](/acapi.yaml/paths/~1orders/get)
+* [order_addresses](/acapi.yaml/paths/~1order_addresses/get)
+* [order_items](/acapi.yaml/paths/~1order_items/get)
+* [order_payments](/acapi.yaml/paths/~1order_payments/get)
+* [order_shipments](/acapi.yaml/paths/~1order_shipments/get)
+* [order_statuses](/acapi.yaml/paths/~1order_statuses/get)
+* [quotes](/acapi.yaml/paths/~1quotes/get)
+* [subscriptions](/acapi.yaml/paths/~1subscriptions/get)
 
 Catalog
 -------

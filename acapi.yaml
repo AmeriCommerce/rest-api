@@ -29,6 +29,7 @@ tags:
   - name: Links
   - name: Mailing Lists
   - name: Manufacturers
+  - name: Marketing
   - name: Notifications
   - name: Order Addresses
   - name: Order Payments
@@ -50,6 +51,7 @@ tags:
   - name: Regions
   - name: Sessions
   - name: Shipping Rate Adjustments
+  - name: Stores
   - name: Subscriptions
   - name: Tax Rates
   - name: Theme Import
@@ -498,6 +500,7 @@ paths:
                       $ref: '#/components/schemas/affiliates'
       operationId: get-affilliates
       deprecated: true
+      description: Gets an array of affiliates.
       tags:
         - Marketing
         - Affiliates
@@ -2487,12 +2490,14 @@ paths:
     delete:
       summary: Delete a Custom Field Value
       operationId: delete-custom_field_value-id
-      responses:
-        '404':
-          $ref: '#/components/responses/404'
       description: Deletes an custom field value.
       tags:
         - Custom Field Values
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
   /custom_fields:
     get:
       summary: Get Custom Fields
@@ -2795,8 +2800,6 @@ paths:
   /customer_types:
     get:
       summary: Get Customer Types
-      tags:
-        - Customer Types
       responses:
         '200':
           description: OK
@@ -2813,6 +2816,49 @@ paths:
                       $ref: '#/components/schemas/customer_types'
       operationId: get-customer_types
       description: Gets an array of customer types.
+      tags:
+        - Customer Types
+    post:
+      summary: Create a Customer Type
+      operationId: post-customer_types
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_types'
+      tags:
+        - Customer Types
+      description: Creates a customer type.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 1
+                  name: Wholesale
+                  customer_level: 1
+                  description: ''
+              properties:
+                name:
+                  type: string
+                  minLength: 1
+                customer_level:
+                  type: number
+                description:
+                  type: string
+              required:
+                - name
+            examples:
+              Example:
+                value:
+                  id: 1
+                  name: wholesale
+                  customer_level: 1
   /customers:
     get:
       summary: Customers
@@ -2942,9 +2988,6 @@ paths:
   /gift_certificates:
     get:
       summary: Gift Certificates
-      tags:
-        - Marketing
-        - Gift Certificates
       responses:
         '200':
           description: OK
@@ -2960,6 +3003,9 @@ paths:
                     items:
                       $ref: '#/components/schemas/gift_certificates'
       operationId: get-gift_certificates
+      tags:
+        - Gift Certificates
+        - Marketing
   /inventory:
     get:
       summary: Inventory
@@ -3501,7 +3547,8 @@ paths:
   /stores:
     get:
       summary: Stores
-      tags: []
+      tags:
+        - Stores
       responses:
         '200':
           description: OK
@@ -3517,6 +3564,7 @@ paths:
                     items:
                       $ref: '#/components/schemas/stores'
       operationId: get-stores
+      description: Gets an array of stores.
   /subscriptions:
     get:
       summary: Subscriptions
@@ -3539,7 +3587,8 @@ paths:
   /tax_rates:
     get:
       summary: Tax Rates
-      tags: []
+      tags:
+        - Tax Rates
       responses:
         '200':
           description: OK
@@ -3555,6 +3604,60 @@ paths:
                     items:
                       $ref: '#/components/schemas/tax_rates'
       operationId: get-tax_rates
+      description: Gets an array of tax rates.
+    post:
+      summary: Create a Tax Rate
+      operationId: post-tax_rates
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tax_rates'
+      description: Creates a tax rate.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Texas
+                  rate: 0.0825
+                  region_id: 1
+                  is_shipping_included: true
+                  is_handling_included: true
+                  store_id: 0
+              properties:
+                name:
+                  type: string
+                rate:
+                  type: number
+                region_id:
+                  type: integer
+                is_shipping_included:
+                  type: boolean
+                is_handling_included:
+                  type: boolean
+                store_id:
+                  type: integer
+              required:
+                - rate
+                - region_id
+                - store_id
+            examples:
+              Example:
+                value:
+                  name: Texas
+                  rate: 0.0825
+                  region_id: 1
+                  is_shipping_included: true
+                  is_handling_included: true
+                  store_id: 0
+      tags:
+        - Tax Rates
   /themes/import:
     post:
       summary: Import Theme
@@ -3610,6 +3713,8 @@ paths:
                 value:
                   theme_name: ThemeName
                   file_path: path-to-theme-import-file.zip
+      tags:
+        - Import Themes
   /url_redirects:
     get:
       summary: Get URL Redirects
@@ -4645,6 +4750,42 @@ paths:
       tags:
         - Customer Payment Methods
       description: Deletes a customer payment method.
+  '/customer_types/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update a Customer Type
+      operationId: put-customer_types-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_types'
+      tags:
+        - Customer Types
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customer_types'
+      description: Updates a customer type.
+    delete:
+      summary: Delete a Customer Type
+      operationId: delete-customer_types-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Customer Types
+      description: Deletes a customer type.
 components:
   schemas:
     adcodes:
@@ -7307,11 +7448,4 @@ components:
               message: Not Found
               details: No resource found
       headers: {}
-  parameters:
-    id:
-      name: id
-      in: path
-      required: true
-      schema:
-        type: integer
-      description: id of object
+  parameters: {}

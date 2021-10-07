@@ -1,7 +1,7 @@
 Resource List
 =============
 
-All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the SSL domain name of your AmeriCommerce. See [Common Usage](common_usage.md) for a more detailed explanation of most of the operations these provide.
+All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename.com]` is the SSL domain name of your Cart.com Online Store. See [Common Usage](common_usage.md) for a more detailed explanation of most of the operations these provide.
 
 ### People
 
