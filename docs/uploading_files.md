@@ -61,7 +61,7 @@ var requestMessage = new HttpRequestMessage(HttpMethod.Post, webService);
 requestMessage.Headers.ExpectContinue = false;
 requestMessage.Headers.Add("X-AC-Auth-Token", "<access_token>");
 
-var multiPartContent = new MultipartFormDataContent("AmeriCommerce API demo");
+var multiPartContent = new MultipartFormDataContent("Online Store API demo");
 var json = "{\"destination\":\"/shared/images/sample.jpg\",\"overwrite\":true}";
 var fileData = File.ReadAllBytes("sample.jpg");
 
