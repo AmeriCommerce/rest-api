@@ -3114,7 +3114,7 @@ paths:
       description: Creates a discount method.
   /discount_rules:
     get:
-      summary: Discount Rules
+      summary: Get Discount Rules
       tags:
         - Marketing
         - Discount Rules
@@ -3133,6 +3133,65 @@ paths:
                     items:
                       $ref: '#/components/schemas/discount_rules'
       operationId: get-discount_rules
+      description: 'Gets an array of discount rules. '
+    post:
+      summary: Create a Discount Rule
+      operationId: post-discount_rules
+      responses:
+        '200':
+          description: OK
+      description: 'Creates a discount rule. '
+      tags:
+        - Discount Rules
+        - Marketing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  discount_method_id: 41
+                  type: coupon code
+                  target: Hello There
+                  operator_type: equal to
+                  target_quantity: 1
+                  target_quantity_type: MinimumOf
+                  discount_action_id: null
+                  is_action_rule: false
+                  bogo_discount_buy_quantity: null
+                  bogo_discount_quantity: null
+                  bogo_max_use_per_order: null
+                  discount_from_high_to_low: false
+              properties:
+                discount_method_id:
+                  type: integer
+                type:
+                  type: string
+                target:
+                  type: string
+                operator_type:
+                  type: string
+                target_quantity:
+                  type: number
+                target_quantity_type:
+                  type: string
+                discount_action_id: {}
+                is_action_rule:
+                  type: boolean
+                bogo_discount_buy_quantity:
+                  type: integer
+                bogo_discount_quantity:
+                  type: integer
+                bogo_max_use_per_order:
+                  type: integer
+                discount_from_high_to_low:
+                  type: boolean
+              required:
+                - discount_method_id
+                - type
+                - target
   /drips:
     get:
       summary: Drips
@@ -5373,6 +5432,43 @@ paths:
         - Discount Methods
         - Marketing
       description: Deletes a discount method.
+  '/discount_rules/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `discount_rule`
+    delete:
+      summary: Deletes a Discount Rule
+      operationId: delete-discount_rules-id
+      responses:
+        '404':
+          $ref: '#/components/responses/404'
+      description: 'Deletes a discount rule. '
+      tags:
+        - Discount Rules
+        - Marketing
+    put:
+      summary: Update a Discount Rule
+      operationId: put-discount_rules-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ''
+      description: Updates a discount rule.
+      tags:
+        - Discount Rules
+        - Marketing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discount_rules'
 components:
   schemas:
     adcodes:

@@ -1,7 +1,7 @@
 Webhooks
 ========
 
-Webhooks are a way to run code on an external server that integrates with events in the AmeriCommerce. When the conditions are fulfilled, the AmeriCommerce will make a request out to a URL, and, depending on the webhook, wait for a response.
+Webhooks are a way to run code on an external server that integrates with events in the Cart.com Online Store. When the conditions are fulfilled, the Online Store will make a request out to a URL, and, depending on the webhook, wait for a response.
 
 In the case of events that expect responses, the timeout is intentionally short (3 seconds), since any delay can potentially be disrupting to users of the store. It is highly recommended that your service return results as quickly as possible.
 
@@ -52,7 +52,7 @@ Webhook subscriptions are accessible via `/api/v1/webhooks`, which works exactly
    * `"Error"` - Display an error message to the user.
    * `"Fallback"` - Call an alternate URL as indicated by the `fallback_url` field.
  * `store_id` - The ID of the store, as shown on the [`store`](resources/stores.md) resource, that this webhook applies to. Only events on this store will be triggered. 
- * `cache_length` - How long the response to this webhook request will be cached by the AmeriCommerce servers, options are:
+ * `cache_length` - How long the response to this webhook request will be cached by the Cart.com servers, options are:
    * `"Short"` - 5 minutes
    * `"Long"` - 30 minutes
    * `"NoCache"` - Do not cache the response.
