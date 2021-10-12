@@ -30,8 +30,10 @@ tags:
   - name: Mailing Lists
   - name: Manufacturers
   - name: Marketing
+  - name: Microstores
   - name: Notifications
   - name: Order Addresses
+  - name: Order Items
   - name: Order Payments
   - name: Order Shipments
   - name: Order Statuses
@@ -2726,6 +2728,49 @@ paths:
               required:
                 - name
         description: ''
+  '/custom_shipping_methods/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `custom_shipping_method`
+    put:
+      summary: Update a Custom Shipping Method
+      operationId: put-custom_shipping_methods-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom_shipping_methods'
+      tags:
+        - Custom Shipping Methods
+      description: |-
+        Updates a custom shipping method.
+
+        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/custom_shipping_methods'
+    delete:
+      summary: Delete a Custom Shipping Method
+      operationId: delete-custom_shipping_methods-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Custom Shipping Methods
+      description: |-
+        Deletes a custom shipping method.
+
+        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
   /customer_payment_methods:
     get:
       summary: Customer Payment Methods
@@ -2800,6 +2845,43 @@ paths:
                   is_default: false
                   card_id: 6
                   address_id: 4
+  '/customer_payment_methods/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `customer_payment_method`
+    put:
+      summary: Update a Customer Payment Method
+      operationId: put-customer_payment_methods-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_payment_methods'
+      description: Updates a customer payment method.
+      tags:
+        - Customer Payment Methods
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customer_payment_methods'
+    delete:
+      summary: Delete a Customer Payment Method
+      operationId: delete-customer_payment_methods-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Customer Payment Methods
+      description: Deletes a customer payment method.
   /customer_types:
     get:
       summary: Get Customer Types
@@ -2862,6 +2944,42 @@ paths:
                   id: 1
                   name: wholesale
                   customer_level: 1
+  '/customer_types/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update a Customer Type
+      operationId: put-customer_types-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_types'
+      tags:
+        - Customer Types
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customer_types'
+      description: Updates a customer type.
+    delete:
+      summary: Delete a Customer Type
+      operationId: delete-customer_types-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Customer Types
+      description: Deletes a customer type.
   /customers:
     get:
       summary: Get Customers
@@ -3027,6 +3145,34 @@ paths:
                   reward_tier_id: 1
                   sub: ''
                   customer_payment_methods_availability: []
+  '/customers/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `customer`
+    put:
+      summary: Update a Customer
+      operationId: put-customers-id
+      responses:
+        '200':
+          description: OK
+      tags:
+        - Customers
+      description: Updates a customer.
+    delete:
+      summary: Delete a Customer
+      operationId: delete-customers-id
+      tags:
+        - Customers
+      description: Deletes a customer.
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
   /discount_methods:
     get:
       summary: Discount Methods
@@ -3112,6 +3258,45 @@ paths:
         - Discount Methods
         - Marketing
       description: Creates a discount method.
+  '/discount_methods/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `discount_method`
+    put:
+      summary: Update a Discount Method
+      operationId: put-discount_methods-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discount_methods'
+      tags:
+        - Discount Methods
+        - Marketing
+      description: Updates a discount method.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discount_methods'
+    delete:
+      summary: Delete a Discount Method
+      operationId: delete-discount_methods-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Discount Methods
+        - Marketing
+      description: Deletes a discount method.
   /discount_rules:
     get:
       summary: Get Discount Rules
@@ -3192,9 +3377,46 @@ paths:
                 - discount_method_id
                 - type
                 - target
+  '/discount_rules/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `discount_rule`
+    delete:
+      summary: Deletes a Discount Rule
+      operationId: delete-discount_rules-id
+      responses:
+        '404':
+          $ref: '#/components/responses/404'
+      description: 'Deletes a discount rule. '
+      tags:
+        - Discount Rules
+        - Marketing
+    put:
+      summary: Update a Discount Rule
+      operationId: put-discount_rules-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: ''
+      description: Updates a discount rule.
+      tags:
+        - Discount Rules
+        - Marketing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discount_rules'
   /drips:
     get:
-      summary: Drips
+      summary: Get Drips
       tags:
         - Marketing
         - Drips
@@ -3213,9 +3435,95 @@ paths:
                     items:
                       $ref: '#/components/schemas/drips'
       operationId: get-drips
+      description: |-
+        Gets an array of drips. 
+
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+    post:
+      summary: Creates a Drip
+      operationId: post-drips
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/drips'
+      description: |-
+        Creates a drip. 
+
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+      tags:
+        - Drips
+        - Marketing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: abandoned cart 2
+                  is_enabled: true
+              properties:
+                name:
+                  type: string
+                is_enabled:
+                  type: boolean
+            examples:
+              example-1:
+                value:
+                  name: abandoned cart
+                  is_enabled: true
+  '/drips/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The id of the `drip`
+    put:
+      summary: Update a Drip
+      operationId: put-drips-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/drips'
+      tags:
+        - Drips
+        - Marketing
+      description: |-
+        Updates a drip. 
+
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/drips'
+    delete:
+      summary: Delete a Drip
+      operationId: delete-drips-id
+      responses:
+        '200':
+          $ref: '#/components/responses/404'
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Drips
+        - Marketing
+      description: |-
+        Deletes a drip.
+
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
   /email_templates:
     get:
-      summary: Email Templates
+      summary: Get Email Templates
       tags:
         - Marketing
         - Email Templates
@@ -3234,9 +3542,105 @@ paths:
                     items:
                       $ref: '#/components/schemas/email_templates'
       operationId: get-email_templates
+      description: Gets an array of email templates.
+    post:
+      summary: Create an Email Template
+      operationId: post-email_templates
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/email_templates'
+      tags:
+        - Email Templates
+        - Marketing
+      description: Creates an email template.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  type: Order Confirmation
+                  body: "Thank you for your order!  Please print this for your records.\r\n\r\n--------------------------------\r\nOrder #\t\t: ##ORDERID##\r\nEmail\t\t\t: ##CUSTOMEREMAIL##\r\nOrder Date\t\t: ##ORDERDATE##\r\nOrder Status\t: ##ORDERSTATUS##\r\nPayment Status\t: ##PAYMENTSTATUS##\r\nPayment Method\t: ##PAYMENTMETHOD##\r\n\r\n--------------------------------\r\nShipping Address\r\n--------------------------------\r\n##SHIPADDRESS##\r\n\r\n--------------------------------\r\nOrder Details\r\n##ORDERITEMS##\r\n--------------------------------\r\nSub-Total\t\t: ##SUBTOTAL##\r\nShipping Method\t: ##SHIPPINGMETHOD##\r\nShipping Amount\t: ##SHIPPING##\r\nEstimated Tax\t: ##TAX##\r\n##DISCOUNTSTRING## ##DISCOUNTTOTAL##\r\n--------------------------------\r\nTotal\t\t\t: ##TOTAL##\r\n--------------------------------"
+                  subject: 'Confirmation Order ###ORDERID##'
+                  from_name: '##STORENAME##'
+                  from_email: '##STOREEMAIL##'
+                  is_enabled: true
+                  admin_alert_header: "\r\nCustomer Test: ##IF[CustomerType= ]## Worked ##ELSE## didnt ##ENDIF##\r\n\r\n##IF[CustomerType=retail]## retail \r\n##IF[CustomerType=approval needed]## aprlvnad \r\n##IF[CustomerType=wholesale]## wholesale\r\n##IF[CustomerType=Drop Shipper]## drop shipper\r\n##ELSE##\r\nNew Customer\r\n###ENDIF##\r\n\r\n\r\n\r\n\r\nView this order: \r\n##ADMINORDERLINK##\r\n \r\n\r\n\r\nAVS Code: ##AVSCODE## \r\nSource: ##SOURCE## \r\nPPC Keyword: ##PPCKEYWORD## \r\nSearch Phrase: ##SEARCHPHRASE## \r\nCampaign Code: ##CAMPAIGNCODE##\r\n\r\n$$GIFTCERTIFICATEAMOUNT$$ \r\n##GIFTCERTIFICATEDELIVERYAREA##\r\n##GIFTCERTIFICATEDELIVERYAREAHTML##\r\n##GIFTCERTIFICATECODESCSV##\r\n\r\n\r\n##ADMINORDERWARNINGS##"
+                  admin_alert_subject: 'Order ID###ORDERID## - ##TOTAL##'
+                  is_admin_alert_enabled: true
+                  email_format: TEXT
+                  attach_invoice_pdf: false
+              properties:
+                type:
+                  type: string
+                body:
+                  type: string
+                subject:
+                  type: string
+                from_name:
+                  type: string
+                from_email:
+                  type: string
+                is_enabled:
+                  type: boolean
+                admin_alert_header:
+                  type: string
+                admin_alert_subject:
+                  type: string
+                is_admin_alert_enabled:
+                  type: boolean
+                email_format:
+                  type: string
+                attach_invoice_pdf:
+                  type: boolean
+  '/email_templates/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `email_template`
+    put:
+      summary: Update an Email Template
+      operationId: put-email_templates-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/email_templates'
+      tags:
+        - Email Templates
+        - Marketing
+      description: Updates an email template.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/email_templates'
+    delete:
+      summary: Delete an Email Template
+      operationId: delete-email_templates-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Email Templates
+        - Marketing
+      description: Deletes an email template.
   /gift_certificate_transactions:
     get:
-      summary: Gift Certificate Transactions
+      summary: Get Gift Certificate Transactions
       tags:
         - Marketing
         - Gift Certificate Transactions
@@ -3255,9 +3659,93 @@ paths:
                     items:
                       $ref: '#/components/schemas/gift_certificate_transactions'
       operationId: get-gift_certificate_transactions
+      description: Gets an array of gift certificate transactions.
+    post:
+      summary: Create a Gift Certificate Transaction
+      operationId: post-gift_certificate_transactions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gift_certificate_transactions'
+      tags:
+        - Gift Certificate Transactions
+        - Marketing
+      description: Creates a gift certificate transactions
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  gift_certificate_id: 28
+                  action: SetActive
+                  amount: 0
+                  is_pre_tax_discount: false
+                  order_id: 0
+                  order_payment_id: null
+                  status: Approved
+              properties:
+                gift_certificate_id:
+                  type: integer
+                action:
+                  type: string
+                amount:
+                  type: number
+                is_pre_tax_discount:
+                  type: boolean
+                order_id:
+                  type: number
+                order_payment_id:
+                  type: integer
+                status:
+                  type: string
+  '/gift_certificate_transactions/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `gift_certificate_transactions`
+    put:
+      summary: Update a Gift Certificate Transaction
+      operationId: put-gift_certificate_transactions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gift_certificate_transactions'
+      description: 'Updates a gift certificate transaction. '
+      tags:
+        - Gift Certificate Transactions
+        - Marketing
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gift_certificate_transactions'
+    delete:
+      summary: Delete a Gift Certificate Transaction
+      operationId: delete-gift_certificate_transactions-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a gift certificate transaction.
+      tags:
+        - Gift Certificate Transactions
+        - Marketing
   /gift_certificates:
     get:
-      summary: Gift Certificates
+      summary: Get Gift Certificates
       responses:
         '200':
           description: OK
@@ -3276,37 +3764,214 @@ paths:
       tags:
         - Gift Certificates
         - Marketing
+      description: Gets an array of gift certificates.
+    post:
+      summary: Creates a Gift Certificate
+      operationId: post-gift_certificates
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gift_certificates'
+      tags:
+        - Gift Certificates
+        - Marketing
+      description: Creates a gift certificate.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  id: 4
+                  code: GC-NCC-67-M1VGS7
+                  original_order_id: null
+                  from_customer_id: null
+                  recipient_email: ''
+                  recipient_name: ''
+                  recipient_shipping_address: ''
+                  gift_message: ''
+                  status: Active
+                  is_pre_tax_discount: false
+                  gift_certificate_type: free gc
+                  comments: ''
+                  expires_at: '1900-01-01T00:00:00-06:00'
+                  store_id: 1
+                  current_amount: 10
+                  original_amount: 10
+                  customer_id: 16
+                  expires: false
+                  order_item_id: null
+              properties:
+                code:
+                  type: string
+                original_order_id:
+                  type: integer
+                from_customer_id:
+                  type: integer
+                recipient_email:
+                  type: string
+                recipient_name:
+                  type: string
+                recipient_shipping_address:
+                  type: string
+                gift_message:
+                  type: string
+                status:
+                  type: string
+                is_pre_tax_discount:
+                  type: boolean
+                gift_certificate_type:
+                  type: string
+                comments:
+                  type: string
+                expires_at:
+                  type: string
+                store_id:
+                  type: integer
+                current_amount:
+                  type: number
+                original_amount:
+                  type: number
+                customer_id:
+                  type: integer
+                expires:
+                  type: boolean
+                order_item_id:
+                  type: integer
+  '/gift_certificates/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `gift_certificate`
+    put:
+      summary: Update a Gift Certificate
+      operationId: put-gift_certificates-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/gift_certificates'
+      tags:
+        - Gift Certificates
+        - Marketing
+      description: Updates a gift certificate.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/gift_certificates'
+    delete:
+      summary: Deletes a Gift Certificate
+      operationId: delete-gift_certificates-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Gift Certificates
+        - Marketing
+      description: 'Deletes a gift certificate. '
   /inventory:
     get:
-      summary: Inventory
-      tags: []
+      summary: Get Inventory
+      tags:
+        - Products
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  total_count:
-                    type: integer
-                  inventory:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/inventory'
+                $ref: '#/components/schemas/inventory'
       operationId: get-inventory
+      parameters:
+        - schema:
+            type: integer
+          in: query
+          name: product_id
+          required: true
+        - schema:
+            type: integer
+          in: query
+          name: variant_inventory_id
+        - schema:
+            type: string
+          in: query
+          name: item_number
+        - schema:
+            type: string
+          in: query
+          name: gtin
+        - schema:
+            type: string
+          in: query
+          name: item_name
+      description: 'Gets current inventory of specified item in query. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  product_id: 62
+                  variant_inventory_id: null
+                  item_number: 60PY2DR
+                  item_name: 60PY2DR
+                  gtin: ''
+                  quantity: 20
+              properties:
+                product_id:
+                  type: integer
+                variant_inventory_id:
+                  type: integer
+                item_number:
+                  type: string
+                  minLength: 1
+                item_name:
+                  type: string
+                  minLength: 1
+                gtin:
+                  type: string
+                quantity:
+                  type: number
+              required:
+                - product_id
+                - item_number
+                - item_name
+                - gtin
+                - quantity
+            examples:
+              Example:
+                value:
+                  product_id: 62
+                  variant_inventory_id: 145
+                  item_number: 60PY2DR
+                  item_name: 60PY2DR
+                  gtin: ''
+                  quantity: 20
+    parameters: []
   /links:
     get:
-      summary: Links
-      tags: []
+      summary: Get Links
+      tags:
+        - Links
       responses:
         '200':
           description: OK
           content:
-            application/json:
-              schema:
-                type: object
-                properties: {}
             application/xml:
               schema:
                 type: object
@@ -3318,9 +3983,122 @@ paths:
                     items:
                       $ref: '#/components/schemas/links'
       operationId: get-links
+      description: Gets an array of menu links.
+    post:
+      summary: Create a Link
+      operationId: post-links
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/links'
+      description: Creates a link.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  url: /store/shop-all.aspx
+                  text: Shop
+                  sort_order: 2
+                  store_id: 14
+                  is_hidden: false
+                  named_link: null
+                  page_id: 0
+                  category_id: 0
+                  is_dynamic_menu_root: false
+                  dynamic_menu_levels: 0
+                  link_type: Category
+                  parent_link_id: 118
+                  is_hidden_in_navigation_only: false
+                  opens_in_new_window: false
+                  is_home_page: false
+                  product_id: 0
+                  blog_id: 0
+                  blog_category_id: 0
+              properties:
+                url:
+                  type: string
+                text:
+                  type: string
+                sort_order:
+                  type: integer
+                store_id:
+                  type: integer
+                is_hidden:
+                  type: boolean
+                named_link: {}
+                page_id:
+                  type: integer
+                category_id:
+                  type: integer
+                is_dynamic_menu_root:
+                  type: boolean
+                dynamic_menu_levels:
+                  type: number
+                link_type:
+                  type: string
+                parent_link_id:
+                  type: integer
+                is_hidden_in_navigation_only:
+                  type: boolean
+                opens_in_new_window:
+                  type: boolean
+                is_home_page:
+                  type: boolean
+                product_id:
+                  type: integer
+                blog_id:
+                  type: integer
+                blog_category_id:
+                  type: integer
+      tags:
+        - Links
+  '/links/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `link`
+    put:
+      summary: Update a Link
+      operationId: put-links-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/links'
+      tags:
+        - Links
+      description: Updates a link.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/links'
+    delete:
+      summary: Delete a Link
+      operationId: delete-links-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Links
+      description: Deletes a link.
   /mailing_lists:
     get:
-      summary: Mailing Lists
+      summary: Get Mailing Lists
       tags:
         - Marketing
         - Mailing Lists
@@ -3339,10 +4117,115 @@ paths:
                     items:
                       $ref: '#/components/schemas/mailing_lists'
       operationId: get-mailing_lists
+      description: Gets an array of mailing lists.
+    post:
+      summary: Create a Mailing List
+      operationId: post-mailing_lists
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mailing_lists'
+      tags:
+        - Mailing Lists
+        - Marketing
+      description: Creates a mailing list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  type: Internal
+                  admin_list_name: InternalList
+                  public_list_name: ''
+                  store_id: 4
+                  is_store_default: true
+                  auto_opt_in: false
+                  is_hidden: false
+                  url_based_subscribe_url: ''
+                  welcome_email_template_id: 0
+              properties:
+                type:
+                  type: string
+                admin_list_name:
+                  type: string
+                public_list_name:
+                  type: string
+                store_id:
+                  type: integer
+                is_store_default:
+                  type: boolean
+                auto_opt_in:
+                  type: boolean
+                is_hidden:
+                  type: boolean
+                url_based_subscribe_url:
+                  type: string
+                welcome_email_template_id:
+                  type: integer
+              required:
+                - store_id
+            examples:
+              Example:
+                value:
+                  type: Internal
+                  admin_list_name: InternalList
+                  public_list_name: ''
+                  store_id: 4
+                  is_store_default: true
+                  auto_opt_in: false
+                  is_hidden: false
+                  url_based_subscribe_url: ''
+                  welcome_email_template_id: 0
+  '/maling_lists/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `mailing_list`
+    put:
+      summary: Update a Mailing List
+      operationId: put-maling_lists-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/mailing_lists'
+      tags:
+        - Mailing Lists
+        - Marketing
+      description: Updates a mailing list.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/mailing_lists'
+    delete:
+      summary: Delete a Mailing List
+      operationId: delete-maling_lists-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Mailing Lists
+        - Marketing
+      description: Deletes a mailing list.
   /manufacturers:
     get:
-      summary: Manufacturers
-      tags: []
+      summary: Get Manufacturers
+      tags:
+        - Manufacturers
       responses:
         '200':
           description: OK
@@ -3358,10 +4241,114 @@ paths:
                     items:
                       $ref: '#/components/schemas/manufacturers'
       operationId: get-manufacturers
+      description: Gets an array of manufacturers.
+    post:
+      summary: Create a Manufacturer
+      operationId: post-manufacturers
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/manufacturers'
+      tags:
+        - Manufacturers
+      description: 'Creates a manufacturer. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: Cart.com
+                  description: ''
+                  is_hidden: false
+                  sort_order: null
+                  manufacturer_logo_url: /Shared/images/cart.png
+                  page_title: ''
+                  keywords: ''
+                  meta_description: ''
+                  url_rewrite: /cartcom.aspx
+                  head_tags: ''
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                is_hidden:
+                  type: boolean
+                sort_order:
+                  type: integer
+                manufacturer_logo_url:
+                  type: string
+                page_title:
+                  type: string
+                keywords:
+                  type: string
+                meta_description:
+                  type: string
+                url_rewrite:
+                  type: string
+                head_tags:
+                  type: string
+            examples:
+              Example:
+                value:
+                  name: Cart.com
+                  description: ''
+                  is_hidden: false
+                  sort_order: 1
+                  manufacturer_logo_url: /Shared/images/cart.png
+                  page_title: ''
+                  keywords: ''
+                  meta_description: ''
+                  url_rewrite: /cartcom.aspx
+                  head_tags: ''
+  '/manufacturers/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `manufacturer`
+    put:
+      summary: Update a Manufacturer
+      operationId: put-manufacturers-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/manufacturers'
+      tags:
+        - Manufacturers
+      description: Updates a manufacturer.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/manufacturers'
+    delete:
+      summary: Delete a Manufacturer.
+      operationId: delete-manufacturers-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Manufacturers
+      description: Deletes a manufacturer.
   /microstores:
     get:
-      summary: Microstores
-      tags: []
+      summary: Get Microstores
+      tags:
+        - Microstores
       responses:
         '200':
           description: OK
@@ -3377,10 +4364,134 @@ paths:
                     items:
                       $ref: '#/components/schemas/microstores'
       operationId: get-microstores
+      description: Gets an array of microstores.
+    post:
+      summary: Create a Microstore
+      operationId: post-microstores
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microstores'
+      tags:
+        - Microstores
+      description: Creates a Microstore.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: TheMikeRoweStore
+                  address_line_1: 135 El Pollo Loco
+                  address_line_2: ''
+                  city: Springfield
+                  state: Texas
+                  country: United States
+                  postal_code: '77334'
+                  phone: 431-543-1234
+                  fax: ''
+                  parent_store_id: 1
+                  is_micro_store: true
+                  set_cookie: true
+                  cookie_expiration: 0
+                  logo_image: ''
+                  path: /TheMikeRoweStore
+              properties:
+                name:
+                  type: string
+                address_line_1:
+                  type: string
+                address_line_2:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                country:
+                  type: string
+                postal_code:
+                  type: string
+                phone:
+                  type: string
+                fax:
+                  type: string
+                parent_store_id:
+                  type: integer
+                is_micro_store:
+                  type: boolean
+                set_cookie:
+                  type: boolean
+                cookie_expiration:
+                  type: number
+                logo_image:
+                  type: string
+                path:
+                  type: string
+            examples:
+              Example:
+                value:
+                  name: TheMikeRoweStore
+                  address_line_1: 135 Test st
+                  address_line_2: ''
+                  city: Beaumont
+                  state: Texas
+                  country: United States
+                  postal_code: '77701'
+                  phone: 431-543-1234
+                  fax: ''
+                  parent_store_id: 1
+                  is_micro_store: true
+                  set_cookie: true
+                  cookie_expiration: 0
+                  logo_image: ''
+                  path: /TheMikeRoweStore
+  '/microstores/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `microstore`
+    put:
+      summary: Update a Microstore
+      operationId: put-microstores-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/microstores'
+      tags:
+        - Microstores
+      description: 'Updates a microstore. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/microstores'
+    delete:
+      summary: Delete a Microstore
+      operationId: delete-microstores-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Microstores
+      description: Deletes a microstore.
   /notifications:
     get:
-      summary: Notifications
-      tags: []
+      summary: Get Notifications
+      tags:
+        - Notifications
       responses:
         '200':
           description: OK
@@ -3396,10 +4507,99 @@ paths:
                     items:
                       $ref: '#/components/schemas/notifications'
       operationId: get-notifications
+      description: 'Returns an array of product notifications. '
+    post:
+      summary: Create a Notification
+      operationId: post-notifications
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notifications'
+      tags:
+        - Notifications
+      description: Creates a product notification.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  product_id: 86
+                  email_address: test@mail.com
+                  customer_id: 22
+                  notification_frequency_type: Once
+                  store_id: 1
+                  variant_inventory_id: null
+              properties:
+                product_id:
+                  type: integer
+                email_address:
+                  type: string
+                customer_id:
+                  type: integer
+                notification_frequency_type:
+                  type: string
+                store_id:
+                  type: integer
+                variant_inventory_id:
+                  type: integer
+            examples:
+              Example:
+                value:
+                  product_id: 86
+                  email_address: test@cart.com
+                  customer_id: 22
+                  notification_frequency_type: Once
+                  store_id: 1
+                  variant_inventory_id: 123
+  '/notifications/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `notification`
+    put:
+      summary: Update a Notification
+      operationId: put-notifications-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/notifications'
+      tags:
+        - Notifications
+      description: Updates a product notification.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/notifications'
+        description: ''
+    delete:
+      summary: Delete a Notification
+      operationId: delete-notifications-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Notifications
+      description: Deletes a notificaton.
   /order_addresses:
     get:
-      summary: Order Addresses
-      tags: []
+      summary: Get Order Addresses
+      tags:
+        - Order Addresses
       responses:
         '200':
           description: OK
@@ -3415,10 +4615,136 @@ paths:
                     items:
                       $ref: '#/components/schemas/order_addresses'
       operationId: get-order_addresses
+      description: Gets an array of order addresses.
+    post:
+      summary: Create an Order Address
+      operationId: post-order_addresses
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_addresses'
+      tags:
+        - Order Addresses
+      description: Creates an order address.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  customer_id: 107
+                  company: ''
+                  address_line_1: 123 Test St
+                  address_line_2: ''
+                  city: Beaumont
+                  state: Texas
+                  country: United States
+                  postal_code: '77706'
+                  phone: '3333333333'
+                  alternate_phone: ''
+                  fax: ''
+                  comments: ''
+                  first_name: Test
+                  last_name: Person
+                  address_type: Default
+              properties:
+                customer_id:
+                  type: integer
+                company:
+                  type: string
+                address_line_1:
+                  type: string
+                address_line_2:
+                  type: string
+                city:
+                  type: string
+                state:
+                  type: string
+                country:
+                  type: string
+                postal_code:
+                  type: string
+                phone:
+                  type: string
+                alternate_phone:
+                  type: string
+                fax:
+                  type: string
+                comments:
+                  type: string
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                address_type:
+                  type: string
+              required:
+                - customer_id
+            examples:
+              Example:
+                value:
+                  customer_id: 107
+                  company: ''
+                  address_line_1: 123 Test St
+                  address_line_2: ''
+                  city: Beaumont
+                  state: Texas
+                  country: United States
+                  postal_code: '77706'
+                  phone: '3333333333'
+                  alternate_phone: ''
+                  fax: ''
+                  comments: ''
+                  first_name: Test
+                  last_name: Person
+                  address_type: Default
+  '/order_addresses/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `order_address`
+    put:
+      summary: Update an Order Address
+      operationId: put-order_addresses-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_addresses'
+      description: 'Updates an order address. '
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/order_addresses'
+      tags:
+        - Order Addresses
+    delete:
+      summary: Delete an Order Address
+      operationId: delete-order_addresses-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Order Addresses
+      description: Deletes an Order Address.
   /order_items:
     get:
-      summary: Order Items
-      tags: []
+      summary: Get Order Items
+      tags:
+        - Order Items
       responses:
         '200':
           description: OK
@@ -3434,6 +4760,211 @@ paths:
                     items:
                       $ref: '#/components/schemas/order_items'
       operationId: get-order_items
+      description: Gets an array of order items.
+    post:
+      summary: Create an Order Item
+      operationId: post-order_items
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_items'
+      tags:
+        - Order Items
+      description: Creates an order item.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  order_id: 100232
+                  product_id: 80
+                  item_number: '1234'
+                  item_name: Project Screen
+                  price: 1400
+                  cost: 0
+                  quantity: 1
+                  is_discount_item: false
+                  weight: 0
+                  is_taxable: false
+                  weight_unit: Lbs
+                  warehouse_id: 0
+                  variant_inventory_id: null
+                  parent_order_item_id: null
+                  is_quantity_bound_to_parent: false
+                  height: 0
+                  length: 0
+                  width: 0
+                  size_unit: In
+                  tax_code: ''
+                  item_number_full: '800'
+                  admin_comments: ''
+                  do_not_discount: false
+                  line_item_note: ''
+                  order_shipping_address_id: null
+                  gift_message: ''
+                  delivery_date: null
+                  discount_amount: 0
+                  discount_percentage: 0
+                  is_subscription_product: false
+                  is_non_shipping_item: false
+                  description: ''
+                  vendor_store_id: null
+                  variants: null
+                  personalizations: null
+              properties:
+                order_id:
+                  type: integer
+                product_id:
+                  type: integer
+                item_number:
+                  type: string
+                item_name:
+                  type: string
+                price:
+                  type: number
+                cost:
+                  type: number
+                quantity:
+                  type: number
+                is_discount_item:
+                  type: boolean
+                weight:
+                  type: number
+                is_taxable:
+                  type: boolean
+                weight_unit:
+                  type: string
+                warehouse_id:
+                  type: integer
+                variant_inventory_id:
+                  type: integer
+                parent_order_item_id:
+                  type: integer
+                is_quantity_bound_to_parent:
+                  type: boolean
+                height:
+                  type: number
+                length:
+                  type: number
+                width:
+                  type: number
+                size_unit:
+                  type: string
+                tax_code:
+                  type: string
+                item_number_full:
+                  type: string
+                admin_comments:
+                  type: string
+                do_not_discount:
+                  type: boolean
+                line_item_note:
+                  type: string
+                order_shipping_address_id:
+                  type: integer
+                gift_message:
+                  type: string
+                delivery_date:
+                  type: string
+                discount_amount:
+                  type: number
+                discount_percentage:
+                  type: number
+                is_subscription_product:
+                  type: boolean
+                is_non_shipping_item:
+                  type: boolean
+                description:
+                  type: string
+                vendor_store_id: {}
+                variants:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/product_variants'
+                personalizations:
+                  type: array
+                  items: {}
+            examples:
+              Example:
+                value:
+                  order_id: 100232
+                  product_id: 80
+                  item_number: '1234'
+                  item_name: Projector Screen
+                  price: 1400
+                  cost: 0
+                  quantity: 1
+                  is_discount_item: false
+                  weight: 0
+                  is_taxable: false
+                  weight_unit: Lbs
+                  warehouse_id: 0
+                  variant_inventory_id: 123
+                  parent_order_item_id: 142
+                  is_quantity_bound_to_parent: false
+                  height: 0
+                  length: 0
+                  width: 0
+                  size_unit: In
+                  tax_code: ''
+                  item_number_full: '800'
+                  admin_comments: ''
+                  do_not_discount: false
+                  line_item_note: ''
+                  order_shipping_address_id: 124
+                  gift_message: ''
+                  delivery_date: ''
+                  discount_amount: 0
+                  discount_percentage: 0
+                  is_subscription_product: false
+                  is_non_shipping_item: false
+                  description: ''
+                  vendor_store_id: null
+                  variants: []
+                  personalizations: []
+  '/order_items/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `order_item`
+    put:
+      summary: Updates an Order Item
+      operationId: put-order_items-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_items'
+      description: Update an order item.
+      tags:
+        - Order Items
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/order_items'
+    delete:
+      summary: Delete an Order Item
+      operationId: delete-order_items-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Order Items
+      description: Deletes an order item.
   /order_payments:
     get:
       summary: Order Payments
@@ -3453,6 +4984,174 @@ paths:
                     items:
                       $ref: '#/components/schemas/order_payments'
       operationId: get-order_payments
+    post:
+      summary: Create an Order Payment
+      operationId: post-order_payments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_payments'
+      tags:
+        - Order Payments
+      description: Creates an order payment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  customer_id: 107
+                  order_id: 100242
+                  customer_payment_method_id: 0
+                  payment_method_id: 122
+                  payment_type: Custom
+                  is_approved: true
+                  is_declined: false
+                  card_type: null
+                  card_expiration_month: 0
+                  card_expiration_year: 0
+                  cardholder_name: ''
+                  approved_at: ''
+                  authorization_code: ''
+                  reject_reason: ''
+                  avs_code: ''
+                  payment_method_name: custom
+                  transaction_type: None
+                  amount: 5001
+                  payment_note: ''
+                  gift_certificate_id: null
+                  is_captured: false
+                  transaction_id: ''
+                  last_four: ''
+                  is_void: false
+                  gateway_response_code: ''
+                  cvv_response_code: ''
+                  token: ''
+                  payment_ref_num: ''
+                  store_payment_method_id: null
+              properties:
+                customer_id:
+                  type: integer
+                order_id:
+                  type: integer
+                customer_payment_method_id:
+                  type: integer
+                payment_method_id:
+                  type: integer
+                payment_type:
+                  type: string
+                  minLength: 1
+                is_approved:
+                  type: boolean
+                is_declined:
+                  type: boolean
+                card_type:
+                  type: string
+                card_expiration_month:
+                  type: integer
+                card_expiration_year:
+                  type: integer
+                cardholder_name:
+                  type: string
+                reject_reason:
+                  type: string
+                payment_method_name:
+                  type: string
+                transaction_type:
+                  type: string
+                amount:
+                  type: number
+                payment_note:
+                  type: string
+                gift_certificate_id:
+                  type: integer
+                is_captured:
+                  type: boolean
+                last_four:
+                  type: string
+                is_void:
+                  type: boolean
+                payment_ref_num:
+                  type: string
+                store_payment_method_id:
+                  type: integer
+              required:
+                - customer_id
+                - order_id
+            examples:
+              Example:
+                value:
+                  customer_id: 107
+                  order_id: 100242
+                  customer_payment_method_id: 0
+                  payment_method_id: 122
+                  payment_type: Custom
+                  is_approved: true
+                  is_declined: false
+                  card_type: ''
+                  card_expiration_month: 0
+                  card_expiration_year: 0
+                  cardholder_name: ''
+                  approved_at: ''
+                  authorization_code: ''
+                  reject_reason: ''
+                  avs_code: ''
+                  payment_method_name: custom
+                  transaction_type: None
+                  amount: 5001
+                  payment_note: ''
+                  gift_certificate_id: 12
+                  is_captured: false
+                  transaction_id: ''
+                  last_four: ''
+                  is_void: false
+                  gateway_response_code: ''
+                  cvv_response_code: ''
+                  token: ''
+                  payment_ref_num: ''
+                  store_payment_method_id: 2
+  '/order_payments/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `order_payment`
+    put:
+      summary: Update an Order Payment
+      operationId: put-order_payments-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_payments'
+      tags:
+        - Order Payments
+      description: Updates an order payment.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/order_payments'
+    delete:
+      summary: ''
+      operationId: delete-order_payments-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Order Payments
+      description: 'Deletes an order payment. '
   /order_shipments:
     get:
       summary: Order Shipments
@@ -3861,6 +5560,43 @@ paths:
                   is_shipping_region: true
                   is_tax_region: false
         description: ''
+  '/regions/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `region`
+    put:
+      summary: Update a Region
+      operationId: put-regions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/regions'
+      tags:
+        - Regions
+      description: Updates a region.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/regions'
+    delete:
+      summary: Delete a Region
+      operationId: delete-regions-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Regions
+      description: Deletes a region.
   /sessions:
     get:
       summary: Get Sessions
@@ -4087,6 +5823,43 @@ paths:
                   renewal_count: 0
                   one_time_customer_notice: ''
                   customer_notice: ''
+  '/subscriptions/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `subscription`
+    put:
+      summary: Update a Subscription
+      operationId: put-subscriptions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subscriptions'
+      tags:
+        - Subscriptions
+      description: Updates a subscription.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/subscriptions'
+    delete:
+      summary: Delete a Subscription
+      operationId: delete-subscriptions-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      description: Deletes a subscription
+      tags:
+        - Subscriptions
   /tax_rates:
     get:
       summary: Tax Rates
@@ -5175,300 +6948,6 @@ paths:
       tags:
         - Warehouses
       description: Deletes a warehouse.
-  '/custom_shipping_methods/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `custom_shipping_method`
-    put:
-      summary: Update a Custom Shipping Method
-      operationId: put-custom_shipping_methods-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/custom_shipping_methods'
-      tags:
-        - Custom Shipping Methods
-      description: |-
-        Updates a custom shipping method.
-
-        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/custom_shipping_methods'
-    delete:
-      summary: Delete a Custom Shipping Method
-      operationId: delete-custom_shipping_methods-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      tags:
-        - Custom Shipping Methods
-      description: |-
-        Deletes a custom shipping method.
-
-        For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
-  '/customer_payment_methods/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `customer_payment_method`
-    put:
-      summary: Update a Customer Payment Method
-      operationId: put-customer_payment_methods-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/customer_payment_methods'
-      description: Updates a customer payment method.
-      tags:
-        - Customer Payment Methods
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/customer_payment_methods'
-    delete:
-      summary: Delete a Customer Payment Method
-      operationId: delete-customer_payment_methods-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      tags:
-        - Customer Payment Methods
-      description: Deletes a customer payment method.
-  '/customer_types/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-    put:
-      summary: Update a Customer Type
-      operationId: put-customer_types-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/customer_types'
-      tags:
-        - Customer Types
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/customer_types'
-      description: Updates a customer type.
-    delete:
-      summary: Delete a Customer Type
-      operationId: delete-customer_types-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      tags:
-        - Customer Types
-      description: Deletes a customer type.
-  '/subscriptions/{id}':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
-        description: The ID of the `subscription`
-    put:
-      summary: Update a Subscription
-      operationId: put-subscriptions-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/subscriptions'
-      tags:
-        - Subscriptions
-      description: Updates a subscription.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/subscriptions'
-    delete:
-      summary: Delete a Subscription
-      operationId: delete-subscriptions-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      description: Deletes a subscription
-      tags:
-        - Subscriptions
-  '/regions/{id}':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
-        description: The ID of the `region`
-    put:
-      summary: Update a Region
-      operationId: put-regions-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/regions'
-      tags:
-        - Regions
-      description: Updates a region.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/regions'
-    delete:
-      summary: Delete a Region
-      operationId: delete-regions-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      tags:
-        - Regions
-      description: Deletes a region.
-  '/customers/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `customer`
-    put:
-      summary: Update a Customer
-      operationId: put-customers-id
-      responses:
-        '200':
-          description: OK
-      tags:
-        - Customers
-      description: Updates a customer.
-    delete:
-      summary: Delete a Customer
-      operationId: delete-customers-id
-      tags:
-        - Customers
-      description: Deletes a customer.
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-  '/discount_methods/{id}':
-    parameters:
-      - schema:
-          type: string
-        name: id
-        in: path
-        required: true
-        description: The ID of the `discount_method`
-    put:
-      summary: Update a Discount Method
-      operationId: put-discount_methods-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/discount_methods'
-      tags:
-        - Discount Methods
-        - Marketing
-      description: Updates a discount method.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/discount_methods'
-    delete:
-      summary: Delete a Discount Method
-      operationId: delete-discount_methods-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      tags:
-        - Discount Methods
-        - Marketing
-      description: Deletes a discount method.
-  '/discount_rules/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `discount_rule`
-    delete:
-      summary: Deletes a Discount Rule
-      operationId: delete-discount_rules-id
-      responses:
-        '404':
-          $ref: '#/components/responses/404'
-      description: 'Deletes a discount rule. '
-      tags:
-        - Discount Rules
-        - Marketing
-    put:
-      summary: Update a Discount Rule
-      operationId: put-discount_rules-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: ''
-      description: Updates a discount rule.
-      tags:
-        - Discount Rules
-        - Marketing
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/discount_rules'
 components:
   schemas:
     adcodes:
