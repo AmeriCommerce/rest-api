@@ -6,7 +6,7 @@ The Online Store API is a REST-style API designed to be a replacement for the le
 Setup
 -----
 
-To use the API it is assumed that you already have a Cart,com Online Store account and access to the admin console. From the admin console you can set up a *custom application*, which is necessary for using the API. To do this, browse to **Tools** > **Apps & Addons** > **API Apps & Integrations** in the admin console. Click the *New* button and fill out the details for your new application. Upon hitting *Save* you will see the *App ID* and *App Secret* displayed on the screen. You will need these for the OAuth process, so it is suggested you make a note of them or at least where to find them.
+To use the API it is assumed that you already have a Cart.com Online Store account and access to the admin console. From the admin console you can set up a *custom application*, which is necessary for using the API. To do this, browse to **Tools** > **Apps & Addons** > **API Apps & Integrations** in the admin console. Click the *New* button and fill out the details for your new application. Upon hitting *Save* you will see the *App ID* and *App Secret* displayed on the screen. You will need these for the OAuth process, so it is suggested you make a note of them or at least where to find them.
 
 Making Requests
 ---------------
