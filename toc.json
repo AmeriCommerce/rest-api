@@ -89,12 +89,12 @@
                         {
                            "type":"item",
                            "title":"Get Attribute Group",
-                           "uri":"/acapi.yaml/paths/~1attribute_groups/put"
+                           "uri":"/acapi.yaml/paths/~1attribute_groups{1}/put"
                         },
                         {
                            "type":"item",
                            "title":"Get Attribute Group",
-                           "uri":"/acapi.yaml/paths/~1attribute_groups/delete"
+                           "uri":"acapi.yaml/paths/~1attribute_groups~1{id}/delete"
                         }
                      ]
                   },
