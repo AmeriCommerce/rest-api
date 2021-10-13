@@ -347,7 +347,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `quote` - Object. A quote model, as shown on the [`quotes`](/docs/resources/quotes.md) resource. 
+* `quote` - Object. A quote model, as shown on the [`quotes`](docs/resources/quotes.md) resource. 
 
 ---
 
@@ -490,7 +490,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `quote` - Object. A quote model, as shown on the [`quotes`](/docs/resources/quotes.md) resource. 
+* `quote` - Object. A quote model, as shown on the [`quotes`](docs/resources/quotes.md) resource. 
 
 ---
 

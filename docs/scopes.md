@@ -16,11 +16,11 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 Applies to:
 
 * [addresses](docs/resources/addresses.md)
-* [customers](/docs/resources/customers.md)
-* [customer_types](/docs/resources/customer_types.md)
-* [customer_payment_methods](/docs/resources/customer_payment_methods.md)
-* [profiles](/docs/resources/profiles.md)
-* [users](/docs/resources/users.md)
+* [customers](docs/resources/customers.md)
+* [customer_types](docs/resources/customer_types.md)
+* [customer_payment_methods](docs/resources/customer_payment_methods.md)
+* [profiles](docs/resources/profiles.md)
+* [users](docs/resources/users.md)
 
 Orders
 ------
@@ -32,17 +32,17 @@ Permissions required: `Orders`, `OrderStatuses`
 
 Applies to:
 
-* [carts](/docs/resources/carts.md)
-* [cart_items](/docs/resources/cart_items.md)
-* [credit_cards](/docs/resources/credit_cards.md)
-* [orders](/docs/resources/orders.md)
-* [order_addresses](/docs/resources/order_addresses.md)
-* [order_items](/docs/resources/order_items.md)
-* [order_payments](/docs/resources/order_payments.md)
-* [order_shipments](/docs/resources/order_shipments.md)
-* [order_statuses](/docs/resources/order_statuses.md)
-* [quotes](/docs/resources/quotes.md)
-* [subscriptions](/docs/resources/subscriptions.md)
+* [carts](docs/resources/carts.md)
+* [cart_items](docs/resources/cart_items.md)
+* [credit_cards](docs/resources/credit_cards.md)
+* [orders](docs/resources/orders.md)
+* [order_addresses](docs/resources/order_addresses.md)
+* [order_items](docs/resources/order_items.md)
+* [order_payments](docs/resources/order_payments.md)
+* [order_shipments](docs/resources/order_shipments.md)
+* [order_statuses](docs/resources/order_statuses.md)
+* [quotes](docs/resources/quotes.md)
+* [subscriptions](docs/resources/subscriptions.md)
 
 Catalog
 -------
