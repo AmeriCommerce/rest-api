@@ -16,6 +16,7 @@ tags:
   - name: Custom Field Values
   - name: Custom Fields
   - name: Custom Shipping Methods
+  - name: Customer Payment Methods
   - name: Customer Types
   - name: Customers
   - name: Discount Methods
@@ -53,6 +54,7 @@ tags:
   - name: Quotes
   - name: Regions
   - name: Sessions
+  - name: Shipping Providers
   - name: Shipping Rate Adjustments
   - name: Stores
   - name: Subscriptions
@@ -3389,13 +3391,15 @@ paths:
     delete:
       summary: Deletes a Discount Rule
       operationId: delete-discount_rules-id
-      responses:
-        '404':
-          $ref: '#/components/responses/404'
       description: 'Deletes a discount rule. '
       tags:
         - Discount Rules
         - Marketing
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
     put:
       summary: Update a Discount Rule
       operationId: put-discount_rules-id
@@ -4968,8 +4972,9 @@ paths:
       description: Deletes an order item.
   /order_payments:
     get:
-      summary: Order Payments
-      tags: []
+      summary: Get Order Payments
+      tags:
+        - Order Payments
       responses:
         '200':
           description: OK
@@ -4985,6 +4990,7 @@ paths:
                     items:
                       $ref: '#/components/schemas/order_payments'
       operationId: get-order_payments
+      description: Gets an array of Orde Payments.
     post:
       summary: Create an Order Payment
       operationId: post-order_payments
@@ -5694,7 +5700,11 @@ paths:
     delete:
       summary: Delete an Order
       operationId: delete-orders-id
-      responses: {}
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
       tags:
         - Orders
       description: 'Deletes an order. '
@@ -6556,6 +6566,8 @@ paths:
         '404':
           $ref: '#/components/responses/404'
       description: Deletes a product picture.
+      tags:
+        - Product Pictures
   /product_pricing:
     get:
       summary: Get Product Pricing
@@ -8021,6 +8033,46 @@ paths:
                       $ref: '#/components/schemas/sessions'
       operationId: get-sessions
       description: Gets an array of sessions.
+  /shipping_providers:
+    get:
+      summary: Your GET endpoint
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipping_providers'
+      operationId: get-shipping_providers
+      tags:
+        - Shipping Providers
+      description: Gets an array of shipping providers.
+  '/shipping_providers/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `shipping_provider`
+    put:
+      summary: Update a Shipping Provider
+      operationId: put-shipping_providers-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipping_providers'
+      tags:
+        - Shipping Providers
+      description: Updates a shipping provider.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shipping_providers'
   /shipping_rate_adjustments:
     get:
       summary: Get Shipping Rate Adjustments
@@ -8347,26 +8399,7 @@ paths:
           content:
             application/json:
               schema:
-                description: ''
-                type: object
-                properties:
-                  theme_id:
-                    type: number
-                  theme_name:
-                    type: string
-                    minLength: 1
-                required:
-                  - theme_id
-                  - theme_name
-                x-examples:
-                  example-1:
-                    theme_id: 1234
-                    theme_name: ThemeName
-              examples:
-                Example:
-                  value:
-                    theme_id: 1234
-                    theme_name: ThemeName
+                $ref: '#/components/schemas/theme_import'
       requestBody:
         content:
           application/json:
@@ -8522,12 +8555,14 @@ paths:
     delete:
       summary: Delete a URL Redirect
       operationId: delete-url_redirects-id
-      responses:
-        '404':
-          $ref: '#/components/responses/404'
       description: Deletes a URL redirect.
       tags:
         - URL Redirects
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
   /users:
     get:
       summary: Get Users
