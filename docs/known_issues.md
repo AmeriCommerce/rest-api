@@ -8,12 +8,12 @@ Some fields may not behave as expected when used in the query syntax due to thei
 
 The fields that have been identified with this issue so far are as follows:
 
-* [shipping_providers](resources/shipping_providers.md)
+* [shipping_providers](docs/resources/shipping_providers.md)
 	* `markup_amount`
-* [users](resources/users.md)
+* [users](docs/resources/users.md)
 	* `last_login_attempt_at`
 	* `last_login_at`
-* [products](resources/products.md)
+* [products](docs/resources/products.md)
 	* `length`
 	* `height`
 	* `width`
