@@ -1,6 +1,6 @@
 {
-  "items": [
-    {
+   "items":[
+      {
          "type":"divider",
          "title":"Getting Started"
       },
@@ -59,14 +59,761 @@
          "title":"Webhooks",
          "uri":"docs/webhooks.md"
       },
-    {
-      "type": "divider",
-      "title": "APIS"
-    },
-    {
-      "type": "item",
-      "title": "Online Store API",
-      "uri": "acapi.yaml"
-    }
-  ]
+      {
+         "type":"divider",
+         "title":"Rest API"
+      },
+      {
+         "type":"group",
+         "title":"Resources",
+         "items":[
+            {
+               "type":"group",
+               "title":"Catalog",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Attribute Groups",
+                     "uri":"docs/resources/attribute_groups.md",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Attribute Group",
+                           "uri":"/acapi.yaml/paths/~1attribute_groups/get"
+                        },
+                        {
+                           "type":"item",
+                           "title":"Get Attribute Group",
+                           "uri":"/acapi.yaml/paths/~1attribute_groups/post"
+                        },
+                        {
+                           "type":"item",
+                           "title":"Get Attribute Group",
+                           "uri":"/acapi.yaml/paths/~1attribute_groups/put"
+                        },
+                        {
+                           "type":"item",
+                           "title":"Get Attribute Group",
+                           "uri":"/acapi.yaml/paths/~1attribute_groups/delete"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Attributes",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Attributes",
+                           "uri":"/acapi.yaml/paths/~1attributes/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Categories",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Categories",
+                           "uri":"/acapi.yaml/paths/~1categories/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Inventory",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Inventory",
+                           "uri":"/acapi.yaml/paths/~1inventory/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Manufacturers",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Manufacturers",
+                           "uri":"/acapi.yaml/paths/~1manufacturers/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Notifications",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Notifications",
+                           "uri":"/acapi.yaml/paths/~1notifications/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Price Calculators",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Price Calculators",
+                           "uri":"/acapi.yaml/paths/~1price_calculators/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Price Calculator Rules",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Price Calculator Rules",
+                           "uri":"/acapi.yaml/paths/~1price_calculator_rules/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Price Calculator Rule Modifiers",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Price Calculator Rule Modifiers",
+                           "uri":"/acapi.yaml/paths/~1price_calculator_rule_modifiers/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Product Lists",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Product Lists",
+                           "uri":"/acapi.yaml/paths/~1product_lists/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Product Pictures",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Product Pictures",
+                           "uri":"/acapi.yaml/paths/~1product_pictures/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Product Reviews",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Product Reviews",
+                           "uri":"/acapi.yaml/paths/~1product_reviews/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Product Statuses",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Product Statuses",
+                           "uri":"/acapi.yaml/paths/~1product_statuses/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Product Variants",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Product Variants",
+                           "uri":"/acapi.yaml/paths/~1product_variants/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Products",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get a Product",
+                           "uri":"/acapi.yaml/paths/~1products/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Shipping Rate Adjustments",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Shipping Rate Adjustments",
+                           "uri":"/acapi.yaml/paths/~1shipping_rate_adjustments/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Variant Groups",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Variant Groups",
+                           "uri":"/acapi.yaml/paths/~1variant_groups/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Variant Inventory",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Variant Inventory",
+                           "uri":"/acapi.yaml/paths/~1variant_inventory/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Content",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Blogs",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Blogs",
+                           "uri":"/acapi.yaml/paths/~1blogs/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Blog Categories",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Blog Categories",
+                           "uri":"/acapi.yaml/paths/~1blog_categories/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Blog Posts",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Blog Posts",
+                           "uri":"/acapi.yaml/paths/~1blog_posts/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Links",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Links",
+                           "uri":"/acapi.yaml/paths/~1links/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Pages",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Pages",
+                           "uri":"/acapi.yaml/paths/~1pages/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Marketing",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Adcodes",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Adcodes",
+                           "uri":"/acapi.yaml/paths/~1adcodes/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Affiliates",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Affiliates",
+                           "uri":"/acapi.yaml/paths/~1affiliates/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Coupon Codes",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Coupon Codes",
+                           "uri":"/acapi.yaml/paths/~1coupon_codes/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Discount Methods",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Discount Methods",
+                           "uri":"/acapi.yaml/paths/~1discount_methods/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Discount Rules",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Discount Rules",
+                           "uri":"/acapi.yaml/paths/~1discount_rules/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Drips",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Drips",
+                           "uri":"/acapi.yaml/paths/~1drips/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Email Templates",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Email Templates",
+                           "uri":"/acapi.yaml/paths/~1email_templates/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Gift Certificates",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Gift Certificates",
+                           "uri":"/acapi.yaml/paths/~1gift_certificates/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Gift Certificate Transactions",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Gift Certificates Transactions",
+                           "uri":"/acapi.yaml/paths/~1gift_certificate_transactions/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Mailing Lists",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Mailing Lists",
+                           "uri":"/acapi.yaml/paths/~1mailing_lists/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Orders",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Carts",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Carts",
+                           "uri":"/acapi.yaml/paths/~1carts/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Cart Items",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Cart Items",
+                           "uri":"/acapi.yaml/paths/~1cart_items/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Credit Cards",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Credit Cards",
+                           "uri":"/acapi.yaml/paths/~1credit_cards/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Orders",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Orders",
+                           "uri":"/acapi.yaml/paths/~1orders/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Order Addresses",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Order Addresses",
+                           "uri":"/acapi.yaml/paths/~1order_addresses/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Order Items",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Order Items",
+                           "uri":"/acapi.yaml/paths/~1order_items/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Order Payments",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Order Payments",
+                           "uri":"/acapi.yaml/paths/~1order_payments/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Order Shipments",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Order Shipments",
+                           "uri":"/acapi.yaml/paths/~1order_shipments/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Order Statuses",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Order Statuses",
+                           "uri":"/acapi.yaml/paths/~1order_statuses/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Quotes",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Quotes",
+                           "uri":"/acapi.yaml/paths/~1quotes/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Subscriptions",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Subscriptions",
+                           "uri":"/acapi.yaml/paths/~1subscriptions/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Wishlists",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Wishlists",
+                           "uri":"/acapi.yaml/paths/~1wishlists/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"People",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Addresses",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Addresses",
+                           "uri":"/acapi.yaml/paths/~1addresses/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Customers",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Customers",
+                           "uri":"/acapi.yaml/paths/~1customers/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Customer Types",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Customer Types",
+                           "uri":"/acapi.yaml/paths/~1customer_types/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Customer Payment Methods",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Customer Payment Methods",
+                           "uri":"/acapi.yaml/paths/~1customer_payment_methods/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Profiles",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Profiles",
+                           "uri":"/acapi.yaml/paths/~1profiles/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Users",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Users",
+                           "uri":"/acapi.yaml/paths/~1users/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Settings",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Custom Shipping Methods",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Custom Shipping Methods",
+                           "uri":"/acapi.yaml/paths/~1custom_shipping_methods/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Payment Methods",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Payment Methods",
+                           "uri":"/acapi.yaml/paths/~1payment_methods/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Regions",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Regions",
+                           "uri":"/acapi.yaml/paths/~1regions/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Shipping Providers",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Shipping Providers",
+                           "uri":"/acapi.yaml/paths/~1shipping_providers/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Tax Rates",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Tax Rates",
+                           "uri":"/acapi.yaml/paths/~1tax_rates/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"URL Redirects",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get URL Redirects",
+                           "uri":"/acapi.yaml/paths/~1url_redirects/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Warehouses",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Warehouses",
+                           "uri":"/acapi.yaml/paths/~1warehouses/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"System",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Sessions",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Sessions",
+                           "uri":"/acapi.yaml/paths/~1sessions/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Stores",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Stores",
+                           "uri":"/acapi.yaml/paths/~1stores/get"
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "type":"group",
+               "title":"Tools",
+               "items":[
+                  {
+                     "type":"group",
+                     "title":"Custom Fields",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Custom Fields",
+                           "uri":"/acapi.yaml/paths/~1custom_fields/get"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"Custom Field values",
+                     "items":[
+                        {
+                           "type":"item",
+                           "title":"Get Custom Field Values",
+                           "uri":"/acapi.yaml/paths/~1custom_field_values/get"
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      }
+   ]
 }
