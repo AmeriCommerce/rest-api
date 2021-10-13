@@ -15,7 +15,7 @@ Permissions required: `Customers`, `CustomerTypes`, `UserAccounts`, `StoreSettin
 
 Applies to:
 
-* [addresses](/docs/resources/addresses.md)
+* [addresses](docs/resources/addresses.md)
 * [customers](/docs/resources/customers.md)
 * [customer_types](/docs/resources/customer_types.md)
 * [customer_payment_methods](/docs/resources/customer_payment_methods.md)
