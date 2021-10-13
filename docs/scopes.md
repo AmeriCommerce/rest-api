@@ -54,18 +54,18 @@ Permissions required: `Products`, `ProductStatuses`, `VariationGroups`, `Product
 
 Applies to:
 
-* [attributes](resources/attributes.md)
-* [attribute_groups](resources/attribute_groups.md)
-* [categories](resources/categories.md)
-* [manufacturers](resources/manufacturers.md)
-* [products](resources/products.md)
-* [product_lists](resources/product_lists.md)
-* [product_pictures](resources/product_pictures.md)
-* [product_statuses](resources/product_statuses.md)
-* [product_variants](resources/product_variants.md)
+* [attributes](docs/resources/attributes.md)
+* [attribute_groups](docs/resources/attribute_groups.md)
+* [categories](docs/resources/categories.md)
+* [manufacturers](docs/resources/manufacturers.md)
+* [products](docs/resources/products.md)
+* [product_lists](docs/resources/product_lists.md)
+* [product_pictures](docs/resources/product_pictures.md)
+* [product_statuses](docs/resources/product_statuses.md)
+* [product_variants](docs/resources/product_variants.md)
 * [shipping_rate_adjustments](resource/shipping_rate_adjustments.md)
-* [variant_groups](resources/variant_groups.md)
-* [variant_inventory](resources/variant_inventory.md)
+* [variant_groups](docs/resources/variant_groups.md)
+* [variant_inventory](docs/resources/variant_inventory.md)
 
 Content
 -------
@@ -77,11 +77,11 @@ Permissions required: `Blogs`, `BlogCategories`, `BlogPosts`, `ContentManagement
 
 Applies to:
 
-* [blogs](resources/blogs.md)
-* [blog_categories](resources/blog_categories.md)
-* [blog_posts](resources/blog_posts.md)
-* [links](resources/links.md)
-* [pages](resources/pages.md)
+* [blogs](docs/resources/blogs.md)
+* [blog_categories](docs/resources/blog_categories.md)
+* [blog_posts](docs/resources/blog_posts.md)
+* [links](docs/resources/links.md)
+* [pages](docs/resources/pages.md)
 
 Marketing
 ---------
@@ -93,16 +93,16 @@ Permissions required: `AdCodes`, `Affiliates`, `EmailEditor`, `MailingList`, `Di
 
 Applies to:
 
-* [adcodes](resources/adcodes.md)
-* [affiliates](resources/affiliates.md)
-* [coupon_codes](resources/coupon_codes.md)
-* [discount_methods](resources/discount_methods.md)
-* [discount_rules](resources/discount_rules.md)
-* [drips](resources/drips.md)
-* [email_templates](resources/email_templates.md)
-* [gift_certificates](resources/gift_certificates.md)
-* [gift_certificate_transactions](resources/gift_certificate_transactions.md)
-* [mailing_lists](resources/mailing_lists.md)
+* [adcodes](docs/resources/adcodes.md)
+* [affiliates](docs/resources/affiliates.md)
+* [coupon_codes](docs/resources/coupon_codes.md)
+* [discount_methods](docs/resources/discount_methods.md)
+* [discount_rules](docs/resources/discount_rules.md)
+* [drips](docs/resources/drips.md)
+* [email_templates](docs/resources/email_templates.md)
+* [gift_certificates](docs/resources/gift_certificates.md)
+* [gift_certificate_transactions](docs/resources/gift_certificate_transactions.md)
+* [mailing_lists](docs/resources/mailing_lists.md)
 
 Specialized Scopes
 ------------------
@@ -121,7 +121,7 @@ Permissions required: `CustomFields`
 
 Applies to:
 
-* [custom_fields](resources/custom_fields.md)
+* [custom_fields](docs/resources/custom_fields.md)
 
 ### settings
 
@@ -129,13 +129,13 @@ Permissions required: `Shipping`, `Warehouses`, `TaxRates`, `GlobalRegions`, `Pa
 
 Applies to:
 
-* [custom_shipping_methods](resources/custom_shipping_methods.md)
-* [payment_methods](resources/payment_methods.md)
-* [regions](resources/regions.md)
-* [shipping_providers](resources/shipping_providers.md)
-* [tax_rates](resources/tax_rates.md)
-* [url_redirects](resources/url_redirects.md)
-* [warehouses](resources/warehouses.md)
+* [custom_shipping_methods](docs/resources/custom_shipping_methods.md)
+* [payment_methods](docs/resources/payment_methods.md)
+* [regions](docs/resources/regions.md)
+* [shipping_providers](docs/resources/shipping_providers.md)
+* [tax_rates](docs/resources/tax_rates.md)
+* [url_redirects](docs/resources/url_redirects.md)
+* [warehouses](docs/resources/warehouses.md)
 
 ### system
 
@@ -143,8 +143,8 @@ Permissions required: `FileBrowser`, `Sessions`, `StoreSettings`
 
 Applies to:
 
-* [stores](resources/stores.md)
-* [sessions](resources/sessions.md)
+* [stores](docs/resources/stores.md)
+* [sessions](docs/resources/sessions.md)
 * `POST /api/v1/upload`
 
 ### decrypt
