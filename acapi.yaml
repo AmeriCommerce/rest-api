@@ -71,7 +71,7 @@ info:
   version: '1.0'
   description: Online Store API
 servers:
-  - url: 'https://www.example.com'
+  - url: 'https://www.yoursite.com'
     description: ''
 paths:
   /adcodes:
@@ -12086,3 +12086,5 @@ components:
               details:
                 type: string
   parameters: {}
+security:
+  - X-AC-Auth-Token: []
