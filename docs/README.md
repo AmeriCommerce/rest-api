@@ -42,12 +42,12 @@ For convenience to developers writing private integrations that only ever use a 
 
 The other way to obtain access tokens is via OAuth 2. This is the more secure way to integrate an application with the API and it enforces token expiration. Additionally, if the app is acting on the behalf of particular users, OAuth is a requirement, as the user will then be able to sign in with their admin credentials and use the app just like they would use the admin console.
 
-You can find more information about authentication in the [guide](docs/resourcesauthentication.md).
+You can find more information about authentication in the [guide](docs/authentication.md).
 
 The Format
 ----------
 
-All data serialization is done with JSON. For endpoints that return lists, there is a list metadata object wrapping the array of results. The list metadata gives you information such as paging and total number of results. For properties we use `snake_case`. Datetime objects are expressed in [ISO 8601 format](docs/resources/datetimes.md).
+All data serialization is done with JSON. For endpoints that return lists, there is a list metadata object wrapping the array of results. The list metadata gives you information such as paging and total number of results. For properties we use `snake_case`. Datetime objects are expressed in [ISO 8601 format](docs/datetimes.md).
 
 Caching
 -------
