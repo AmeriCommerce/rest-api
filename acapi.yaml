@@ -71,7 +71,7 @@ info:
   version: '1.0'
   description: Online Store API
 servers:
-  - url: 'https://www.yoursite.com'
+  - url: 'https://www.yoursite.com/api/v1'
     description: ''
 paths:
   /adcodes:
