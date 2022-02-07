@@ -1,7 +1,7 @@
-AmeriCommerce API Authentication
+Cart.com Online Store API Authentication
 =========================================
 
-All AmeriCommerce API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one and how to refresh expired tokens.
+All Online Store API requests require an access token. The purpose of this guide is to give instructions on the ways to obtain one and how to refresh expired tokens.
 
 If your app is mostly just a service app and does not really interact with a user in any way, you can use the admin console to generate a token (more information below).
 
@@ -14,7 +14,7 @@ These instructions make use of digests and assume you know how to generate one (
 
 1. Redirect the user to `https://[mystorename.com]/api/oauth` with the following query string parameters:
   * `client_id` - The App ID given to you in the admin console when you set up the application.
-  * `scope` - The permissions that this access token will need. (See [Scopes](scopes.md) for specifics.)
+  * `scope` - The permissions that this access token will need. (See [Scopes](docs/scopes.md) for specifics.)
   * `redirect_uri` - The callback URL that will be returned to after the user has authorized the application.
 
 2. The user will be asked to login with their admin console credentials.

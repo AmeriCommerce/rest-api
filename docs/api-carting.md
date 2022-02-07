@@ -10,7 +10,7 @@ Creating a cart
 POST /api/v1/carts
 ```
 
-Returns a `201 Created` response with the new [cart resource](resources/carts.md) as the response body.
+Returns a `201 Created` response with the new [cart resource](docs/resources/carts.md) as the response body.
 
 Add items to the cart
 ---------------------
@@ -19,7 +19,7 @@ Add items to the cart
 POST /api/v1/carts/{id}/items
 ```
 
-Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 ### Request body
 
@@ -62,7 +62,7 @@ Update items in the cart
 PUT /api/v1/carts/{id}/items
 ```
 
-Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 ### Request body
 
@@ -94,7 +94,7 @@ Remove items from the cart
 DELETE /api/v1/carts/{id}/items
 ```
 
-Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 ### Request body
 
@@ -177,7 +177,7 @@ Set shipping method
 PUT /api/v1/carts/{id}/shipping
 ```
 
-Applies a shipping method to this cart and sets the shipping total. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Applies a shipping method to this cart and sets the shipping total. Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 ### Request body
 
@@ -198,7 +198,7 @@ Set Shipping Estimation Address
 PUT /api/v1/carts/{id}/shipping_estimation
 ```
 
-Similar to the calculate shipping method above, however this sets the estimation address on the cart so that when the cart is returned, shipping will be calculated/estimated on the cart itself. This assumes that you have set a shipping method on the cart. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Similar to the calculate shipping method above, however this sets the estimation address on the cart so that when the cart is returned, shipping will be calculated/estimated on the cart itself. This assumes that you have set a shipping method on the cart. Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 ### Request body
 
@@ -224,7 +224,7 @@ Set Coupon/Discount Code
 PUT /api/v1/carts/{id}/coupon_code
 ```
 
-Applies a coupon/discount code to this cart and recalculates the total based on that code. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Applies a coupon/discount code to this cart and recalculates the total based on that code. Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 ### Request body
 
@@ -289,7 +289,7 @@ Get Cart With Updated Pricing
 GET /api/v1/carts/{id}/calculated
 ```
 
-Gets the current state of a cart, ensuring that pricing, shipping, and discount totals are updated. Returns a `200 OK` response with the [cart resource](resources/carts.md) as the response body.
+Gets the current state of a cart, ensuring that pricing, shipping, and discount totals are updated. Returns a `200 OK` response with the [cart resource](docs/resources/carts.md) as the response body.
 
 
 Place order
@@ -301,12 +301,12 @@ POST /api/v1/carts/{id}/place_order
 
 Submits all of the cart information to process payment and create an order. Returns a `200 OK` response with a model specific to this endpoint as the response body (see sample response data below for details).
 
-*At the time of this writing, some advanced features available on AmeriCommerce's checkout page might not be available here.*
+*At the time of this writing, some advanced features available on Cart.com's checkout page might not be available here.*
 
 ### Request body
 
-* `customer` - (required) Information about the [customer](resources/customers.md) to assign to this order.
-	* `id` - (optional) The ID of an existing [customer](resources/customers.md). If omitted, a new customer will be created.
+* `customer` - (required) Information about the [customer](docs/resources/customers.md) to assign to this order.
+	* `id` - (optional) The ID of an existing [customer](docs/resources/customers.md). If omitted, a new customer will be created.
 	* `first_name` - (required) Customer's first/given name.
 	* `last_name` - (required) Customer's last/family name.
 	* `email` - (required) Customer's email address. Must not already exist.
@@ -314,8 +314,8 @@ Submits all of the cart information to process payment and create an order. Retu
 	* `phone` - (optional) Customer's phone number.
 	* `alternate_phone` - (optional) Customer's alternative phone number.
 	* `fax` - (optional) - Customer's fax number.
-* `billing_address` - (required) The [address](resources/addresses.md) to use for billing.
-	* `id` - (optional) The ID of an existing [address](resources/addresses.md). If omitted, a new address will be created.
+* `billing_address` - (required) The [address](docs/resources/addresses.md) to use for billing.
+	* `id` - (optional) The ID of an existing [address](docs/resources/addresses.md). If omitted, a new address will be created.
 	* `name` - (required) The name of the person to bill to.
 	* `address_line_1` - (required) Line 1 of the billing street address.
 	* `address_line_2` - (optional) Line 2 of the billing street address.
@@ -324,7 +324,7 @@ Submits all of the cart information to process payment and create an order. Retu
 	* `postal_code` - (required) Postal code of the billing address.
 	* `country` - (required) Country of the billing address.
 	* `notes` - (optional) Any additional information to record for this address entry.
-* `shipping_address` - (optional) The [address](resources/addresses.md) to use for shipping. Only required if `use_billing_address_for_shipping` is `false`.
+* `shipping_address` - (optional) The [address](docs/resources/addresses.md) to use for shipping. Only required if `use_billing_address_for_shipping` is `false`.
 	* `id` - (optional) The ID of an existing [address](resource/addresses.md). If omitted, a new address will be created.
 	* `name` - (required) The name of the person to ship to.
 	* `address_line_1` - (required) Line 1 of the shipping street address.

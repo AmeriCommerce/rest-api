@@ -1,7 +1,7 @@
 Webhooks
 ========
 
-Webhooks are a way to run code on an external server that integrates with events in the AmeriCommerce. When the conditions are fulfilled, the AmeriCommerce will make a request out to a URL, and, depending on the webhook, wait for a response.
+Webhooks are a way to run code on an external server that integrates with events in the Cart.com Online Store. When the conditions are fulfilled, the Online Store will make a request out to a URL, and, depending on the webhook, wait for a response.
 
 In the case of events that expect responses, the timeout is intentionally short (3 seconds), since any delay can potentially be disrupting to users of the store. It is highly recommended that your service return results as quickly as possible.
 
@@ -51,8 +51,8 @@ Webhook subscriptions are accessible via `/api/v1/webhooks`, which works exactly
    * `"Ignore"` - Disregard the failure and continue as normal, this is the default.
    * `"Error"` - Display an error message to the user.
    * `"Fallback"` - Call an alternate URL as indicated by the `fallback_url` field.
- * `store_id` - The ID of the store, as shown on the [`store`](resources/stores.md) resource, that this webhook applies to. Only events on this store will be triggered. 
- * `cache_length` - How long the response to this webhook request will be cached by the AmeriCommerce servers, options are:
+ * `store_id` - The ID of the store, as shown on the [`store`](docs/resources/stores.md) resource, that this webhook applies to. Only events on this store will be triggered. 
+ * `cache_length` - How long the response to this webhook request will be cached by the Cart.com servers, options are:
    * `"Short"` - 5 minutes
    * `"Long"` - 30 minutes
    * `"NoCache"` - Do not cache the response.
@@ -87,7 +87,7 @@ In version 2020.3+, webhooks may also be viewed and managed within your store's 
 
 The request contains the following:
 
- * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](resources/order_payments.md) resource. 
+ * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](docs/resources/order_payments.md) resource. 
 
 ###### Response
 
@@ -110,7 +110,7 @@ The response to this webhook is expected to contain:
 
 The request contains the following:
 
- * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](resources/order_payments.md) resource. 
+ * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](docs/resources/order_payments.md) resource. 
 
 ###### Response
 
@@ -133,7 +133,7 @@ The response to this webhook is expected to contain:
 
 The request contains the following:
 
-* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource.
+* `customer` - Object. A customer model, as shown on the [`customers`](docs/resources/customer.md) resource.
 
 ---
 
@@ -143,7 +143,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource. 
+* `customer` - Object. A customer model, as shown on the [`customers`](docs/resources/customer.md) resource. 
 
 ---
 
@@ -155,7 +155,7 @@ The request contains the following:
 
 * `old_email` - string. The email address of the customer before the change.
 * `new_email` - string. The new email address of the customer.
-* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource.
+* `customer` - Object. A customer model, as shown on the [`customers`](docs/resources/customer.md) resource.
 ---
 
 #### CustomerRegistered
@@ -164,7 +164,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `customer` - Object. A customer model, as shown on the [`customers`](resources/customer.md) resource. 
+* `customer` - Object. A customer model, as shown on the [`customers`](docs/resources/customer.md) resource. 
 
 ---
 
@@ -175,27 +175,27 @@ The request contains the following:
 The request contains the following:
 
 * `ad_code` - String. [`ad code`](https://support.americommerce.com/hc/en-us/articles/201903360-Campaign-AdCodes) set on the current session.
-* `billing_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-* `campaign_code` - String. [`campaign code`](resources/coupon_codes) set on the cart. 
-* `cart_id` - Integer. ID of the current [`cart`](resources/carts)
-* `customer_type` - String. The [`customer type`](resources/customer_types.md) name
-* `customer_type_id` - Integer. ID of the [`customer type`](resources/customer_types.md)
-* `destination_address` - Object.  An address model as it appears on the [`addresses`](resources/addresses.md) resource. 
+* `billing_address` - Object.  An address model as it appears on the [`addresses`](docs/resources/addresses.md) resource.
+* `campaign_code` - String. [`campaign code`](docs/resources/coupon_codes) set on the cart. 
+* `cart_id` - Integer. ID of the current [`cart`](docs/resources/carts)
+* `customer_type` - String. The [`customer type`](docs/resources/customer_types.md) name
+* `customer_type_id` - Integer. ID of the [`customer type`](docs/resources/customer_types.md)
+* `destination_address` - Object.  An address model as it appears on the [`addresses`](docs/resources/addresses.md) resource. 
 * `is_region_set` - Boolean. Is a specific region set?
 * `items` - Array of Objects 
-    * `cart_item_id` - Integer. ID of the [`cart item`](resources/cart_items.md)
-    * `category_id` - Array of Integers. List of [`category`](resources/categories.md) IDs this item belongs to.
+    * `cart_item_id` - Integer. ID of the [`cart item`](docs/resources/cart_items.md)
+    * `category_id` - Array of Integers. List of [`category`](docs/resources/categories.md) IDs this item belongs to.
     * `custom_fields` - Object
         * `name` - String
         * `value` - String
-    * `destination_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
+    * `destination_address` - Object. An address model as it appears on the [`addresses`](docs/resources/addresses.md) resource.
     * `is_subscription_item` - Boolean. Is this a subscription item?
-    * `item_number` - String. Item Number as it appears on the [`product`](resources/products.md) resource.
-    * `manufacturer_id` - Integer. ID of the [`manufacturer`](resources/manufacturers.md)
-    * `origin_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-    * `parent_product_id` - Integer. ID of the [`parent product`](resources/products.md)
+    * `item_number` - String. Item Number as it appears on the [`product`](docs/resources/products.md) resource.
+    * `manufacturer_id` - Integer. ID of the [`manufacturer`](docs/resources/manufacturers.md)
+    * `origin_address` - Object. An address model as it appears on the [`addresses`](docs/resources/addresses.md) resource.
+    * `parent_product_id` - Integer. ID of the [`parent product`](docs/resources/products.md)
     * `price` - Decimal. Unit price of the item.
-    * `product_id` - Integer. ID of the [`product`](resources/products.md)
+    * `product_id` - Integer. ID of the [`product`](docs/resources/products.md)
     * `product_list_id` - Array of Integer. IDs of the product lists this product belongs to.
     * `quantity` - Integer. Quantity
     * `shipping_classification_code` - String. Breakout shipping classification code
@@ -207,11 +207,11 @@ The request contains the following:
     * `delivery_date` - String. Estimated delivery date
     * `ship_method` - String. Selected shipping method
     * `shipping_method_name` - String. Selected shipping method name
-* `shipping_region_id` - Integer. ID of the [`shipping region`](resources/regions.md)
+* `shipping_region_id` - Integer. ID of the [`shipping region`](docs/resources/regions.md)
 * `shipping_total` - Decimal. Shipping Total
-* `store_id` - Integer. ID of the [`store`](resources/stores.md)
+* `store_id` - Integer. ID of the [`store`](docs/resources/stores.md)
 * `subscription_subtotal` - Decimal. Subtotal of the subscription items
-* `tax_region_id` - Integer. ID of the [`tax region`](resources/regions.md)
+* `tax_region_id` - Integer. ID of the [`tax region`](docs/resources/regions.md)
 * `total_weight` - Decimal. Total weight of the items in the cart.
 
 
@@ -225,9 +225,9 @@ The response to this webhook is expected to contain:
     * `discount_amount` - Decimal. The discount that should be applied for this item.
 * `add_items` - Array of Objects. New items that will be added to the cart as part of the discount.
     * `price` - Decimal.
-    * `product_id` - Integer. ID of the [`product`](resources/products.md)
+    * `product_id` - Integer. ID of the [`product`](docs/resources/products.md)
     * `quantity` - Integer.
-    * `variant_inventory_item_number` - [`variant inventory`](resources/variant_inventory.md) item number
+    * `variant_inventory_item_number` - [`variant inventory`](docs/resources/variant_inventory.md) item number
     * `variants` - Array of Objects. If using variant inventory set `variant_inventory_item_number` instead of this array.
         * `group` - String. Variant group name
         * `value` - String. Variant name
@@ -246,9 +246,9 @@ The request contains the following:
  * `items` - Array. Contains summarized product information indicating the items we need pricing information for:
    * `item_number` - String. The product's item number.
    * `quantity` - Integer. The number of products we need pricing for.
-   * `variant_ids` - Array containing the integer IDs of the [`product_variants`](resources/product_variants.md) selected, if any exist.
-   * `variant_inventory_id` - Integer. ID of the corresponding [`variant_inventory`](resources/variant_inventory.md) record.
- * `customer_type_id` - The [`customer_type`](resources/customer_types.md) in effect at the time of the request.
+   * `variant_ids` - Array containing the integer IDs of the [`product_variants`](docs/resources/product_variants.md) selected, if any exist.
+   * `variant_inventory_id` - Integer. ID of the corresponding [`variant_inventory`](docs/resources/variant_inventory.md) record.
+ * `customer_type_id` - The [`customer_type`](docs/resources/customer_types.md) in effect at the time of the request.
 
 ###### Response
 
@@ -271,12 +271,12 @@ The response to this webhook is expected to contain:
 The request contains the following:
 
 * `items` - Array. Contains summarized information for the products we need status information for:
-  * `product_id` - Integer. The ID of the [`product`](resources/products.md).
-  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resources/variant_inventory.md) record, if it exists.
-  * `product_status_id` - Integer. The ID of the current [`product_status`](resources/product_statuses.md).
-  * `product` - Object. Product model as shown on the [`products`](resources/products.md) resource.
-  * `variant_inventory` - Object. Variant inventory model as shown on the [`variant_inventory`](resources/variant_inventory.md) resource.
-  * `product_status` - Object. Product status model as shown on the [`product_statuses`](resources/product_statuses.md) resource.
+  * `product_id` - Integer. The ID of the [`product`](docs/resources/products.md).
+  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](docs/resources/variant_inventory.md) record, if it exists.
+  * `product_status_id` - Integer. The ID of the current [`product_status`](docs/resources/product_statuses.md).
+  * `product` - Object. Product model as shown on the [`products`](docs/resources/products.md) resource.
+  * `variant_inventory` - Object. Variant inventory model as shown on the [`variant_inventory`](docs/resources/variant_inventory.md) resource.
+  * `product_status` - Object. Product status model as shown on the [`product_statuses`](docs/resources/product_statuses.md) resource.
   * `inventory` - Integer. Current stock of this item.
   * `item_number` - String. The product's item number.
   * `manufacturer_item_number` - String. The product's manufacturer item number.
@@ -286,11 +286,11 @@ The request contains the following:
 The response to this webhook is expected to contain:
 
 * `items` - Array. Contains status information that corresponds to the data sent from the webhook request:
-  * `product_id` - Integer. The ID of the [`product`](resources/products.md) that this data corresponds to.
-  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resources/variant_inventory.md) record, if it exists.
+  * `product_id` - Integer. The ID of the [`product`](docs/resources/products.md) that this data corresponds to.
+  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](docs/resources/variant_inventory.md) record, if it exists.
   * `inventory` - Integer. Current stock of this item.
   * `status_display_text` - String. The text to display for this item's status on frontend pages.
-  * `product_status_id` - Integer. The ID of the [`product_status`](resources/product_statuses.md) to set for this product.
+  * `product_status_id` - Integer. The ID of the [`product_status`](docs/resources/product_statuses.md) to set for this product.
   * `is_unavailable` - Boolean. Indicates that the product is not available for purchase.
   * `is_hidden` - Boolean. Indicates that this product should be hidden from customer view.
   * `is_back_ordered` - Boolean. Indicates that this product is currently backordered.
@@ -304,7 +304,7 @@ The response to this webhook is expected to contain:
 The request contains the following:
 
 * `items` - Array. Contains summarized information for the items in the cart that tax is being calculated for:
-  * `cart_item_id` - Integer. The ID of the [`cart_item`](resources/cart_items.md).
+  * `cart_item_id` - Integer. The ID of the [`cart_item`](docs/resources/cart_items.md).
   * `item_number` - String. The product's item number.
   * `item_name` - String. The product's name.
   * `manufacturer_item_number` - String. The product's manufacturer item number.
@@ -314,8 +314,8 @@ The request contains the following:
   * `is_tax_exempt` - Boolean. Is the item flagged as being tax exempt.
   * `tax_code` - String. Tax exempt code, if it exists.
   * `line_item_subtotal` - Decimal. Price multiplied by quantity.
-  * `origin_address` - Object. The [`warehouse`](resources/warehouses.md) that the item is being shipped from.
-  * `destination_address` - Object. The [`address`](resources/addresses.md) that the item is being shipped to.
+  * `origin_address` - Object. The [`warehouse`](docs/resources/warehouses.md) that the item is being shipped from.
+  * `destination_address` - Object. The [`address`](docs/resources/addresses.md) that the item is being shipped to.
 * `shipping_total` - Decimal. The amount calculated for shipping on the current cart.
 * `handling_total` - Decimal. The amount calculated for handling on the current cart.
 
@@ -337,7 +337,7 @@ The response to this webhook is expected to contain:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -347,7 +347,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `quote` - Object. A quote model, as shown on the [`quotes`](/resources/quotes.md) resource. 
+* `quote` - Object. A quote model, as shown on the [`quotes`](docs/resources/quotes.md) resource. 
 
 ---
 
@@ -357,7 +357,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -367,7 +367,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -377,7 +377,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -387,7 +387,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -397,7 +397,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -407,7 +407,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
 
 ---
 
@@ -417,9 +417,9 @@ The request contains the following:
 
 The request contains the following:
 
-* `order` - Object. An order model, as shown on the [`orders`](resources/orders.md) resource.
-* `old_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
-* `new_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
+* `order` - Object. An order model, as shown on the [`orders`](docs/resources/orders.md) resource.
+* `old_status` - Object. An order status model, as shown on the [`order_statuses`](docs/resources/order_statuses.md) resource.
+* `new_status` - Object. An order status model, as shown on the [`order_statuses`](docs/resources/order_statuses.md) resource.
 
 ---
 
@@ -429,7 +429,7 @@ The request contains the following:
 
 The request contains the following:
 
- * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](resources/order_payments.md) resource. 
+ * `order_payment` - Object. An order payment model, as shown on the [`order_payments`](docs/resources/order_payments.md) resource. 
 
 ---
 
@@ -439,7 +439,7 @@ The request contains the following:
 
 The request contains the following:
 
- * `product` - Object. A product model, as shown on the [`products`](resources/products.md) resource. 
+ * `product` - Object. A product model, as shown on the [`products`](docs/resources/products.md) resource. 
 
 ---
 
@@ -450,12 +450,12 @@ The request contains the following:
 The request contains the following:
 
 * `item` - Object. A summary of data about the item and its inventory information
-  * `product_id` - Integer. The ID of the [`product`](resources/products.md).
-  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](resources/variant_inventory.md) record, if it exists.
-  * `product_status_id` - Integer. The ID of the current [`product_status`](resources/product_statuses.md).
-  * `product` - Object. Product model as shown on the [`products`](resources/products.md) resource.
-  * `variant_inventory` - Object. Variant inventory model as shown on the [`variant_inventory`](resources/variant_inventory.md) resource.
-  * `product_status` - Object. Product status model as shown on the [`product_statuses`](resources/product_statuses.md) resource.
+  * `product_id` - Integer. The ID of the [`product`](docs/resources/products.md).
+  * `variant_inventory_id` - Integer. The ID of the applicable [`variant_inventory`](docs/resources/variant_inventory.md) record, if it exists.
+  * `product_status_id` - Integer. The ID of the current [`product_status`](docs/resources/product_statuses.md).
+  * `product` - Object. Product model as shown on the [`products`](docs/resources/products.md) resource.
+  * `variant_inventory` - Object. Variant inventory model as shown on the [`variant_inventory`](docs/resources/variant_inventory.md) resource.
+  * `product_status` - Object. Product status model as shown on the [`product_statuses`](docs/resources/product_statuses.md) resource.
   * `inventory` - Integer. Current stock of this item.
   * `item_number` - String. The product's item number.
   * `manufacturer_item_number` - String. The product's manufacturer item number.
@@ -468,7 +468,7 @@ The request contains the following:
 
 The request contains the following:
 
- * `product` - Object. A product model, as shown on the [`products`](resources/products.md) resource. 
+ * `product` - Object. A product model, as shown on the [`products`](docs/resources/products.md) resource. 
 
 ---
 
@@ -478,9 +478,9 @@ The request contains the following:
 
 The request contains the following:
 
-* `quote` - Object. A quote model, as shown on the [`quote`](resources/quotes.md) resource.
-* `old_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
-* `new_status` - Object. An order status model, as shown on the [`order_statuses`](resources/order_statuses.md) resource.
+* `quote` - Object. A quote model, as shown on the [`quote`](docs/resources/quotes.md) resource.
+* `old_status` - Object. An order status model, as shown on the [`order_statuses`](docs/resources/order_statuses.md) resource.
+* `new_status` - Object. An order status model, as shown on the [`order_statuses`](docs/resources/order_statuses.md) resource.
 
 ---
 
@@ -490,7 +490,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `quote` - Object. A quote model, as shown on the [`quotes`](/resources/quotes.md) resource. 
+* `quote` - Object. A quote model, as shown on the [`quotes`](docs/resources/quotes.md) resource. 
 
 ---
 
@@ -500,7 +500,7 @@ The request contains the following:
 
 The request contains the following:
 
-* `cart` - Object. A cart model as it appears on the [`carts`](resources/carts.md) resource.
+* `cart` - Object. A cart model as it appears on the [`carts`](docs/resources/carts.md) resource.
 
 ###### Response
 
@@ -516,10 +516,10 @@ The response to this webhook is expected to contain:
 
 The request contains the following:
 
-* `customer` - Object. A customer model as it appears on the [`customers`](resources/customers.md) resource.
-* `billing_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-* `shipping_address` - Object. An address model as it appears on the [`addresses`](resources/addresses.md) resource.
-* `cart` - Object. A cart model as it appears on the [`carts`](resources/carts.md) resource.
+* `customer` - Object. A customer model as it appears on the [`customers`](docs/resources/customers.md) resource.
+* `billing_address` - Object. An address model as it appears on the [`addresses`](docs/resources/addresses.md) resource.
+* `shipping_address` - Object. An address model as it appears on the [`addresses`](docs/resources/addresses.md) resource.
+* `cart` - Object. A cart model as it appears on the [`carts`](docs/resources/carts.md) resource.
 * `order_custom_fields` - Array. Objects that represent the information entered for order custom fields on the checkout page:
   * `name` - String. The name of the custom field.
   * `value` - String. The value entered for the custom field.
@@ -545,7 +545,7 @@ The response to this webhook is expected to contain:
 
 The request contains the following:
 
-* `customer` - Object. A customer model as it appears on the [`customers`](resources/customers.md) resource.
+* `customer` - Object. A customer model as it appears on the [`customers`](docs/resources/customers.md) resource.
 
 ###### Response
 
@@ -562,7 +562,7 @@ The response to this webhook is expected to contain:
 
 The request contains the following:
 
-* `product` - Object. A product model as it appears on the [`products`](resources/products.md) resource.
+* `product` - Object. A product model as it appears on the [`products`](docs/resources/products.md) resource.
 
 ###### Response
 
