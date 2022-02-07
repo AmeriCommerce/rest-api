@@ -7015,6 +7015,10 @@ paths:
                   type: integer
                 item_number_extension:
                   type: string
+                item_number_sort_order:
+                  type: integer
+                  default: 0
+                  minimum: 0
                 is_hidden:
                   type: boolean
                 is_default_selection:
