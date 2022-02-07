@@ -11433,6 +11433,9 @@ components:
           type: integer
         item_number_extension:
           type: string
+        item_number_sort_order:
+          type: integer
+          default: 0
         is_hidden:
           type: boolean
         updated_at:
