@@ -3,6 +3,8 @@ Integration Routes
 
 (Available in 2020.3+)
 
+* Zapier must be enabled in your AmeriCommerce store in order to use this API Route.  
+
 In many cases, it may be necessary to add or update particular resources without having access to identifiers within AmeriCommerce. For example, you may need to update a particular customer, but you may not know the ID of that customer. Or you may need to add a product, which requires a product status, but you don't know the ID of a particular product status. Normal resources require these identifiers. To assist in this need, we provide some special integration routes that are designed to be "ID-less". In these cases we will look up the appropriate resource using unique information other than the ID, or we will create a new resource using the information provided. For example, instead of knowing customer ID, you could send customer email and we would attempt to locate a customer matching that email. Or you would send product status of "In Stock" and we would attempt to find a status matching that name, and create a new product status if one was not found.
 
 Integration routes are provided for customers, products, orders, order shipments, and order payments. These integration routes provide an abbreviated data model as compared to the full resources, but provide a great deal of functionality and flexibility. 
