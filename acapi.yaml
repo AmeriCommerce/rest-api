@@ -6587,6 +6587,27 @@ paths:
                     type: array
                     items:
                       $ref: '#/components/schemas/product_pricing'
+              examples:
+                example-1:
+                  value:
+                    total_count: string
+                    product_pricing:
+                      - id: 0
+                        product_id: 0
+                        store_id: 0
+                        customer_type_id: 0
+                        variant_inventory_id: 0
+                        sale_type_id: 0
+                        start_date: string
+                        end_date: string
+                        starting_quantity: 0
+                        price: 0
+                        cost: 0
+                        updated_at: string
+                        created_at: string
+                        price_calculation_id: 0
+                        variant_id: 0
+                        variant_price_surcharge: string
       operationId: get-product_pricing
       description: Gets an array of product pricing.
     post:

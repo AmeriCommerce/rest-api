@@ -78,17 +78,17 @@
                         {
                            "type":"item",
                            "title":"Get Attribute Group",
-                           "uri":"/acapi.yaml/paths/~1attribute_groups/get"
+                           "uri":"acapi.yaml/paths/~1attribute_groups/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Attribute Group",
-                           "uri":"/acapi.yaml/paths/~1attribute_groups/post"
+                           "uri":"acapi.yaml/paths/~1attribute_groups/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Attribute Group",
-                           "uri":"/acapi.yaml/paths/~1attribute_groups~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1attribute_groups~1{id}/put"
                         },
                         {
                            "type":"item",
@@ -104,22 +104,22 @@
                         {
                            "type":"item",
                            "title":"Get Attributes",
-                           "uri":"/acapi.yaml/paths/~1attributes/get"
+                           "uri":"acapi.yaml/paths/~1attributes/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Attribute",
-                           "uri":"/acapi.yaml/paths/~1attributes/post"
+                           "uri":"acapi.yaml/paths/~1attributes/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Attribute",
-                           "uri":"/acapi.yaml/paths/~1attributes~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1attributes~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Attribute",
-                           "uri":"/acapi.yaml/paths/~1attributes~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1attributes~1{id}/delete"
                         }
                      ]
                   },
@@ -130,22 +130,22 @@
                         {
                            "type":"item",
                            "title":"Get Categories",
-                           "uri":"/acapi.yaml/paths/~1categories/get"
+                           "uri":"acapi.yaml/paths/~1categories/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Category",
-                           "uri":"/acapi.yaml/paths/~1categories/post"
+                           "uri":"acapi.yaml/paths/~1categories/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Category",
-                           "uri":"/acapi.yaml/paths/~1categories~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1categories~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Category",
-                           "uri":"/acapi.yaml/paths/~1categories~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1categories~1{id}/delete"
                         }
                      ]
                   },
@@ -156,7 +156,7 @@
                         {
                            "type":"item",
                            "title":"Get Inventory",
-                           "uri":"/acapi.yaml/paths/~1inventory/get"
+                           "uri":"acapi.yaml/paths/~1inventory/get"
                         }
                      ]
                   },
@@ -167,22 +167,22 @@
                         {
                            "type":"item",
                            "title":"Get Manufacturers",
-                           "uri":"/acapi.yaml/paths/~1manufacturers/get"
+                           "uri":"acapi.yaml/paths/~1manufacturers/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Manufacturer",
-                           "uri":"/acapi.yaml/paths/~1manufacturers/post"
+                           "uri":"acapi.yaml/paths/~1manufacturers/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Manufacturer",
-                           "uri":"/acapi.yaml/paths/~1manufacturers~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1manufacturers~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Manufacturer",
-                           "uri":"/acapi.yaml/paths/~1manufacturers~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1manufacturers~1{id}/delete"
                         }
                      ]
                   },
@@ -193,22 +193,22 @@
                         {
                            "type":"item",
                            "title":"Get Notifications",
-                           "uri":"/acapi.yaml/paths/~1notifications/get"
+                           "uri":"acapi.yaml/paths/~1notifications/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Notification",
-                           "uri":"/acapi.yaml/paths/~1notifications/post"
+                           "uri":"acapi.yaml/paths/~1notifications/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Notification",
-                           "uri":"/acapi.yaml/paths/~1notifications~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1notifications~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Notification",
-                           "uri":"/acapi.yaml/paths/~1notifications~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1notifications~1{id}/delete"
                         }
                      ]
                   },
@@ -219,22 +219,22 @@
                         {
                            "type":"item",
                            "title":"Get Price Calculators",
-                           "uri":"/acapi.yaml/paths/~1price_calculators/get"
+                           "uri":"acapi.yaml/paths/~1price_calculators/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Price Calculator",
-                           "uri":"/acapi.yaml/paths/~1price_calculators/post"
+                           "uri":"acapi.yaml/paths/~1price_calculators/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Price Calculator",
-                           "uri":"/acapi.yaml/paths/~1price_calculators~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1price_calculators~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Price Calculator",
-                           "uri":"/acapi.yaml/paths/~1price_calculators~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1price_calculators~1{id}/delete"
                         }
                      ]
                   },
@@ -245,22 +245,22 @@
                         {
                            "type":"item",
                            "title":"Get Price Calculator Rules",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rules/get"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rules/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Price Calculator Rule",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rules/post"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rules/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Price Calculator Rule",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rules~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rules~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Price Calculator Rule",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rules~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rules~1{id}/delete"
                         }
                      ]
                   },
@@ -271,22 +271,22 @@
                         {
                            "type":"item",
                            "title":"Get Rule Modifiers",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rule_modifiers/get"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rule_modifiers/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Rule Modifier",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rule_modifiers/post"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rule_modifiers/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Rule Modifier",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rule_modifiers~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rule_modifiers~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Rule Modifier",
-                           "uri":"/acapi.yaml/paths/~1price_calculator_rule_modifiers~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1price_calculator_rule_modifiers~1{id}/delete"
                         }
                      ]
                   },
@@ -297,22 +297,22 @@
                         {
                            "type":"item",
                            "title":"Get Product Lists",
-                           "uri":"/acapi.yaml/paths/~1product_lists/get"
+                           "uri":"acapi.yaml/paths/~1product_lists/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Product List",
-                           "uri":"/acapi.yaml/paths/~1product_lists/post"
+                           "uri":"acapi.yaml/paths/~1product_lists/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Product List",
-                           "uri":"/acapi.yaml/paths/~1product_lists~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1product_lists~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Product List",
-                           "uri":"/acapi.yaml/paths/~1product_lists~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1product_lists~1{id}/delete"
                         }
                      ]
                   },
@@ -323,24 +323,50 @@
                         {
                            "type":"item",
                            "title":"Get Product Pictures",
-                           "uri":"/acapi.yaml/paths/~1product_pictures/get"
+                           "uri":"acapi.yaml/paths/~1product_pictures/get"
                         },
                         {
                            "type":"item",
                            "title":"Add a Product Picture",
-                           "uri":"/acapi.yaml/paths/~1product_pictures/post"
+                           "uri":"acapi.yaml/paths/~1product_pictures/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Product Picture",
-                           "uri":"/acapi.yaml/paths/~1product_pictures~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1product_pictures~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Product Picture",
-                           "uri":"/acapi.yaml/paths/~1product_pictures~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1product_pictures~1{id}/delete"
                         }
                      ]
+                  },
+                  {
+                    "type": "group",
+                    "title": "Product Pricing",
+                    "items": [
+                      {
+                        "type": "item",
+                        "title": "Get Product Pricing",
+                        "uri": "acapi.yaml/paths/~1product_pricing/get"
+                      },
+                      {
+                        "type": "item",
+                        "title": "Add a Product Pricing",
+                        "uri": "acapi.yaml/paths/~1product_pricing/post"
+                      },
+                      {
+                        "type": "item",
+                        "title": "Update a Product Pricing",
+                        "uri": "acapi.yaml/paths/~1product_pricing~1{id}/put"
+                      },
+                      {
+                        "type": "item",
+                        "title": "Delete Product Pricing",
+                        "uri": "acapi.yaml/paths/~1product_pricing~1{id}/delete"
+                      }
+                    ]
                   },
                   {
                      "type":"group",
@@ -349,22 +375,22 @@
                         {
                            "type":"item",
                            "title":"Get Product Reviews",
-                           "uri":"/acapi.yaml/paths/~1product_reviews/get"
+                           "uri":"acapi.yaml/paths/~1product_reviews/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Product Review",
-                           "uri":"/acapi.yaml/paths/~1product_reviews/post"
+                           "uri":"acapi.yaml/paths/~1product_reviews/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Product Review",
-                           "uri":"/acapi.yaml/paths/~1product_reviews~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1product_reviews~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Product Review",
-                           "uri":"/acapi.yaml/paths/~1product_reviews~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1product_reviews~1{id}/delete"
                         }
                      ]
                   },
@@ -375,22 +401,22 @@
                         {
                            "type":"item",
                            "title":"Get Product Statuses",
-                           "uri":"/acapi.yaml/paths/~1product_statuses/get"
+                           "uri":"acapi.yaml/paths/~1product_statuses/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Product Status",
-                           "uri":"/acapi.yaml/paths/~1product_statuses/post"
+                           "uri":"acapi.yaml/paths/~1product_statuses/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Product Status",
-                           "uri":"/acapi.yaml/paths/~1product_statuses~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1product_statuses~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Product Status",
-                           "uri":"/acapi.yaml/paths/~1product_statuses~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1product_statuses~1{id}/delete"
                         }
                      ]
                   },
@@ -401,22 +427,22 @@
                         {
                            "type":"item",
                            "title":"Get Product Variants",
-                           "uri":"/acapi.yaml/paths/~1product_variants/get"
+                           "uri":"acapi.yaml/paths/~1product_variants/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Product Variant",
-                           "uri":"/acapi.yaml/paths/~1product_variants/post"
+                           "uri":"acapi.yaml/paths/~1product_variants/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Product Variant",
-                           "uri":"/acapi.yaml/paths/~1product_variants~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1product_variants~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Product Variant",
-                           "uri":"/acapi.yaml/paths/~1product_variants~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1product_variants~1{id}/delete"
                         }
                      ]
                   },
@@ -427,22 +453,22 @@
                         {
                            "type":"item",
                            "title":"Get Products",
-                           "uri":"/acapi.yaml/paths/~1products/get"
+                           "uri":"acapi.yaml/paths/~1products/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Product",
-                           "uri":"/acapi.yaml/paths/~1products/post"
+                           "uri":"acapi.yaml/paths/~1products/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Product",
-                           "uri":"/acapi.yaml/paths/~1products~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1products~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Product",
-                           "uri":"/acapi.yaml/paths/~1products~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1products~1{id}/delete"
                         }
                      ]
                   },
@@ -453,17 +479,17 @@
                         {
                            "type":"item",
                            "title":"Get Shipping Rate Adjustments",
-                           "uri":"/acapi.yaml/paths/~1shipping_rate_adjustments/get"
+                           "uri":"acapi.yaml/paths/~1shipping_rate_adjustments/get"
                         },
                         {
                            "type":"item",
                            "title":"Update a Shipping Rate Adjustment",
-                           "uri":"/acapi.yaml/paths/~1shipping_rate_adjustments~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1shipping_rate_adjustments~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete Shipping Rate Adjustment",
-                           "uri":"/acapi.yaml/paths/~1shipping_rate_adjustments~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1shipping_rate_adjustments~1{id}/delete"
                         }
                      ]
                   },
@@ -474,22 +500,22 @@
                         {
                            "type":"item",
                            "title":"Get Variant Groups",
-                           "uri":"/acapi.yaml/paths/~1variant_groups/get"
+                           "uri":"acapi.yaml/paths/~1variant_groups/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Variant Group",
-                           "uri":"/acapi.yaml/paths/~1variant_groups/post"
+                           "uri":"acapi.yaml/paths/~1variant_groups/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Variant Group",
-                           "uri":"/acapi.yaml/paths/~1variant_groups~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1variant_groups~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Variant Group",
-                           "uri":"/acapi.yaml/paths/~1variant_groups~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1variant_groups~1{id}/delete"
                         }
                      ]
                   },
@@ -500,22 +526,22 @@
                         {
                            "type":"item",
                            "title":"Get Variant Inventory",
-                           "uri":"/acapi.yaml/paths/~1variant_inventory/get"
+                           "uri":"acapi.yaml/paths/~1variant_inventory/get"
                         },
                         {
                            "type":"item",
                            "title":"Create Variant Inventory",
-                           "uri":"/acapi.yaml/paths/~1variant_inventory/post"
+                           "uri":"acapi.yaml/paths/~1variant_inventory/post"
                         },
                         {
                            "type":"item",
                            "title":"Update Variant Inventory",
-                           "uri":"/acapi.yaml/paths/~1variant_inventory~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1variant_inventory~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete Variant Inventory",
-                           "uri":"/acapi.yaml/paths/~1variant_inventory~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1variant_inventory~1{id}/delete"
                         }
                      ]
                   }
@@ -532,22 +558,22 @@
                         {
                            "type":"item",
                            "title":"Get Blogs",
-                           "uri":"/acapi.yaml/paths/~1blogs/get"
+                           "uri":"acapi.yaml/paths/~1blogs/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Blog",
-                           "uri":"/acapi.yaml/paths/~1blogs/post"
+                           "uri":"acapi.yaml/paths/~1blogs/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Blog",
-                           "uri":"/acapi.yaml/paths/~1blogs~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1blogs~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Blog",
-                           "uri":"/acapi.yaml/paths/~1blogs~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1blogs~1{id}/delete"
                         }
                      ]
                   },
@@ -558,22 +584,22 @@
                         {
                            "type":"item",
                            "title":"Get Blog Categories",
-                           "uri":"/acapi.yaml/paths/~1blog_categories/get"
+                           "uri":"acapi.yaml/paths/~1blog_categories/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Blog Category",
-                           "uri":"/acapi.yaml/paths/~1blog_categories/post"
+                           "uri":"acapi.yaml/paths/~1blog_categories/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Blog Category",
-                           "uri":"/acapi.yaml/paths/~1blog_categories~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1blog_categories~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Blog Category",
-                           "uri":"/acapi.yaml/paths/~1blog_categories~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1blog_categories~1{id}/delete"
                         }
                      ]
                   },
@@ -584,22 +610,22 @@
                         {
                            "type":"item",
                            "title":"Get Blog Posts",
-                           "uri":"/acapi.yaml/paths/~1blog_posts/get"
+                           "uri":"acapi.yaml/paths/~1blog_posts/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Blog Post",
-                           "uri":"/acapi.yaml/paths/~1blog_posts/post"
+                           "uri":"acapi.yaml/paths/~1blog_posts/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Blog Post",
-                           "uri":"/acapi.yaml/paths/~1blog_posts~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1blog_posts~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Blog Post",
-                           "uri":"/acapi.yaml/paths/~1blog_posts~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1blog_posts~1{id}/delete"
                         }
                      ]
                   },
@@ -610,22 +636,22 @@
                         {
                            "type":"item",
                            "title":"Get Links",
-                           "uri":"/acapi.yaml/paths/~1links/get"
+                           "uri":"acapi.yaml/paths/~1links/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Link",
-                           "uri":"/acapi.yaml/paths/~1links/post"
+                           "uri":"acapi.yaml/paths/~1links/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Link",
-                           "uri":"/acapi.yaml/paths/~1links~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1links~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Link",
-                           "uri":"/acapi.yaml/paths/~1links~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1links~1{id}/delete"
                         }
                      ]
                   },
@@ -636,22 +662,22 @@
                         {
                            "type":"item",
                            "title":"Get Pages",
-                           "uri":"/acapi.yaml/paths/~1pages/get"
+                           "uri":"acapi.yaml/paths/~1pages/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Page",
-                           "uri":"/acapi.yaml/paths/~1pages/post"
+                           "uri":"acapi.yaml/paths/~1pages/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Page",
-                           "uri":"/acapi.yaml/paths/~1pages~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1pages~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Page",
-                           "uri":"/acapi.yaml/paths/~1pages~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1pages~1{id}/delete"
                         }
                      ]
                   }
@@ -668,22 +694,22 @@
                         {
                            "type":"item",
                            "title":"Get Adcodes",
-                           "uri":"/acapi.yaml/paths/~1adcodes/get"
+                           "uri":"acapi.yaml/paths/~1adcodes/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Adcode",
-                           "uri":"/acapi.yaml/paths/~1adcodes/post"
+                           "uri":"acapi.yaml/paths/~1adcodes/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Adcode",
-                           "uri":"/acapi.yaml/paths/~1adcodes~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1adcodes~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Adcode",
-                           "uri":"/acapi.yaml/paths/~1adcodes~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1adcodes~1{id}/delete"
                         }
                      ]
                   },
@@ -694,7 +720,7 @@
                         {
                            "type":"item",
                            "title":"Get Affiliates",
-                           "uri":"/acapi.yaml/paths/~1affiliates/get"
+                           "uri":"acapi.yaml/paths/~1affiliates/get"
                         }
                      ]
                   },
@@ -705,22 +731,22 @@
                         {
                            "type":"item",
                            "title":"Get Coupon Codes",
-                           "uri":"/acapi.yaml/paths/~1coupon_codes/get"
+                           "uri":"acapi.yaml/paths/~1coupon_codes/get"
                         },
                         {
                            "type":"item",
                            "title":"Create Coupon Code",
-                           "uri":"/acapi.yaml/paths/~1coupon_codes/post"
+                           "uri":"acapi.yaml/paths/~1coupon_codes/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Coupon Code",
-                           "uri":"/acapi.yaml/paths/~1coupon_codes~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1coupon_codes~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Coupon Code",
-                           "uri":"/acapi.yaml/paths/~1coupon_codes~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1coupon_codes~1{id}/delete"
                         }
                      ]
                   },
@@ -731,22 +757,22 @@
                         {
                            "type":"item",
                            "title":"Get Discount Methods",
-                           "uri":"/acapi.yaml/paths/~1discount_methods/get"
+                           "uri":"acapi.yaml/paths/~1discount_methods/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Discount Method",
-                           "uri":"/acapi.yaml/paths/~1discount_methods/post"
+                           "uri":"acapi.yaml/paths/~1discount_methods/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Discount Method",
-                           "uri":"/acapi.yaml/paths/~1discount_methods~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1discount_methods~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Discount Method",
-                           "uri":"/acapi.yaml/paths/~1discount_methods~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1discount_methods~1{id}/delete"
                         }
                      ]
                   },
@@ -757,22 +783,22 @@
                         {
                            "type":"item",
                            "title":"Get Discount Rules",
-                           "uri":"/acapi.yaml/paths/~1discount_rules/get"
+                           "uri":"acapi.yaml/paths/~1discount_rules/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Discount Rule",
-                           "uri":"/acapi.yaml/paths/~1discount_rules/post"
+                           "uri":"acapi.yaml/paths/~1discount_rules/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Discount Rule",
-                           "uri":"/acapi.yaml/paths/~1discount_rules~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1discount_rules~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Discount Rule",
-                           "uri":"/acapi.yaml/paths/~1discount_rules~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1discount_rules~1{id}/delete"
                         }
                      ]
                   },
@@ -783,22 +809,22 @@
                         {
                            "type":"item",
                            "title":"Get Drips",
-                           "uri":"/acapi.yaml/paths/~1drips/get"
+                           "uri":"acapi.yaml/paths/~1drips/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Drip",
-                           "uri":"/acapi.yaml/paths/~1drips/post"
+                           "uri":"acapi.yaml/paths/~1drips/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Drip",
-                           "uri":"/acapi.yaml/paths/~1drips~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1drips~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Drip",
-                           "uri":"/acapi.yaml/paths/~1drips~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1drips~1{id}/delete"
                         }
                      ]
                   },
@@ -809,22 +835,22 @@
                         {
                            "type":"item",
                            "title":"Get Email Templates",
-                           "uri":"/acapi.yaml/paths/~1email_templates/get"
+                           "uri":"acapi.yaml/paths/~1email_templates/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Email Template",
-                           "uri":"/acapi.yaml/paths/~1email_templates/post"
+                           "uri":"acapi.yaml/paths/~1email_templates/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Email Template",
-                           "uri":"/acapi.yaml/paths/~1email_templates~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1email_templates~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Email Template",
-                           "uri":"/acapi.yaml/paths/~1email_templates~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1email_templates~1{id}/delete"
                         }
                      ]
                   },
@@ -835,22 +861,22 @@
                         {
                            "type":"item",
                            "title":"Get Gift Certificates",
-                           "uri":"/acapi.yaml/paths/~1gift_certificates/get"
+                           "uri":"acapi.yaml/paths/~1gift_certificates/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Gift Certificate",
-                           "uri":"/acapi.yaml/paths/~1gift_certificates/post"
+                           "uri":"acapi.yaml/paths/~1gift_certificates/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Gift Certificate",
-                           "uri":"/acapi.yaml/paths/~1gift_certificates~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1gift_certificates~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Gift Certificate",
-                           "uri":"/acapi.yaml/paths/~1gift_certificates~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1gift_certificates~1{id}/delete"
                         }
                      ]
                   },
@@ -861,22 +887,22 @@
                         {
                            "type":"item",
                            "title":"Get Gift Certificates Transactions",
-                           "uri":"/acapi.yaml/paths/~1gift_certificate_transactions/get"
+                           "uri":"acapi.yaml/paths/~1gift_certificate_transactions/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Gift Certificates Transaction",
-                           "uri":"/acapi.yaml/paths/~1gift_certificate_transactions/post"
+                           "uri":"acapi.yaml/paths/~1gift_certificate_transactions/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Gift Certificates Transaction",
-                           "uri":"/acapi.yaml/paths/~1gift_certificate_transactions~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1gift_certificate_transactions~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Gift Certificates Transaction",
-                           "uri":"/acapi.yaml/paths/~1gift_certificate_transactions~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1gift_certificate_transactions~1{id}/delete"
                         }
                      ]
                   },
@@ -887,22 +913,22 @@
                         {
                            "type":"item",
                            "title":"Get Mailing Lists",
-                           "uri":"/acapi.yaml/paths/~1mailing_lists/get"
+                           "uri":"acapi.yaml/paths/~1mailing_lists/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Mailing List",
-                           "uri":"/acapi.yaml/paths/~1mailing_lists/post"
+                           "uri":"acapi.yaml/paths/~1mailing_lists/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Mailing List",
-                           "uri":"/acapi.yaml/paths/~1mailing_lists~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1mailing_lists~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Mailing List",
-                           "uri":"/acapi.yaml/paths/~1mailing_lists~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1mailing_lists~1{id}/delete"
                         }
                      ]
                   }
@@ -919,17 +945,17 @@
                         {
                            "type":"item",
                            "title":"Get Carts",
-                           "uri":"/acapi.yaml/paths/~1carts/get"
+                           "uri":"acapi.yaml/paths/~1carts/get"
                         },
                         {
                            "type":"item",
                            "title":"Update a Cart",
-                           "uri":"/acapi.yaml/paths/~1carts~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1carts~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete Cart",
-                           "uri":"/acapi.yaml/paths/~1carts~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1carts~1{id}/delete"
                         }
                      ]
                   },
@@ -940,22 +966,22 @@
                         {
                            "type":"item",
                            "title":"Get Cart Items",
-                           "uri":"/acapi.yaml/paths/~1cart_items/get"
+                           "uri":"acapi.yaml/paths/~1cart_items/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Cart Item",
-                           "uri":"/acapi.yaml/paths/~1cart_items/post"
+                           "uri":"acapi.yaml/paths/~1cart_items/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Cart Item",
-                           "uri":"/acapi.yaml/paths/~1cart_items~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1cart_items~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Cart Item",
-                           "uri":"/acapi.yaml/paths/~1cart_items~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1cart_items~1{id}/delete"
                         }
                      ]
                   },
@@ -966,22 +992,22 @@
                         {
                            "type":"item",
                            "title":"Get Credit Cards",
-                           "uri":"/acapi.yaml/paths/~1credit_cards/get"
+                           "uri":"acapi.yaml/paths/~1credit_cards/get"
                         },
                         {
                            "type":"item",
                            "title":"Add a Credit Card",
-                           "uri":"/acapi.yaml/paths/~1credit_cards/post"
+                           "uri":"acapi.yaml/paths/~1credit_cards/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Credit Card",
-                           "uri":"/acapi.yaml/paths/~1credit_cards~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1credit_cards~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Credit Card",
-                           "uri":"/acapi.yaml/paths/~1credit_cards~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1credit_cards~1{id}/delete"
                         }
                      ]
                   },
@@ -992,22 +1018,22 @@
                         {
                            "type":"item",
                            "title":"Get Orders",
-                           "uri":"/acapi.yaml/paths/~1orders/get"
+                           "uri":"acapi.yaml/paths/~1orders/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Order",
-                           "uri":"/acapi.yaml/paths/~1orders/post"
+                           "uri":"acapi.yaml/paths/~1orders/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Order",
-                           "uri":"/acapi.yaml/paths/~1orders~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1orders~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Order",
-                           "uri":"/acapi.yaml/paths/~1orders~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1orders~1{id}/delete"
                         }
                      ]
                   },
@@ -1018,22 +1044,22 @@
                         {
                            "type":"item",
                            "title":"Get Order Addresses",
-                           "uri":"/acapi.yaml/paths/~1order_addresses/get"
+                           "uri":"acapi.yaml/paths/~1order_addresses/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Order Address",
-                           "uri":"/acapi.yaml/paths/~1order_addresses/post"
+                           "uri":"acapi.yaml/paths/~1order_addresses/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Order Address",
-                           "uri":"/acapi.yaml/paths/~1order_addresses~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1order_addresses~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Order Address",
-                           "uri":"/acapi.yaml/paths/~1order_addresses~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1order_addresses~1{id}/delete"
                         }
                      ]
                   },
@@ -1044,22 +1070,22 @@
                         {
                            "type":"item",
                            "title":"Get Order Items",
-                           "uri":"/acapi.yaml/paths/~1order_items/get"
+                           "uri":"acapi.yaml/paths/~1order_items/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Order Item",
-                           "uri":"/acapi.yaml/paths/~1order_items/post"
+                           "uri":"acapi.yaml/paths/~1order_items/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Order Item",
-                           "uri":"/acapi.yaml/paths/~1order_items~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1order_items~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete Order Item",
-                           "uri":"/acapi.yaml/paths/~1order_items~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1order_items~1{id}/delete"
                         }
                      ]
                   },
@@ -1070,22 +1096,22 @@
                         {
                            "type":"item",
                            "title":"Get Order Payments",
-                           "uri":"/acapi.yaml/paths/~1order_payments/get"
+                           "uri":"acapi.yaml/paths/~1order_payments/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Order Payment",
-                           "uri":"/acapi.yaml/paths/~1order_payments/post"
+                           "uri":"acapi.yaml/paths/~1order_payments/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Order Payment",
-                           "uri":"/acapi.yaml/paths/~1order_payments~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1order_payments~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Order Payment",
-                           "uri":"/acapi.yaml/paths/~1order_payments~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1order_payments~1{id}/delete"
                         }
                      ]
                   },
@@ -1096,22 +1122,22 @@
                         {
                            "type":"item",
                            "title":"Get Order Shipments",
-                           "uri":"/acapi.yaml/paths/~1order_shipments/get"
+                           "uri":"acapi.yaml/paths/~1order_shipments/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Order Shipment",
-                           "uri":"/acapi.yaml/paths/~1order_shipments/post"
+                           "uri":"acapi.yaml/paths/~1order_shipments/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Order Shipment",
-                           "uri":"/acapi.yaml/paths/~1order_shipments~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1order_shipments~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Order Shipment",
-                           "uri":"/acapi.yaml/paths/~1order_shipments~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1order_shipments~1{id}/delete"
                         }
                      ]
                   },
@@ -1122,22 +1148,22 @@
                         {
                            "type":"item",
                            "title":"Get Order Statuses",
-                           "uri":"/acapi.yaml/paths/~1order_statuses/get"
+                           "uri":"acapi.yaml/paths/~1order_statuses/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Order Status",
-                           "uri":"/acapi.yaml/paths/~1order_statuses/post"
+                           "uri":"acapi.yaml/paths/~1order_statuses/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Order Status",
-                           "uri":"/acapi.yaml/paths/~1order_statuses~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1order_statuses~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Order Status",
-                           "uri":"/acapi.yaml/paths/~1order_statuses~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1order_statuses~1{id}/delete"
                         }
                      ]
                   },
@@ -1148,22 +1174,22 @@
                         {
                            "type":"item",
                            "title":"Get Quotes",
-                           "uri":"/acapi.yaml/paths/~1quotes/get"
+                           "uri":"acapi.yaml/paths/~1quotes/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Quote",
-                           "uri":"/acapi.yaml/paths/~1quotes/post"
+                           "uri":"acapi.yaml/paths/~1quotes/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Quote",
-                           "uri":"/acapi.yaml/paths/~1quotes~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1quotes~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Quote",
-                           "uri":"/acapi.yaml/paths/~1quotes~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1quotes~1{id}/delete"
                         }
                      ]
                   },
@@ -1174,22 +1200,22 @@
                         {
                            "type":"item",
                            "title":"Get Subscriptions",
-                           "uri":"/acapi.yaml/paths/~1subscriptions/get"
+                           "uri":"acapi.yaml/paths/~1subscriptions/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Subscription",
-                           "uri":"/acapi.yaml/paths/~1subscriptions/post"
+                           "uri":"acapi.yaml/paths/~1subscriptions/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Subscription",
-                           "uri":"/acapi.yaml/paths/~1subscriptions~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1subscriptions~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Subscription",
-                           "uri":"/acapi.yaml/paths/~1subscriptions~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1subscriptions~1{id}/delete"
                         }
                      ]
                   },
@@ -1200,22 +1226,22 @@
                         {
                            "type":"item",
                            "title":"Get Wishlists",
-                           "uri":"/acapi.yaml/paths/~1wishlists/get"
+                           "uri":"acapi.yaml/paths/~1wishlists/get"
                         },
                         {
                            "type":"item",
                            "title":"Create Wishlist",
-                           "uri":"/acapi.yaml/paths/~1wishlists/post"
+                           "uri":"acapi.yaml/paths/~1wishlists/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Wishlist",
-                           "uri":"/acapi.yaml/paths/~1wishlists~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1wishlists~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Wishlist",
-                           "uri":"/acapi.yaml/paths/~1wishlists~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1wishlists~1{id}/delete"
                         }
                      ]
                   }
@@ -1232,22 +1258,22 @@
                         {
                            "type":"item",
                            "title":"Get Addresses",
-                           "uri":"/acapi.yaml/paths/~1addresses/get"
+                           "uri":"acapi.yaml/paths/~1addresses/get"
                         },
                         {
                            "type":"item",
                            "title":"Create an Address",
-                           "uri":"/acapi.yaml/paths/~1addresses/post"
+                           "uri":"acapi.yaml/paths/~1addresses/post"
                         },
                         {
                            "type":"item",
                            "title":"Update an Address",
-                           "uri":"/acapi.yaml/paths/~1addresses~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1addresses~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete an Address",
-                           "uri":"/acapi.yaml/paths/~1addresses~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1addresses~1{id}/delete"
                         }
                      ]
                   },
@@ -1258,22 +1284,22 @@
                         {
                            "type":"item",
                            "title":"Get Customers",
-                           "uri":"/acapi.yaml/paths/~1customers/get"
+                           "uri":"acapi.yaml/paths/~1customers/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Customer",
-                           "uri":"/acapi.yaml/paths/~1customers/post"
+                           "uri":"acapi.yaml/paths/~1customers/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Customer",
-                           "uri":"/acapi.yaml/paths/~1customers~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1customers~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Customer",
-                           "uri":"/acapi.yaml/paths/~1customers~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1customers~1{id}/delete"
                         }
                      ]
                   },
@@ -1284,22 +1310,22 @@
                         {
                            "type":"item",
                            "title":"Get Customer Types",
-                           "uri":"/acapi.yaml/paths/~1customer_types/get"
+                           "uri":"acapi.yaml/paths/~1customer_types/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Customer Type",
-                           "uri":"/acapi.yaml/paths/~1customer_types/post"
+                           "uri":"acapi.yaml/paths/~1customer_types/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Customer Type",
-                           "uri":"/acapi.yaml/paths/~1customer_types~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1customer_types~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Customer Type",
-                           "uri":"/acapi.yaml/paths/~1customer_types~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1customer_types~1{id}/delete"
                         }
                      ]
                   },
@@ -1310,22 +1336,22 @@
                         {
                            "type":"item",
                            "title":"Get Customer Payment Methods",
-                           "uri":"/acapi.yaml/paths/~1customer_payment_methods/get"
+                           "uri":"acapi.yaml/paths/~1customer_payment_methods/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Customer Payment Method",
-                           "uri":"/acapi.yaml/paths/~1customer_payment_methods/post"
+                           "uri":"acapi.yaml/paths/~1customer_payment_methods/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Customer Payment Method",
-                           "uri":"/acapi.yaml/paths/~1customer_payment_methods~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1customer_payment_methods~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Customer Payment Method",
-                           "uri":"/acapi.yaml/paths/~1customer_payment_methods~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1customer_payment_methods~1{id}/delete"
                         }
                      ]
                   },
@@ -1336,22 +1362,22 @@
                         {
                            "type":"item",
                            "title":"Get Profiles",
-                           "uri":"/acapi.yaml/paths/~1profiles/get"
+                           "uri":"acapi.yaml/paths/~1profiles/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Profile",
-                           "uri":"/acapi.yaml/paths/~1profiles/post"
+                           "uri":"acapi.yaml/paths/~1profiles/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Profile",
-                           "uri":"/acapi.yaml/paths/~1profiles~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1profiles~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Profile",
-                           "uri":"/acapi.yaml/paths/~1profiles~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1profiles~1{id}/delete"
                         }
                      ]
                   },
@@ -1362,7 +1388,7 @@
                         {
                            "type":"item",
                            "title":"Get Users",
-                           "uri":"/acapi.yaml/paths/~1users/get"
+                           "uri":"acapi.yaml/paths/~1users/get"
                         }
                      ]
                   }
@@ -1379,22 +1405,22 @@
                         {
                            "type":"item",
                            "title":"Get Custom Shipping Methods",
-                           "uri":"/acapi.yaml/paths/~1custom_shipping_methods/get"
+                           "uri":"acapi.yaml/paths/~1custom_shipping_methods/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Custom Shipping Method",
-                           "uri":"/acapi.yaml/paths/~1custom_shipping_methods/post"
+                           "uri":"acapi.yaml/paths/~1custom_shipping_methods/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Custom Shipping Method",
-                           "uri":"/acapi.yaml/paths/~1custom_shipping_methods~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1custom_shipping_methods~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Custom Shipping Method",
-                           "uri":"/acapi.yaml/paths/~1custom_shipping_methods~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1custom_shipping_methods~1{id}/delete"
                         }
                      ]
                   },
@@ -1405,22 +1431,22 @@
                         {
                            "type":"item",
                            "title":"Get Microstores",
-                           "uri":"/acapi.yaml/paths/~1microstores/get"
+                           "uri":"acapi.yaml/paths/~1microstores/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Microstore",
-                           "uri":"/acapi.yaml/paths/~1microstores/post"
+                           "uri":"acapi.yaml/paths/~1microstores/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Microstore",
-                           "uri":"/acapi.yaml/paths/~1microstores~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1microstores~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Microstore",
-                           "uri":"/acapi.yaml/paths/~1microstores~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1microstores~1{id}/delete"
                         }
                      ]
                   },
@@ -1431,22 +1457,22 @@
                         {
                            "type":"item",
                            "title":"Get Payment Methods",
-                           "uri":"/acapi.yaml/paths/~1payment_methods/get"
+                           "uri":"acapi.yaml/paths/~1payment_methods/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Payment Method",
-                           "uri":"/acapi.yaml/paths/~1payment_methods/post"
+                           "uri":"acapi.yaml/paths/~1payment_methods/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Payment Method",
-                           "uri":"/acapi.yaml/paths/~1payment_methods~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1payment_methods~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Payment Method",
-                           "uri":"/acapi.yaml/paths/~1payment_methods~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1payment_methods~1{id}/delete"
                         }
                      ]
                   },
@@ -1457,22 +1483,22 @@
                         {
                            "type":"item",
                            "title":"Get Regions",
-                           "uri":"/acapi.yaml/paths/~1regions/get"
+                           "uri":"acapi.yaml/paths/~1regions/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Region",
-                           "uri":"/acapi.yaml/paths/~1regions/post"
+                           "uri":"acapi.yaml/paths/~1regions/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Region",
-                           "uri":"/acapi.yaml/paths/~1regions~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1regions~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Region",
-                           "uri":"/acapi.yaml/paths/~1regions~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1regions~1{id}/delete"
                         }
                      ]
                   },
@@ -1483,12 +1509,12 @@
                         {
                            "type":"item",
                            "title":"Get Shipping Providers",
-                           "uri":"/acapi.yaml/paths/~1shipping_providers/get"
+                           "uri":"acapi.yaml/paths/~1shipping_providers/get"
                         },
                         {
                            "type":"item",
                            "title":"Update a Shipping Provider",
-                           "uri":"/acapi.yaml/paths/~1shipping_providers~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1shipping_providers~1{id}/put"
                         }
                      ]
                   },
@@ -1499,22 +1525,22 @@
                         {
                            "type":"item",
                            "title":"Get Tax Rates",
-                           "uri":"/acapi.yaml/paths/~1tax_rates/get"
+                           "uri":"acapi.yaml/paths/~1tax_rates/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Tax Rate",
-                           "uri":"/acapi.yaml/paths/~1tax_rates/post"
+                           "uri":"acapi.yaml/paths/~1tax_rates/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Tax Rate",
-                           "uri":"/acapi.yaml/paths/~1tax_rates~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1tax_rates~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete Tax Rate",
-                           "uri":"/acapi.yaml/paths/~1tax_rates~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1tax_rates~1{id}/delete"
                         }
                      ]
                   },
@@ -1525,22 +1551,22 @@
                         {
                            "type":"item",
                            "title":"Get URL Redirects",
-                           "uri":"/acapi.yaml/paths/~1url_redirects/get"
+                           "uri":"acapi.yaml/paths/~1url_redirects/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a URL Redirect",
-                           "uri":"/acapi.yaml/paths/~1url_redirects/post"
+                           "uri":"acapi.yaml/paths/~1url_redirects/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a URL Redirect",
-                           "uri":"/acapi.yaml/paths/~1url_redirects~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1url_redirects~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a URL Redirect",
-                           "uri":"/acapi.yaml/paths/~1url_redirects~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1url_redirects~1{id}/delete"
                         }
                      ]
                   },
@@ -1551,22 +1577,22 @@
                         {
                            "type":"item",
                            "title":"Get Warehouses",
-                           "uri":"/acapi.yaml/paths/~1warehouses/get"
+                           "uri":"acapi.yaml/paths/~1warehouses/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Warehouse",
-                           "uri":"/acapi.yaml/paths/~1warehouses/post"
+                           "uri":"acapi.yaml/paths/~1warehouses/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Warehouse",
-                           "uri":"/acapi.yaml/paths/~1warehouses~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1warehouses~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Warehouse",
-                           "uri":"/acapi.yaml/paths/~1warehouses~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1warehouses~1{id}/delete"
                         }
                      ]
                   }
@@ -1583,7 +1609,7 @@
                         {
                            "type":"item",
                            "title":"Get Sessions",
-                           "uri":"/acapi.yaml/paths/~1sessions/get"
+                           "uri":"acapi.yaml/paths/~1sessions/get"
                         }
                      ]
                   },
@@ -1594,7 +1620,7 @@
                         {
                            "type":"item",
                            "title":"Get Stores",
-                           "uri":"/acapi.yaml/paths/~1stores/get"
+                           "uri":"acapi.yaml/paths/~1stores/get"
                         }
                      ]
                   }
@@ -1611,22 +1637,22 @@
                         {
                            "type":"item",
                            "title":"Get Custom Fields",
-                           "uri":"/acapi.yaml/paths/~1custom_fields/get"
+                           "uri":"acapi.yaml/paths/~1custom_fields/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Custom Field",
-                           "uri":"/acapi.yaml/paths/~1custom_fields/post"
+                           "uri":"acapi.yaml/paths/~1custom_fields/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Custom Field",
-                           "uri":"/acapi.yaml/paths/~1custom_fields~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1custom_fields~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Custom Field",
-                           "uri":"/acapi.yaml/paths/~1custom_fields~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1custom_fields~1{id}/delete"
                         }
                      ]
                   },
@@ -1637,22 +1663,22 @@
                         {
                            "type":"item",
                            "title":"Get Custom Field Values",
-                           "uri":"/acapi.yaml/paths/~1custom_field_values/get"
+                           "uri":"acapi.yaml/paths/~1custom_field_values/get"
                         },
                         {
                            "type":"item",
                            "title":"Create a Custom Field Value",
-                           "uri":"/acapi.yaml/paths/~1custom_field_values/post"
+                           "uri":"acapi.yaml/paths/~1custom_field_values/post"
                         },
                         {
                            "type":"item",
                            "title":"Update a Custom Field Value",
-                           "uri":"/acapi.yaml/paths/~1custom_field_values~1{id}/put"
+                           "uri":"acapi.yaml/paths/~1custom_field_values~1{id}/put"
                         },
                         {
                            "type":"item",
                            "title":"Delete a Custom Field Value",
-                           "uri":"/acapi.yaml/paths/~1custom_field_values~1{id}/delete"
+                           "uri":"acapi.yaml/paths/~1custom_field_values~1{id}/delete"
                         }
                      ]
                   },
