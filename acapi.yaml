@@ -11418,6 +11418,8 @@ components:
           type: integer
         profile_id:
           type: integer
+        uploaded_image:
+          type: string
     product_statuses:
       type: object
       properties:
