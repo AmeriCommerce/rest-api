@@ -10609,6 +10609,9 @@ components:
           type: string
         reward_points_credited:
           type: boolean
+        channel:
+          type: string
+          description: 'Valid values: Online, InStore, Chat, Phone, Email'
     order_addresses:
       type: object
       properties:
