@@ -997,6 +997,7 @@ paths:
                   new_comment_admin_notification_email_template_id: null
                   new_post_admin_notification_email_template_id: null
                   new_comment_reply_notification_email_template_id: null
+                  page_title: '##STORENAME## Blog'
               properties:
                 store_id:
                   type: integer
@@ -1050,6 +1051,9 @@ paths:
                   type: integer
                 new_comment_reply_notification_email_template_id:
                   type: integer
+                page_title:
+                  type: string
+                  maxLength: 255
               required:
                 - store_id
                 - name
@@ -1082,6 +1086,7 @@ paths:
                   new_comment_admin_notification_email_template_id: 6
                   new_post_admin_notification_email_template_id: 7
                   new_comment_reply_notification_email_template_id: 8
+                  page_title: '##STORENAME## Blog'
         description: ''
       description: 'Creates a Blog. '
       tags:
@@ -1136,6 +1141,7 @@ paths:
                   new_comment_admin_notification_email_template_id: 6
                   new_post_admin_notification_email_template_id: 7
                   new_comment_reply_notification_email_template_id: 8
+                  page_title: '##STORENAME## Blog'
               properties:
                 id:
                   type: integer
@@ -1191,6 +1197,9 @@ paths:
                   type: integer
                 new_comment_reply_notification_email_template_id:
                   type: integer
+                page_title:
+                  type: string
+                  maxLength: 255
               required:
                 - id
             examples:
@@ -1223,6 +1232,7 @@ paths:
                   new_comment_admin_notification_email_template_id: 6
                   new_post_admin_notification_email_template_id: 7
                   new_comment_reply_notification_email_template_id: 8
+                  page_title: '##STORENAME## Blog'
       tags:
         - Blogs
     delete:
