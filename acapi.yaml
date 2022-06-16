@@ -11776,6 +11776,147 @@ components:
           type: integer
     subscriptions:
       type: object
+      x-examples:
+        example-1:
+          id: 5
+          saved_cart_id: 128
+          customer_id: 1
+          next_due_at: '2022-04-07T20:38:27.58+05:00'
+          frequency_type: Months
+          frequency: 3
+          drip_series_id: 1
+          original_order_id: 100008
+          shipping_method_name: Priority Shipping
+          updated_at: '2022-01-07T20:38:27.59+05:00'
+          created_at: '2022-01-07T20:38:27.59+05:00'
+          customer_payment_method_id: 98
+          shipping_address_id: 267
+          billing_address_id: 267
+          is_enabled: true
+          latest_renewal_order_id: null
+          is_renewal_payment_declined: false
+          renewal_count: 0
+          one_time_customer_notice: ''
+          customer_notice: ''
+          cart_info:
+            id: 128
+            name: 'Sub for: 100008 - 100008'
+            cart_type: SavedCart
+            customer_id: 6
+            is_public: false
+            updated_at: '2022-01-07T20:38:27.573+05:00'
+            created_at: '2022-01-07T20:38:27.573+05:00'
+            store_id: 1
+            session_id: 343
+            discount_total: 0
+            subtotal: 5500
+            shipping_total: 0
+            handling_total: 0
+            tax_total: 0
+            grand_total: 5500
+            tax_rate: 0
+            additional_fees: 0
+            discounted_shipping_total: 0
+            region_markup_amount: null
+            non_shipping_discount: 0
+            gift_certificate_discount: null
+            coupon_code: ''
+            associated_order_id: null
+            shipping_estimate_city: ''
+            shipping_estimate_state_code: ''
+            shipping_estimate_postal_code: ''
+            shipping_estimate_country_code: ''
+            is_shipping_billed_to_account: false
+            customer_payment_method_id: null
+            payment_method_id: null
+            is_payment_cart_only: false
+            items:
+              - id: 439
+                product_id: 62
+                item_number: ''
+                quantity: 1
+                price: 5500
+                cost: 0
+                shipping_address_id: 39
+                item_thumbnail: /images/LG/_thumb_60_50PY2DR_bic.jpg
+                item_url: ''
+                item_name: 60PY2DR
+                warehouse_id: 0
+                parent_product_id: null
+                parent_cart_item_id: null
+                updated_at: '2022-01-07T20:38:27.573+05:00'
+                created_at: '2022-01-07T20:38:27.573+05:00'
+                cart_id: 128
+                is_subscription_product: true
+                vendor_store_id: null
+                fitment: ''
+                configuration: ''
+                variants: null
+                personalizations: null
+            lookup_key: Tr0anQUb2yM%3D
+          customer:
+            id: 1
+            customer_number: ''
+            last_name: Barlow
+            first_name: Stefan
+            email: stefan@americomlp.com
+            phone_number: ''
+            registered_at: '2004-10-08T00:00:00+05:00'
+            last_visit_at: '2005-09-08T13:48:55+05:00'
+            adcode: ''
+            adcode_id: 0
+            affiliate_id: 0
+            customer_type_id: 1
+            is_no_tax_customer: false
+            comments: ''
+            store_id: 1
+            source: ''
+            search_string: ''
+            no_account: false
+            sales_person: ''
+            alternate_phone_number: ''
+            is_affiliate_customer: false
+            updated_at: '2022-03-04T18:21:45.413+05:00'
+            created_at: null
+            username: ''
+            is_contact_information_only: false
+            tax_exemption_number: ''
+            company: ''
+            source_group: ''
+            sales_person_user_id: null
+            store_payment_methods_enabled: []
+            tax_rate: null
+            reward_tier_id: null
+            sub: ''
+          shipping_address:
+            id: 267
+            customer_id: 1
+            company: Cart
+            address_line_1: mckldmcdm
+            address_line_2: ''
+            city: New York
+            state: New York
+            country: United States
+            postal_code: '10001'
+            phone: '111111111111111111111111111111'
+            alternate_phone: ''
+            fax: ''
+            comments: ''
+            updated_at: '2022-01-07T20:38:27.463+05:00'
+            created_at: '2022-01-07T20:38:27.463+05:00'
+            first_name: Salman
+            last_name: L
+            address_type: Default
+          customer_payment_method:
+            id: 98
+            payment_method_id: 193
+            customer_id: 8
+            payment_type: CreditCard
+            is_default: true
+            card_id: 33
+            updated_at: '2022-03-07T21:57:16.773+05:00'
+            created_at: '2022-03-07T21:57:16.773+05:00'
+            address_id: null
       properties:
         id:
           type: integer
@@ -11817,6 +11958,394 @@ components:
           type: string
         customer_notice:
           type: string
+        cart_info:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            cart_type:
+              type: string
+            customer_id:
+              type: integer
+            is_public:
+              type: boolean
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            store_id:
+              type: integer
+            session_id:
+              type: integer
+            discount_total:
+              type: integer
+            subtotal:
+              type: integer
+            shipping_total:
+              type: integer
+            handling_total:
+              type: integer
+            tax_total:
+              type: integer
+            grand_total:
+              type: integer
+            tax_rate:
+              type: integer
+            additional_fees:
+              type: integer
+            discounted_shipping_total:
+              type: integer
+            region_markup_amount:
+              type: integer
+            non_shipping_discount:
+              type: integer
+            gift_certificate_discount:
+              type: integer
+            coupon_code:
+              type: string
+            associated_order_id:
+              type: integer
+            shipping_estimate_city:
+              type: string
+            shipping_estimate_state_code:
+              type: string
+            shipping_estimate_postal_code:
+              type: string
+            shipping_estimate_country_code:
+              type: string
+            is_shipping_billed_to_account:
+              type: boolean
+            customer_payment_method_id:
+              type: integer
+            payment_method_id: {}
+            is_payment_cart_only:
+              type: boolean
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  product_id:
+                    type: integer
+                  item_number:
+                    type: string
+                  quantity:
+                    type: integer
+                  price:
+                    type: integer
+                  cost:
+                    type: integer
+                  shipping_address_id:
+                    type: integer
+                  item_thumbnail:
+                    type: string
+                  item_url:
+                    type: string
+                  item_name:
+                    type: string
+                  warehouse_id:
+                    type: integer
+                  parent_product_id:
+                    type: 'null'
+                  parent_cart_item_id:
+                    type: 'null'
+                  updated_at:
+                    type: string
+                  created_at:
+                    type: string
+                  cart_id:
+                    type: integer
+                  is_subscription_product:
+                    type: boolean
+                  vendor_store_id:
+                    type: 'null'
+                  fitment:
+                    type: string
+                  configuration:
+                    type: string
+                  variants:
+                    type: 'null'
+                  personalizations:
+                    type: 'null'
+            lookup_key:
+              type: string
+        customer:
+          type: object
+          properties:
+            id:
+              type: integer
+            customer_number:
+              type: string
+            last_name:
+              type: string
+            first_name:
+              type: string
+            email:
+              type: string
+            phone_number:
+              type: string
+            registered_at:
+              type: string
+            last_visit_at:
+              type: string
+            adcode:
+              type: string
+            adcode_id:
+              type: integer
+            affiliate_id:
+              type: integer
+            customer_type_id:
+              type: integer
+            is_no_tax_customer:
+              type: boolean
+            comments:
+              type: string
+            store_id:
+              type: integer
+            source:
+              type: string
+            search_string:
+              type: string
+            no_account:
+              type: boolean
+            sales_person:
+              type: string
+            alternate_phone_number:
+              type: string
+            is_affiliate_customer:
+              type: boolean
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            username:
+              type: string
+            is_contact_information_only:
+              type: boolean
+            tax_exemption_number:
+              type: string
+            company:
+              type: string
+            source_group:
+              type: string
+            sales_person_user_id:
+              type: integer
+            store_payment_methods_enabled:
+              type: array
+              items:
+                type: string
+            tax_rate:
+              type: integer
+            reward_tier_id:
+              type: integer
+            sub:
+              type: string
+        shipping_address:
+          type: object
+          properties:
+            id:
+              type: integer
+            customer_id:
+              type: integer
+            company:
+              type: string
+            address_line_1:
+              type: string
+            address_line_2:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            country:
+              type: string
+            postal_code:
+              type: string
+            phone:
+              type: string
+            alternate_phone:
+              type: string
+            fax:
+              type: string
+            comments:
+              type: string
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            address_type:
+              type: string
+        customer_payment_method:
+          type: object
+          properties:
+            id:
+              type: integer
+            payment_method_id:
+              type: integer
+            customer_id:
+              type: integer
+            payment_type:
+              type: string
+            is_default:
+              type: boolean
+            card_id:
+              type: integer
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            address_id:
+              type: integer
+      examples:
+        - id: 5
+          saved_cart_id: 128
+          customer_id: 1
+          next_due_at: '2022-04-07T20:38:27.58+05:00'
+          frequency_type: Months
+          frequency: 3
+          drip_series_id: 1
+          original_order_id: 100008
+          shipping_method_name: Priority Shipping
+          updated_at: '2022-01-07T20:38:27.59+05:00'
+          created_at: '2022-01-07T20:38:27.59+05:00'
+          customer_payment_method_id: 98
+          shipping_address_id: 267
+          billing_address_id: 267
+          is_enabled: true
+          latest_renewal_order_id: null
+          is_renewal_payment_declined: false
+          renewal_count: 0
+          one_time_customer_notice: ''
+          customer_notice: ''
+          cart_info:
+            id: 128
+            name: 'Sub for: 100008 - 100008'
+            cart_type: SavedCart
+            customer_id: 6
+            is_public: false
+            updated_at: '2022-01-07T20:38:27.573+05:00'
+            created_at: '2022-01-07T20:38:27.573+05:00'
+            store_id: 1
+            session_id: 343
+            discount_total: 0
+            subtotal: 5500
+            shipping_total: 0
+            handling_total: 0
+            tax_total: 0
+            grand_total: 5500
+            tax_rate: 0
+            additional_fees: 0
+            discounted_shipping_total: 0
+            region_markup_amount: null
+            non_shipping_discount: 0
+            gift_certificate_discount: null
+            coupon_code: ''
+            associated_order_id: null
+            shipping_estimate_city: ''
+            shipping_estimate_state_code: ''
+            shipping_estimate_postal_code: ''
+            shipping_estimate_country_code: ''
+            is_shipping_billed_to_account: false
+            customer_payment_method_id: null
+            payment_method_id: null
+            is_payment_cart_only: false
+            items:
+              - id: 439
+                product_id: 62
+                item_number: ''
+                quantity: 1
+                price: 5500
+                cost: 0
+                shipping_address_id: 39
+                item_thumbnail: /images/LG/_thumb_60_50PY2DR_bic.jpg
+                item_url: ''
+                item_name: 60PY2DR
+                warehouse_id: 0
+                parent_product_id: null
+                parent_cart_item_id: null
+                updated_at: '2022-01-07T20:38:27.573+05:00'
+                created_at: '2022-01-07T20:38:27.573+05:00'
+                cart_id: 128
+                is_subscription_product: true
+                vendor_store_id: null
+                fitment: ''
+                configuration: ''
+                variants: null
+                personalizations: null
+            lookup_key: Tr0anQUb2yM%3D
+          customer:
+            id: 1
+            customer_number: ''
+            last_name: Barlow
+            first_name: Stefan
+            email: stefan@americomlp.com
+            phone_number: ''
+            registered_at: '2004-10-08T00:00:00+05:00'
+            last_visit_at: '2005-09-08T13:48:55+05:00'
+            adcode: ''
+            adcode_id: 0
+            affiliate_id: 0
+            customer_type_id: 1
+            is_no_tax_customer: false
+            comments: ''
+            store_id: 1
+            source: ''
+            search_string: ''
+            no_account: false
+            sales_person: ''
+            alternate_phone_number: ''
+            is_affiliate_customer: false
+            updated_at: '2022-03-04T18:21:45.413+05:00'
+            created_at: null
+            username: ''
+            is_contact_information_only: false
+            tax_exemption_number: ''
+            company: ''
+            source_group: ''
+            sales_person_user_id: null
+            store_payment_methods_enabled: []
+            tax_rate: null
+            reward_tier_id: null
+            sub: ''
+          shipping_address:
+            id: 267
+            customer_id: 1
+            company: Cart
+            address_line_1: mckldmcdm
+            address_line_2: ''
+            city: New York
+            state: New York
+            country: United States
+            postal_code: '10001'
+            phone: '111111111111111111111111111111'
+            alternate_phone: ''
+            fax: ''
+            comments: ''
+            updated_at: '2022-01-07T20:38:27.463+05:00'
+            created_at: '2022-01-07T20:38:27.463+05:00'
+            first_name: FirstName
+            last_name: LastName
+            address_type: Default
+          customer_payment_method:
+            id: 98
+            payment_method_id: 193
+            customer_id: 8
+            payment_type: CreditCard
+            is_default: true
+            card_id: 33
+            updated_at: '2022-03-07T21:57:16.773+05:00'
+            created_at: '2022-03-07T21:57:16.773+05:00'
+            address_id: null
+      description: ''
+      title: ''
     stores:
       type: object
       title: ''
