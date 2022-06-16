@@ -11917,293 +11917,6 @@ components:
             updated_at: '2022-03-07T21:57:16.773+05:00'
             created_at: '2022-03-07T21:57:16.773+05:00'
             address_id: null
-      properties:
-        id:
-          type: integer
-        saved_cart_id:
-          type: integer
-        customer_id:
-          type: integer
-        next_due_at:
-          type: string
-        frequency_type:
-          type: string
-        frequency:
-          type: integer
-        drip_series_id:
-          type: integer
-        original_order_id:
-          type: integer
-        shipping_method_name:
-          type: string
-        updated_at:
-          type: string
-        created_at:
-          type: string
-        customer_payment_method_id:
-          type: integer
-        shipping_address_id:
-          type: integer
-        billing_address_id:
-          type: integer
-        is_enabled:
-          type: boolean
-        latest_renewal_order_id:
-          type: integer
-        is_renewal_payment_declined:
-          type: boolean
-        renewal_count:
-          type: integer
-        one_time_customer_notice:
-          type: string
-        customer_notice:
-          type: string
-        cart_info:
-          type: object
-          properties:
-            id:
-              type: integer
-            name:
-              type: string
-            cart_type:
-              type: string
-            customer_id:
-              type: integer
-            is_public:
-              type: boolean
-            updated_at:
-              type: string
-            created_at:
-              type: string
-            store_id:
-              type: integer
-            session_id:
-              type: integer
-            discount_total:
-              type: integer
-            subtotal:
-              type: integer
-            shipping_total:
-              type: integer
-            handling_total:
-              type: integer
-            tax_total:
-              type: integer
-            grand_total:
-              type: integer
-            tax_rate:
-              type: integer
-            additional_fees:
-              type: integer
-            discounted_shipping_total:
-              type: integer
-            region_markup_amount:
-              type: integer
-            non_shipping_discount:
-              type: integer
-            gift_certificate_discount:
-              type: integer
-            coupon_code:
-              type: string
-            associated_order_id:
-              type: integer
-            shipping_estimate_city:
-              type: string
-            shipping_estimate_state_code:
-              type: string
-            shipping_estimate_postal_code:
-              type: string
-            shipping_estimate_country_code:
-              type: string
-            is_shipping_billed_to_account:
-              type: boolean
-            customer_payment_method_id:
-              type: integer
-            payment_method_id: {}
-            is_payment_cart_only:
-              type: boolean
-            items:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                  product_id:
-                    type: integer
-                  item_number:
-                    type: string
-                  quantity:
-                    type: integer
-                  price:
-                    type: integer
-                  cost:
-                    type: integer
-                  shipping_address_id:
-                    type: integer
-                  item_thumbnail:
-                    type: string
-                  item_url:
-                    type: string
-                  item_name:
-                    type: string
-                  warehouse_id:
-                    type: integer
-                  parent_product_id:
-                    type: 'null'
-                  parent_cart_item_id:
-                    type: 'null'
-                  updated_at:
-                    type: string
-                  created_at:
-                    type: string
-                  cart_id:
-                    type: integer
-                  is_subscription_product:
-                    type: boolean
-                  vendor_store_id:
-                    type: 'null'
-                  fitment:
-                    type: string
-                  configuration:
-                    type: string
-                  variants:
-                    type: 'null'
-                  personalizations:
-                    type: 'null'
-            lookup_key:
-              type: string
-        customer:
-          type: object
-          properties:
-            id:
-              type: integer
-            customer_number:
-              type: string
-            last_name:
-              type: string
-            first_name:
-              type: string
-            email:
-              type: string
-            phone_number:
-              type: string
-            registered_at:
-              type: string
-            last_visit_at:
-              type: string
-            adcode:
-              type: string
-            adcode_id:
-              type: integer
-            affiliate_id:
-              type: integer
-            customer_type_id:
-              type: integer
-            is_no_tax_customer:
-              type: boolean
-            comments:
-              type: string
-            store_id:
-              type: integer
-            source:
-              type: string
-            search_string:
-              type: string
-            no_account:
-              type: boolean
-            sales_person:
-              type: string
-            alternate_phone_number:
-              type: string
-            is_affiliate_customer:
-              type: boolean
-            updated_at:
-              type: string
-            created_at:
-              type: string
-            username:
-              type: string
-            is_contact_information_only:
-              type: boolean
-            tax_exemption_number:
-              type: string
-            company:
-              type: string
-            source_group:
-              type: string
-            sales_person_user_id:
-              type: integer
-            store_payment_methods_enabled:
-              type: array
-              items:
-                type: string
-            tax_rate:
-              type: integer
-            reward_tier_id:
-              type: integer
-            sub:
-              type: string
-        shipping_address:
-          type: object
-          properties:
-            id:
-              type: integer
-            customer_id:
-              type: integer
-            company:
-              type: string
-            address_line_1:
-              type: string
-            address_line_2:
-              type: string
-            city:
-              type: string
-            state:
-              type: string
-            country:
-              type: string
-            postal_code:
-              type: string
-            phone:
-              type: string
-            alternate_phone:
-              type: string
-            fax:
-              type: string
-            comments:
-              type: string
-            updated_at:
-              type: string
-            created_at:
-              type: string
-            first_name:
-              type: string
-            last_name:
-              type: string
-            address_type:
-              type: string
-        customer_payment_method:
-          type: object
-          properties:
-            id:
-              type: integer
-            payment_method_id:
-              type: integer
-            customer_id:
-              type: integer
-            payment_type:
-              type: string
-            is_default:
-              type: boolean
-            card_id:
-              type: integer
-            updated_at:
-              type: string
-            created_at:
-              type: string
-            address_id:
-              type: integer
       examples:
         - id: 5
           saved_cart_id: 128
@@ -12346,6 +12059,293 @@ components:
             address_id: null
       description: ''
       title: ''
+      properties:
+        id:
+          type: integer
+        saved_cart_id:
+          type: integer
+        customer_id:
+          type: integer
+        next_due_at:
+          type: string
+        frequency_type:
+          type: string
+        frequency:
+          type: integer
+        drip_series_id:
+          type: integer
+        original_order_id:
+          type: integer
+        shipping_method_name:
+          type: string
+        updated_at:
+          type: string
+        created_at:
+          type: string
+        customer_payment_method_id:
+          type: integer
+        shipping_address_id:
+          type: integer
+        billing_address_id:
+          type: integer
+        is_enabled:
+          type: boolean
+        latest_renewal_order_id:
+          type: integer
+        is_renewal_payment_declined:
+          type: boolean
+        renewal_count:
+          type: integer
+        one_time_customer_notice:
+          type: string
+        customer_notice:
+          type: string
+        cart_info:
+          type: object
+          properties:
+            id:
+              type: integer
+            name:
+              type: string
+            cart_type:
+              type: string
+            customer_id:
+              type: integer
+            is_public:
+              type: boolean
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            store_id:
+              type: integer
+            session_id:
+              type: integer
+            discount_total:
+              type: integer
+            subtotal:
+              type: integer
+            shipping_total:
+              type: integer
+            handling_total:
+              type: integer
+            tax_total:
+              type: integer
+            grand_total:
+              type: integer
+            tax_rate:
+              type: integer
+            additional_fees:
+              type: integer
+            discounted_shipping_total:
+              type: integer
+            region_markup_amount:
+              type: integer
+            non_shipping_discount:
+              type: integer
+            gift_certificate_discount:
+              type: integer
+            coupon_code:
+              type: string
+            associated_order_id:
+              type: integer
+            shipping_estimate_city:
+              type: string
+            shipping_estimate_state_code:
+              type: string
+            shipping_estimate_postal_code:
+              type: string
+            shipping_estimate_country_code:
+              type: string
+            is_shipping_billed_to_account:
+              type: boolean
+            customer_payment_method_id:
+              type: integer
+            payment_method_id: {}
+            is_payment_cart_only:
+              type: boolean
+            items:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  product_id:
+                    type: integer
+                  item_number:
+                    type: string
+                  quantity:
+                    type: integer
+                  price:
+                    type: integer
+                  cost:
+                    type: integer
+                  shipping_address_id:
+                    type: integer
+                  item_thumbnail:
+                    type: string
+                  item_url:
+                    type: string
+                  item_name:
+                    type: string
+                  warehouse_id:
+                    type: integer
+                  parent_product_id:
+                    type: integer
+                  parent_cart_item_id:
+                    type: integer
+                  updated_at:
+                    type: string
+                  created_at:
+                    type: string
+                  cart_id:
+                    type: integer
+                  is_subscription_product:
+                    type: boolean
+                  vendor_store_id:
+                    type: integer
+                  fitment:
+                    type: string
+                  configuration:
+                    type: string
+                  variants:
+                    type: object
+                  personalizations:
+                    type: object
+            lookup_key:
+              type: string
+        customer:
+          type: object
+          properties:
+            id:
+              type: integer
+            customer_number:
+              type: string
+            last_name:
+              type: string
+            first_name:
+              type: string
+            email:
+              type: string
+            phone_number:
+              type: string
+            registered_at:
+              type: string
+            last_visit_at:
+              type: string
+            adcode:
+              type: string
+            adcode_id:
+              type: integer
+            affiliate_id:
+              type: integer
+            customer_type_id:
+              type: integer
+            is_no_tax_customer:
+              type: boolean
+            comments:
+              type: string
+            store_id:
+              type: integer
+            source:
+              type: string
+            search_string:
+              type: string
+            no_account:
+              type: boolean
+            sales_person:
+              type: string
+            alternate_phone_number:
+              type: string
+            is_affiliate_customer:
+              type: boolean
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            username:
+              type: string
+            is_contact_information_only:
+              type: boolean
+            tax_exemption_number:
+              type: string
+            company:
+              type: string
+            source_group:
+              type: string
+            sales_person_user_id:
+              type: integer
+            store_payment_methods_enabled:
+              type: array
+              items:
+                type: string
+            tax_rate:
+              type: integer
+            reward_tier_id:
+              type: integer
+            sub:
+              type: string
+        shipping_address:
+          type: object
+          properties:
+            id:
+              type: integer
+            customer_id:
+              type: integer
+            company:
+              type: string
+            address_line_1:
+              type: string
+            address_line_2:
+              type: string
+            city:
+              type: string
+            state:
+              type: string
+            country:
+              type: string
+            postal_code:
+              type: string
+            phone:
+              type: string
+            alternate_phone:
+              type: string
+            fax:
+              type: string
+            comments:
+              type: string
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            first_name:
+              type: string
+            last_name:
+              type: string
+            address_type:
+              type: string
+        customer_payment_method:
+          type: object
+          properties:
+            id:
+              type: integer
+            payment_method_id:
+              type: integer
+            customer_id:
+              type: integer
+            payment_type:
+              type: string
+            is_default:
+              type: boolean
+            card_id:
+              type: integer
+            updated_at:
+              type: string
+            created_at:
+              type: string
+            address_id:
+              type: integer
     stores:
       type: object
       title: ''
