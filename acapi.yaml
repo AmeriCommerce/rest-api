@@ -12057,8 +12057,8 @@ components:
             updated_at: '2022-03-07T21:57:16.773+05:00'
             created_at: '2022-03-07T21:57:16.773+05:00'
             address_id: null
-      description: ''
-      title: ''
+      description: If you want child resources included in response you must pass the query parameter 'includeLookups = true'
+      title: Subscriptions
       properties:
         id:
           type: integer
