@@ -106,3 +106,4 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | ---- | ----------- |
 | [sessions](docs/resources/sessions.md)	| |
 | [stores](docs/resources/stores.md)	| |
+| [microstores](docs/resources/microstores.md)	| |
