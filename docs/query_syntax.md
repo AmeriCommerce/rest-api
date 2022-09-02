@@ -60,6 +60,14 @@ Returns results where a field *contains* the supplied value.
 /api/v1/products?item_name=like:test
 ```
 
+###### startwith
+
+Returns results where a field *starts with* the supplied value.
+
+```shell
+/api/v1/products?item_name=startwith:test
+```
+
 ###### gt
 
 Returns results where a field is *greater than* the supplied value.
