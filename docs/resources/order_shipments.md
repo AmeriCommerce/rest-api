@@ -35,6 +35,52 @@ Sample Model
 }
 ```
 
+Create or Update Shipments
+--------------------
+
+To create or update shipments for an order send requests using following endpoint.
+
+```Shell
+POST /api/v1/order_shipments
+```
+
+Sample Model
+------------
+
+```json
+{
+  "order_id": 100004,
+  "shipped_at": "2022-09-06T00:00:00-05:00",
+  "tracking_numbers": "123498776",
+  "tracking_url": "www.fedex.com/track/123498776",
+  "shipping_method": "FedEx Express",
+  "shipping_method_id": 1,
+  "number_of_packages": 1,
+  "total_weight": 2,
+  "provider_base_shipping_cost": "",
+  "provider_insurance_cost": 0,
+  "provider_handling_cost": 0,
+  "provider_other_charges": 0,
+  "provider_total_shipping_cost": 0,
+  "email_sent": false,
+  "private_comment": "",
+  "shipping_comment": "",
+  "shipping_method_type": "provider",
+  "shipment_name": "New Shipment",
+  "shipping_provider_name": "FedEx",
+  "items": [{
+      "id": 128,
+      "quantity_shipped": 1
+  }]
+}
+```
+
+### Notes
+- If you provide a `shipment_name` that matches any existing shipment for the order, the request will update the existing shipment, else it will create a new shipment record.
+	- To ensure, you update an existing shipment record, you can specify existing shipment using `id` field. This will update an existing shipment record.
+
+- For nested `items` resource, `id` field is used for providing _OrderItemID_, **not** the _ProductID_
+
 Nested Resources
 ----------------
 
