@@ -11997,6 +11997,22 @@ components:
           type: boolean
         gtin:
           type: string
+        Length:
+          type: string
+          x-stoplight:
+            id: 2cfkwbhlwdtp4
+        Width:
+          type: string
+          x-stoplight:
+            id: 273gtwjptklbz
+        Height:
+          type: string
+          x-stoplight:
+            id: ye89koq69mjeh
+        Retail:
+          type: number
+          x-stoplight:
+            id: 9urv6okkcazcp
     variant_groups:
       type: object
       properties:
