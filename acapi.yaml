@@ -3172,9 +3172,106 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customers'
       tags:
         - Customers
       description: Updates a customer.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_number:
+                  type: string
+                last_name:
+                  type: string
+                first_name:
+                  type: string
+                email:
+                  type: string
+                phone_number:
+                  type: string
+                registered_at:
+                  type: string
+                last_visit_at:
+                  type: 'null'
+                adcode:
+                  type: string
+                adcode_id:
+                  type: integer
+                affiliate_id:
+                  type: 'null'
+                customer_type_id:
+                  type: integer
+                is_no_tax_customer:
+                  type: boolean
+                comments:
+                  type: string
+                store_id:
+                  type: integer
+                source:
+                  type: string
+                search_string:
+                  type: string
+                no_account:
+                  type: boolean
+                sales_person:
+                  type: string
+                alternate_phone_number:
+                  type: string
+                is_affiliate_customer:
+                  type: boolean
+                username:
+                  type: string
+                is_contact_information_only:
+                  type: boolean
+                tax_exemption_number:
+                  type: string
+                company:
+                  type: string
+                source_group:
+                  type: string
+                sales_person_user_id:
+                  type: 'null'
+                tax_rate:
+                  type: 'null'
+                reward_tier_id:
+                  type: 'null'
+              x-examples:
+                Example 1:
+                  customer_number: ''
+                  last_name: Johnson
+                  first_name: John
+                  email: johnjohnson@mail.com
+                  phone_number: '654654454'
+                  registered_at: '2019-04-01T15:16:00-05:00'
+                  last_visit_at: null
+                  adcode: ''
+                  adcode_id: 0
+                  affiliate_id: null
+                  customer_type_id: 1
+                  is_no_tax_customer: false
+                  comments: ''
+                  store_id: 1
+                  source: ''
+                  search_string: ''
+                  no_account: false
+                  sales_person: ''
+                  alternate_phone_number: ''
+                  is_affiliate_customer: false
+                  username: ''
+                  is_contact_information_only: false
+                  tax_exemption_number: ''
+                  company: ''
+                  source_group: ''
+                  sales_person_user_id: null
+                  tax_rate: null
+                  reward_tier_id: null
+        description: ''
     delete:
       summary: Delete a Customer
       operationId: delete-customers-id
