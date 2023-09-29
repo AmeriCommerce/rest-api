@@ -9035,7 +9035,6 @@ paths:
         content:
           application/json:
             schema:
-              description: ''
               type: object
               x-examples:
                 example-1:
@@ -9137,8 +9136,6 @@ paths:
                       - id
                       - product_id
                       - variant_group_id
-                      - swatch_thumbnail_color
-                      - variant_inventory_id
               required:
                 - product_id
                 - variants
