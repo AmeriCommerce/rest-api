@@ -12291,11 +12291,7 @@ components:
                 type: string
               details:
                 type: string
-          examples:
-            Example:
-              status_code: 404
-              message: Not Found
-              details: No resource found
+          examples: {}
       headers: {}
     '500':
       description: Internal Server Error
