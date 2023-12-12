@@ -10746,6 +10746,10 @@ components:
           type: string
         reward_points_credited:
           type: boolean
+        sales_agent_user_id:
+          type: integer
+          x-stoplight:
+            id: kaw0p5vde61h6
         channel:
           type: string
           description: 'Valid values: Online, InStore, Chat, Phone, Email'
