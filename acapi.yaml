@@ -5747,7 +5747,6 @@ paths:
               required:
                 - customer_id
                 - order_status_id
-                - grand_total
                 - order_shipping_address_id
                 - order_billing_address_id
             examples:
