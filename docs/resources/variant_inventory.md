@@ -26,13 +26,13 @@ Sample Model
 	"gtin": "",
 	"variant_inventory_image": "",
 	"height": null,
-    "length": null,
-    "width": null,
-    "retail": null,
-    "shipper_hq_shipping_groups": "",
-    "shipper_hq_dimensional_rule_groups": "",
-    "shipper_hq_packing_boxes": "",
-    "description": "Color: VariantTest-Red"
+	"length": null,
+	"width": null,
+	"retail": null,
+	"shipper_hq_shipping_groups": "",
+	"shipper_hq_dimensional_rule_groups": "",
+	"shipper_hq_packing_boxes": "",
+	"description": "Color: VariantTest-Red"
 }
 ```
 
