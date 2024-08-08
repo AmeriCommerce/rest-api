@@ -11853,13 +11853,13 @@ components:
                 configuration: ''
                 variants: null
                 personalizations: null
-            lookup_key: Tr0anQUb2yM%3D
+                subscription_paused: false
           customer:
             id: 1
             customer_number: ''
-            last_name: Barlow
-            first_name: Stefan
-            email: stefan@americomlp.com
+            last_name: 'lastname'
+            first_name: 'firstname'
+            email: 'test@test.com'
             phone_number: ''
             registered_at: '2004-10-08T00:00:00+05:00'
             last_visit_at: '2005-09-08T13:48:55+05:00'
@@ -11993,13 +11993,13 @@ components:
                 configuration: ''
                 variants: null
                 personalizations: null
-            lookup_key: Tr0anQUb2yM%3D
+                subscription_paused: false
           customer:
             id: 1
             customer_number: ''
-            last_name: LastName
-            first_name: FirstName
-            email: 123@any.com
+            last_name: 'LastName'
+            first_name: 'FirstName'
+            email: 'test@test.com'
             phone_number: ''
             registered_at: '2004-10-08T00:00:00+05:00'
             last_visit_at: '2005-09-08T13:48:55+05:00'
@@ -12213,8 +12213,8 @@ components:
                     type: object
                   personalizations:
                     type: object
-            lookup_key:
-              type: string
+                  subscription_paused:
+                    type: boolean 
         customer:
           type: object
           properties:
