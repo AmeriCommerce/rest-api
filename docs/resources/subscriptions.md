@@ -125,6 +125,7 @@ GET /api/v1/subscriptions?includelookups=1
                         "vendor_store_id": null,
                         "fitment": "",
                         "configuration": "",
+                        subscription_paused: false,
                         "variants": [
                             {
                                 "id": 48,
@@ -134,8 +135,7 @@ GET /api/v1/subscriptions?includelookups=1
                         ],
                         "personalizations": null
                     }
-                ],
-                "lookup_key": "KjvSkStG7tg%3D"
+                ]
             },
             "customer": {
                 "id": 105,
@@ -178,5 +178,28 @@ GET /api/v1/subscriptions?includelookups=1
 		...
 	],
 	...
+}
+```
+
+Pause or Resume Subscription items
+--------------------
+
+To pause or resume subscription item for a subscription. ("id" in the payload is the cart item id)
+
+```Shell
+PUT /api/v1/subscriptions/{subscription_id}/pause
+```
+
+Sample Model
+------------
+
+```json
+{
+	"items":[
+		{
+			"id": 123,
+			"subscription_paused": true
+		}
+	]
 }
 ```
