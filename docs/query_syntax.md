@@ -109,11 +109,11 @@ Complex queries using parentheses are not supported. The conjunctions we do supp
 
 The default when multiple fields are specified in a query. Can also be used to specify multiple comparison values for a single field.
 
-```shell
+```
 /api/v1/products?item_name=test&price=gt:5.00
 ```
-
-```shell
+-
+```
 /api/v1/products?price=gt:5.00+AND+lte:25.00
 ```
 
@@ -124,7 +124,7 @@ Can prefix the first operator, in which it overrides the default `AND` behavior 
 ```shell
 /api/v1/products?weight=OR+gt:3.5&length=gt:12
 ```
-
+-
 ```shell
 /api/v1/products?item_name=like:doge+OR+like:wow
 ```

@@ -23,7 +23,16 @@ Sample Model
 	"created_at": "2014-07-21T14:11:39.543-05:00",
 	"low_stock_warning_at": null,
 	"low_stock_warning_enabled": false,
-	"gtin": ""
+	"gtin": "",
+	"variant_inventory_image": "",
+	"height": null,
+	"length": null,
+	"width": null,
+	"retail": null,
+	"shipper_hq_shipping_groups": "",
+	"shipper_hq_dimensional_rule_groups": "",
+	"shipper_hq_packing_boxes": "",
+	"description": "Color: VariantTest-Red"
 }
 ```
 
@@ -95,7 +104,12 @@ GET /api/v1/variant_inventory/{id}/variants
 			"is_hidden": false,
 			"updated_at": "2014-07-21T14:10:40.257-05:00",
 			"created_at": "2014-07-21T14:10:40.257-05:00",
-			"is_default_selection": false
+			"is_default_selection": false,
+			"swatch_file": null,
+			"swatch_thumbnail": null,
+			"swatch_thumbnail_color": null,
+			"item_number_sort_order": 1,
+			"variant_inventory_id": 1
 		},
 		...
 	],
