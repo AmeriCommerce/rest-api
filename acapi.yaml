@@ -9074,6 +9074,14 @@ paths:
                   low_stock_warning_at: 3
                   low_stock_warning_enabled: false
                   gtin: ''
+                  variant_inventory_image: ''
+                  height: null
+                  length: null
+                  width: null
+                  retail: 0
+                  shipper_hq_shipping_groups: ''
+                  shipper_hq_dimensional_rule_groups: ''
+                  shipper_hq_packing_boxes: ''
                   variants:
                     - id: 9
                       product_id: 8
@@ -9123,6 +9131,22 @@ paths:
                 low_stock_warning_enabled:
                   type: boolean
                 gtin:
+                  type: string
+                variant_inventory_image: 
+                  type: string
+                height: 
+                  type: number
+                length: 
+                  type: number
+                width: 
+                  type: number
+                retail: 
+                  type: number
+                shipper_hq_shipping_groups: 
+                  type: string
+                shipper_hq_dimensional_rule_groups: 
+                  type: string
+                shipper_hq_packing_boxes: 
                   type: string
                 variants:
                   type: array
@@ -9178,6 +9202,14 @@ paths:
                   low_stock_warning_at: 3
                   low_stock_warning_enabled: false
                   gtin: ''
+                  variant_inventory_image: ''
+                  height: null
+                  length: null
+                  width: null
+                  retail: 0
+                  shipper_hq_shipping_groups: ''
+                  shipper_hq_dimensional_rule_groups: ''
+                  shipper_hq_packing_boxes: ''
                   variants:
                     - id: 9
                       product_id: 8
