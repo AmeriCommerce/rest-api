@@ -12153,22 +12153,22 @@ components:
           type: boolean
         gtin:
           type: string
-        Length:
+        variant_inventory_image: 
           type: string
-          x-stoplight:
-            id: 2cfkwbhlwdtp4
-        Width:
-          type: string
-          x-stoplight:
-            id: 273gtwjptklbz
-        Height:
-          type: string
-          x-stoplight:
-            id: ye89koq69mjeh
-        Retail:
+        height: 
           type: number
-          x-stoplight:
-            id: 9urv6okkcazcp
+        length: 
+          type: number
+        width: 
+          type: number
+        retail: 
+          type: number
+        shipper_hq_shipping_groups: 
+          type: string
+        shipper_hq_dimensional_rule_groups: 
+          type: string
+        shipper_hq_packing_boxes: 
+          type: string
     variant_groups:
       type: object
       properties:
