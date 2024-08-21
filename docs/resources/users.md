@@ -18,7 +18,6 @@ Sample Model
 	"phone": "",
 	"last_login_attempt_at": "2014-05-06T12:24:32.753-05:00",
 	"last_login_at": "2014-05-06T12:24:32.753-05:00",
-	"user_role_id": null,
 	"updated_at": "2014-05-06T12:24:32.753-05:00",
 	"created_at": "2014-05-04T20:00:27.433-05:00",
 	"first_name": "Chris",
@@ -27,5 +26,6 @@ Sample Model
 	"alternate_phone": "",
 	"fax": "",
 	"profile_id": 20
+	"is_salesperson": true
 }
 ```

@@ -16,6 +16,7 @@ tags:
   - name: Custom Field Values
   - name: Custom Fields
   - name: Custom Shipping Methods
+  - name: Customer Association
   - name: Customer Payment Methods
   - name: Customer Types
   - name: Customers
@@ -477,10 +478,6 @@ paths:
       responses:
         '200':
           description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/addresses'
         '404':
           $ref: '#/components/responses/404'
       tags:
@@ -2784,6 +2781,105 @@ paths:
         Deletes a custom shipping method.
 
         For more information, please see our knowledge base: [Custom Shipping Methods](https://support.americommerce.com/hc/en-us/articles/201905690-Custom-Shipping-Methods).
+  /customer_association:
+    get:
+      summary: Get Customer Associations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  customer_types:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/customer_association'
+      operationId: get-customer_association
+      description: Gets an array of customer associations.
+      tags:
+        - Customer Association
+    post:
+      summary: Create a Customer Association
+      operationId: post-customer_association
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_association'
+      tags:
+        - Customer Association
+      description: Creates a customer association.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  association_type_id: 2
+                  parent_customer_id: 1
+                  child_customer_id: 13
+              properties:
+                association_type_id:
+                  type: integer
+                  minLength: 1
+                parent_customer_id:
+                  type: integer
+                child_customer_id:
+                  type: integer
+              required:
+                - association_type_id
+                - parent_customer_id
+                - child_customer_id
+            examples:
+              Example:
+                value:
+                  association_type_id: 2
+                  parent_customer_id: 1
+                  child_customer_id: 13
+  '/customer_association/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+    put:
+      summary: Update a Customer Association
+      operationId: put-customer_association-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/customer_association'
+      tags:
+        - Customer Association
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/customer_association'
+      description: Updates a customer association.
+    delete:
+      summary: Delete a Customer Association
+      operationId: delete-customer_association-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Customer Association
+      description: Deletes a customer association.
   /customer_payment_methods:
     get:
       summary: Customer Payment Methods
@@ -2954,9 +3050,9 @@ paths:
             examples:
               Example:
                 value:
-                  id: 1
                   name: wholesale
                   customer_level: 1
+                  description: ''
   '/customer_types/{id}':
     parameters:
       - schema:
@@ -3115,14 +3211,26 @@ paths:
                     type: object
                 tax_rate:
                   type: number
+                lock_default_address:
+                  type: boolean
                 reward_tier_id:
                   type: integer
-                sub:
-                  type: string
+                payment_net_term:
+                  type: integer
+                credit_limit:
+                  type: number
+                is_inactive:
+                  type: boolean
+                use_shared_credit_limit:
+                  type: boolean
+                override_shared_credit_limit:
+                  type: boolean
                 customer_payment_methods_availability:
                   type: array
                   items:
                     type: object
+                default_payment_type_name:
+                  type: string
               required:
                 - email
                 - store_id
@@ -3155,9 +3263,15 @@ paths:
                   sales_person_user_id: 2
                   store_payment_methods_enabled: []
                   tax_rate: 2
+                  lock_default_address: false
                   reward_tier_id: 1
-                  sub: ''
+                  payment_net_term: 0
+                  credit_limit: 10.00
+                  is_inactive: false
+                  use_shared_credit_limit: false
+                  override_shared_credit_limit: false
                   customer_payment_methods_availability: []
+                  default_payment_type_name: Credit Card
   '/customers/{id}':
     parameters:
       - schema:
@@ -3271,6 +3385,45 @@ paths:
                   sales_person_user_id: null
                   tax_rate: null
                   reward_tier_id: null
+            examples:
+              Example:
+                value:
+                  id: 13
+                  customer_number: ''
+                  last_name: Aurelius
+                  first_name: Marcus
+                  email: maurelius@test.com
+                  phone_number: 555-123-4596
+                  adcode: ''
+                  adcode_id: 0
+                  affiliate_id: 1
+                  customer_type_id: 4
+                  is_no_tax_customer: true
+                  comments: ''
+                  store_id: 19
+                  source: ''
+                  search_string: ''
+                  no_account: false
+                  sales_person: ''
+                  alternate_phone_number: 455-258-8585
+                  is_affiliate_customer: false
+                  username: ''
+                  is_contact_information_only: false
+                  tax_exemption_number: ''
+                  company: Romanatech
+                  source_group: ''
+                  sales_person_user_id: 2
+                  store_payment_methods_enabled: []
+                  tax_rate: 2
+                  lock_default_address: false
+                  reward_tier_id: 1
+                  payment_net_term: 0
+                  credit_limit: 10.00
+                  is_inactive: false
+                  use_shared_credit_limit: false
+                  override_shared_credit_limit: false
+                  customer_payment_methods_availability: []
+                  default_payment_type_name: Credit Card
         description: ''
     delete:
       summary: Delete a Customer
@@ -7725,6 +7878,17 @@ paths:
                   type: string
               required:
                 - username
+              examples:
+                Example:
+                  value:
+                    email: email@email.com
+                    username: admin
+                    type: User
+                    real_name: ''
+                    display_name: MyDisplayName
+                    about: ''
+                    image_url: ''
+                    company: ''
       tags:
         - Profiles
   '/profiles/{id}':
@@ -7753,6 +7917,17 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/profiles'
+            examples:
+              Example:
+                value:
+                  email: email@email.com
+                  username: admin
+                  type: User
+                  real_name: ''
+                  display_name: MyDisplayName
+                  about: ''
+                  image_url: ''
+                  company: ''
     delete:
       summary: ''
       operationId: delete-profiles-id
@@ -9708,6 +9883,8 @@ components:
           type: string
         last_name:
           type: string
+        address_type:
+          type: string
     affiliates:
       type: object
       properties:
@@ -10246,10 +10423,45 @@ components:
           type: string
         source_group:
           type: string
+        sales_person_user_id:
+          type: integer
         store_payment_methods_enabled:
           type: array
           items:
             type: string
+        tax_rate:
+          type: number
+        lock_default_address:
+          type: boolean
+        reward_tier_id:
+          type: integer
+        payment_net_term:
+          type: integer
+        credit_limit:
+          type: number
+        is_inactive:
+          type: boolean
+        use_shared_credit_limit:
+          type: boolean
+        override_shared_credit_limit:
+          type: boolean
+        customer_payment_methods_availability:
+          type: array
+          items:
+            type: object
+        default_payment_type_name:
+          type: string
+    customer_association:
+      type: object
+      properties:
+        customer_association_id:
+          type: integer
+        association_type_id:
+          type: integer
+        parent_customer_id:
+          type: integer
+        child_customer_id:
+          type: integer
     customer_types:
       type: object
       properties:
@@ -10284,6 +10496,8 @@ components:
           type: string
         created_at:
           type: string
+        address_id:
+          type: integer
     custom_fields:
       type: object
       properties:
@@ -12637,8 +12851,6 @@ components:
           type: string
         last_login_at:
           type: string
-        user_role_id:
-          type: integer
         updated_at:
           type: string
         created_at:
@@ -12655,6 +12867,8 @@ components:
           type: string
         profile_id:
           type: integer
+        is_salesperson:
+          type: boolean
     variant_inventory:
       type: object
       properties:

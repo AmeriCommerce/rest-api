@@ -1251,148 +1251,174 @@
                "type":"group",
                "title":"People",
                "items":[
-                  {
+                {
                      "type":"group",
                      "title":"Addresses",
                      "items":[
-                        {
+                    {
                            "type":"item",
                            "title":"Get Addresses",
                            "uri":"acapi.yaml/paths/~1addresses/get"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Create an Address",
                            "uri":"acapi.yaml/paths/~1addresses/post"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Update an Address",
                            "uri":"acapi.yaml/paths/~1addresses~1{id}/put"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Delete an Address",
                            "uri":"acapi.yaml/paths/~1addresses~1{id}/delete"
-                        }
-                     ]
-                  },
-                  {
+                    }
+                  ]
+                },
+                {
                      "type":"group",
                      "title":"Customers",
                      "items":[
-                        {
+                    {
                            "type":"item",
                            "title":"Get Customers",
                            "uri":"acapi.yaml/paths/~1customers/get"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Create a Customer",
                            "uri":"acapi.yaml/paths/~1customers/post"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Update a Customer",
                            "uri":"acapi.yaml/paths/~1customers~1{id}/put"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Delete a Customer",
                            "uri":"acapi.yaml/paths/~1customers~1{id}/delete"
-                        }
-                     ]
-                  },
-                  {
+                    }
+                  ]
+                },
+                {
+                     "type":"group",
+                     "title":"Customer Association",
+                     "items":[
+                    {
+                          "type":"item",
+                          "title":"Get Customer Associations",
+                          "uri":"acapi.yaml/paths/~1customer_association/get"
+                    },
+                    {
+                          "type": "item",
+                          "title": "Create a Customer Association",
+                          "uri": "acapi.yaml/paths/~1customer_association/post"
+                    },
+                    {
+                          "type": "item",
+                          "title": "Update a Customer Association",
+                          "uri": "acapi.yaml/paths/~1customer_association~1{id}/put"
+                    },
+                    {
+                          "type": "item",
+                          "title": "Delete a Customer Association",
+                          "uri": "acapi.yaml/paths/~1customer_association~1{id}/delete"
+                    }
+                  ]
+                },
+                {
                      "type":"group",
                      "title":"Customer Types",
                      "items":[
-                        {
-                           "type":"item",
-                           "title":"Get Customer Types",
-                           "uri":"acapi.yaml/paths/~1customer_types/get"
-                        },
-                        {
+                    {
+                          "type":"item",
+                          "title":"Get Customer Types",
+                          "uri":"acapi.yaml/paths/~1customer_types/get"
+                    },
+                    {
                            "type":"item",
                            "title":"Create a Customer Type",
                            "uri":"acapi.yaml/paths/~1customer_types/post"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Update a Customer Type",
                            "uri":"acapi.yaml/paths/~1customer_types~1{id}/put"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Delete a Customer Type",
                            "uri":"acapi.yaml/paths/~1customer_types~1{id}/delete"
-                        }
-                     ]
-                  },
-                  {
+                    }
+                  ]
+                },
+                {
                      "type":"group",
                      "title":"Customer Payment Methods",
                      "items":[
-                        {
+                    {
                            "type":"item",
                            "title":"Get Customer Payment Methods",
                            "uri":"acapi.yaml/paths/~1customer_payment_methods/get"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Create a Customer Payment Method",
                            "uri":"acapi.yaml/paths/~1customer_payment_methods/post"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Update a Customer Payment Method",
                            "uri":"acapi.yaml/paths/~1customer_payment_methods~1{id}/put"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Delete a Customer Payment Method",
                            "uri":"acapi.yaml/paths/~1customer_payment_methods~1{id}/delete"
-                        }
-                     ]
-                  },
-                  {
+                    }
+                  ]
+                },
+                {
                      "type":"group",
                      "title":"Profiles",
                      "items":[
-                        {
+                    {
                            "type":"item",
                            "title":"Get Profiles",
                            "uri":"acapi.yaml/paths/~1profiles/get"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Create a Profile",
                            "uri":"acapi.yaml/paths/~1profiles/post"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Update a Profile",
                            "uri":"acapi.yaml/paths/~1profiles~1{id}/put"
-                        },
-                        {
+                    },
+                    {
                            "type":"item",
                            "title":"Delete a Profile",
                            "uri":"acapi.yaml/paths/~1profiles~1{id}/delete"
-                        }
-                     ]
-                  },
-                  {
+                    }
+                  ]
+                },
+                {
                      "type":"group",
                      "title":"Users",
                      "items":[
-                        {
+                    {
                            "type":"item",
                            "title":"Get Users",
                            "uri":"acapi.yaml/paths/~1users/get"
-                        }
-                     ]
-                  }
-               ]
+                    }
+                  ]
+                }
+              ]
             },
             {
                "type":"group",
