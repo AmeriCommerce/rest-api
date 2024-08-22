@@ -31,5 +31,24 @@ Sample Model
 	"created_at": "2014-04-07T11:55:56.297-05:00",
 	"first_name": "Chris",
 	"last_name": "Allen"
+	"address_type": "Default"
+}
+```
+
+## Get State By Postal Code
+
+###### Example Request
+```shell
+GET /api/v1/addresses/state_by_postalcode/{postalCode}
+```
+###### Example Response
+
+```json
+{
+    "id": 43,
+    "state": "Texas",
+    "state_code": "TX",
+    "country_id": 1,
+    "is_system_state": true
 }
 ```
