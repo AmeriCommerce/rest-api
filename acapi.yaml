@@ -2794,7 +2794,7 @@ paths:
                 properties:
                   total_count:
                     type: integer
-                  customer_types:
+                  customer_association:
                     type: array
                     items:
                       $ref: '#/components/schemas/customer_association'
@@ -3103,9 +3103,9 @@ paths:
                 type: object
                 properties:
                   total_count:
-                    type:
-                      - string
-                      - array
+                    type: integer
+                  customers:
+                    type: array
                     items:
                       $ref: '#/components/schemas/customers'
       operationId: get-customers
@@ -3350,11 +3350,29 @@ paths:
                 source_group:
                   type: string
                 sales_person_user_id:
-                  type: 'null'
+                  type: integer
                 tax_rate:
-                  type: 'null'
+                  type: number
+                lock_default_address:
+                  type: boolean
                 reward_tier_id:
-                  type: 'null'
+                  type: integer
+                payment_net_term:
+                  type: integer
+                credit_limit:
+                  type: number
+                is_inactive:
+                  type: boolean
+                use_shared_credit_limit:
+                  type: boolean
+                override_shared_credit_limit:
+                  type: boolean
+                customer_payment_methods_availability:
+                  type: array
+                  items:
+                    type: object
+                default_payment_type_name:
+                  type: string
               x-examples:
                 Example 1:
                   customer_number: ''

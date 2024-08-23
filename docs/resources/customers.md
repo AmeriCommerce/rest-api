@@ -41,22 +41,22 @@ Sample Model
 	"company": "AmeriCommerce",
 	"source_group": "",
 	"sales_person_user_id": 2,
-    "store_payment_methods_enabled": ["Purchase Orders","Checks"]
+	"store_payment_methods_enabled": ["Purchase Orders","Checks"],
 	"tax_rate": 2,
-    "lock_default_address": false,
-    "reward_tier_id": 1,
-    "payment_net_term": 0,
-    "credit_limit": 10.00,
-    "is_inactive": false,
-    "use_shared_credit_limit": false,
-    "override_shared_credit_limit": false,
+	"lock_default_address": false,
+	"reward_tier_id": 1,
+	"payment_net_term": 0,
+	"credit_limit": 10.00,
+	"is_inactive": false,
+	"use_shared_credit_limit": false,
+	"override_shared_credit_limit": false,
 	"customer_payment_methods_availability": [
 		{
-			id: 5,
-			payment_method_id: 6,
-			store_payment_method_id: 12,
-			status: "Active",
-			customer_id: 1
+			"id": 5,
+			"payment_method_id": 6,
+			"store_payment_method_id": 12,
+			"status": "Active",
+			"customer_id": 1
 		}
 	],
 	"default_payment_type_name": "Credit Card"
@@ -84,8 +84,8 @@ GET /api/v1/customers/{id}/additional_emails
 	"customer_additional_emails": [
 		{
 			"customer_additional_email_id": 1,
-            "customer_id": 13,
-            "email": "test@not-real-address.zzz"
+			"customer_id": 13,
+			"email": "test@not-real-address.zzz"
 		},
 		...
 	],
