@@ -24,6 +24,7 @@ Sample Model
 	"url_rewrite": "/Nike.aspx",
 	"updated_at": "2014-03-19T13:31:47.923-05:00",
 	"created_at": "2014-03-19T13:31:47.923-05:00",
-	"head_tags": ""
+	"head_tags": "",
+	"brand_code": ""
 }
 ```

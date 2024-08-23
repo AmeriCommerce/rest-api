@@ -477,9 +477,14 @@
                      "title":"Shipping Rate Adjustments",
                      "items":[
                         {
+                            "type":"item",
+                            "title":"Get Shipping Rate Adjustments",
+                            "uri":"acapi.yaml/paths/~1shipping_rate_adjustments/get"
+                        },
+                        {
                            "type":"item",
-                           "title":"Get Shipping Rate Adjustments",
-                           "uri":"acapi.yaml/paths/~1shipping_rate_adjustments/get"
+                           "title":"Create a Shipping Rate Adjustment",
+                           "uri":"acapi.yaml/paths/~1shipping_rate_adjustments/post"
                         },
                         {
                            "type":"item",

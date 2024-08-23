@@ -46,8 +46,9 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [price_calculator_rules](docs/resources/price_calculator_rules.md) | modifiers |
 | [price_calculator_rule_modifiers](docs/resources/price_calculator_rule_modifiers.md) | |
 | [products](docs/resources/products.md) | variants, personalizations, related, categories, pricing, attributes, variant\_inventory, pictures, child\_products, shipping\_rate\_adjustments, reviews, custom\_fields |
-| [product_lists](docs/resources/product_lists.md) | |
+| [product_lists](docs/resources/product_lists.md) | items |
 | [product_pictures](docs/resources/product_pictures.md) | |
+| [product_pricing](docs/resources/product_pricing.md) | |
 | [product_reviews](docs/resources/product_reviews.md) | ratings |
 | [product_statuses](docs/resources/product_statuses.md) | |
 | [product_variants](docs/resources/product_variants.md) | |

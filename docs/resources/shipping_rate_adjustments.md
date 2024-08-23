@@ -22,5 +22,6 @@ Sample Model
 	"updated_at": "2014-01-31T15:34:15.363-06:00",
 	"created_at": "2014-01-31T15:34:15.363-06:00",
 	"available_region_id": 0
+        "use_calculated_rate": false
 }
 ```

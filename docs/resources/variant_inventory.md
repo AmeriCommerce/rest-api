@@ -57,6 +57,7 @@ GET /api/v1/variant_inventory/{id}/pricing
 	"pricing": [
 		{
 			"id": 12,
+			"product_id": 4
 			"store_id": 3,
 			"customer_type_id": null,
 			"variant_inventory_id": 1,
@@ -102,6 +103,8 @@ GET /api/v1/variant_inventory/{id}/variants
 			"sort_order": 0,
 			"item_number_extension": "vtred",
 			"is_hidden": false,
+			"weight": 1.0000,
+                        "weight_type": "+",
 			"updated_at": "2014-07-21T14:10:40.257-05:00",
 			"created_at": "2014-07-21T14:10:40.257-05:00",
 			"is_default_selection": false,
