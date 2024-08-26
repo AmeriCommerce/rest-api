@@ -7634,16 +7634,17 @@ paths:
                 maximum_quantity:
                   type: integer
                 is_spotlight_item:
-                  type: number
-                quantity_on_hand: {}
+                  type: integer
+                quantity_on_hand:
+                  type: integer
                 keywords:
                   type: string
                 is_non_taxable:
-                  type: boolean
+                  type: integer
                 is_shipped_individually:
-                  type: boolean
+                  type: integer
                 is_hidden:
-                  type: number
+                  type: integer
                 sort_order:
                   type: integer
                 e_product_type:
@@ -7653,18 +7654,19 @@ paths:
                 e_product_password:
                   type: string
                 e_product_verification_link_expiration:
-                  type: number
+                  type: integer
                 e_product_email:
                   type: string
                 e_product_allow_multiple_deliveries:
-                  type: number
-                warehouse_id: {}
+                  type: integer
+                warehouse_id:
+                  type: integer
                 call_for_shipping:
-                  type: number
+                  type: integer
                 quickbooks_item_id:
                   type: string
                 call_for_pricing:
-                  type: number
+                  type: integer
                 rate_adjustment_type:
                   type: string
                 meta_description:
@@ -7729,9 +7731,10 @@ paths:
                   type: boolean
                 is_discontinued:
                   type: boolean
-                eta_date: {}
+                eta_date:
+                  type: string
                 quantity_on_order:
-                  type: number
+                  type: integer
                 available_region_id:
                   type: integer
                 call_for_shipping_on_whole_order:
@@ -7791,7 +7794,7 @@ paths:
                 is_subscription_product:
                   type: boolean
                 subscription_frequency:
-                  type: string
+                  type: integer
                 subscription_frequency_type:
                   type: string
                 e_product_generic_username:
@@ -7805,7 +7808,7 @@ paths:
                 exclude_from_commissions:
                   type: boolean
                 days_until_reorder_allowed:
-                  type: number
+                  type: integer
                 force_separate_order:
                   type: boolean
                 approval_required:
@@ -7815,7 +7818,7 @@ paths:
                 earns_points:
                   type: boolean
                 additional_points_earned:
-                  type: number
+                  type: integer
                 allowed_variable_subscription_types:
                   type: string
                 profile_id:
@@ -7826,6 +7829,42 @@ paths:
                   type: integer
                 do_not_send_review_request:
                   type: boolean
+                pack_slip_sort_order:
+                  type: integer
+                is_enable_variants_on_parent:
+                  type: boolean
+                is_hide_children_on_parent:
+                  type: boolean
+                cart_product_id:
+                  type: guid
+                enabled_configurator:
+                  type: string
+                material_code:
+                  type: string
+                product_line_code:
+                  type: string
+                ext_update_date:
+                  type: string
+                additional_attributes:
+                  type: string
+                shipper_hq_shipping_groups:
+                  type: string
+                shipper_hq_dimensional_rule_groups:
+                  type: string
+                shipper_hq_packing_boxes:
+                  type: string
+                freight_class:
+                  type: string
+                hs_code:
+                  type: string
+                coo:
+                  type: string
+                hts:
+                  type: string
+                is_exempt_from_min_order_amount:
+                  type: boolean
+                category_list:
+                  type: string
               required:
                 - primary_category_id
                 - product_status_id
@@ -11538,8 +11577,6 @@ components:
           type: integer
         item_number:
           type: string
-        supplier_id:
-          type: integer
         manufacturer_id:
           type: integer
         manufacturer_part_number:
@@ -11571,15 +11608,15 @@ components:
         size_unit:
           type: string
         weight:
-          type: integer
+          type: number
         weight_unit:
           type: string
         cost:
-          type: integer
+          type: number
         price:
-          type: integer
+          type: number
         retail:
-          type: integer
+          type: number
         minimum_quantity:
           type: integer
         maximum_quantity:
@@ -11614,6 +11651,8 @@ components:
           type: integer
         call_for_shipping:
           type: integer
+        quickbooks_item_id:
+          type: string
         call_for_pricing:
           type: integer
         rate_adjustment_type:
@@ -11778,6 +11817,48 @@ components:
           type: string
         profile_id:
           type: integer
+        is_linked_product:
+          type: boolean
+        master_product_id:
+          type: integer
+        do_not_send_review_request:
+          type: boolean
+        pack_slip_sort_order:
+          type: integer
+        is_enable_variants_on_parent:
+          type: boolean
+        is_hide_children_on_parent:
+          type: boolean
+        cart_product_id:
+          type: guid
+        enabled_configurator:
+          type: string
+        material_code:
+          type: string
+        product_line_code:
+          type: string
+        ext_update_date:
+          type: string
+        additional_attributes:
+          type: string
+        shipper_hq_shipping_groups:
+          type: string
+        shipper_hq_dimensional_rule_groups:
+          type: string
+        shipper_hq_packing_boxes:
+          type: string
+        freight_class:
+          type: string
+        hs_code:
+          type: string
+        coo:
+          type: string
+        hts:
+          type: string
+        is_exempt_from_min_order_amount:
+          type: boolean
+        category_list:
+          type: string
         variants:
           type: array
           items:
