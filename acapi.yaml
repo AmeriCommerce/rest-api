@@ -1940,7 +1940,7 @@ paths:
                   head_tags: ''
                   cat_image_alt_text: ''
                   thumb_image_alt_text: ''
-                  vendor_store_id: 1
+                  is_hide_from_site_maps: false
               properties:
                 name:
                   type: string
@@ -1983,10 +1983,34 @@ paths:
                   type: string
                 thumb_image_alt_text:
                   type: string
-                vendor_store_id:
-                  type: integer
+                is_hide_from_site_maps:
+                  type: boolean
               required:
                 - name
+              examples:
+                Example:
+                  value:
+                    name: Shoes
+                    short_description: ''
+                    sort_order: 0
+                    is_hidden: false
+                    parent_category_id: 14
+                    max_quantity: 0
+                    category_thumbnail: ''
+                    page_title: ''
+                    keywords: ''
+                    meta_description: ''
+                    category_image: ''
+                    external_content_url: ''
+                    is_category_content_displayed: true
+                    are_subcategory_products_displayed: false
+                    url_rewrite: ''
+                    default_product_picture: ''
+                    alternate_thumbnail: ''
+                    head_tags: ''
+                    cat_image_alt_text: ''
+                    thumb_image_alt_text: ''
+                    is_hide_from_site_maps: false
   '/categories/{id}':
     parameters:
       - schema:
@@ -2922,7 +2946,6 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  id: 6
                   payment_method_id: 111
                   customer_id: 18
                   payment_type: CreditCard
@@ -2930,8 +2953,6 @@ paths:
                   card_id: 6
                   address_id: 4
               properties:
-                id:
-                  type: integer
                 payment_method_id:
                   type: integer
                 customer_id:
@@ -2947,7 +2968,6 @@ paths:
             examples:
               Example:
                 value:
-                  id: 6
                   payment_method_id: 111
                   customer_id: 18
                   payment_type: CreditCard
@@ -4556,6 +4576,7 @@ paths:
                   meta_description: ''
                   url_rewrite: /cartcom.aspx
                   head_tags: ''
+                  brand_code: ''
               properties:
                 name:
                   type: string
@@ -4577,6 +4598,8 @@ paths:
                   type: string
                 head_tags:
                   type: string
+                brand_code:
+                  type: string
             examples:
               Example:
                 value:
@@ -4590,6 +4613,7 @@ paths:
                   meta_description: ''
                   url_rewrite: /cartcom.aspx
                   head_tags: ''
+                  brand_code: ''
   '/manufacturers/{id}':
     parameters:
       - schema:
@@ -6369,10 +6393,10 @@ paths:
                   sort_order: 0
                   description: ''
                   optional_action: None
-  '/price_calculator_rule_modifier/{id}':
+  '/price_calculator_rule_modifiers/{id}':
     parameters:
       - schema:
-          type: string
+          type: integer
         name: id
         in: path
         required: true
@@ -6641,7 +6665,6 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  id: 5
                   price_calculator_id: 3
                   customer_type_id: 1
                   store_id: 2
@@ -6649,8 +6672,6 @@ paths:
                   price_base_type: BasePricePassedIn
                   specific_base_price: 0
               properties:
-                id:
-                  type: integer
                 price_calculator_id:
                   type: integer
                 customer_type_id:
@@ -6666,7 +6687,6 @@ paths:
             examples:
               Example:
                 value:
-                  id: 5
                   price_calculator_id: 3
                   customer_type_id: 1
                   store_id: 2
@@ -6763,6 +6783,7 @@ paths:
                   flash_path: ''
                   is_video_screen_shot: false
                   video_content: ''
+                  download_external_image: false
               properties:
                 product_id:
                   type: integer
@@ -6786,6 +6807,8 @@ paths:
                   type: boolean
                 video_content:
                   type: string
+                download_external_image:
+                  type: boolean
               required:
                 - product_id
                 - image_file
@@ -6803,6 +6826,7 @@ paths:
                   flash_path: ''
                   is_video_screen_shot: false
                   video_content: ''
+                  download_external_image: false
           application/xml:
             schema:
               type: object
@@ -7045,6 +7069,8 @@ paths:
                   approval_status: Approved
                   origin_store_id: 1
                   profile_id: null
+                  uploaded_image: ''
+                  published_date: "2023-08-18T09:01:47.38-05:00"
               properties:
                 product_id:
                   type: integer
@@ -7078,6 +7104,10 @@ paths:
                   type: integer
                 profile_id:
                   type: integer
+                uploaded_image:
+                  type: string
+                published_date:
+                  type: string
             examples:
               Example:
                 value:
@@ -7098,6 +7128,8 @@ paths:
                   approval_status: Approved
                   origin_store_id: 1
                   profile_id: 45
+                  uploaded_image: ''
+                  published_date: "2023-08-18T09:01:47.38-05:00"
   '/product_reviews/{id}':
     parameters:
       - schema:
@@ -7217,7 +7249,7 @@ paths:
         description: The ID of the `product_status`
     put:
       summary: Update a Product Status
-      operationId: put-product-statuses-id
+      operationId: put-product_statuses-id
       responses:
         '200':
           description: OK
@@ -7235,7 +7267,7 @@ paths:
               $ref: '#/components/schemas/product_statuses'
     delete:
       summary: Delete a Product Status
-      operationId: delete-product-statuses-id
+      operationId: delete-product_statuses-id
       responses:
         '200':
           description: OK
@@ -7294,6 +7326,8 @@ paths:
                   sort_order: 0
                   item_number_extension: '101520'
                   is_hidden: false
+                  weight: 1.000
+                  weight_type: '+'
                   is_default_selection: true
                   swatch_file: ''
                   swatch_thumbnail: /images/blue.jpg
@@ -7317,6 +7351,10 @@ paths:
                   type: integer
                   default: 0
                   minimum: 0
+                weight:
+                  type: number
+                weight_type:
+                  type: string
                 is_hidden:
                   type: boolean
                 is_default_selection:
@@ -7341,6 +7379,8 @@ paths:
                   sort_order: 0
                   item_number_extension: '101520'
                   is_hidden: false
+                  weight: 1.000
+                  weight_type: '+'
                   is_default_selection: true
                   swatch_file: ''
                   swatch_thumbnail: /images/blue.jpg
@@ -7594,16 +7634,17 @@ paths:
                 maximum_quantity:
                   type: integer
                 is_spotlight_item:
-                  type: number
-                quantity_on_hand: {}
+                  type: integer
+                quantity_on_hand:
+                  type: integer
                 keywords:
                   type: string
                 is_non_taxable:
-                  type: boolean
+                  type: integer
                 is_shipped_individually:
-                  type: boolean
+                  type: integer
                 is_hidden:
-                  type: number
+                  type: integer
                 sort_order:
                   type: integer
                 e_product_type:
@@ -7613,18 +7654,19 @@ paths:
                 e_product_password:
                   type: string
                 e_product_verification_link_expiration:
-                  type: number
+                  type: integer
                 e_product_email:
                   type: string
                 e_product_allow_multiple_deliveries:
-                  type: number
-                warehouse_id: {}
+                  type: integer
+                warehouse_id:
+                  type: integer
                 call_for_shipping:
-                  type: number
+                  type: integer
                 quickbooks_item_id:
                   type: string
                 call_for_pricing:
-                  type: number
+                  type: integer
                 rate_adjustment_type:
                   type: string
                 meta_description:
@@ -7689,9 +7731,10 @@ paths:
                   type: boolean
                 is_discontinued:
                   type: boolean
-                eta_date: {}
+                eta_date:
+                  type: string
                 quantity_on_order:
-                  type: number
+                  type: integer
                 available_region_id:
                   type: integer
                 call_for_shipping_on_whole_order:
@@ -7751,7 +7794,7 @@ paths:
                 is_subscription_product:
                   type: boolean
                 subscription_frequency:
-                  type: string
+                  type: integer
                 subscription_frequency_type:
                   type: string
                 e_product_generic_username:
@@ -7765,7 +7808,7 @@ paths:
                 exclude_from_commissions:
                   type: boolean
                 days_until_reorder_allowed:
-                  type: number
+                  type: integer
                 force_separate_order:
                   type: boolean
                 approval_required:
@@ -7775,7 +7818,7 @@ paths:
                 earns_points:
                   type: boolean
                 additional_points_earned:
-                  type: number
+                  type: integer
                 allowed_variable_subscription_types:
                   type: string
                 profile_id:
@@ -7786,6 +7829,42 @@ paths:
                   type: integer
                 do_not_send_review_request:
                   type: boolean
+                pack_slip_sort_order:
+                  type: integer
+                is_enable_variants_on_parent:
+                  type: boolean
+                is_hide_children_on_parent:
+                  type: boolean
+                cart_product_id:
+                  type: guid
+                enabled_configurator:
+                  type: string
+                material_code:
+                  type: string
+                product_line_code:
+                  type: string
+                ext_update_date:
+                  type: string
+                additional_attributes:
+                  type: string
+                shipper_hq_shipping_groups:
+                  type: string
+                shipper_hq_dimensional_rule_groups:
+                  type: string
+                shipper_hq_packing_boxes:
+                  type: string
+                freight_class:
+                  type: string
+                hs_code:
+                  type: string
+                coo:
+                  type: string
+                hts:
+                  type: string
+                is_exempt_from_min_order_amount:
+                  type: boolean
+                category_list:
+                  type: string
               required:
                 - primary_category_id
                 - product_status_id
@@ -8418,6 +8497,65 @@ paths:
                       $ref: '#/components/schemas/shipping_rate_adjustments'
       operationId: get-shipping_rate_adjustments
       description: Gets an array of shipping rate adjustments.
+    post:
+      summary: Create a Shipping Rate Adjustment
+      operationId: post-shipping_rate_adjustments
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipping_rate_adjustments'
+      description: Creates a Shipping Rate Adjustment
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  type: Additional Handling
+                  amount: 0.0
+                  shipping_method_name: UPS Ground
+                  shipping_provider: UPS
+                  is_unavailable: false
+                  product_id: 4
+                  available_region_id: 2
+                  use_calculated_rate: false
+              properties:
+                type:
+                  type: string
+                amount:
+                  type: number
+                shipping_method_name:
+                  type: string
+                shipping_provider:
+                  type: string
+                is_unavailable:
+                  type: boolean
+                product_id:
+                  type: integer
+                available_region_id:
+                  type: integer
+                use_calculated_rate:
+                  type: boolean
+              required:
+                - username
+              examples:
+                Example:
+                  value:
+                    type: Additional Handling
+                    amount: 0.0
+                    shipping_method_name: UPS Ground
+                    shipping_provider: UPS
+                    is_unavailable: false
+                    product_id: 4
+                    available_region_id: 2
+                    use_calculated_rate: false
+      tags:
+        - Shipping Rate Adjustments
   '/shipping_rate_adjustments/{id}':
     parameters:
       - schema:
@@ -9130,6 +9268,8 @@ paths:
                         sort_order: 0
                         item_number_extension: ''
                         is_hidden: false
+                        weight: 1.000
+                        weight_type: '+'
                         updated_at: null
                         created_at: null
                         is_default_selection: false
@@ -9146,6 +9286,8 @@ paths:
                         sort_order: 0
                         item_number_extension: ''
                         is_hidden: false
+                        weight: 1.000
+                        weight_type: '+'
                         updated_at: null
                         created_at: null
                         is_default_selection: false
@@ -9224,6 +9366,10 @@ paths:
                           type: string
                         is_hidden:
                           type: boolean
+                        weight:
+                          type: number
+                        weight_type:
+                          type: string
                         updated_at:
                           type: string
                         created_at:
@@ -10269,6 +10415,12 @@ components:
           type: string
         head_tags:
           type: string
+        cat_image_alt_text:
+          type: string
+        thumb_image_alt_text:
+          type: string
+        is_hide_from_site_maps:
+          type: boolean
     cart_items:
       type: object
       properties:
@@ -10877,6 +11029,8 @@ components:
           type: string
         head_tags:
           type: string
+        brand_code:
+          type: string
     microstores:
       type: object
       properties:
@@ -11423,8 +11577,6 @@ components:
           type: integer
         item_number:
           type: string
-        supplier_id:
-          type: integer
         manufacturer_id:
           type: integer
         manufacturer_part_number:
@@ -11456,15 +11608,15 @@ components:
         size_unit:
           type: string
         weight:
-          type: integer
+          type: number
         weight_unit:
           type: string
         cost:
-          type: integer
+          type: number
         price:
-          type: integer
+          type: number
         retail:
-          type: integer
+          type: number
         minimum_quantity:
           type: integer
         maximum_quantity:
@@ -11499,6 +11651,8 @@ components:
           type: integer
         call_for_shipping:
           type: integer
+        quickbooks_item_id:
+          type: string
         call_for_pricing:
           type: integer
         rate_adjustment_type:
@@ -11663,6 +11817,48 @@ components:
           type: string
         profile_id:
           type: integer
+        is_linked_product:
+          type: boolean
+        master_product_id:
+          type: integer
+        do_not_send_review_request:
+          type: boolean
+        pack_slip_sort_order:
+          type: integer
+        is_enable_variants_on_parent:
+          type: boolean
+        is_hide_children_on_parent:
+          type: boolean
+        cart_product_id:
+          type: guid
+        enabled_configurator:
+          type: string
+        material_code:
+          type: string
+        product_line_code:
+          type: string
+        ext_update_date:
+          type: string
+        additional_attributes:
+          type: string
+        shipper_hq_shipping_groups:
+          type: string
+        shipper_hq_dimensional_rule_groups:
+          type: string
+        shipper_hq_packing_boxes:
+          type: string
+        freight_class:
+          type: string
+        hs_code:
+          type: string
+        coo:
+          type: string
+        hts:
+          type: string
+        is_exempt_from_min_order_amount:
+          type: boolean
+        category_list:
+          type: string
         variants:
           type: array
           items:
@@ -11756,6 +11952,8 @@ components:
           type: boolean
         video_content:
           type: string
+        download_external_image:
+          type: boolean
     product_pricing:
       description: ''
       type: object
@@ -11860,6 +12058,8 @@ components:
           type: integer
         uploaded_image:
           type: string
+        published_date:
+          type: string
     product_statuses:
       type: object
       properties:
@@ -11905,12 +12105,22 @@ components:
           default: 0
         is_hidden:
           type: boolean
+        weight:
+          type: number
+        weight_type:
+          type: string
         updated_at:
           type: string
         created_at:
           type: string
         is_default_selection:
           type: boolean
+        swatch_file:
+          type: string
+        swatch_thumbnail:
+          type: string
+        swatch_thumbnail_color:
+          type: string
     profiles:
       type: object
       properties:
@@ -12168,6 +12378,8 @@ components:
           type: string
         available_region_id:
           type: integer
+        use_calculated_rate:
+          type: boolean
     subscriptions:
       type: object
       x-examples:
@@ -12904,6 +13116,8 @@ components:
           type: integer
         product_status_id:
           type: integer
+        quickbooks_item_id:
+          type: string
         updated_at:
           type: string
         created_at:

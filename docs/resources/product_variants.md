@@ -22,8 +22,13 @@ Sample Model
 	"item_number_extension": "",
 	"item_number_sort_order": 0,
 	"is_hidden": false,
+        "weight": 1.0000,
+        "weight_type": "+",
 	"updated_at": "2014-03-19T13:31:47.923-05:00",
 	"created_at": "2014-03-19T13:31:47.923-05:00",
-	"is_default_selection": false
+	"is_default_selection": false,
+        "swatch_file": "",
+        "swatch_thumbnail": "",
+        "swatch_thumbnail_color": ""
 }
 ```

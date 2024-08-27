@@ -21,6 +21,7 @@ Sample Model
 	"max_quantity": 0,
 	"category_thumbnail": "",
 	"page_title": "",
+	"lookup_path": "Clothes > Shoes"
 	"keywords": "",
 	"meta_description": "",
 	"category_image": "",
@@ -32,7 +33,10 @@ Sample Model
 	"created_at": "2014-03-19T13:31:47.923-05:00",
 	"default_product_picture": "",
 	"alternate_thumbnail": "",
-	"head_tags": ""
+	"head_tags": "",
+	"cat_image_alt_text": "",
+	"thumb_image_alt_text": "",
+        "is_hide_from_site_maps": false
 }
 ```
 
@@ -52,6 +56,30 @@ Nested Resources
 
 Accessible via the `?expand=` parameter or `/api/v1/categories/{id}/{nested_resource}`.
 
+### custom_fields
+
+```shell
+GET /api/v1/categories?expand=custom_fields
+```
+
+```shell
+GET /api/v1/categories/{id}/custom_fields
+```
+
+```json
+{
+	...
+	"custom_fields": [
+		{
+			"name": "CategoryCustomField",
+                        "value": ""
+		},
+		...
+	],
+	...
+}
+```
+
 ### products
 
 ```shell
@@ -68,8 +96,7 @@ GET /api/v1/categories/{id}/products
 	"products": [
 		{
 			"id": 18,
-			"item_number": "",
-			"supplier_id": 0,
+                        "item_number": "",
 			"manufacturer_id": 0,
 			"manufacturer_part_number": "",
 			"primary_category_id": 11,
@@ -107,6 +134,7 @@ GET /api/v1/categories/{id}/products
 			"e_product_allow_multiple_deliveries": 0,
 			"warehouse_id": 0,
 			"call_for_shipping": 0,
+			"quickbooks_item_id": "123-456"
 			"call_for_pricing": 0,
 			"rate_adjustment_type": "AutoCalculation",
 			"meta_description": "",
@@ -184,11 +212,32 @@ GET /api/v1/categories/{id}/products
 			"force_separate_order": false,
 			"approval_required": false,
 			"in_stock_notification_email_template_id": null,
-			"inelligible_for_purchase_by_points": false,
 			"earns_points": true,
 			"additional_points_earned": null,
 			"allowed_variable_subscription_types": "",
-			"profile_id": null
+			"profile_id": null,
+			"is_linked_product": false,
+			"master_product_id": 6,
+			"do_not_send_review_request": false,
+			"pack_slip_sort_order": 3,
+			"is_enable_variants_on_parent": false,
+			"is_hide_children_on_parent": false,
+			"cart_product_id": "00000000-0000-0000-0000-000000000000",
+			"enabled_configurator": "None",
+			"material_code": "",
+			"product_line_code": "",
+			"ext_update_date": null,
+			"additional_attributes": "",
+			"shipper_hq_shipping_groups": "",
+			"shipper_hq_dimensional_rule_groups": "",
+			"shipper_hq_packing_boxes": "",
+			"freight_class": "",
+			"hs_code": "",
+			"coo": "",
+			"hts": "",
+			"inelligible_for_purchase_by_points": false,
+			"is_exempt_from_min_order_amount": false,
+			"category_list": null
 		},
 		...
 	],

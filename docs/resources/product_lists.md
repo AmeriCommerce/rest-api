@@ -38,18 +38,21 @@ GET /api/v1/product_lists/{id}/items
 	"items": [
 		{
 			"id": 1,
+                        "product_list_id": 2,
 			"product_id": 1,
 			"sort_order": 0,
 			"variant_inventory_id": null
 		},
 		{
 			"id": 2,
+                        "product_list_id": 2,
 			"product_id": 6,
 			"sort_order": 0,
 			"variant_inventory_id": null
 		},
 		{
 			"id": 3,
+                        "product_list_id": 2,
 			"product_id": 7,
 			"sort_order": 0,
 			"variant_inventory_id": null

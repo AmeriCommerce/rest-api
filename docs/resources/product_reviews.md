@@ -31,6 +31,8 @@ Sample Model
 	"approval_status": "Approved",
 	"origin_store_id": 3,
 	"profile_id": 12
+        "uploaded_image": "",
+        "published_date": "2023-08-18T09:01:47.38-05:00"
 }
 ```
 

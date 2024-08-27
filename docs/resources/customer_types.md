@@ -42,9 +42,9 @@ GET /api/v1/customer_types/{id}/customer_type_payment_methods_availability
 	"customer_type_payment_methods_availability": [
 		{
 			"id": 1,
-            "payment_method_id": 6,
-            "status": "Active",
-            "customer_type_id": 13
+                        "payment_method_id": 6,
+                        "status": "Active",
+                        "customer_type_id": 13
 		},
 		...
 	],

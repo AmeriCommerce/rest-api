@@ -134,6 +134,119 @@ Sample Model
 	"additional_points_earned": null,
 	"allowed_variable_subscription_types": "",
 	"profile_id": null
+        "is_linked_product": false,
+        "master_product_id": 0,
+        "do_not_send_review_request": false,
+        "pack_slip_sort_order": 0,
+        "is_enable_variants_on_parent": false,
+        "is_hide_children_on_parent": false,
+        "cart_product_id": "00000000-0000-0000-0000-000000000000",
+        "enabled_configurator": "",
+        "material_code": "",
+        "product_line_code": "",
+        "ext_update_date": "",
+        "additional_attributes": "",
+        "shipper_hq_shipping_groups": "",
+        "shipper_hq_dimensional_rule_groups": "",
+        "shipper_hq_packing_boxes": "",
+        "freight_class": "",
+        "hs_code": "",
+        "coo": "",
+        "hts": "",
+        "is_exempt_from_min_order_amount": false,
+        "category_list": ""
+}
+```
+
+## Import Many
+
+Import Many can be used to update or add products in bulk. When look_by_sku is true, products are found by their item number instead of by id for updating. 
+Categories and Manufacturers can be created for a product. The id of the new category/manufacturer will be set as the primary category ID or the manufacturer ID of the product it was created with. This cannot be used to update an existing category or manufacturer. 
+
+###### Example Requests
+
+```shell
+POST /api/v1/products/importMany
+```
+
+```json
+{
+    [
+        {
+            "lookup_by_sku": true,
+            "product": 
+            {
+                "item_number": "test-123",
+                ...
+            },
+            "category":
+            {
+                "name": "Shoes",
+                "short_description": "",
+                "sort_order": 0,
+                "is_hidden": true,
+                "parent_category_id": 0,
+                "max_quantity": 0,
+                "category_thumbnail": "",
+                "page_title": "",
+                "keywords": "",
+                "meta_description": "",
+                "category_image": "",
+                "external_content_url": "",
+                "is_category_content_displayed": true,
+                "are_subcategory_products_displayed": true,
+                "url_rewrite": "",
+                "default_product_picture": "",
+                "alternate_thumbnail": "",
+                "head_tags": "",
+                "cat_image_alt_text": "",
+                "thumb_image_alt_text": "",
+                "is_hide_from_site_maps": false
+            },
+            manufacturer:
+            {
+                "name": "Nike",
+	        "description": "",
+	        "is_hidden": false,
+	        "sort_order": null,
+	        "manufacturer_logo_url": "/Shared/images/sample/manufacturers/nike_logo.jpg",
+	        "page_title": "",
+	        "keywords": "",
+	        "meta_description": "",
+	        "url_rewrite": "/Nike.aspx",
+	        "head_tags": "",
+	        "brand_code": ""
+            }
+        },
+        {
+            "product": 
+            {
+                "id": 18,
+                ...
+            }
+        },
+        ...
+    ]
+}
+```
+
+###### Example Response
+
+```json
+{
+	"total_errors": 0,
+        "results": [
+        {
+            "line_item": 0,
+            "status_code": 200,
+            "entity_id": 1
+        },
+        {
+            "line_item": 1,
+            "status_code": 200,
+            "entity_id": 2
+        }
+    ]
 }
 ```
 
@@ -158,6 +271,7 @@ GET /api/v1/products/{id}/variants
 	"variants": [
 		{
 			"id": 11,
+                        "product_id": 18,
 			"variant_group_id": 7,
 			"description": "Director's Cut",
 			"price_adjustment": 2,
@@ -165,9 +279,15 @@ GET /api/v1/products/{id}/variants
 			"sort_order": 0,
 			"item_number_extension": "",
 			"is_hidden": false,
+                        "weight": 0.0,
+                        "weight_type": "+",
 			"updated_at": null,
 			"created_at": null,
 			"is_default_selection": false
+                        "swatch_file": "",
+                        "swatch_thumbnail": "",
+                        "swatch_thumbnail_color": "",
+                        "item_number_sort_order": 0
 		},
 		...
 	],
@@ -227,13 +347,17 @@ GET /api/v1/products/{id}/related
 			"id": 6,
 			"sort_order": 0,
 			"is_hidden": false,
-			"is_upsell": false
+			"is_upsell": false,
+                        "upsell_adjusted_price": 0.0,
+                        "upsell_quantity": 0
 		},
 		{
 			"id": 7,
 			"sort_order": 0,
 			"is_hidden": false,
-			"is_upsell": false
+			"is_upsell": false,
+                        "upsell_adjusted_price": 0.0,
+                        "upsell_quantity": 0
 		},
 		...
 	],
@@ -292,6 +416,7 @@ GET /api/v1/products/{id}/pricing
 	"pricing": [
 		{
 			"id": 31,
+                        "product_id": 18,
 			"store_id": null,
 			"customer_type_id": null,
 			"variant_inventory_id": null,
@@ -309,6 +434,7 @@ GET /api/v1/products/{id}/pricing
 		},
 		{
 			"id": 32,
+                        "product_id": 18,
 			"store_id": null,
 			"customer_type_id": null,
 			"variant_inventory_id": null,
@@ -356,6 +482,7 @@ GET /api/v1/products/{id}/attributes
 			"keywords": "",
 			"meta_description": "",
 			"url_rewrite": "",
+                        "product_id": 18,
 			"value": ""
 		},
 		{
@@ -370,6 +497,7 @@ GET /api/v1/products/{id}/attributes
 			"keywords": "",
 			"meta_description": "",
 			"url_rewrite": "",
+                        "product_id": 18,
 			"value": ""
 		},
 		...
@@ -394,6 +522,7 @@ GET /api/v1/products/{id}/variant_inventory
 	"variant_inventory": [
 		{
 			"id": 4,
+                        "product_id": 18,
 			"inventory": 5,
 			"item_number": "3367799-1",
 			"manufacturer_item_number": "",
@@ -403,7 +532,16 @@ GET /api/v1/products/{id}/variant_inventory
 			"created_at": null,
 			"low_stock_warning_at": null,
 			"low_stock_warning_enabled": false,
-			"gtin": ""
+			"gtin": "",
+                        "variant_inventory_image": "",
+                        "height": 0.0,
+                        "length": 0.0,
+                        "width": 0.0,
+                        "retail": 0.0000,
+                        "shipper_hq_shipping_groups": "",
+                        "shipper_hq_dimensional_rule_groups": "",
+                        "shipper_hq_packing_boxes": "",
+                        "description": ""
 		},
 		...
 	],
@@ -427,6 +565,7 @@ GET /api/v1/products/{id}/pictures
 	"pictures": [
 		{
 			"id": 30,
+                        "product_id": 18,
 			"image_file": "/images/LG/60_50PY2DR_bic.jpg",
 			"alt": "",
 			"description": "",
@@ -438,7 +577,8 @@ GET /api/v1/products/{id}/pictures
 			"created_at": "2013-10-17T20:09:47.327-05:00",
 			"updated_at": "2013-10-17T20:09:47.327-05:00",
 			"is_video_screen_shot": false,
-			"video_content": ""
+			"video_content": "",
+                        "download_external_image": false
 		},
 		...
 	],
@@ -467,9 +607,11 @@ GET /api/v1/products/{id}/shipping_rate_adjustments
 			"shipping_method_name": "UPS Ground",
 			"shipping_provider": "UPS",
 			"is_unavailable": false,
+                        "product_id": 18,
 			"updated_at": null,
 			"created_at": null,
-			"available_region_id": null
+			"available_region_id": null,
+                        "use_calculated_rate": false
 		},
 		{
 			"id": 3755,
@@ -478,9 +620,11 @@ GET /api/v1/products/{id}/shipping_rate_adjustments
 			"shipping_method_name": "UPS Next Day Air",
 			"shipping_provider": "UPS",
 			"is_unavailable": false,
+                        "product_id": 18,
 			"updated_at": null,
 			"created_at": null,
-			"available_region_id": null
+			"available_region_id": null,
+                        "use_calculated_rate": false
 		},
 		...
 	],
@@ -504,6 +648,7 @@ GET /api/v1/products/{id}/reviews
 	"reviews": [
 		{
 			"id": 1,
+                        "product_id": 18,
 			"title": "Lorem ipsum Cillum amet minim ex eiusmod.",
 			"body": "Lorem ipsum Dolore qui consectetur incididunt deserunt qui id sit Excepteur sit dolor anim ex quis reprehenderit.",
 			"review_pros": "",
@@ -519,7 +664,10 @@ GET /api/v1/products/{id}/reviews
 			"author_website": "",
 			"author_location": "",
 			"approval_status": "Approved",
-			"origin_store_id": 3
+			"origin_store_id": 1
+                        "profile_id": 10,
+                        "uploaded_image": "",
+                        "published_date": "2023-08-18T09:01:47.38-05:00"
 		},
 		...
 	],

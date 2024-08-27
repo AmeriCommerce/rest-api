@@ -109,25 +109,25 @@ GET /api/v1/customers/{id}/addresses
 	"addresses": [
 		{
 			"id": 42,
-            "customer_id": 13,
-            "address_line_1": "251 N Bristol Ave",
-            "address_line_2": "",
-            "city": "Los Angeles",
-            "state": "California",
-            "postal_code": "90049",
-            "country": "United States",
-            "is_default_shipping_address": false,
-            "phone": "1234567897",
-            "company": "",
-            "alternate_phone": "",
-            "fax": "",
-            "comments": "",
-            "is_default_billing_address": false,
-            "updated_at": "2019-04-01T17:12:37.187-05:00",
-            "created_at": "2019-04-01T17:12:37.107-05:00",
-            "first_name": "Will",
-            "last_name": "Smith",
-            "address_type": "Default"
+                        "customer_id": 13,
+                        "address_line_1": "251 N Bristol Ave",
+                        "address_line_2": "",
+                        "city": "Los Angeles",
+                        "state": "California",
+                        "postal_code": "90049",
+                        "country": "United States",
+                        "is_default_shipping_address": false,
+                        "phone": "1234567897",
+                        "company": "",
+                        "alternate_phone": "",
+                        "fax": "",
+                        "comments": "",
+                        "is_default_billing_address": false,
+                        "updated_at": "2019-04-01T17:12:37.187-05:00",
+                        "created_at": "2019-04-01T17:12:37.107-05:00",
+                        "first_name": "Will",
+                        "last_name": "Smith",
+                        "address_type": "Default"
 		},
 		...
 	],
@@ -150,8 +150,8 @@ GET /api/v1/customers/{id}/custom_fields
 	...
 	"custom_fields": [
 		{
-			"name": "CustomerCustomField",
-            "value": ""
+		    "name": "CustomerCustomField",
+                    "value": ""
 		},
 		...
 	],
@@ -175,9 +175,9 @@ GET /api/v1/customers/{id}/customer_store_locations
 	...
 	"customer_store_locations": [
 		{
-			"id": 7,
-            "store_location_id": 3,
-            "customer_id": 13
+		    "id": 7,
+                    "store_location_id": 3,
+                    "customer_id": 13
 		},
 		...
 	],

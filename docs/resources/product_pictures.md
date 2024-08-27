@@ -25,6 +25,7 @@ Sample Model
 	"created_at": "2013-10-17T20:09:47.307-05:00",
 	"updated_at": "2013-10-17T20:09:47.307-05:00",
 	"is_video_screen_shot": false,
-	"video_content": ""
+	"video_content": "",
+        "download_external_image": false
 }
 ```
