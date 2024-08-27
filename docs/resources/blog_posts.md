@@ -66,7 +66,7 @@ GET /api/v1/blog_posts/{id}/categories
 	                "description": "",
 	                "updated_at": "2014-03-05T08:46:30.627-06:00",
 	                "created_at": "2014-03-05T08:46:30.627-06:00",
-	                "name" "test",
+	                "name": "test",
 	                "blog_category_path": ""
 		},
 		...
