@@ -833,7 +833,6 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  id: 1
                   blog_id: 1
                   parent_category_id: 0
                   type: Category
@@ -868,6 +867,17 @@ paths:
                 - blog_id
                 - parent_category_id
                 - blog_category_path
+              examples:
+                Example:
+                  value:
+                    blog_id: 1
+                    parent_category_id: 0
+                    type: Category
+                    description: ''
+                    updated_at: '2019-10-18T11:41:33.31-05:00'
+                    created_at: '2019-10-18T11:41:33.31-05:00'
+                    name: test
+                    blog_category_path: test
       tags:
         - Blog Categories
   '/blog_categories/{id}':
@@ -1026,8 +1036,10 @@ paths:
                   type: boolean
                 is_atom_feed_enabled:
                   type: boolean
-                max_chars_short_feed: {}
-                max_chars_summary: {}
+                max_chars_short_feed:
+                  type: integer
+                max_chars_summary:
+                  type: integer
                 is_commenting_enabled:
                   type: boolean
                 is_comment_moderation_enabled:
@@ -1102,6 +1114,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blogs'
       description: Updates a blog.
       requestBody:
         content:
@@ -1317,6 +1333,8 @@ paths:
                   type: string
                 content:
                   type: string
+                published_at:
+                  type: string
                 teaser_title:
                   type: string
                 teaser_description:
@@ -1343,6 +1361,8 @@ paths:
                   type: string
                 url_rewrite:
                   type: string
+                page_title:
+                  type: string
                 page_content_type:
                   type: string
               required:
@@ -1356,6 +1376,7 @@ paths:
                   keywords: ''
                   description: ''
                   content: ''
+                  published_at: '2023-05-17T12:08:00-05:00'
                   teaser_title: ''
                   teaser_description: ''
                   post_image_url: ''
@@ -1369,6 +1390,7 @@ paths:
                   store_id: 4
                   head_tags: ''
                   url_rewrite: /blog/Hello-There
+                  page_title: ''
                   page_content_type: BlogPost
       tags:
         - Blog Posts
@@ -1424,10 +1446,10 @@ paths:
                   page_content_type: BlogPost
               properties:
                 id:
-                  type: number
+                  type: integer
                   readOnly: true
                 blog_id:
-                  type: number
+                  type: integer
                 title:
                   type: string
                 keywords:
@@ -1436,7 +1458,8 @@ paths:
                   type: string
                 content:
                   type: string
-                published_at: {}
+                published_at:
+                  type: string
                 updated_at:
                   type: string
                 created_at:
@@ -1450,7 +1473,7 @@ paths:
                 teaser_image_url:
                   type: string
                 author_profile_id:
-                  type: number
+                  type: integer
                 are_comments_enabled:
                   type: boolean
                 is_featured:
@@ -1460,12 +1483,14 @@ paths:
                 are_comments_locked:
                   type: boolean
                 view_count:
-                  type: number
+                  type: integer
                 store_id:
-                  type: number
+                  type: integer
                 head_tags:
                   type: string
                 url_rewrite:
+                  type: string
+                page_title:
                   type: string
                 page_content_type:
                   type: string
@@ -1494,6 +1519,7 @@ paths:
                   store_id: 4
                   head_tags: ''
                   url_rewrite: /blog/Hello-There
+                  page_title: ''
                   page_content_type: BlogPost
           application/xml:
             schema:
@@ -1928,6 +1954,7 @@ paths:
                   max_quantity: 0
                   category_thumbnail: ''
                   page_title: ''
+                  lookup_path: ''
                   keywords: ''
                   meta_description: ''
                   category_image: ''
@@ -1958,6 +1985,8 @@ paths:
                 category_thumbnail:
                   type: string
                 page_title:
+                  type: string
+                lookup_path:
                   type: string
                 keywords:
                   type: string
@@ -1998,6 +2027,7 @@ paths:
                     max_quantity: 0
                     category_thumbnail: ''
                     page_title: ''
+                    lookup_path: ''
                     keywords: ''
                     meta_description: ''
                     category_image: ''
@@ -4360,6 +4390,27 @@ paths:
                   type: integer
                 blog_category_id:
                   type: integer
+              examples:
+                Example:
+                  value:
+                    url: /store/shop-all.aspx
+                    text: Shop
+                    sort_order: 2
+                    store_id: 14
+                    is_hidden: false
+                    named_link: null
+                    page_id: 0
+                    category_id: 0
+                    is_dynamic_menu_root: false
+                    dynamic_menu_levels: 0
+                    link_type: Category
+                    parent_link_id: 118
+                    is_hidden_in_navigation_only: false
+                    opens_in_new_window: false
+                    is_home_page: false
+                    product_id: 0
+                    blog_id: 0
+                    blog_category_id: 0
       tags:
         - Links
   '/links/{id}':
@@ -6040,7 +6091,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/orders'
+                $ref: '#/components/schemas/pages'
       tags:
         - Pages
       description: Creates a content page.
@@ -7239,7 +7290,7 @@ paths:
                   show_quantity: false
       tags:
         - Product Statuses
-  '/product/statuses/{id}':
+  '/product_statuses/{id}':
     parameters:
       - schema:
           type: integer
@@ -8507,7 +8558,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/shipping_rate_adjustments'
-      description: Creates a Shipping Rate Adjustment
+      description: Creates a shipping rate adjustment.
       requestBody:
         content:
           application/json:
@@ -9364,6 +9415,8 @@ paths:
                           type: number
                         item_number_extension:
                           type: string
+                        item_number_sort_order:
+                          type: integer
                         is_hidden:
                           type: boolean
                         weight:
@@ -9430,7 +9483,10 @@ paths:
                       price_adjustment_type: ''
                       sort_order: 0
                       item_number_extension: ''
+                      item_number_sort_order: 0
                       is_hidden: false
+                      weight: 0
+                      weight_type: ''
                       is_default_selection: false
                       swatch_file: ''
                       swatch_thumbnail: ''
@@ -9444,7 +9500,10 @@ paths:
                       price_adjustment_type: ''
                       sort_order: 0
                       item_number_extension: ''
+                      item_number_sort_order: 0
                       is_hidden: false
+                      weight: 0
+                      weight_type: ''
                       is_default_selection: false
                       swatch_file: ''
                       swatch_thumbnail: ''
@@ -9487,6 +9546,8 @@ paths:
                   type: string
                 shipper_hq_packing_boxes: 
                   type: string
+                description:
+                  type: string
                 variants:
                   type: array
                   uniqueItems: true
@@ -9509,8 +9570,14 @@ paths:
                         type: number
                       item_number_extension:
                         type: string
+                      item_number_sort_order:
+                        type: integer
                       is_hidden:
                         type: boolean
+                      weight:
+                        type: number
+                      weight_type:
+                        type: number
                       is_default_selection:
                         type: boolean
                       swatch_file:
@@ -9549,6 +9616,7 @@ paths:
                   shipper_hq_shipping_groups: ''
                   shipper_hq_dimensional_rule_groups: ''
                   shipper_hq_packing_boxes: ''
+                  description: ''
                   variants:
                     - id: 9
                       product_id: 8
@@ -10243,6 +10311,12 @@ components:
           type: boolean
         new_comment_admin_notification_email_template_id:
           type: integer
+        new_post_admin_notification_email_template_id:
+          type: integer
+        new_comment_reply_notification_email_template_id:
+          type: integer
+        page_title:
+          type: string
     blog_categories:
       type: object
       properties:
@@ -10305,6 +10379,16 @@ components:
           type: boolean
         view_count:
           type: integer
+        store_id:
+          type: integer
+        head_tags:
+          type: string
+        url_rewrite:
+          type: string
+        page_title:
+          type: string
+        page_content_type:
+          type: string
     carts:
       type: object
       properties:
@@ -10390,6 +10474,8 @@ components:
         category_thumbnail:
           type: string
         page_title:
+          type: string
+        lookup_path:
           type: string
         keywords:
           type: string
@@ -11474,6 +11560,8 @@ components:
           type: boolean
         is_login_required:
           type: boolean
+        head_tags:
+          type: string
     payment_methods:
       type: object
       properties:
@@ -11900,6 +11988,8 @@ components:
       properties:
         id:
           type: integer
+        product_id:
+          type: integer
         variant_group_id:
           type: integer
         description:
@@ -11912,6 +12002,8 @@ components:
           type: integer
         item_number_extension:
           type: string
+        item_number_sort_order:
+          type: integer
         is_hidden:
           type: boolean
         updated_at:
@@ -11920,6 +12012,12 @@ components:
           type: string
         is_default_selection:
           type: boolean
+        swatch_file:
+          type: string
+        swatch_thumbnail:
+          type: string
+        swatch_thumbnail_color:
+          type: string
       description: 'Accessible via the `?expand=` parameter or `/api/v1/products/{id}/{nested_resource}`.'
     product_pictures:
       type: object
@@ -13113,7 +13211,7 @@ components:
         manufacturer_item_number:
           type: string
         weight:
-          type: integer
+          type: number
         product_status_id:
           type: integer
         quickbooks_item_id:
@@ -13143,6 +13241,8 @@ components:
         shipper_hq_dimensional_rule_groups: 
           type: string
         shipper_hq_packing_boxes: 
+          type: string
+        description:
           type: string
     variant_groups:
       type: object

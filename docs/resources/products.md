@@ -244,7 +244,7 @@ POST /api/v1/products/importMany
         {
             "line_item": 1,
             "status_code": 200,
-            "entity_id": 2
+            "entity_id": 18
         }
     ]
 }

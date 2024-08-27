@@ -62,7 +62,12 @@ GET /api/v1/blog_categories/{id}/posts
 			"is_featured": false,
 			"is_stickied": false,
 			"are_comments_locked": false,
-			"view_count": 6
+			"view_count": 6,
+                        "store_id": 1,
+                        "head_tags": "",
+                        "url_rewrite": "",
+                        "page_title": "",
+                        "page_content_type": "BlogPost"
 		},
 		...
 	],
