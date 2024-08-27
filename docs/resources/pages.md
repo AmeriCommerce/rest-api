@@ -25,6 +25,7 @@ Sample Model
 	"updated_at": "2013-10-07T14:16:19.163-05:00",
 	"created_at": "2013-10-07T14:16:19.163-05:00",
 	"is_secure": false,
-	"is_login_required": false
+	"is_login_required": false,
+        "head_tags": ""
 }
 ```
