@@ -35,11 +35,11 @@ Accessible via the `?expand=` parameter or `/api/v1/mailing_lists/{id}/{nested_r
 ### members
 
 ```shell
-GET /api/v1/drips?expand=members
+GET /api/v1/mailing_lists?expand=members
 ```
 
 ```shell
-GET /api/v1/drips/{id}/members
+GET /api/v1/mailing_lists/{id}/members
 ```
 
 ```json
