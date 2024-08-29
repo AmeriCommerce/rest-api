@@ -20,6 +20,12 @@ Sample Model
 	"created_at": "2013-10-07T14:44:57.373-05:00",
 	"operator_type": "contains",
 	"target_quantity": 1,
-	"target_quantity_type": "MinimumOf"
+	"target_quantity_type": "MinimumOf",
+        "discount_action_id": null,
+        "is_action_rule": false,
+        "bogo_discount_buy_quantity": null,
+        "bogo_discount_quantity": null,
+        "bogo_max_use_per_order": null,
+        "discount_from_high_to_low": false
 }
 ```

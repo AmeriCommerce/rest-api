@@ -87,7 +87,7 @@ Applies to:
 Marketing
 ---------
 
-Permissions required: `AdCodes`, `Affiliates`, `EmailEditor`, `MailingList`, `DiscountMethods`, `GiftCertificates`
+Permissions required: `AdCodes`, `EmailEditor`, `MailingList`, `DiscountMethods`, `GiftCertificates`
 
 * `read_marketing` - View adcode, discount, and other marketing-related data
 * `marketing` - View and change adcode, discount, and other marketing-related data; supercedes `read_marketing` if specified together
@@ -95,8 +95,8 @@ Permissions required: `AdCodes`, `Affiliates`, `EmailEditor`, `MailingList`, `Di
 Applies to:
 
 * [adcodes](docs/resources/adcodes.md)
-* [affiliates](docs/resources/affiliates.md)
 * [coupon_codes](docs/resources/coupon_codes.md)
+* [discount_actions](docs/resources/discount_actions.md)
 * [discount_methods](docs/resources/discount_methods.md)
 * [discount_rules](docs/resources/discount_rules.md)
 * [drips](docs/resources/drips.md)

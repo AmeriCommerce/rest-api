@@ -2,7 +2,6 @@ openapi: 3.1.0
 tags:
   - name: Adcodes
   - name: Addresses
-  - name: Affiliates
   - name: Attribute Groups
   - name: Attributes
   - name: Blog Categories
@@ -20,6 +19,7 @@ tags:
   - name: Customer Payment Methods
   - name: Customer Types
   - name: Customers
+  - name: Discount Actions
   - name: Discount Methods
   - name: Discount Rules
   - name: Drips
@@ -91,7 +91,7 @@ paths:
                   adcodes:
                     type: array
                     items:
-                      $ref: '#/components/schemas/attributes'
+                      $ref: '#/components/schemas/adcodes'
       operationId: get-adcodes
       tags:
         - Adcodes
@@ -107,7 +107,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/adcodes'
         '500':
-          description: OK
+          description: Base POST failed
           content:
             application/json:
               schema:
@@ -159,7 +159,7 @@ paths:
                 description:
                   type: string
                 visits:
-                  type: number
+                  type: integer
                 commission:
                   type: string
                 commission_type:
@@ -168,6 +168,8 @@ paths:
                   type: string
                 is_pay_per_click:
                   type: boolean
+                expires_at:
+                  type: string
               required:
                 - visits
             examples:
@@ -177,6 +179,7 @@ paths:
                   description: 5% off
                   visits: 0
                   url: 'https://www.drunkenmoocow.com/Default.aspx?a=5off'
+                  expires_at: '2024-03-05T00:00:00-06:00'
       tags:
         - Adcodes
       description: Creates an adcode
@@ -192,6 +195,11 @@ paths:
     delete:
       summary: Delete an Adcode
       operationId: delete-adcodes-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
       parameters: []
       description: Delete an adcode by ID.
       tags:
@@ -483,30 +491,6 @@ paths:
       tags:
         - Addresses
       description: Delete an address by ID.
-  /affiliates:
-    get:
-      summary: Get Affiliates
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  total_count:
-                    type: integer
-                  affiliates:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/affiliates'
-      operationId: get-affilliates
-      deprecated: true
-      description: Gets an array of affiliates.
-      tags:
-        - Marketing
-        - Affiliates
-    parameters: []
   /attribute_groups:
     get:
       summary: Get Attribute Groups
@@ -867,17 +851,17 @@ paths:
                 - blog_id
                 - parent_category_id
                 - blog_category_path
-              examples:
-                Example:
-                  value:
-                    blog_id: 1
-                    parent_category_id: 0
-                    type: Category
-                    description: ''
-                    updated_at: '2019-10-18T11:41:33.31-05:00'
-                    created_at: '2019-10-18T11:41:33.31-05:00'
-                    name: test
-                    blog_category_path: test
+            examples:
+              Example:
+                value:
+                  blog_id: 1
+                  parent_category_id: 0
+                  type: Category
+                  description: ''
+                  updated_at: '2019-10-18T11:41:33.31-05:00'
+                  created_at: '2019-10-18T11:41:33.31-05:00'
+                  name: test
+                  blog_category_path: test
       tags:
         - Blog Categories
   '/blog_categories/{id}':
@@ -2152,6 +2136,13 @@ paths:
                 value:
                   campaign_code: '123'
                   coupon_code: CC-3SCEUZGYA3
+                  is_active: false
+                  is_expired: false
+                  expires_at: null
+                  max_uses: 0
+                  usage_count: 0
+                  notes: ''
+                  is_hidden: false
       tags:
         - Coupon Codes
       description: Creats a coupon code.
@@ -2169,6 +2160,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/coupon_codes'
         '404':
           $ref: '#/components/responses/404'
       requestBody:
@@ -2190,6 +2185,8 @@ paths:
                   notes: ''
                   is_hidden: false
               properties:
+                id:
+                  type: integer
                 campaign_code:
                   type: string
                 coupon_code:
@@ -2208,6 +2205,19 @@ paths:
                   type: string
                 is_hidden:
                   type: boolean
+              examples:
+                Example:
+                  values:
+                    id: 1023
+                    campaign_code: '123'
+                    coupon_code: CC-3SCEUZGYA3
+                    is_active: false
+                    is_expired: false
+                    expires_at: null
+                    max_uses: 0
+                    usage_count: 0
+                    notes: ''
+                    is_hidden: false
       tags:
         - Coupon Codes
       description: Update a coupon code by ID.
@@ -3504,6 +3514,120 @@ paths:
           description: OK
         '404':
           $ref: '#/components/responses/404'
+  /discount_actions:
+    get:
+      summary: Discount Actions
+      tags:
+        - Marketing
+        - Discount Actions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  discount_actions:
+                    type:
+                      - string
+                      - array
+                    items:
+                      $ref: '#/components/schemas/discount_actions'
+      operationId: get-discount_actions
+      description: Gets an array of discount actions.
+    post:
+      summary: Create a Discount Actions
+      operationId: post-discount_actions
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discount_actions'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                discount_method_id:
+                  type: integer
+                is_exclusive:
+                  type: boolean
+                is_strict:
+                  type: boolean
+                is_active:
+                  type: boolean
+                modifier_operation:
+                  type: string
+                modifier_amount:
+                  type: string
+                modifier_type:
+                  type: string
+                modifier_target:
+                  type: string
+                sort_order:
+                  type: integer
+            examples:
+              Example:
+                value:
+                  discount_method_id: 4
+                  is_exclusive: true
+                  is_strict: false
+                  is_active: false
+                  modifier_operation: 'subtract'
+                  modifier_amount: '1'
+                  modifier_type: 'dollars'
+                  modifier_target: 'total'
+                  sort_order: 0
+      tags:
+        - Discount Actions
+        - Marketing
+      description: Creates a discount action.
+  '/discount_actions/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `discount_action`
+    put:
+      summary: Update a Discount Action
+      operationId: put-discount_actions-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discount_actions'
+      tags:
+        - Discount Actions
+        - Marketing
+      description: Updates a discount action.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/discount_actions'
+    delete:
+      summary: Delete a Discount Action
+      operationId: delete-discount_actions-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Discount Actions
+        - Marketing
+      description: Deletes a discount action.
   /discount_methods:
     get:
       summary: Discount Methods
@@ -3537,54 +3661,71 @@ paths:
           content:
             application/json:
               schema:
-                description: ''
-                type: object
-                x-examples:
-                  example-1:
-                    name: 15 off
-                    is_enabled: true
-                    is_strict: false
-                    use_once: false
-                    expires: false
-                    expires_at: ''
-                    starts_at: '7/7/2021 3:23:11 PM'
-                    remaining_uses: null
-                    notes: ''
-                    is_free_shipping_discount: false
-                properties:
-                  name:
-                    type: string
-                  is_enabled:
-                    type: boolean
-                  is_strict:
-                    type: boolean
-                  use_once:
-                    type: boolean
-                  expires:
-                    type: boolean
-                  expires_at:
-                    type: string
-                  starts_at:
-                    type: string
-                  remaining_uses:
-                    type: integer
-                  notes:
-                    type: string
-                  is_free_shipping_discount:
-                    type: boolean
-              examples:
-                Example:
-                  value:
-                    name: 15 off
-                    is_enabled: true
-                    is_strict: false
-                    use_once: false
-                    expires: false
-                    expires_at: ''
-                    starts_at: '7/7/2021 3:23:11 PM'
-                    remaining_uses: 5
-                    notes: ''
-                    is_free_shipping_discount: false
+                $ref: '#/components/schemas/discount_methods'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              x-examples:
+                example-1:
+                  name: 15 off
+                  is_enabled: true
+                  is_strict: false
+                  use_once: false
+                  expires: false
+                  expires_at: ''
+                  starts_at: '7/7/2021 3:23:11 PM'
+                  remaining_uses: null
+                  notes: ''
+                  is_free_shipping_discount: false
+              properties:
+                name:
+                  type: string
+                is_enabled:
+                  type: boolean
+                is_strict:
+                  type: boolean
+                use_once:
+                  type: boolean
+                expires:
+                  type: boolean
+                expires_at:
+                  type: string
+                starts_at:
+                  type: string
+                remaining_uses:
+                  type: integer
+                notes:
+                  type: string
+                is_free_shipping_discount:
+                  type: boolean
+                is_exclusive:
+                  type: boolean
+                uses:
+                  type: integer
+                exclude_child_items:
+                  type: boolean
+                exclude_subscription_renew:
+                  type: boolean
+            examples:
+              Example:
+                value:
+                  name: 15 off
+                  is_enabled: true
+                  is_strict: false
+                  use_once: false
+                  expires: false
+                  expires_at: ''
+                  starts_at: '7/7/2021 3:23:11 PM'
+                  remaining_uses: 5
+                  notes: ''
+                  is_free_shipping_discount: false
+                  is_exclusive: false
+                  uses: 10
+                  exclude_child_items: false
+                  exclude_subscription_renew: true
       tags:
         - Discount Methods
         - Marketing
@@ -3656,6 +3797,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/discount_rules'
       description: 'Creates a discount rule. '
       tags:
         - Discount Rules
@@ -3690,10 +3835,11 @@ paths:
                 operator_type:
                   type: string
                 target_quantity:
-                  type: number
+                  type: integer
                 target_quantity_type:
                   type: string
-                discount_action_id: {}
+                discount_action_id:
+                  type: integer
                 is_action_rule:
                   type: boolean
                 bogo_discount_buy_quantity:
@@ -3708,6 +3854,21 @@ paths:
                 - discount_method_id
                 - type
                 - target
+            examples:
+              Example:
+                value:
+                  discount_method_id: 41
+                  type: coupon code
+                  target: Hello There
+                  operator_type: equal to
+                  target_quantity: 1
+                  target_quantity_type: MinimumOf
+                  discount_action_id: null
+                  is_action_rule: false
+                  bogo_discount_buy_quantity: null
+                  bogo_discount_quantity: null
+                  bogo_max_use_per_order: null
+                  discount_from_high_to_low: false
   '/discount_rules/{id}':
     parameters:
       - schema:
@@ -3737,7 +3898,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: ''
+                $ref: '#/components/schemas/discount_rules'
       description: Updates a discount rule.
       tags:
         - Discount Rules
@@ -3771,7 +3932,7 @@ paths:
       description: |-
         Gets an array of drips. 
 
-        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing](https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
     post:
       summary: Creates a Drip
       operationId: post-drips
@@ -3785,7 +3946,7 @@ paths:
       description: |-
         Creates a drip. 
 
-        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing](https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
       tags:
         - Drips
         - Marketing
@@ -3833,7 +3994,7 @@ paths:
       description: |-
         Updates a drip. 
 
-        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing](https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
       requestBody:
         content:
           application/json:
@@ -3844,7 +4005,7 @@ paths:
       operationId: delete-drips-id
       responses:
         '200':
-          $ref: '#/components/responses/404'
+          description: OK
         '404':
           $ref: '#/components/responses/404'
       tags:
@@ -3853,7 +4014,7 @@ paths:
       description: |-
         Deletes a drip.
 
-        For more information on drips, please see our Knowedge Base: [Drip Series Emailing] (https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
+        For more information on drips, please see our Knowedge Base: [Drip Series Emailing](https://support.americommerce.com/hc/en-us/articles/201903290-Drip-Series-Email-Setup)
   /email_templates:
     get:
       summary: Get Email Templates
@@ -3932,6 +4093,26 @@ paths:
                   type: string
                 attach_invoice_pdf:
                   type: boolean
+                email_category_id:
+                  type: integer
+                admin_alert_email_override:
+                  type: string
+            examples:
+              Example:
+                values:
+                  type: Order Confirmation
+                  body: "Thank you for your order!  Please print this for your records.\r\n\r\n--------------------------------\r\nOrder #\t\t: ##ORDERID##\r\nEmail\t\t\t: ##CUSTOMEREMAIL##\r\nOrder Date\t\t: ##ORDERDATE##\r\nOrder Status\t: ##ORDERSTATUS##\r\nPayment Status\t: ##PAYMENTSTATUS##\r\nPayment Method\t: ##PAYMENTMETHOD##\r\n\r\n--------------------------------\r\nShipping Address\r\n--------------------------------\r\n##SHIPADDRESS##\r\n\r\n--------------------------------\r\nOrder Details\r\n##ORDERITEMS##\r\n--------------------------------\r\nSub-Total\t\t: ##SUBTOTAL##\r\nShipping Method\t: ##SHIPPINGMETHOD##\r\nShipping Amount\t: ##SHIPPING##\r\nEstimated Tax\t: ##TAX##\r\n##DISCOUNTSTRING## ##DISCOUNTTOTAL##\r\n--------------------------------\r\nTotal\t\t\t: ##TOTAL##\r\n--------------------------------"
+                  subject: 'Confirmation Order ###ORDERID##'
+                  from_name: '##STORENAME##'
+                  from_email: '##STOREEMAIL##'
+                  is_enabled: true
+                  admin_alert_header: "\r\nCustomer Test: ##IF[CustomerType= ]## Worked ##ELSE## didnt ##ENDIF##\r\n\r\n##IF[CustomerType=retail]## retail \r\n##IF[CustomerType=approval needed]## aprlvnad \r\n##IF[CustomerType=wholesale]## wholesale\r\n##IF[CustomerType=Drop Shipper]## drop shipper\r\n##ELSE##\r\nNew Customer\r\n###ENDIF##\r\n\r\n\r\n\r\n\r\nView this order: \r\n##ADMINORDERLINK##\r\n \r\n\r\n\r\nAVS Code: ##AVSCODE## \r\nSource: ##SOURCE## \r\nPPC Keyword: ##PPCKEYWORD## \r\nSearch Phrase: ##SEARCHPHRASE## \r\nCampaign Code: ##CAMPAIGNCODE##\r\n\r\n$$GIFTCERTIFICATEAMOUNT$$ \r\n##GIFTCERTIFICATEDELIVERYAREA##\r\n##GIFTCERTIFICATEDELIVERYAREAHTML##\r\n##GIFTCERTIFICATECODESCSV##\r\n\r\n\r\n##ADMINORDERWARNINGS##"
+                  admin_alert_subject: 'Order ID###ORDERID## - ##TOTAL##'
+                  is_admin_alert_enabled: true
+                  email_format: TEXT
+                  attach_invoice_pdf: false
+                  email_category_id: 1
+                  admin_alert_email_override: 'coolGuy89@americommerce.com'
   '/email_templates/{id}':
     parameters:
       - schema:
@@ -4037,6 +4218,16 @@ paths:
                   type: integer
                 status:
                   type: string
+            examples:
+              Example:
+                values:
+                  gift_certificate_id: 28
+                  action: SetActive
+                  amount: 0
+                  is_pre_tax_discount: false
+                  order_id: 0
+                  order_payment_id: null
+                  status: Approved
   '/gift_certificate_transactions/{id}':
     parameters:
       - schema:
@@ -4176,6 +4367,28 @@ paths:
                   type: boolean
                 order_item_id:
                   type: integer
+            examples:
+              Example:
+                values:
+                  id: 4
+                  code: GC-NCC-67-M1VGS7
+                  original_order_id: null
+                  from_customer_id: null
+                  recipient_email: ''
+                  recipient_name: ''
+                  recipient_shipping_address: ''
+                  gift_message: ''
+                  status: Active
+                  is_pre_tax_discount: false
+                  gift_certificate_type: free gc
+                  comments: ''
+                  expires_at: '1900-01-01T00:00:00-06:00'
+                  store_id: 1
+                  current_amount: 10.00
+                  original_amount: 10.00
+                  customer_id: 16
+                  expires: false
+                  order_item_id: null
   '/gift_certificates/{id}':
     parameters:
       - schema:
@@ -4390,27 +4603,27 @@ paths:
                   type: integer
                 blog_category_id:
                   type: integer
-              examples:
-                Example:
-                  value:
-                    url: /store/shop-all.aspx
-                    text: Shop
-                    sort_order: 2
-                    store_id: 14
-                    is_hidden: false
-                    named_link: null
-                    page_id: 0
-                    category_id: 0
-                    is_dynamic_menu_root: false
-                    dynamic_menu_levels: 0
-                    link_type: Category
-                    parent_link_id: 118
-                    is_hidden_in_navigation_only: false
-                    opens_in_new_window: false
-                    is_home_page: false
-                    product_id: 0
-                    blog_id: 0
-                    blog_category_id: 0
+            examples:
+              Example:
+                value:
+                  url: /store/shop-all.aspx
+                  text: Shop
+                  sort_order: 2
+                  store_id: 14
+                  is_hidden: false
+                  named_link: null
+                  page_id: 0
+                  category_id: 0
+                  is_dynamic_menu_root: false
+                  dynamic_menu_levels: 0
+                  link_type: Category
+                  parent_link_id: 118
+                  is_hidden_in_navigation_only: false
+                  opens_in_new_window: false
+                  is_home_page: false
+                  product_id: 0
+                  blog_id: 0
+                  blog_category_id: 0
       tags:
         - Links
   '/links/{id}':
@@ -4536,7 +4749,7 @@ paths:
                   is_hidden: false
                   url_based_subscribe_url: ''
                   welcome_email_template_id: 0
-  '/maling_lists/{id}':
+  '/mailing_lists/{id}':
     parameters:
       - schema:
           type: string
@@ -10117,97 +10330,6 @@ components:
           type: string
         address_type:
           type: string
-    affiliates:
-      type: object
-      properties:
-        id:
-          type: integer
-        affiliate_status:
-          type: string
-        email:
-          type: string
-        affiliate_code:
-          type: string
-        name:
-          type: string
-        urls:
-          type: string
-        origin:
-          type: string
-        description:
-          type: string
-        commission_amount:
-          type: number
-        commission_type:
-          type: string
-        pay_for_repeat_sales:
-          type: string
-        repeat_commission_amount:
-          type: number
-        repeat_commission_type:
-          type: string
-        last_statement_at:
-          type: string
-        payee_name:
-          type: string
-        payee_address_line_1:
-          type: string
-        payee_address_line_2:
-          type: string
-        payee_address_line_3:
-          type: string
-        payee_city:
-          type: string
-        payee_state:
-          type: string
-        payee_postal_code:
-          type: string
-        payee_country:
-          type: string
-        payee_phone:
-          type: string
-        payee_tax_id:
-          type: string
-        payee_tax_registration_name:
-          type: string
-        payee_tax_classification:
-          type: string
-        contact_name:
-          type: string
-        contact_address_line_1:
-          type: string
-        contact_address_line_2:
-          type: string
-        contact_address_line_3:
-          type: string
-        contact_city:
-          type: string
-        contact_state:
-          type: string
-        contact_postal_code:
-          type: string
-        contact_country:
-          type: string
-        contact_phone:
-          type: string
-        total_visitors:
-          type: integer
-        total_sales:
-          type: number
-        total_orders:
-          type: integer
-        new_customers:
-          type: integer
-        total_commissions:
-          type: number
-        conversion_rate:
-          type: number
-        store_id:
-          type: integer
-        updated_at:
-          type: string
-        created_at:
-          type: string
     attributes:
       type: object
       properties:
@@ -10839,6 +10961,29 @@ components:
           type: boolean
         is_calculated_method:
           type: boolean
+    discount_actions:
+      type: object
+      properties:
+        id:
+          type: integer
+        discount_method_id:
+          type: integer
+        is_exclusive:
+          type: boolean
+        is_strict:
+          type: boolean
+        is_active:
+          type: boolean
+        modifier_operation:
+          type: string
+        modifier_amount:
+          type: string
+        modifier_type:
+          type: string
+        modifier_target:
+          type: string
+        sort_order:
+          type: integer
     discount_methods:
       type: object
       properties:
@@ -10850,14 +10995,6 @@ components:
           type: boolean
         is_strict:
           type: boolean
-        modifier_operation:
-          type: string
-        modifier_amount:
-          type: string
-        modifier_type:
-          type: string
-        modifier_target:
-          type: string
         use_once:
           type: boolean
         expires:
@@ -10875,6 +11012,14 @@ components:
         notes:
           type: string
         is_free_shipping_discount:
+          type: boolean
+        is_exclusive:
+          type: boolean
+        uses:
+          type: integer
+        exclude_child_items:
+          type: boolean
+        exclude_subscription_renew:
           type: boolean
     discount_rules:
       type: object
@@ -10897,6 +11042,18 @@ components:
           type: integer
         target_quantity_type:
           type: string
+        discount_action_id:
+          type: integer
+        is_action_rule:
+          type: boolean
+        bogo_discount_buy_quantity:
+          type: integer
+        bogo_discount_quantity:
+          type: integer
+        bogo_max_use_per_order:
+          type: integer
+        discount_from_high_to_low:
+          type: boolean
     drips:
       type: object
       properties:
@@ -10930,6 +11087,12 @@ components:
         is_admin_alert_enabled:
           type: boolean
         email_format:
+          type: string
+        attach_invoice_pdf:
+          type: boolean
+        email_category_id:
+          type: integer
+        admin_alert_email_override:
           type: string
     gift_certificate_transactions:
       type: object
@@ -12006,6 +12169,10 @@ components:
           type: integer
         is_hidden:
           type: boolean
+        weight:
+          type: number
+        weight_type:
+          type: string
         updated_at:
           type: string
         created_at:

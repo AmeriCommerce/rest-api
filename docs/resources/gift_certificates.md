@@ -57,6 +57,7 @@ GET /api/v1/gift_certificates/{id}/transactions
 	"transactions": [
 		{
 			"id": 1,
+                        "gift_certificate_id": 1,
 			"action": "Create",
 			"amount": 100,
 			"is_pre_tax_discount": false,
@@ -68,6 +69,7 @@ GET /api/v1/gift_certificates/{id}/transactions
 		},
 		{
 			"id": 2,
+                        "gift_certificate_id": 1,
 			"action": "SetActive",
 			"amount": 0,
 			"is_pre_tax_discount": false,

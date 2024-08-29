@@ -33,3 +33,29 @@ Nested Resources
 Accessible via the `?expand=` parameter or `/api/v1/mailing_lists/{id}/{nested_resource}`.
 
 ### members
+
+```shell
+GET /api/v1/drips?expand=members
+```
+
+```shell
+GET /api/v1/drips/{id}/members
+```
+
+```json
+{
+	...
+	"members": [
+		{
+		        "id": 8,
+                        "mailing_list_id": 1,
+                        "customer_id": 14,
+                        "is_subscribed": true,
+                        "updated_at": "2024-08-15T11:27:27.043-05:00",
+                        "created_at": "2024-08-15T11:27:27.043-05:00"
+		},
+		...
+	],
+	...
+}
+```
