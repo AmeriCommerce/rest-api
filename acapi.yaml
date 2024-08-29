@@ -2211,7 +2211,7 @@ paths:
                   type: boolean
             examples:
               Example:
-                values:
+                value:
                   id: 1023
                   campaign_code: '123'
                   coupon_code: CC-3SCEUZGYA3
