@@ -73,9 +73,9 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | Name | Collections |
 | ---- | ----------- |
 | [adcodes](docs/resources/adcodes.md) | |
-| [affiliates](docs/resources/affiliates.md) | |
 | [coupon_codes](docs/resources/coupon_codes.md) | |
-| [discount_methods](docs/resources/discount_methods.md) | rules |
+| [discount_actions](docs/resources/discount_actions.md) | rules |
+| [discount_methods](docs/resources/discount_methods.md) | rules, actions |
 | [discount_rules](docs/resources/discount_rules.md) | |
 | [drips](docs/resources/drips.md) | members, events |
 | [email_templates](docs/resources/email_templates.md) | |

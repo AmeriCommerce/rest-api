@@ -720,17 +720,6 @@
                   },
                   {
                      "type":"group",
-                     "title":"Affiliates",
-                     "items":[
-                        {
-                           "type":"item",
-                           "title":"Get Affiliates",
-                           "uri":"acapi.yaml/paths/~1affiliates/get"
-                        }
-                     ]
-                  },
-                  {
-                     "type":"group",
                      "title":"Coupon Codes",
                      "items":[
                         {
@@ -752,6 +741,32 @@
                            "type":"item",
                            "title":"Delete a Coupon Code",
                            "uri":"acapi.yaml/paths/~1coupon_codes~1{id}/delete"
+                        }
+                     ]
+                  },
+                  {
+                     "type": "group",
+                     "title": "Discount Actions",
+                     "items": [
+                        {
+                           "type": "item",
+                           "title": "Get Discount Actions",
+                           "uri": "acapi.yaml/paths/~1discount_actions/get"
+                        },
+                        {
+                           "type": "item",
+                           "title": "Create a Discount Action",
+                           "uri": "acapi.yaml/paths/~1discount_actions/post"
+                        },
+                        {
+                           "type": "item",
+                           "title": "Update a Discount Action",
+                           "uri": "acapi.yaml/paths/~1discount_actions~1{id}/put"
+                        },
+                        {
+                           "type": "item",
+                           "title": "Delete a Discount Action",
+                           "uri": "acapi.yaml/paths/~1discount_actions~1{id}/delete"
                         }
                      ]
                   },

@@ -23,7 +23,10 @@ GET /api/v1/email_templates
 	"admin_alert_header": "",
 	"admin_alert_subject": "",
 	"is_admin_alert_enabled": false,
-	"email_format": "TEXT"
+	"email_format": "TEXT",
+        "attach_invoice_pdf": false,
+        "email_category_id": 1,
+        "admin_alert_email_override": "coolGuy89@americommerce.com"
 }
 ```
 
@@ -45,7 +48,8 @@ POST /api/v1/email_templates/{template_id}/send
 	"merge_codes": {
 		"##TESTMERGE##" : "what's up",
 		"##ANOTHERMERGE##" : "10"
-	}
+	},
+        "send_duplicate": false
 }
 ```
 
