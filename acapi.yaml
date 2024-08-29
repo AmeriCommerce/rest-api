@@ -210,6 +210,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/adcodes'
       requestBody:
         content:
           application/json:
@@ -2205,19 +2209,19 @@ paths:
                   type: string
                 is_hidden:
                   type: boolean
-              examples:
-                Example:
-                  values:
-                    id: 1023
-                    campaign_code: '123'
-                    coupon_code: CC-3SCEUZGYA3
-                    is_active: false
-                    is_expired: false
-                    expires_at: null
-                    max_uses: 0
-                    usage_count: 0
-                    notes: ''
-                    is_hidden: false
+            examples:
+              Example:
+                value:
+                  id: 1023
+                  campaign_code: '123'
+                  coupon_code: CC-3SCEUZGYA3
+                  is_active: false
+                  is_expired: false
+                  expires_at: null
+                  max_uses: 0
+                  usage_count: 0
+                  notes: ''
+                  is_hidden: false
       tags:
         - Coupon Codes
       description: Update a coupon code by ID.
@@ -3532,7 +3536,6 @@ paths:
                     type: integer
                   discount_actions:
                     type:
-                      - string
                       - array
                     items:
                       $ref: '#/components/schemas/discount_actions'
@@ -3646,7 +3649,6 @@ paths:
                     type: integer
                   discount_methods:
                     type:
-                      - string
                       - array
                     items:
                       $ref: '#/components/schemas/discount_methods'
@@ -4099,7 +4101,7 @@ paths:
                   type: string
             examples:
               Example:
-                values:
+                value:
                   type: Order Confirmation
                   body: "Thank you for your order!  Please print this for your records.\r\n\r\n--------------------------------\r\nOrder #\t\t: ##ORDERID##\r\nEmail\t\t\t: ##CUSTOMEREMAIL##\r\nOrder Date\t\t: ##ORDERDATE##\r\nOrder Status\t: ##ORDERSTATUS##\r\nPayment Status\t: ##PAYMENTSTATUS##\r\nPayment Method\t: ##PAYMENTMETHOD##\r\n\r\n--------------------------------\r\nShipping Address\r\n--------------------------------\r\n##SHIPADDRESS##\r\n\r\n--------------------------------\r\nOrder Details\r\n##ORDERITEMS##\r\n--------------------------------\r\nSub-Total\t\t: ##SUBTOTAL##\r\nShipping Method\t: ##SHIPPINGMETHOD##\r\nShipping Amount\t: ##SHIPPING##\r\nEstimated Tax\t: ##TAX##\r\n##DISCOUNTSTRING## ##DISCOUNTTOTAL##\r\n--------------------------------\r\nTotal\t\t\t: ##TOTAL##\r\n--------------------------------"
                   subject: 'Confirmation Order ###ORDERID##'
@@ -4220,7 +4222,7 @@ paths:
                   type: string
             examples:
               Example:
-                values:
+                value:
                   gift_certificate_id: 28
                   action: SetActive
                   amount: 0
@@ -4369,7 +4371,7 @@ paths:
                   type: integer
             examples:
               Example:
-                values:
+                value:
                   id: 4
                   code: GC-NCC-67-M1VGS7
                   original_order_id: null
