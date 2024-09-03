@@ -28,6 +28,6 @@ Sample Model
 	"region_type": "Country",
 	"postal_code_country": null,
 	"is_shipping_region": true,
-	"is_tax_region": true
+	"is_tax_region": false
 }
 ```

@@ -291,6 +291,32 @@
                      ]
                   },
                   {
+                     "type": "group",
+                     "title": "Product Inactive In Store",
+                     "items": [
+                        {
+                            "type": "item",
+                            "title": "Get Product Inactive In Store",
+                            "uri": "acapi.yaml/paths/~1product_inactive_in_store/get"
+                        },
+                        {
+                            "type": "item",
+                            "title": " Create a Product Inactive In Store",
+                            "uri": "acapi.yaml/paths/~1product_inactive_in_store/post"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Update a Product Inactive In Store",
+                            "uri": "acapi.yaml/paths/~1product_inactive_in_store~1{id}/put"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Delete a Product Inactive In Store",
+                            "uri": "acapi.yaml/paths/~1product_inactive_in_store~1{id}/delete"
+                        }
+                     ]
+                  },
+                  {
                      "type":"group",
                      "title":"Product Lists",
                      "items":[
@@ -1472,6 +1498,32 @@
                   },
                   {
                      "type":"group",
+                     "title":"External Image Whitelist",
+                     "items": [
+                        {
+                            "type": "item",
+                            "title": "Get External Image Whitelist",
+                            "uri": "acapi.yaml/paths/~1external_image_whitelist/get"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Create an External Image Whitelist Item",
+                            "uri": "acapi.yaml/paths/~1external_image_whitelist/post"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Update an External Image Whitelist Item",
+                            "uri": "acapi.yaml/paths/~1external_image_whitelist~1{id}/put"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Delete an External Image Whitelist Item",
+                            "uri": "acapi.yaml/paths/~1external_image_whitelist~1{id}/delete"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
                      "title":"Microstores",
                      "items":[
                         {
@@ -1561,6 +1613,48 @@
                            "type":"item",
                            "title":"Update a Shipping Provider",
                            "uri":"acapi.yaml/paths/~1shipping_providers~1{id}/put"
+                        }
+                     ]
+                  },
+                  {
+                     "type": "group",
+                     "title": "Shipping Provider Services",
+                     "items": [
+                        {
+                            "type": "item",
+                            "title": "Get Shipping Provider Services",
+                            "uri": "acapi.yaml/paths/~1shipping_provider_services/get"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Update a Shipping Provider Service",
+                            "uri": "acapi.yaml/paths/~1shipping_provider_services~1{id}/put"
+                        }
+                     ]
+                  },
+                  {
+                     "type": "group",
+                     "title": "Store Locations",
+                     "items": [
+                        {
+                            "type": "item",
+                            "title": "Get Store Locations",
+                            "uri": "acapi.yaml/paths/~1store_locations/get"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Create a Store Location",
+                            "uri": "acapi.yaml/paths/~1store_locations/post"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Update a Store Location",
+                            "uri": "acapi.yaml/paths/~1store_locations~1{id}/put"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Delete a Store Location",
+                            "uri": "acapi.yaml/paths/~1store_locations~1{id}/delete"
                         }
                      ]
                   },

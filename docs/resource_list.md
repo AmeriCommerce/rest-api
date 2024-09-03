@@ -46,6 +46,7 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [price_calculator_rules](docs/resources/price_calculator_rules.md) | modifiers |
 | [price_calculator_rule_modifiers](docs/resources/price_calculator_rule_modifiers.md) | |
 | [products](docs/resources/products.md) | variants, personalizations, related, categories, pricing, attributes, variant\_inventory, pictures, child\_products, shipping\_rate\_adjustments, reviews, custom\_fields |
+| [product_inactive_in_store](docs/resources/product_inactive_in_store.md) | |
 | [product_lists](docs/resources/product_lists.md) | items |
 | [product_pictures](docs/resources/product_pictures.md) | |
 | [product_pricing](docs/resources/product_pricing.md) | |
@@ -94,10 +95,14 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 
 | Name | Collections |
 | ---- | ----------- |
+| [blacklisted_ips](docs/resources/blacklisted_ips.md)	| |
 | [custom_shipping_methods](docs/resources/custom_shipping_methods.md)	| rules |
+| [external_image_whitelist](docs/resources/external_image_whitelist.md)	| |
 | [payment_methods](docs/resources/payment_methods.md)	| fields, stores |
 | [regions](docs/resources/regions.md)	| |
 | [shipping_providers](docs/resources/shipping_providers.md)	| services |
+| [shipping_provider_services](docs/resources/shipping_provider_services.md)	| |
+| [store_locations](docs/resources/store_locations.md)	| |
 | [tax_rates](docs/resources/tax_rates.md)	| |
 | [url_redirects](docs/resources/url_redirects.md)	| |
 | [warehouses](docs/resources/warehouses.md)	| |
