@@ -31,3 +31,33 @@ Nested Resources
 Accessible via the `?expand=` parameter or `/api/v1/shipping_providers/{id}/{nested_resource}`.
 
 ### services
+
+```shell
+GET /api/v1/shipping_providers?expand=services
+```
+
+```shell
+GET /api/v1/shipping_providers/{id}/services
+```
+
+```json
+{
+	...
+	"services": [
+		{
+			"id": 1,
+                        "is_enabled": true,
+                        "shipping_provider_id": 1,
+                        "identifier": "UPS Ground",
+                        "name": "DHL Ground",
+                        "shipping_provider_code": "",
+                        "updated_at": null,
+                        "created_at": null,
+                        "allow_apo": false,
+                        "allow_po_box": false
+		},
+		...
+	],
+	...
+}
+```

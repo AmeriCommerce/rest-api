@@ -60,6 +60,7 @@ Applies to:
 * [categories](docs/resources/categories.md)
 * [manufacturers](docs/resources/manufacturers.md)
 * [products](docs/resources/products.md)
+* [product_inactive_in_store](docs/resources/product_inactive_in_store.md)
 * [product_lists](docs/resources/product_lists.md)
 * [product_pictures](docs/resources/product_pictures.md)
 * [product_statuses](docs/resources/product_statuses.md)
@@ -130,10 +131,14 @@ Permissions required: `Shipping`, `Warehouses`, `TaxRates`, `GlobalRegions`, `Pa
 
 Applies to:
 
+* [blacklisted_ips](docs/resources/blacklisted_ips.md)
 * [custom_shipping_methods](docs/resources/custom_shipping_methods.md)
+* [external_image_whitelist](docs/resources/external_image_whitelist.md)
 * [payment_methods](docs/resources/payment_methods.md)
 * [regions](docs/resources/regions.md)
 * [shipping_providers](docs/resources/shipping_providers.md)
+* [shipping_provider_services](docs/resources/shipping_provider_services.md)
+* [store_locations](docs/resources/store_locations.md)
 * [tax_rates](docs/resources/tax_rates.md)
 * [url_redirects](docs/resources/url_redirects.md)
 * [warehouses](docs/resources/warehouses.md)
@@ -144,6 +149,7 @@ Permissions required: `FileBrowser`, `Sessions`, `StoreSettings`
 
 Applies to:
 
+* [microstores](docs/resources/microstores.md)
 * [stores](docs/resources/stores.md)
 * [sessions](docs/resources/sessions.md)
 * `POST /api/v1/upload`

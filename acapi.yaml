@@ -24,9 +24,11 @@ tags:
   - name: Discount Rules
   - name: Drips
   - name: Email Templates
+  - name: External Image Whitelist
   - name: Gift Certificate Transactions
   - name: Gift Certificates
   - name: Inventory
+  - name: IP Blacklist
   - name: Links
   - name: Mailing Lists
   - name: Manufacturers
@@ -44,6 +46,7 @@ tags:
   - name: Price Calculator Rule Modifiers
   - name: Price Calculator Rules
   - name: Price Calculators
+  - name: Product Inactive In Store
   - name: Product Lists
   - name: Product Pictures
   - name: Product Pricing
@@ -56,7 +59,9 @@ tags:
   - name: Regions
   - name: Sessions
   - name: Shipping Providers
+  - name: Shipping Provider Services
   - name: Shipping Rate Adjustments
+  - name: Store Locations
   - name: Stores
   - name: Subscriptions
   - name: Tax Rates
@@ -781,6 +786,93 @@ paths:
       tags:
         - Attributes
       description: Delete an attribute by ID.
+  /blacklisted_ips:
+    get:
+      summary: Get IP Blacklist
+      tags:
+        - IP Blacklist
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  blacklisted_ips:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/blacklisted_ips'
+      operationId: get-blacklisted_ips
+      description: Gets an array of IP blacklist items.
+    post:
+      summary: Create an IP Blacklist Item
+      operationId: post-blacklisted_ips
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blacklisted_ips'
+      tags:
+        - IP Blacklist
+      description: Creates an IP blacklist item.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                ip_address:
+                  type: string
+                description:
+                  type: string
+            examples:
+              Example:
+                value:
+                  ip_address: '12.34.56.78'
+                  description: ''
+  '/blacklisted_ips/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `blacklisted_ips`
+    put:
+      summary: Update an IP Blacklist Item
+      operationId: put-blacklisted_ips-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/blacklisted_ips'
+      tags:
+        - IP Blacklist
+      description: Updates an IP blacklist item.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/blacklisted_ips'
+    delete:
+      summary: Delete an IP Blacklist Item
+      operationId: delete-blacklisted_ips-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        -  IP Blacklist
+      description: Deletes an IP blacklist item.
   /blog_categories:
     get:
       summary: Get Blog Categories
@@ -2805,6 +2897,18 @@ paths:
                   type: boolean
               required:
                 - name
+            examples:
+              Example:
+                value:
+                  name: Free Shipping
+                  is_enabled: true
+                  is_default: false
+                  markup_type: ''
+                  markup_amount: ''
+                  description: ''
+                  use_base_rate: false
+                  is_calculated_method: false
+                  admin_only: false
         description: ''
   '/custom_shipping_methods/{id}':
     parameters:
@@ -4154,6 +4258,90 @@ paths:
         - Email Templates
         - Marketing
       description: Deletes an email template.
+  /external_image_whitelist:
+    get:
+      summary: Get External Image Whitelist
+      tags:
+        - External Image Whitelist
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  external_image_whitelist:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/external_image_whitelist'
+      operationId: get-external_image_whitelist
+      description: Gets an array of external image whitelist items.
+    post:
+      summary: Create an External Image Whitelist Item
+      operationId: post-external_image_whitelist
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/external_image_whitelist'
+      tags:
+        - External Image Whitelist
+      description: Creates an external image whitelist item.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                url:
+                  type: string
+            examples:
+              Example:
+                value:
+                  url: ''
+  '/external_image_whitelist/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `external_image_whitelist`
+    put:
+      summary: Update an External Image Whitelist Item
+      operationId: put-external_image_whitelist-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/external_image_whitelist'
+      tags:
+        - External Image Whitelist
+      description: Updates an external image whitelist item.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/external_image_whitelist'
+    delete:
+      summary: Delete an External Image Whitelist Item
+      operationId: delete-external_image_whitelist-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        -  External Image Whitelist
+      description: Deletes an external image whitelist item.
   /gift_certificate_transactions:
     get:
       summary: Get Gift Certificate Transactions
@@ -5001,6 +5189,10 @@ paths:
                   type: boolean
                 cookie_expiration:
                   type: number
+                activation_date:
+                  type: string
+                expiration_date:
+                  type: string
                 logo_image:
                   type: string
                 path:
@@ -5021,6 +5213,8 @@ paths:
                   is_micro_store: true
                   set_cookie: true
                   cookie_expiration: 0
+                  activation_date: null
+                  expiration_date: null
                   logo_image: ''
                   path: /TheMikeRoweStore
   '/microstores/{id}':
@@ -6485,6 +6679,20 @@ paths:
                   type: string
                 name:
                   type: string
+            examples:
+              Example:
+                value:
+                  payment_type: Custom
+                  cost_modifier: 0
+                  cost_modifier_type: Percent
+                  sort_order: 0
+                  is_hidden: false
+                  description: ''
+                  confirmation_message: ''
+                  declined_message: ''
+                  is_gateway: false
+                  gateway_name: ''
+                  name: IOU
   '/payment_methods/{id}':
     parameters:
       - schema:
@@ -6527,6 +6735,8 @@ paths:
                   gateway_name: ''
                   name: IOU
               properties:
+                id: 
+                  type: integer
                 payment_type:
                   type: string
                 cost_modifier:
@@ -6552,6 +6762,7 @@ paths:
             examples:
               Example:
                 value:
+                  id: 1
                   payment_type: Custom
                   cost_modifier: 0
                   cost_modifier_type: Percent
@@ -6565,7 +6776,7 @@ paths:
                   name: IOU
         description: ''
     delete:
-      summary: ''
+      summary: Delete a Payment Method
       operationId: delete-payment_methods-id
       responses:
         '200':
@@ -6793,6 +7004,100 @@ paths:
       tags:
         - Price Calculators
       description: Deletes a price calculator.
+  /product_inactive_in_store:
+    get:
+      summary: Get Products Inactive in Store
+      tags:
+        - Product Inactive In Store
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  product_inactive_in_store:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/product_inactive_in_store'
+      operationId: get-product_inactive_in_store
+      description: Gets an array of products inactive in store.
+    post:
+      summary: Create a Product Inactive in Store
+      operationId: post-product_inactive_in_store
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_inactive_in_store'
+      tags:
+        - Product Inactive In Store
+      description: Marks a product inactive in store.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                item_id:
+                  type: integer
+                store_id:
+                  type: integer
+                customer_type_id:
+                  type: integer
+              required:
+                - item_id
+                - store_id
+            examples:
+              Example:
+                value:
+                  item_id: 12
+                  store_id: 1
+                  customer_type_id: 0
+        description: ''
+  '/product_inactive_in_store/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `product_inactive_in_store`
+    put:
+      summary: Update a Product Inactive in Store
+      operationId: put-product_inactive_in_store-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/product_inactive_in_store'
+      tags:
+        - Product Inactive In Store
+      description: Updates a product inactive in store.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/product_inactive_in_store'
+    delete:
+      summary: Delete a Product Inactive in Store
+      operationId: delete-product_inactive_in_store-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        - Product Inactive In Store
+      description: Delete a product inactive in store.
   /product_lists:
     get:
       summary: Get Product Lists
@@ -8567,6 +8872,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/regions'
       tags:
         - Regions
       description: Creates a region.
@@ -8578,7 +8887,6 @@ paths:
               type: object
               x-examples:
                 example-1:
-                  id: 14
                   postal_codes: []
                   name: OCONUS
                   states:
@@ -8631,8 +8939,7 @@ paths:
                   postal_codes: []
                   name: OCONUS
                   states:
-                    - type: string
-                    - type: string
+                    Alaska, Hawaii
                   countries: []
                   markup_type: Percent
                   markup_amount: 5
@@ -8704,7 +9011,7 @@ paths:
       description: Gets an array of sessions.
   /shipping_providers:
     get:
-      summary: Your GET endpoint
+      summary: Get Shipping Providers
       responses:
         '200':
           description: OK
@@ -8742,6 +9049,46 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/shipping_providers'
+  /shipping_provider_services:
+    get:
+      summary: Get Shipping Provider Services
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipping_provider_services'
+      operationId: get-shipping_provider_services
+      tags:
+        - Shipping Provider Services
+      description: Gets an array of shipping provider services.
+  '/shipping_provider_services/{id}':
+    parameters:
+      - schema:
+          type: string
+        name: id
+        in: path
+        required: true
+        description: The ID of the `shipping_provider_services`
+    put:
+      summary: Update a Shipping Provider Service
+      operationId: put-shipping_provider_services-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/shipping_provider_services'
+      tags:
+        - Shipping Provider Services
+      description: Updates a shipping provider service.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/shipping_provider_services'
   /shipping_rate_adjustments:
     get:
       summary: Get Shipping Rate Adjustments
@@ -8862,6 +9209,129 @@ paths:
       tags:
         - Shipping Rate Adjustments
       description: Deletes a shipping rate adjustment.
+  /store_locations:
+    get:
+      summary: Get Store Locations
+      tags:
+        - Store Locations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  total_count:
+                    type: integer
+                  store_locations:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/store_locations'
+      operationId: get-store_locations
+      description: Gets an array of store locations.
+    post:
+      summary: Create a Store Location
+      operationId: post-store_locations
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/store_locations'
+      tags:
+        - Store Locations
+      description: Creates a store location.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              description: ''
+              type: object
+              properties:
+                store_id:
+                  type: integer
+                name:
+                  type: string
+                city:
+                  type: string
+                state_id:
+                  type: integer
+                non_us_state:
+                  type: string
+                country_id:
+                  type: integer
+                phone:
+                  type: string
+                address_1:
+                  type: string
+                address_2:
+                  type: string
+                zip_code:
+                  type: string
+                latitude: 
+                  type: number
+                longitude:
+                  type: number
+                notes:
+                  type: string
+                sort_order:
+                  type: integer
+            examples:
+              Example:
+                value:
+                  store_id: 1
+                  name: Another Store
+                  city: Houston
+                  state_id: 43
+                  non_us_state: ''
+                  country_id: 1
+                  phone: 123-456-7890
+                  address_1: 123 Test
+                  address_2: ''
+                  zip_code: '77068'
+                  latitude: null
+                  longitude: null
+                  notes: 'Hours: 9 AM to 5 PM'
+                  sort_order: 0
+  '/store_locations/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `store_locations`
+    put:
+      summary: Update a Store Location
+      operationId: put-store_locations-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/store_locations'
+      tags:
+        - Store Locations
+      description: Updates a store location.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/store_locations'
+    delete:
+      summary: Delete a Store Location
+      operationId: delete-store_locations-id
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
+      tags:
+        -  Store Locations
+      description: Deletes a store location.
   /stores:
     get:
       summary: Stores
@@ -9150,6 +9620,43 @@ paths:
                   store_id: 0
       tags:
         - Tax Rates
+  '/tax_rates/{id}':
+    parameters:
+      - schema:
+          type: integer
+        name: id
+        in: path
+        required: true
+        description: The ID of the `tax_rates`
+    put:
+      summary: Update a Tax Rate
+      operationId: put-tax_rates-id
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/tax_rates'
+      tags:
+        - Tax Rates
+      description: Updates a tax rate.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/tax_rates'
+    delete:
+      summary: Delete a Tax Rate
+      operationId: delete-tax_rates-id
+      description: Deletes a tax rate.
+      tags:
+        - Tax Rates
+      responses:
+        '200':
+          description: OK
+        '404':
+          $ref: '#/components/responses/404'
   /themes/import:
     post:
       summary: Import Theme
@@ -10378,6 +10885,21 @@ components:
           type: string
         created_at:
           type: string
+    blacklisted_ips:
+      type: object
+      properties:
+        id:
+          type: integer
+        ip_address:
+          type: string
+        hit_count:
+          type: integer
+        last_hit_at:
+          type: string
+        user_agent:
+          type: string
+        description:
+          type: string
     blogs:
       type: object
       properties:
@@ -10963,6 +11485,8 @@ components:
           type: boolean
         is_calculated_method:
           type: boolean
+        admin_only:
+          type: boolean
     discount_actions:
       type: object
       properties:
@@ -11095,6 +11619,19 @@ components:
         email_category_id:
           type: integer
         admin_alert_email_override:
+          type: string
+    external_image_whitelist:
+      type: object
+      properties:
+        external_image_whitelist_sites_id:
+          type: integer
+        url:
+          type: string
+        created_at:
+          type: string
+        entered_by:
+          type: string
+        updated_at:
           type: string
     gift_certificate_transactions:
       type: object
@@ -12116,6 +12653,21 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/product_nested_variant'
+    product_inactive_in_store:
+      type: object
+      properties:
+        id:
+          type: integer
+        item_id:
+          type: integer
+        store_id:
+          type: integer
+        updated_at:
+          type: string
+        created_at:
+          type: string
+        customer_type_id:
+          type: integer
     product_lists:
       type: object
       properties:
@@ -12622,6 +13174,29 @@ components:
           type: integer
         additional_weight_per_package:
           type: integer
+    shipping_provider_services:
+      type: object
+      properties:
+        id:
+          type: integer
+        is_enabled:
+          type: boolean
+        shipping_provider_id:
+          type: integer
+        identifier:
+          type: string
+        name:
+          type: string
+        shipping_provider_code:
+          type: string
+        updated_at:
+          type: string
+        created_at:
+          type: string
+        allow_apo:
+          type: boolean
+        allow_po_box:
+          type: boolean
     shipping_rate_adjustments:
       type: object
       properties:
@@ -13219,6 +13794,39 @@ components:
               type: string
             address_id:
               type: integer
+    store_locations:
+      type: object
+      properties:
+        id:
+          type: integer
+        store_id:
+          type: integer
+        name:
+          type: string
+        city:
+          type: string
+        state_id:
+          type: integer
+        non_us_state:
+          type: string
+        country_id:
+          type: integer
+        phone:
+          type: string
+        address_1:
+          type: string
+        address_2:
+          type: string
+        zip_code:
+          type: string
+        latitude: 
+          type: number
+        longitude:
+          type: number
+        notes:
+          type: string
+        sort_order:
+          type: integer
     stores:
       type: object
       title: ''
