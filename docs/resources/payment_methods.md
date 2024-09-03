@@ -52,7 +52,7 @@ GET /api/v1/payment_methods/{id}/fields
 	"fields": [
 		{
 			"id": 17,
-            "payment_method_id": 1,
+                        "payment_method_id": 1,
 			"name": "Purchase order number",
 			"length": 0,
 			"sort_order": 0,
@@ -66,7 +66,7 @@ GET /api/v1/payment_methods/{id}/fields
 		},
 		{
 			"id": 18,
-            "payment_method_id": 1,
+                        "payment_method_id": 1,
 			"name": "Check Number",
 			"length": 12,
 			"sort_order": 0,
@@ -100,7 +100,7 @@ GET /api/v1/payment_methods/{id}/stores
 		{
 			"id": 3,
 			"store_id": 1,
-            "payment_method_id": 1,
+                        "payment_method_id": 1,
 			"is_enabled": true,
 			"updated_at": "2014-05-06T12:24:32.753-05:00",
 			"created_at": "2014-05-06T12:24:32.753-05:00"
@@ -108,7 +108,7 @@ GET /api/v1/payment_methods/{id}/stores
 		{
 			"id": 4,
 			"store_id": 3,
-            "payment_method_id": 1,
+                        "payment_method_id": 1,
 			"is_enabled": true,
 			"updated_at": "2014-05-06T12:24:32.753-05:00",
 			"created_at": "2014-05-06T12:24:32.753-05:00"
