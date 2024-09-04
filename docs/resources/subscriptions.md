@@ -35,6 +35,29 @@ Sample Model
 }
 ```
 
+
+Pause or Resume Subscription items
+--------------------
+
+To pause or resume subscription item for a subscription. ("id" in the payload is the cart item id)
+
+###### Example Request
+
+```Shell
+PUT /api/v1/subscriptions/{subscription_id}/pause
+```
+
+```json
+{
+	"items":[
+	    {
+                "id": 123,
+		"subscription_paused": true
+	    }
+	]
+}
+```
+
 Nested Resources
 ----------------
 
@@ -46,8 +69,6 @@ GET /api/v1/subscriptions?includelookups=1
 ```
 ```json
 {
-	...
-	{
     "total_count": 1,
     "subscriptions": [
         {
@@ -121,11 +142,9 @@ GET /api/v1/subscriptions?includelookups=1
                         "updated_at": "2021-08-04T15:20:39.98-05:00",
                         "created_at": "2021-08-04T15:20:39.98-05:00",
                         "cart_id": 3844,
-                        "is_subscription_product": false,
-                        "vendor_store_id": null,
-                        "fitment": "",
+                        "is_subscription_product": true,
                         "configuration": "",
-                        subscription_paused: false,
+                        "subscription_paused": false,
                         "variants": [
                             {
                                 "id": 48,
@@ -135,7 +154,9 @@ GET /api/v1/subscriptions?includelookups=1
                         ],
                         "personalizations": null
                     }
-                ]
+                ],
+                ...
+                "lookup_key": null
             },
             "customer": {
                 "id": 105,
@@ -169,37 +190,49 @@ GET /api/v1/subscriptions?includelookups=1
                 "sales_person_user_id": null,
                 "store_payment_methods_enabled": [],
                 "tax_rate": null,
+                "lock_default_address": false,
                 "reward_tier_id": null,
-                "sub": ""
+                "payment_net_term": 0,
+                "credit_limit": 0.0000,
+                "is_inactive": false,
+                "use_shared_credit_limit": false,
+                "override_shared_credit_limit": false,
+                "default_payment_type_name": "Credit Card"
+            },
+            "shipping_address": {
+                "id": 1382,
+                "customer_id": 105,
+                "company": "",
+                "address_line_1": "3334 test",
+                "address_line_2": "",
+                "city": "Test",
+                "state": "Texas",
+                "country": "United States",
+                "postal_code": "77713",
+                "phone": "",
+                "alternate_phone": "",
+                "fax": "",
+                "comments": "",
+                "updated_at": "2020-10-25T12:17:13.03-05:00",
+                "created_at": "2020-10-25T12:17:13.03-05:00",
+                "first_name": "Ac",
+                "last_name": "Test",
+                "address_type": "Default",
+                "state_code": "TX",
+                "country_code": "US"
+            },
+            "customer_payment_method": {
+                "id": 129,
+                "payment_method_id": 229,
+                "customer_id": 105,
+                "payment_type": "CreditCard",
+                "is_default": false,
+                "card_id": 45,
+                "updated_at": "2020-10-25T12:17:12.993-05:00",
+                "created_at": "2020-10-25T12:17:12.993-05:00",
+                "address_id": null
             }
         }
     ]
-}
-		...
-	],
-	...
-}
-```
-
-Pause or Resume Subscription items
---------------------
-
-To pause or resume subscription item for a subscription. ("id" in the payload is the cart item id)
-
-```Shell
-PUT /api/v1/subscriptions/{subscription_id}/pause
-```
-
-Sample Model
-------------
-
-```json
-{
-	"items":[
-		{
-			"id": 123,
-			"subscription_paused": true
-		}
-	]
 }
 ```

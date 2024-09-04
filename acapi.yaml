@@ -1712,7 +1712,6 @@ paths:
                       - integer
                   cart_items:
                     type:
-                      - string
                       - array
                     items:
                       $ref: '#/components/schemas/cart_items'
@@ -1777,7 +1776,7 @@ paths:
                 item_number:
                   type: string
                 quantity:
-                  type: number
+                  type: integer
                 price:
                   type: number
                 cost:
@@ -1791,15 +1790,19 @@ paths:
                 item_name:
                   type: string
                 warehouse_id:
-                  type: number
-                parent_product_id: {}
-                parent_cart_item_id: {}
+                  type: integer
+                parent_product_id:
+                  type: integer
+                parent_cart_item_id:
+                  type: integer
                 cart_id:
                   type: integer
                 is_subscription_product:
                   type: boolean
-                vendor_store_id:
-                  type: integer
+                configuration:
+                  type: string
+                subscription_paused:
+                  type: boolean
                 variants:
                   type: array
                   uniqueItems: false
@@ -1845,7 +1848,8 @@ paths:
                   created_at: '2021-10-05T12:08:41.37-05:00'
                   cart_id: 3946
                   is_subscription_product: false
-                  vendor_store_id: 1
+                  configuration: ''
+                  subscription_paused: false
                   variants:
                     - id: 5
                       description: 'COLOR: White'
@@ -1901,7 +1905,8 @@ paths:
                   created_at: '2021-10-05T12:08:41.37-05:00'
                   cart_id: 3946
                   is_subscription_product: false
-                  vendor_store_id: null
+                  configuration: ''
+                  subscription_paused: false
                   variants:
                     - id: 5
                       description: 'COLOR: White'
@@ -1916,7 +1921,7 @@ paths:
       tags:
         - Cart Items
     delete:
-      summary: ''
+      summary: Delete a Cart Item
       operationId: delete-cart_items-id
       responses:
         '200':
@@ -1947,43 +1952,6 @@ paths:
                       $ref: '#/components/schemas/carts'
       operationId: get-carts
       description: Gets an array of carts.
-  '/carts/{id}':
-    parameters:
-      - schema:
-          type: integer
-        name: id
-        in: path
-        required: true
-        description: The ID of the `cart`
-    put:
-      summary: Update a Cart
-      operationId: put-carts-id
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/carts'
-      description: Updates a cart.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/carts'
-      tags:
-        - Carts
-    delete:
-      summary: Delete a Cart
-      operationId: delete-carts-id
-      responses:
-        '200':
-          description: OK
-        '404':
-          $ref: '#/components/responses/404'
-      description: Deletes a cart.
-      tags:
-        - Carts
   /categories:
     get:
       summary: Get Categories
@@ -2355,6 +2323,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/credit_cards'
       description: Adds a credit card.
       requestBody:
         content:
@@ -5450,6 +5422,10 @@ paths:
                   type: string
                 address_type:
                   type: string
+                state_code:
+                  type: string
+                country_code:
+                  type: string
               required:
                 - customer_id
             examples:
@@ -5470,6 +5446,8 @@ paths:
                   first_name: Test
                   last_name: Person
                   address_type: Default
+                  state_code: TX
+                  country_code: US
   '/order_addresses/{id}':
     parameters:
       - schema:
@@ -5649,14 +5627,34 @@ paths:
                   type: boolean
                 description:
                   type: string
-                vendor_store_id: {}
+                tax:
+                  type: number
+                configuration:
+                  type: string
+                status:
+                  type: string
+                shipping_classification_code:
+                  type: string
                 variants:
                   type: array
                   items:
-                    $ref: '#/components/schemas/product_variants'
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      description:
+                        type: string
+                      variant_group_id:
+                        type: integer
                 personalizations:
                   type: array
-                  items: {}
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      answer:
+                        type: string
             examples:
               Example:
                 value:
@@ -5692,7 +5690,10 @@ paths:
                   is_subscription_product: false
                   is_non_shipping_item: false
                   description: ''
-                  vendor_store_id: null
+                  tax: 18.20
+                  configuration: ''
+                  status: ''
+                  shipping_classification_code: ''
                   variants: []
                   personalizations: []
   '/order_items/{id}':
@@ -5999,7 +6000,8 @@ paths:
                   description: 'The id of the desired shipping method. This can be found by making a GET request to shipping_methods. This will be filled automatically if a valid shippping_method is provided. '
                 number_of_packages:
                   type: integer
-                total_weight: {}
+                total_weight:
+                  type: number
                 provider_base_shipping_cost:
                   type: string
                 provider_insurance_cost:
@@ -6076,6 +6078,8 @@ paths:
       responses:
         '200':
           description: OK
+        '404':
+          $ref: '#/components/responses/404'
       tags:
         - Order Shipments
       description: Deletes an order shipment.
@@ -6106,6 +6110,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/order_statuses'
       tags:
         - Order Statuses
       description: Creates an order status.
@@ -6148,6 +6156,8 @@ paths:
                   type: boolean
                 is_quote_status:
                   type: boolean
+                is_partially_shipped:
+                  type: boolean
             examples:
               Example:
                 value:
@@ -6161,6 +6171,7 @@ paths:
                   is_fully_refunded: false
                   is_partially_refunded: false
                   is_quote_status: false
+                  is_partially_shipped: false
   '/order_statuses/{id}':
     parameters:
       - schema:
@@ -6261,7 +6272,6 @@ paths:
                   search_phrase: ''
                   is_ppc: false
                   ppc_keyword: ''
-                  affiliate_id: null
                   store_id: 19
                   session_id: 135414
                   handling_total: 0
@@ -6320,10 +6330,6 @@ paths:
                   type: number
                 selected_shipping_method:
                   type: string
-                ip_address:
-                  type: string
-                exported_to_accounting_system:
-                  type: number
                 referrer:
                   type: string
                 order_shipping_address_id:
@@ -6340,11 +6346,8 @@ paths:
                   type: boolean
                 ppc_keyword:
                   type: string
-                affiliate_id: {}
                 store_id:
                   type: integer
-                session_id:
-                  type: number
                 handling_total:
                   type: number
                 is_payment_order_only:
@@ -6355,10 +6358,6 @@ paths:
                   type: number
                 adcode_id:
                   type: integer
-                updated_at:
-                  type: string
-                created_at:
-                  type: string
                 is_gift:
                   type: boolean
                 gift_message:
@@ -6369,9 +6368,8 @@ paths:
                   type: string
                 source_group:
                   type: string
-                from_subscription_id: {}
-                order_status_last_changed_at:
-                  type: string
+                from_subscription_id:
+                  type: integer
                 discounted_shipping_total:
                   type: number
                 order_number:
@@ -6380,10 +6378,12 @@ paths:
                   type: string
                 order_type:
                   type: string
-                expires_at: {}
+                expires_at:
+                  type: string
                 expires:
                   type: boolean
-                from_quote_id: {}
+                from_quote_id:
+                  type: integer
                 campaign_code:
                   type: string
                 reward_points_credited:
@@ -6398,7 +6398,12 @@ paths:
                   type: number
                 manufacturer_invoice_paid:
                   type: boolean
-                due_date: {}
+                due_date:
+                  type: string
+                delivery_tax:
+                  type: number
+                location_id:
+                  type: integer
               required:
                 - customer_id
                 - order_status_id
@@ -6409,6 +6414,8 @@ paths:
                 value:
                   customer_id: 88
                   customer_type_id: 0
+                  adcode: ''
+                  ordered_at: '2021-05-14T11:09:00-05:00'
                   order_status_id: 10
                   special_instructions: ''
                   subtotal: 4386
@@ -6418,17 +6425,44 @@ paths:
                   grand_total: 3444
                   cost_total: 450
                   selected_shipping_method: Texas
+                  referrer: ''
                   order_shipping_address_id: 1597
                   order_billing_address_id: 1597
-                  admin_comments: ''
+                  admin_comments: 'Combined with order # 100231.'
+                  source: '[none]'
+                  search_phrase: ''
+                  is_ppc: false
+                  ppc_keyword: ''
                   store_id: 19
-                  session_id: 135414
                   handling_total: 0
                   is_payment_order_only: false
                   selected_shipping_provider_service: '23'
                   additional_fees: 0
+                  adcode_id: 0
+                  is_gift: false
+                  gift_message: ''
+                  public_comments: ''
+                  instructions: ''
+                  source_group: ''
+                  from_subscription_id: null
                   discounted_shipping_total: 1
+                  order_number: ''
+                  coupon_code: ''
                   order_type: Order
+                  expires_at: null
+                  expires: false
+                  from_quote_id: null
+                  campaign_code: ''
+                  reward_points_credited: false
+                  channel: Online
+                  device: None
+                  manufacturer_invoice_number: ''
+                  manufacturer_invoice_amount: 0
+                  manufacturer_invoice_paid: false
+                  entered_by: acsupport
+                  due_date: null
+                  delivery_tax: 0.00
+                  location_id: null
       tags:
         - Orders
       description: Creates an order.
@@ -8747,7 +8781,8 @@ paths:
                   type: string
                 order_type:
                   type: string
-                expires_at: {}
+                expires_at:
+                  type: string
                 expires:
                   type: boolean
                 campaign_code:
@@ -8760,8 +8795,14 @@ paths:
                   type: number
                 manufacturer_invoice_paid:
                   type: boolean
+                sales_agent_user_id:
+                  type: integer
                 due_date:
                   type: string
+                delivery_tax:
+                  type: number
+                location_id:
+                  type: integer
               required:
                 - customer_id
                 - order_status_id
@@ -8807,7 +8848,10 @@ paths:
                   manufacturer_invoice_number: ''
                   manufacturer_invoice_amount: 0
                   manufacturer_invoice_paid: false
+                  sales_agent_user_id: 0
                   due_date: ''
+                  delivery_tax: 0.00
+                  location_id: null
   '/quotes/{id}':
     parameters:
       - schema:
@@ -8939,7 +8983,8 @@ paths:
                   postal_codes: []
                   name: OCONUS
                   states:
-                    Alaska, Hawaii
+                    - Alaska
+                    - Hawaii
                   countries: []
                   markup_type: Percent
                   markup_amount: 5
@@ -11100,6 +11145,8 @@ components:
           type: integer
         is_payment_cart_only:
           type: boolean
+        lookup_key:
+          type: string
     categories:
       type: object
       properties:
@@ -11168,6 +11215,10 @@ components:
           type: integer
         cost:
           type: integer
+        shipping_address_id:
+          type: integer
+        item_thumbnail:
+          type: string
         item_url:
           type: string
         item_name:
@@ -11185,6 +11236,10 @@ components:
         cart_id:
           type: integer
         is_subscription_product:
+          type: boolean
+        configuration:
+          type: string
+        subscription_paused:
           type: boolean
         variants:
           type: array
@@ -11908,6 +11963,8 @@ components:
           type: string
         ip_address:
           type: string
+        exported_to_accounting_system:
+          type: integer
         referrer:
           type: string
         order_shipping_address_id:
@@ -11924,8 +11981,6 @@ components:
           type: boolean
         ppc_keyword:
           type: string
-        affiliate_id:
-          type: integer
         store_id:
           type: integer
         session_id:
@@ -11985,6 +12040,20 @@ components:
         channel:
           type: string
           description: 'Valid values: Online, InStore, Chat, Phone, Email'
+        device:
+          type: string
+        manufacturer_invoice_number:
+          type: string
+        manufacturer_invoice_amount:
+          type: number
+        manufacturer_invoice_paid:
+          type: boolean
+        due_date:
+          type: string
+        delivery_tax:
+          type: number
+        location_id:
+          integer
         entered_by:
           type: string
           description: Username/Email of the Admin or Customer who created this order
@@ -12028,6 +12097,12 @@ components:
           type: string
         last_name:
           type: string
+        address_type:
+          type: string
+        state_code:
+          type: string
+        country_code:
+          type: string
     order_items:
       type: object
       properties:
@@ -12055,6 +12130,10 @@ components:
           type: boolean
         weight_unit:
           type: string
+        is_non_shipping_item:
+          type: boolean
+        variant_inventory_id:
+          type: integer
         parent_order_item_id:
           type: integer
         is_quantity_bound_to_parent:
@@ -12071,21 +12150,39 @@ components:
           type: number
         size_unit:
           type: string
+        tax_code:
+          type: string
+        item_number_full:
+          type: string
         admin_comments:
           type: string
         do_not_discount:
           type: boolean
         line_item_note:
           type: string
+        order_shipping_address_id:
+          type: integer
         gift_message:
           type: string
         delivery_date:
           type: string
+        discount_amount:
+          type: number
+        discount_percentage:
+          type: number
         is_subscription_product:
           type: boolean
         warehouse_id:
           type: integer
         description:
+          type: string
+        tax:
+          type: number
+        configuration:
+          type: string
+        status:
+          type: string
+        shipping_classification_code:
           type: string
         variants:
           type: array
@@ -12098,6 +12195,15 @@ components:
                 type: string
               variant_group_id:
                 type: integer
+        personalizations:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: integer
+              answer:
+                type: string
     order_payments:
       type: object
       properties:
@@ -12153,12 +12259,18 @@ components:
           type: boolean
         transaction_id:
           type: string
+        last_four:
+          type: string
         is_void:
           type: boolean
         gateway_response_code:
           type: string
         cvv_response_code:
           type: string
+        payment_ref_num:
+          type: string
+        store_payment_method_id:
+          type: integer
     order_shipments:
       type: object
       properties:
@@ -12186,6 +12298,8 @@ components:
           type: number
         provider_handling_cost:
           type: number
+        provider_other_charges:
+          type: number
         provider_total_shipping_cost:
           type: number
         email_sent:
@@ -12201,6 +12315,8 @@ components:
         shipping_method_type:
           type: string
         shipment_name:
+          type: string
+        shipping_provider_name:
           type: string
     order_statuses:
       type: object
@@ -12230,6 +12346,8 @@ components:
         is_partially_refunded:
           type: boolean
         is_quote_status:
+          type: boolean
+        is_partially_shipped:
           type: boolean
     pages:
       type: object
@@ -12680,6 +12798,8 @@ components:
       properties:
         id:
           type: integer
+        payment_method_id: 
+          type: integer
         name:
           type: string
         length:
@@ -13012,8 +13132,6 @@ components:
           type: boolean
         ppc_keyword:
           type: string
-        affiliate_id:
-          type: integer
         store_id:
           type: integer
         session_id:
@@ -13030,6 +13148,8 @@ components:
           type: string
         created_at:
           type: string
+        entered_by:
+          type: string
         is_gift:
           type: boolean
         gift_message:
@@ -13040,12 +13160,16 @@ components:
           type: string
         source_group:
           type: string
+        from_subscription_id:
+          type: integer
         previous_order_status_id:
           type: integer
         order_status_last_changed_at:
           type: string
         discounted_shipping_total:
           type: integer
+        order_number:
+          type: string
         coupon_code:
           type: string
         order_type:
@@ -13060,6 +13184,26 @@ components:
           type: string
         reward_points_credited:
           type: boolean
+        channel:
+          type: string
+        device:
+          type: string
+        manufacturer_invoice_number:
+          type: string
+        manufacturer_invoice_amount:
+          type: number
+        manufacturer_invoice_paid:
+          type: boolean
+        sales_agent_user_id:
+          type: integer
+        due_date:
+          type: string
+        delivery_tax:
+          type: number
+        location_id:
+          type: integer
+        converted_to_order_ids:
+          type: string
     regions:
       description: ''
       type: object
@@ -13474,8 +13618,14 @@ components:
             sales_person_user_id: null
             store_payment_methods_enabled: []
             tax_rate: null
+            lock_default_address: false
             reward_tier_id: null
-            sub: ''
+            payment_net_term: 0
+            credit_limit: 0.00
+            is_inactive: false
+            use_shared_credit_limit: false
+            override_shared_credit_limit: false
+            default_payment_type_name: Credit Card
           shipping_address:
             id: 267
             customer_id: 1
@@ -13495,6 +13645,8 @@ components:
             first_name: FirstName
             last_name: LastName
             address_type: Default
+            state_code: NY
+            country_code: US
           customer_payment_method:
             id: 98
             payment_method_id: 193
@@ -13730,9 +13882,21 @@ components:
                 type: string
             tax_rate:
               type: integer
+            lock_default_address:
+              type: boolean
             reward_tier_id:
               type: integer
-            sub:
+            payment_net_term:
+              type: integer
+            credit_limit:
+              type: number
+            is_inactive:
+              type: boolean
+            use_shared_credit_limit:
+              type: boolean
+            override_shared_credit_limit:
+              type: boolean
+            default_payment_type_name:
               type: string
         shipping_address:
           type: object
@@ -13772,6 +13936,10 @@ components:
             last_name:
               type: string
             address_type:
+              type: string
+            state_code:
+              type: string
+            country_code:
               type: string
         customer_payment_method:
           type: object
@@ -14078,40 +14246,41 @@ components:
     wishlists:
       description: ''
       type: object
-      x-examples:
-        example-1:
-          id: 41
-          name: ''
-          cart_type: WishList
-          customer_id: null
-          is_public: false
-          updated_at: '2020-12-11T08:57:29.79-06:00'
-          created_at: '2019-05-28T17:56:07.49-05:00'
-          store_id: 1
-          session_id: 1899
-          discount_total: 100
-          subtotal: 1099.99
-          shipping_total: 0
-          handling_total: 0
-          tax_total: 0
-          grand_total: 999.99
-          tax_rate: null
-          additional_fees: 0
-          discounted_shipping_total: 0
-          region_markup_amount: null
-          non_shipping_discount: 100
-          gift_certificate_discount: 5
-          coupon_code: ''
-          associated_order_id: null
-          shipping_estimate_city: null
-          shipping_estimate_state_code: null
-          shipping_estimate_postal_code: null
-          shipping_estimate_country_code: null
-          is_shipping_billed_to_account: false
-          customer_payment_method_id: null
-          payment_method_id: null
-          is_payment_cart_only: false
-          lookup_key: null
+      examples:
+        Example:
+          value:
+            id: 41
+            name: ''
+            cart_type: WishList
+            customer_id: null
+            is_public: false
+            updated_at: '2020-12-11T08:57:29.79-06:00'
+            created_at: '2019-05-28T17:56:07.49-05:00'
+            store_id: 1
+            session_id: 1899
+            discount_total: 100
+            subtotal: 1099.99
+            shipping_total: 0
+            handling_total: 0
+            tax_total: 0
+            grand_total: 999.99
+            tax_rate: null
+            additional_fees: 0
+            discounted_shipping_total: 0
+            region_markup_amount: null
+            non_shipping_discount: 100
+            gift_certificate_discount: 5
+            coupon_code: ''
+            associated_order_id: null
+            shipping_estimate_city: null
+            shipping_estimate_state_code: null
+            shipping_estimate_postal_code: null
+            shipping_estimate_country_code: null
+            is_shipping_billed_to_account: false
+            customer_payment_method_id: null
+            payment_method_id: null
+            is_payment_cart_only: false
+            lookup_key: null
       properties:
         id:
           type: integer
@@ -14179,7 +14348,7 @@ components:
         is_payment_cart_only:
           type: boolean
         lookup_key:
-          type: integer
+          type: string
   securitySchemes:
     X-AC-Auth-Token:
       name: X-AC-Auth-Token

@@ -992,16 +992,6 @@
                            "type":"item",
                            "title":"Get Carts",
                            "uri":"acapi.yaml/paths/~1carts/get"
-                        },
-                        {
-                           "type":"item",
-                           "title":"Update a Cart",
-                           "uri":"acapi.yaml/paths/~1carts~1{id}/put"
-                        },
-                        {
-                           "type":"item",
-                           "title":"Delete Cart",
-                           "uri":"acapi.yaml/paths/~1carts~1{id}/delete"
                         }
                      ]
                   },
@@ -1519,6 +1509,32 @@
                             "type": "item",
                             "title": "Delete an External Image Whitelist Item",
                             "uri": "acapi.yaml/paths/~1external_image_whitelist~1{id}/delete"
+                        }
+                     ]
+                  },
+                  {
+                     "type":"group",
+                     "title":"IP Blacklist",
+                     "items": [
+                        {
+                            "type": "item",
+                            "title": "Get IP Blacklist",
+                            "uri": "acapi.yaml/paths/~1blacklisted_ips/get"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Create a IP Blacklist Item",
+                            "uri": "acapi.yaml/paths/~1blacklisted_ips/post"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Update a IP Blacklist Item",
+                            "uri": "acapi.yaml/paths/~1blacklisted_ips~1{id}/put"
+                        },
+                        {
+                            "type": "item",
+                            "title": "Delete a IP Blacklist Item",
+                            "uri": "acapi.yaml/paths/~1blacklisted_ips~1{id}/delete"
                         }
                      ]
                   },

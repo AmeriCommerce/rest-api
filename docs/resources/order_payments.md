@@ -38,9 +38,12 @@ Sample Model
 	"gift_certificate_id": null,
 	"is_captured": false,
 	"transaction_id": "",
+        "last_four": "",
 	"is_void": false,
 	"gateway_response_code": "",
-	"cvv_response_code": ""
+	"cvv_response_code": "",
+        "payment_ref_num": "",
+        "store_method_payment_id": 0
 }
 ```
 
@@ -50,3 +53,33 @@ Nested Resources
 Accessible via the `?expand=` parameter or `/api/v1/order_payments/{id}/{nested_resource}`.
 
 ### fields
+
+```shell
+GET /api/v1/order_payments?expand=fields
+```
+
+```shell
+GET /api/v1/order_payments/{id}/fields
+```
+
+```json
+{
+    ...
+    "fields": [
+        {
+            "id": 14,
+            "order_payment_id": 95,
+            "name": "Sign your name",
+            "type": "text",
+            "value": "",
+            "is_encrypted": false,
+            "is_masked": false,
+            "updated_at": "2023-05-15T12:59:19.14-05:00",
+            "created_at": "2023-05-15T12:59:19.14-05:00"
+        },
+	...
+    ],
+    ...
+}
+
+```

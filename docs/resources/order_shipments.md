@@ -24,14 +24,16 @@ Sample Model
 	"provider_base_shipping_cost": "",
 	"provider_insurance_cost": null,
 	"provider_handling_cost": null,
+	"provider_other_charges": null,
 	"provider_total_shipping_cost": null,
 	"email_sent": false,
 	"private_comment": "",
 	"shipping_comment": "",
 	"created_at": "2014-02-18T13:36:58.357-06:00",
 	"updated_at": "2014-02-18T13:36:58.357-06:00",
-	"shipping_method_type": "custom",
-	"shipment_name": "test1"
+	"shipping_method_type": "provider",
+	"shipment_name": "test1",
+	"shipping_provider_name": "UPS"
 }
 ```
 
@@ -104,7 +106,8 @@ GET /api/v1/order_shipments/{id}/items
             "id": 206,
             "quantity_shipped": 1,
             "product_id": 36,
-            "item_name": "Claymore"
+            "item_name": "Claymore",
+	    "item_nr": "test1"
         },
 	...
     ],

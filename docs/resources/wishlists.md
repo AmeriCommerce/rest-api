@@ -1,4 +1,4 @@
-carts
+wishlists
 =====
 
 ```shell
@@ -35,17 +35,22 @@ Sample Model
 	"gift_certificate_discount": null,
 	"coupon_code": "",
 	"associated_order_id": null,
+	"shipping_estimate_city": null,
+        "shipping_estimate_state_code": null,
+        "shipping_estimate_postal_code": null,
+        "shipping_estimate_country_code": null,
 	"is_shipping_billed_to_account": false,
 	"customer_payment_method_id": null,
 	"payment_method_id": null,
-	"is_payment_cart_only": false
+	"is_payment_cart_only": false,
+	"lookup_key": null
 }
 ```
 
 Nested Resources
 ----------------
 
-Accessible via the `?expand=` parameter or `/api/v1/carts/{id}/{nested_resource}`.
+Accessible via the `?expand=` parameter or `/api/v1/wishlists/{id}/{nested_resource}`.
 
 ### items
 
@@ -68,6 +73,8 @@ GET /api/v1/wishlists/{id}/items
 			"quantity": 2,
 			"price": 2295,
 			"cost": 0,
+			"shipping_address_id": 43,
+                        "item_thumbnail": "/shared/images/product/test.jpg",
 			"item_url": "",
 			"item_name": "60PY2DR",
 			"warehouse_id": 0,
@@ -75,17 +82,22 @@ GET /api/v1/wishlists/{id}/items
 			"parent_cart_item_id": null,
 			"updated_at": "2014-04-07T11:55:56.31-05:00",
 			"created_at": "2014-04-07T11:55:56.31-05:00",
+			"cart_id": 68,
 			"is_subscription_product": false,
+			"configuration": "",
+                        "subscription_paused": false,
 			"variants": null,
 			"personalizations": null
 		},
 		{
 			"id": 298,
-			"product_id" 55,
+			"product_id": 55,
 			"item_number": "42LP1",
 			"quantity": 1,
 			"price": 36.99,
 			"cost": 0,
+			"shipping_address_id": 43,
+                        "item_thumbnail": "/shared/images/product/test2.jpg",
 			"item_url": "",
 			"item_name": "42LP1",
 			"warehouse_id": 0,
@@ -93,7 +105,10 @@ GET /api/v1/wishlists/{id}/items
 			"parent_cart_item_id": null,
 			"updated_at": "2014-04-07T11:55:56.31-05:00",
 			"created_at": "2014-04-07T11:55:56.31-05:00",
+			"cart_id": 68,
 			"is_subscription_product": false,
+			"configuration": "",
+                        "subscription_paused": false,
 			"variants": [
 				{
 					"id": 11,

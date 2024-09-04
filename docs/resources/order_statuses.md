@@ -24,6 +24,7 @@ Sample Model
 	"created_at": "2014-02-18T13:36:58.357-06:00",
 	"is_fully_refunded": false,
 	"is_partially_refunded": false,
-	"is_quote_status": false
+	"is_quote_status": false,
+	"is_partially_shipped": false
 }
 ```
