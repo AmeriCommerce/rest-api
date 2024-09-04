@@ -44,6 +44,7 @@ Sample Model
 	"customer_payment_method_id": null,
 	"payment_method_id": null,
 	"is_payment_cart_only": false
+        "lookup_key": null
 }
 ```
 
@@ -74,6 +75,8 @@ GET /api/v1/carts/{id}/items
 			"quantity": 2,
 			"price": 2295,
 			"cost": 0,
+                        "shipping_address_id": null,
+                        "item_thumbnail": "/Shared/Images/Product/img.png",
 			"item_url": "",
 			"item_name": "60PY2DR",
 			"warehouse_id": 0,
@@ -81,7 +84,10 @@ GET /api/v1/carts/{id}/items
 			"parent_cart_item_id": null,
 			"updated_at": "2014-04-07T11:55:56.31-05:00",
 			"created_at": "2014-04-07T11:55:56.31-05:00",
-			"is_subscription_product": false,
+                        "cart_id": 3844,
+                        "is_subscription_product": false,
+                        "configuration": "",
+                        "subscription_paused": false,
 			"variants": null,
 			"personalizations": null
 		},
@@ -92,6 +98,8 @@ GET /api/v1/carts/{id}/items
 			"quantity": 1,
 			"price": 36.99,
 			"cost": 0,
+                        "shipping_address_id": null,
+                        "item_thumbnail": "/Shared/Images/Product/img2.png",
 			"item_url": "",
 			"item_name": "42LP1",
 			"warehouse_id": 0,
@@ -99,7 +107,10 @@ GET /api/v1/carts/{id}/items
 			"parent_cart_item_id": null,
 			"updated_at": "2014-04-07T11:55:56.31-05:00",
 			"created_at": "2014-04-07T11:55:56.31-05:00",
-			"is_subscription_product": false,
+			"cart_id": 3844,
+                        "is_subscription_product": false,
+                        "configuration": "",
+                        "subscription_paused": false,
 			"variants": [
 				{
 					"id": 11,
