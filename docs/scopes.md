@@ -124,6 +124,15 @@ Permissions required: `CustomFields`
 Applies to:
 
 * [custom_fields](docs/resources/custom_fields.md)
+* [custom_field_values](docs/resources/custom_field_values.md)
+
+### import
+
+Permissions required: `DataImport`
+
+Applies to:
+
+* [import](docs/resources/import.md)
 
 ### settings
 

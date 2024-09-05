@@ -1733,6 +1733,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/cart_items'
       description: 'Adds an Item to specified cart. '
       requestBody:
         content:
@@ -2557,6 +2561,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom_field_values'
       description: Creates a custom field value.
       tags:
         - Custom Field Values
@@ -2590,7 +2598,7 @@ paths:
                   custom_field_id: 46
                   resource_id: 88
                   value: value
-  '/custom_field_value/{id}':
+  '/custom_field_values/{id}':
     parameters:
       - schema:
           type: integer
@@ -2675,6 +2683,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/custom_fields'
       tags:
         - Custom Fields
       description: |-
@@ -2745,9 +2757,33 @@ paths:
                   type: string
                 show_on_one_page_checkout:
                   type: boolean
+                is_visible_all_stores:
+                  type: boolean
               required:
                 - name
                 - resource_type
+            examples:
+              Example:
+                values:
+                  name: My Custom Field
+                  resource_type: Products
+                  input_type: TextBox
+                  value_type: String
+                  field_width: 25
+                  sort_order: 1
+                  format_string: ''
+                  is_searchable: true
+                  is_editable: false
+                  is_multi_select: false
+                  label: Google Adwords Grouping
+                  is_private: true
+                  is_required: false
+                  show_on_order_page: false
+                  display_location: ''
+                  default_value: ''
+                  read_only: AdminWritable
+                  show_on_one_page_checkout: false
+                  is_visible_all_stores: true
   '/custom_fields/{id}':
     parameters:
       - schema:
@@ -5867,22 +5903,15 @@ paths:
                   card_expiration_month: 0
                   card_expiration_year: 0
                   cardholder_name: ''
-                  approved_at: ''
-                  authorization_code: ''
                   reject_reason: ''
-                  avs_code: ''
                   payment_method_name: custom
                   transaction_type: None
                   amount: 5001
                   payment_note: ''
                   gift_certificate_id: 12
                   is_captured: false
-                  transaction_id: ''
                   last_four: ''
                   is_void: false
-                  gateway_response_code: ''
-                  cvv_response_code: ''
-                  token: ''
                   payment_ref_num: ''
                   store_payment_method_id: 2
   '/order_payments/{id}':
@@ -5912,7 +5941,7 @@ paths:
             schema:
               $ref: '#/components/schemas/order_payments'
     delete:
-      summary: ''
+      summary: Delete an Order Payment
       operationId: delete-order_payments-id
       responses:
         '200':
@@ -9409,9 +9438,8 @@ paths:
                         phone: string
                         keywords: string
                         description: string
+                        all_catalog: boolean
                         is_micro_store: true
-                        is_vendor: false
-                        vendor_key: string
                         parent_store_id: 0
                         profile_id: 0
                         company_name: string
@@ -9427,6 +9455,8 @@ paths:
                         tech_first_name: string
                         tech_last_name: string
                         tech_same_as_billing: false
+                        store_logo: string
+                        store_image: string
                         testimonial_count: 0
                         average_testimonial_rating: 0
       operationId: get-stores
@@ -11212,9 +11242,9 @@ components:
         quantity:
           type: integer
         price:
-          type: integer
+          type: number
         cost:
-          type: integer
+          type: number
         shipping_address_id:
           type: integer
         item_thumbnail:
@@ -11499,6 +11529,8 @@ components:
         read_only:
           type: string
         show_on_one_page_checkout:
+          type: boolean
+        is_visible_all_stores:
           type: boolean
     custom_field_values:
       type: object
@@ -12053,7 +12085,7 @@ components:
         delivery_tax:
           type: number
         location_id:
-          integer
+          type: integer
         entered_by:
           type: string
           description: Username/Email of the Admin or Customer who created this order
@@ -13103,17 +13135,19 @@ components:
         special_instructions:
           type: string
         subtotal:
-          type: integer
+          type: number
         tax_total:
           type: number
         shipping_total:
-          type: integer
+          type: number
         discount_total:
-          type: integer
+          type: number
         grand_total:
           type: number
         cost_total:
-          type: integer
+          type: number
+        selected_shipping_method:
+          type: string
         ip_address:
           type: string
         referrer:
@@ -13140,6 +13174,8 @@ components:
           type: integer
         is_payment_order_only:
           type: boolean
+        selected_shipping_provider_service:
+          type: string
         additional_fees:
           type: integer
         adcode_id:
@@ -13803,10 +13839,6 @@ components:
                     type: integer
                   is_subscription_product:
                     type: boolean
-                  vendor_store_id:
-                    type: integer
-                  fitment:
-                    type: string
                   configuration:
                     type: string
                   variants:
@@ -13837,8 +13869,6 @@ components:
             adcode:
               type: string
             adcode_id:
-              type: integer
-            affiliate_id:
               type: integer
             customer_type_id:
               type: integer
@@ -14015,12 +14045,10 @@ components:
           type: string
         description:
           type: string
+        all_catalog:
+          type: boolean
         is_micro_store:
           type: boolean
-        is_vendor:
-          type: boolean
-        vendor_key:
-          type: string
         parent_store_id:
           type: integer
         profile_id:
@@ -14051,6 +14079,10 @@ components:
           type: string
         tech_same_as_billing:
           type: boolean
+        store_logo:
+          type: string
+        store_image:
+          type: string
         testimonial_count:
           type: integer
         average_testimonial_rating:
