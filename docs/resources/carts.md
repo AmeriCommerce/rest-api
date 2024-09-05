@@ -93,7 +93,7 @@ GET /api/v1/carts/{id}/items
 		},
 		{
 			"id": 298,
-			"product_id" 55,
+			"product_id": 55,
 			"item_number": "42LP1",
 			"quantity": 1,
 			"price": 36.99,

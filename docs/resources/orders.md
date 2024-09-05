@@ -36,7 +36,6 @@ Sample Model
 	"search_phrase": "",
 	"is_ppc": false,
 	"ppc_keyword": "",
-	"affiliate_id": null,
 	"store_id": 1,
 	"session_id": 363,
 	"handling_total": 0,

@@ -28,7 +28,7 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | [order_payments](docs/resources/order_payments.md) | fields |
 | [order_shipments](docs/resources/order_shipments.md) | items |
 | [order_statuses](docs/resources/order_statuses.md) | |
-| [quotes](docs/resources/quotes.md) | items, payments, shipments, custom_fields |
+| [quotes](docs/resources/quotes.md) | items, custom_fields |
 | [subscriptions](docs/resources/subscriptions.md) | |
 | [wishlists](docs/resources/wishlists.md) | items |
 
@@ -90,6 +90,7 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | ---- | ----------- |
 | [custom_fields](docs/resources/custom_fields.md) | values, list_items, stores |
 | [custom\_field\_values](docs/resources/custom_field_values.md) | |
+| [import](docs/resources/import.md) | |
 
 ### Settings
 

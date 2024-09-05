@@ -32,7 +32,8 @@ Sample Model
 	"display_location": "DefaultLocation",
 	"default_value": "",
 	"read_only": "Off",
-	"show_on_one_page_checkout": false
+	"show_on_one_page_checkout": false,
+        "is_visible_all_stores": true
 }
 ```
 
@@ -43,4 +44,82 @@ Accessible via the `?expand=` parameter or `/api/v1/custom_fields/{id}/{nested_r
 
 ### list_items
 
+###### Example Request
+```shell
+GET /api/v1/custom_fields?expand=list_items
+```
+
+```shell
+GET /api/v1/custom_fields/{id}/list_items
+```
+
+```json
+{
+	...
+	"list_items": [
+		{
+			"id": 10,
+                        "custom_field_id": 1,
+                        "text": "test",
+                        "value": "test",
+                        "sort_order": 0
+		},
+		...
+	],
+	...
+}
+```
+
 ### stores
+
+###### Example Request
+```shell
+GET /api/v1/custom_fields?expand=stores
+```
+
+```shell
+GET /api/v1/custom_fields/{id}/stores
+```
+
+```json
+{
+	...
+	"stores": [
+		{
+			"id": 1,
+                        "name": "Your Site"
+		},
+		...
+	],
+	...
+}
+```
+
+### values
+
+###### Example Request
+```shell
+GET /api/v1/custom_fields?expand=values
+```
+
+```shell
+GET /api/v1/custom_fields/{id}/values
+```
+
+```json
+{
+	...
+	"values": [
+		{
+			"id": 2,
+	                "custom_field_id": 1,
+	                "resource_id": 100013,
+	                "value": "2/5/2014",
+	                "updated_at": "2014-02-18T13:37:19.25-06:00",
+	                "created_at": "2014-02-18T13:37:19.25-06:00"
+		},
+		...
+	],
+	...
+}
+```
