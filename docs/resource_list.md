@@ -8,9 +8,9 @@ All API URLs start with `https://[mystorename.com]/api/v1/`, where `[mystorename
 | Name | Collections |
 | ---- | ----------- |
 | [addresses](docs/resources/addresses.md) |
-| [customers](docs/resources/customers.md) | addresses, reward\_points, custom\_fields |
+| [customers](docs/resources/customers.md) | additional_emails, addresses, customer_store_locations, reward\_points, custom\_fields |
 | [customer_association](docs/resources/customer_association.md) | |
-| [customer_types](docs/resources/customer_types.md) | |
+| [customer_types](docs/resources/customer_types.md) | customer_type_payment_methods_availability |
 | [customer_payment_methods](docs/resources/customer_payment_methods.md) | fields |
 | [profiles](docs/resources/profiles.md) | contacts |
 | [users](docs/resources/users.md) | |

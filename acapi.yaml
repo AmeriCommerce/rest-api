@@ -2764,7 +2764,7 @@ paths:
                 - resource_type
             examples:
               Example:
-                values:
+                value:
                   name: My Custom Field
                   resource_type: Products
                   input_type: TextBox
@@ -5789,7 +5789,7 @@ paths:
                     items:
                       $ref: '#/components/schemas/order_payments'
       operationId: get-order_payments
-      description: Gets an array of Orde Payments.
+      description: Gets an array of Order Payments.
     post:
       summary: Create an Order Payment
       operationId: post-order_payments
@@ -8660,7 +8660,7 @@ paths:
                   image_url: ''
                   company: ''
     delete:
-      summary: ''
+      summary: Delete a Profile
       operationId: delete-profiles-id
       responses:
         '200':
@@ -9957,6 +9957,10 @@ paths:
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/variant_groups'
       tags:
         - Variant Groups
       description: |-
@@ -10037,7 +10041,7 @@ paths:
             schema:
               $ref: '#/components/schemas/variant_groups'
     delete:
-      summary: ''
+      summary: Delete a Variant Group
       operationId: delete-variant_groups-id
       responses:
         '200':
