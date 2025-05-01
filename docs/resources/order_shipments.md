@@ -72,7 +72,8 @@ Sample Model
   "shipping_provider_name": "FedEx",
   "items": [{
       "id": 128,
-      "quantity_shipped": 1
+      "quantity_shipped": 1,
+      "item_nr": "test1"
   }]
 }
 ```
@@ -81,7 +82,7 @@ Sample Model
 - If you provide a `shipment_name` that matches any existing shipment for the order, the request will update the existing shipment, else it will create a new shipment record.
 	- To ensure, you update an existing shipment record, you can specify existing shipment using `id` field. This will update an existing shipment record.
 
-- For nested `items` resource, `id` field is used for providing _OrderItemID_, **not** the _ProductID_
+- For nested `items` resource, `id` field is used for providing _OrderItemID_, **not** the _ProductID_. You can provide id or item_nr for the shipped items.
 
 Nested Resources
 ----------------
