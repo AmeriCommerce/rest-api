@@ -6053,6 +6053,18 @@ paths:
                   type: string
                 shipping_provider_name:
                   type: string
+                items:
+                  type: array
+                  uniqueItems: false
+                  items:
+                    type: object
+                    properties:
+                      id:
+                        type: integer
+                      quantity_shipped:
+                        type: integer
+                      item_nr:
+                        type: string
             examples:
               Example:
                 value:
@@ -6075,6 +6087,10 @@ paths:
                   shipping_method_type: provider
                   shipment_name: '1'
                   shipping_provider_name: UPS
+                  items:
+                    - id: 206
+                      quantity_shipped: 1
+                      item_ne: 'test1'
   '/order_shipments/{id}':
     parameters:
       - schema:
